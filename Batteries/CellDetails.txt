@@ -1,0 +1,3 @@
+Cell Number		Battery Number	Battery Voltage		Battery Current		Source		Voltage-Before 		T t=0		Initial Charge Start	Initial Charge End		V t=30	T t=30							
+001				001														JessLaptop	1.74v				15 deg		2015-03-28 13:13
+002				001														JessLaptop	3.38v				16.6 deg	2015-03-28 13:13
