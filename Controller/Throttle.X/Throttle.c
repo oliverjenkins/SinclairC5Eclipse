@@ -76,8 +76,10 @@ void main (void)
     TRISBbits.TRISB0 = 1;       // PORTB bit 0 (connected to switch) is input (1)
 
     // Init ADC
-
     ADC_Init();
+
+    // Init PWM
+    PWM_Init();
     
     while (1)
     {
@@ -129,6 +131,14 @@ void ADC_Init(void)
 
 }
 
+
+void PWM_Init(void) {
+    CCP1CON = 0b00001100;
+    T2CON = 0b00000100;
+    PR2 = 249;   // PWM period = (PR2+1) * prescaler * Tcy = 1ms
+    CCPR1L = 25; // pulse width = CCPR1L * prescaler * Tcy = 100us
+     
+}
 
 unsigned char ADC_Convert(void)
 { // start an ADC conversion and return the 8 most-significant bits of the result

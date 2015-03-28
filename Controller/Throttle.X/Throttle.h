@@ -14,6 +14,8 @@
 
 /** P R O T O T Y P E S ******************************************************/
 void ADC_Init(void);
+void PWM_Init(void);
 unsigned char ADC_Convert(void);
+
 
 #endif

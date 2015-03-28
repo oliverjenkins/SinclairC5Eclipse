@@ -5248,6 +5248,7 @@ extern __nonreentrant void _delay3(unsigned char);
 
 # 16 "Throttle.h"
 void ADC_Init(void);
+void PWM_Init(void);
 unsigned char ADC_Convert(void);
 
 # 39 "Throttle.c"
@@ -5288,8 +5289,10 @@ WPUBbits.WPUB0 = 1;
 TRISBbits.TRISB0 = 1;
 
 
-
 ADC_Init();
+
+
+PWM_Init();
 
 while (1)
 {
@@ -5318,7 +5321,7 @@ ANSELbits.ANS0 = 1;
 
 ADCON1 = 0;
 
-# 125
+# 127
 ADCON2 = 0b00111000;
 
 
@@ -5326,6 +5329,14 @@ ADCON0 = 0b00000001;
 
 }
 
+
+void PWM_Init(void) {
+CCP1CON = 0b00001100;
+T2CON = 0b00000100;
+PR2 = 249;
+CCPR1L = 25;
+
+}
 
 unsigned char ADC_Convert(void)
 {
