@@ -53,6 +53,7 @@
 #include "compilertype.h"
 
 #include <delays.h>
+#include "PWM.h"
 
 /** V A R I A B L E S *************************************************/
 
@@ -66,18 +67,7 @@ void main (void)
     TRISDbits.TRISD0 = 0;
     TRISDbits.TRISD1 = 0;
 
-    // Set up 8-bit Timer2 to generate the PWM period (frequency)
-    T2CON = 0b00000111;// Prescale = 1:16, timer on, postscale not used with CCP module
-    PR2 = 249;         // Timer 2 Period Register = 250 counts
-    // Thus, the PWM frequency is:
-    // 1MHz clock / 4 = 250kHz instruction rate.
-    // (250kHz / 16 prescale) / 250) = 62.5Hz, a period of 16ms.
-
-    CCP1CON = 0b01001100;
-    // P1Mx = 01 Full-Bridge output forward, so we get the PWM
-    // signal on P1D to LED7.  Only Single Output (00) is needed,
-    // but the P1A pin does not connect to a demo board LED
-    // CCP1Mx = 1100, PWM mode with P1D active-high.
+    PWM_Init();
 
     while(1) {
         LATDbits.LATD0 = ~LATDbits.LATD0; // toggle LATD
@@ -90,7 +80,7 @@ void main (void)
         CCPR1L = 16;
         Delay1KTCYx(255);
         
-        CCPR1L = 32;
+        CCPR1L = 50;
         Delay1KTCYx(255);
 
         CCPR1L = 64;
@@ -103,4 +93,21 @@ void main (void)
         Delay1KTCYx(255);
     }
 
+}
+
+
+void PWM_Init(void) {
+
+    // Set up 8-bit Timer2 to generate the PWM period (frequency)
+    T2CON = 0b00000111;// Prescale = 1:16, timer on, postscale not used with CCP module
+    PR2 = 249;         // Timer 2 Period Register = 250 counts
+    // Thus, the PWM frequency is:
+    // 1MHz clock / 4 = 250kHz instruction rate.
+    // (250kHz / 16 prescale) / 250) = 62.5Hz, a period of 16ms.
+
+    CCP1CON = 0b01001100;
+    // P1Mx = 01 Full-Bridge output forward, so we get the PWM
+    // signal on P1D to LED7.  Only Single Output (00) is needed,
+    // but the P1A pin does not connect to a demo board LED
+    // CCP1Mx = 1100, PWM mode with P1D active-high.
 }

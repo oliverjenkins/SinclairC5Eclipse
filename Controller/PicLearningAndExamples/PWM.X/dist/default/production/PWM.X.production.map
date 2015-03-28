@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Sat Mar 28 17:46:04 2015
+Linker Map File - Created Sat Mar 28 17:49:20 2015
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -7,18 +7,18 @@ Linker Map File - Created Sat Mar 28 17:46:04 2015
                _entry_scn       code   0x000000    program   0x000006
                    .cinit    romdata   0x000006    program   0x000002
                _cinit_scn       code   0x000008    program   0x00009e
-              .code_PWM.o       code   0x0000a6    program   0x000042
-              D1KTCYXCODE       code   0x0000e8    program   0x000020
-                    .code       code   0x000108    program   0x000020
-             _startup_scn       code   0x000128    program   0x00001c
-           .code___init.o       code   0x000144    program   0x000002
-        .romdata___init.o    romdata   0x000146    program   0x000000
-        .idata___init.o_i    romdata   0x000146    program   0x000000
-           .romdata_PWM.o    romdata   0x000146    program   0x000000
-           .idata_PWM.o_i    romdata   0x000146    program   0x000000
-            .code_c018i.o       code   0x000146    program   0x000000
-         .romdata_c018i.o    romdata   0x000146    program   0x000000
-         .idata_c018i.o_i    romdata   0x000146    program   0x000000
+              .code_PWM.o       code   0x0000a6    program   0x000046
+              D1KTCYXCODE       code   0x0000ec    program   0x000020
+                    .code       code   0x00010c    program   0x000020
+             _startup_scn       code   0x00012c    program   0x00001c
+           .code___init.o       code   0x000148    program   0x000002
+        .romdata___init.o    romdata   0x00014a    program   0x000000
+        .idata___init.o_i    romdata   0x00014a    program   0x000000
+           .romdata_PWM.o    romdata   0x00014a    program   0x000000
+           .idata_PWM.o_i    romdata   0x00014a    program   0x000000
+            .code_c018i.o       code   0x00014a    program   0x000000
+         .romdata_c018i.o    romdata   0x00014a    program   0x000000
+         .idata_c018i.o_i    romdata   0x00014a    program   0x000000
      .config_300001_PWM.o    romdata   0x300001    program   0x000001
      .config_300002_PWM.o    romdata   0x300002    program   0x000001
      .config_300003_PWM.o    romdata   0x300003    program   0x000001
@@ -47,24 +47,25 @@ Linker Map File - Created Sat Mar 28 17:46:04 2015
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x000145      
+                            0x000000    0x000149      
                             0x300001    0x300003      
                             0x300005    0x300006      
                             0x300008    0x30000d      
-            337 out of 33048 program addresses used, program memory utilization is 1%
+            341 out of 33048 program addresses used, program memory utilization is 1%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                    D1K_1   0x0000f4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-                     D1Kx   0x0000f2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-              Delay1KTCYx   0x0000e8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0010   0x0000f8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0016   0x0000fe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+                    D1K_1   0x0000f8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+                     D1Kx   0x0000f6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+              Delay1KTCYx   0x0000ec    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+                 PWM_Init   0x0000d4    program     extern F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PWM.X\PWM.c
+        _D1KTCYXCODE_0010   0x0000fc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0016   0x000102    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x000142    program     static                          
+       ___return_lbl00001   0x000146    program     static                          
        ___return_lbl00002   0x0000a4    program     static                          
                __config_0   0x300001    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PWM.X\PWM.c
                __config_1   0x300002    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PWM.X\PWM.c
@@ -77,23 +78,23 @@ Linker Map File - Created Sat Mar 28 17:46:04 2015
                __config_7   0x30000a    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PWM.X\PWM.c
                __config_8   0x30000b    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PWM.X\PWM.c
                __config_9   0x30000c    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PWM.X\PWM.c
-                   __init   0x000144    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-                   __pa_0   0x0000de    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PWM.X\PWM.c
-            __zero_memory   0x000108    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+                   __init   0x000148    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
+                   __pa_0   0x0000e2    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PWM.X\PWM.c
+            __zero_memory   0x00010c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
                 _do_cinit   0x000008    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 _startup   0x000128    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                compare_l   0x00011e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+                 _startup   0x00012c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                compare_l   0x000122    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
                 copy_loop   0x00007a    program     static                          
             copy_one_byte   0x000080    program     static                          
                      done   0x0000a4    program     static                          
              done_copying   0x00008e    program     static                          
-                     loop   0x000138    program     static                          
-                   loop_h   0x000116    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
-                   loop_l   0x000120    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+                     loop   0x00013c    program     static                          
+                   loop_h   0x00011a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+                   loop_l   0x000124    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
                      main   0x0000a6    program     extern F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PWM.X\PWM.c
                      test   0x000022    program     static                          
-               zero_block   0x000116    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+               zero_block   0x00011a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
@@ -324,21 +325,22 @@ Linker Map File - Created Sat Mar 28 17:46:04 2015
                      done   0x0000a4    program     static                          
        ___return_lbl00002   0x0000a4    program     static                          
                      main   0x0000a6    program     extern F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PWM.X\PWM.c
-                   __pa_0   0x0000de    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PWM.X\PWM.c
-              Delay1KTCYx   0x0000e8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-                     D1Kx   0x0000f2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-                    D1K_1   0x0000f4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0010   0x0000f8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0016   0x0000fe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-            __zero_memory   0x000108    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
-                   loop_h   0x000116    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
-               zero_block   0x000116    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
-                compare_l   0x00011e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
-                   loop_l   0x000120    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
-                 _startup   0x000128    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x000138    program     static                          
-       ___return_lbl00001   0x000142    program     static                          
-                   __init   0x000144    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
+                 PWM_Init   0x0000d4    program     extern F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PWM.X\PWM.c
+                   __pa_0   0x0000e2    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PWM.X\PWM.c
+              Delay1KTCYx   0x0000ec    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+                     D1Kx   0x0000f6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+                    D1K_1   0x0000f8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0010   0x0000fc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0016   0x000102    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+            __zero_memory   0x00010c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+                   loop_h   0x00011a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+               zero_block   0x00011a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+                compare_l   0x000122    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+                   loop_l   0x000124    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+                 _startup   0x00012c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x00013c    program     static                          
+       ___return_lbl00001   0x000146    program     static                          
+                   __init   0x000148    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
                __config_0   0x300001    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PWM.X\PWM.c
                __config_1   0x300002    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PWM.X\PWM.c
                __config_2   0x300003    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PWM.X\PWM.c

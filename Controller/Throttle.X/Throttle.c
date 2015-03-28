@@ -42,7 +42,7 @@ unsigned char ADC_Value;  // 8-bit variable
 /** D E C L A R A T I O N S *******************************************/
 // declare constant data in program memory starting at address 0x180
 
-const unsigned char ADC_ThrottlePWM_Lookup[16] @ 0x180 = {
+const unsigned char ADC_ThrottleLED_Lookup[16] @ 0x180 = {
     0b00000000,
     0b00000001,
     0b00000010,
@@ -59,6 +59,25 @@ const unsigned char ADC_ThrottlePWM_Lookup[16] @ 0x180 = {
     0b01111111,
     0b10111111,
     0b11111111,
+};
+
+const unsigned char ADC_ThrottlePWM_Lookup[16] @ 0x180 = {
+    0,
+    18,
+    36,
+    54,
+    72,
+    90,
+    90,
+    108,
+    126,
+    144,
+    162,
+    180,
+    198,
+    216,
+    234,
+    255,
 };
 
 #endif
@@ -88,7 +107,7 @@ void main (void)
         ADC_Value = ADC_Value >> 4;     // We have 0 - 255 from ADC, so divide by 16 to get a lookup range
 
         // use lookup table to output one LED on based on LED_Number value
-        LATD = ADC_ThrottlePWM_Lookup[ADC_Value];
+        CCPR1L = ADC_ThrottlePWM_Lookup[ADC_Value];
         
 
         Delay1KTCYx(30);	    // Delay 50 x 1000 = 50,000 cycles; 200ms @ 1MHz
@@ -131,13 +150,20 @@ void ADC_Init(void)
 
 }
 
-
 void PWM_Init(void) {
-    CCP1CON = 0b00001100;
-    T2CON = 0b00000100;
-    PR2 = 249;   // PWM period = (PR2+1) * prescaler * Tcy = 1ms
-    CCPR1L = 25; // pulse width = CCPR1L * prescaler * Tcy = 100us
-     
+
+    // Set up 8-bit Timer2 to generate the PWM period (frequency)
+    T2CON = 0b00000111;// Prescale = 1:16, timer on, postscale not used with CCP module
+    PR2 = 249;         // Timer 2 Period Register = 250 counts
+    // Thus, the PWM frequency is:
+    // 1MHz clock / 4 = 250kHz instruction rate.
+    // (250kHz / 16 prescale) / 250) = 62.5Hz, a period of 16ms.
+
+    CCP1CON = 0b01001100;
+    // P1Mx = 01 Full-Bridge output forward, so we get the PWM
+    // signal on P1D to LED7.  Only Single Output (00) is needed,
+    // but the P1A pin does not connect to a demo board LED
+    // CCP1Mx = 1100, PWM mode with P1D active-high.
 }
 
 unsigned char ADC_Convert(void)
