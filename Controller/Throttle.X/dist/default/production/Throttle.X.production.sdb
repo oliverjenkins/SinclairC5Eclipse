@@ -3,8 +3,6 @@
 [d edition pro ]
 [d chip 18F45K20 ]
 [d frameptr 4065 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "63 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\double.c
 [v ___flpack __flpack `(d  1 e 3 0 ]
 "88 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fladd.c
@@ -29,11 +27,11 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
 [v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]
-"67 F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+"66 F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
 [v _main main `(v  1 e 0 0 ]
-"101
+"96
 [v _ADC_Init ADC_Init `(v  1 e 0 0 ]
-"138
+"133
 [v _ADC_Convert ADC_Convert `(uc  1 e 1 0 ]
 [s S97 . 1 `uc 1 WPUB0 1 0 :1:0 
 `uc 1 WPUB1 1 0 :1:1 
@@ -168,26 +166,13 @@
 [u S77 . 1 `S62 1 . 1 0 `S65 1 . 1 0 `S74 1 . 1 0 ]
 [v _INTCON2bits INTCON2bits `VES77  1 e 1 @4081 ]
 "39 F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-[v _LED_Number LED_Number `uc  1 e 1 0 ]
+[v _ADC_Value ADC_Value `uc  1 e 1 0 ]
 "45
-[v _LED_LookupTable LED_LookupTable `C[17]uc  1 e 17 @384 ]
-"67
+[v _ADC_ThrottlePWM_Lookup ADC_ThrottlePWM_Lookup `C[16]uc  1 e 16 @384 ]
+"66
 [v _main main `(v  1 e 0 0 ]
 {
-"99
-} 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"11
-[v ___awdiv@quotient quotient `i  1 a 2 6 ]
-"12
-[v ___awdiv@sign sign `uc  1 a 1 5 ]
-[v ___awdiv@counter counter `uc  1 a 1 4 ]
-"8
-[v ___awdiv@dividend dividend `i  1 p 2 0 ]
-[v ___awdiv@divisor divisor `i  1 p 2 2 ]
-"42
+"94
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
 [v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]
@@ -197,13 +182,13 @@
 [v Delay1KTCYx@unit unit `uc  1 a 1 0 ]
 "13
 } 0
-"101 F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+"96 F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
 [v _ADC_Init ADC_Init `(v  1 e 0 0 ]
 {
-"135
+"130
 } 0
-"138
+"133
 [v _ADC_Convert ADC_Convert `(uc  1 e 1 0 ]
 {
-"143
+"138
 } 0

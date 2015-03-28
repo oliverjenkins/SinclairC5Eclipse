@@ -4051,178 +4051,172 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Throttle.h: 16: void ADC_Init(void);
 [; ;Throttle.h: 17: unsigned char ADC_Convert(void);
 "39 Throttle.c
-[v _LED_Number `uc ~T0 @X0 1 e ]
-[; ;Throttle.c: 39: unsigned char LED_Number;
+[v _ADC_Value `uc ~T0 @X0 1 e ]
+[; ;Throttle.c: 39: unsigned char ADC_Value;
 "45
-[v _LED_LookupTable `Cuc ~T0 @X0 -> 17 `i e@384 ]
-[i _LED_LookupTable
+[v _ADC_ThrottlePWM_Lookup `Cuc ~T0 @X0 -> 16 `i e@384 ]
+[i _ADC_ThrottlePWM_Lookup
 :U ..
 "46
 -> -> 0 `i `uc
 "47
 -> -> 1 `i `uc
 "48
--> -> 1 `i `uc
-"49
 -> -> 2 `i `uc
-"50
+"49
 -> -> 3 `i `uc
-"51
+"50
 -> -> 5 `i `uc
-"52
+"51
 -> -> 7 `i `uc
-"53
+"52
 -> -> 11 `i `uc
-"54
+"53
 -> -> 15 `i `uc
-"55
+"54
 -> -> 23 `i `uc
-"56
+"55
 -> -> 31 `i `uc
-"57
+"56
 -> -> 47 `i `uc
-"58
+"57
 -> -> 63 `i `uc
-"59
+"58
 -> -> 95 `i `uc
-"60
+"59
 -> -> 127 `i `uc
-"61
+"60
 -> -> 191 `i `uc
-"62
+"61
 -> -> 255 `i `uc
 ..
 ]
-[; ;Throttle.c: 45: const unsigned char LED_LookupTable[17] @ 0x180 = {
+[; ;Throttle.c: 45: const unsigned char ADC_ThrottlePWM_Lookup[16] @ 0x180 = {
 [; ;Throttle.c: 46: 0b00000000,
 [; ;Throttle.c: 47: 0b00000001,
-[; ;Throttle.c: 48: 0b00000001,
-[; ;Throttle.c: 49: 0b00000010,
-[; ;Throttle.c: 50: 0b00000011,
-[; ;Throttle.c: 51: 0b00000101,
-[; ;Throttle.c: 52: 0b00000111,
-[; ;Throttle.c: 53: 0b00001011,
-[; ;Throttle.c: 54: 0b00001111,
-[; ;Throttle.c: 55: 0b00010111,
-[; ;Throttle.c: 56: 0b00011111,
-[; ;Throttle.c: 57: 0b00101111,
-[; ;Throttle.c: 58: 0b00111111,
-[; ;Throttle.c: 59: 0b01011111,
-[; ;Throttle.c: 60: 0b01111111,
-[; ;Throttle.c: 61: 0b10111111,
-[; ;Throttle.c: 62: 0b11111111,
-[; ;Throttle.c: 63: };
-"67
+[; ;Throttle.c: 48: 0b00000010,
+[; ;Throttle.c: 49: 0b00000011,
+[; ;Throttle.c: 50: 0b00000101,
+[; ;Throttle.c: 51: 0b00000111,
+[; ;Throttle.c: 52: 0b00001011,
+[; ;Throttle.c: 53: 0b00001111,
+[; ;Throttle.c: 54: 0b00010111,
+[; ;Throttle.c: 55: 0b00011111,
+[; ;Throttle.c: 56: 0b00101111,
+[; ;Throttle.c: 57: 0b00111111,
+[; ;Throttle.c: 58: 0b01011111,
+[; ;Throttle.c: 59: 0b01111111,
+[; ;Throttle.c: 60: 0b10111111,
+[; ;Throttle.c: 61: 0b11111111,
+[; ;Throttle.c: 62: };
+"66
 [v _main `(v ~T0 @X0 1 ef ]
-"68
+"67
 {
-[; ;Throttle.c: 67: void main (void)
-[; ;Throttle.c: 68: {
+[; ;Throttle.c: 66: void main (void)
+[; ;Throttle.c: 67: {
 [e :U _main ]
 [f ]
-[; ;Throttle.c: 70: TRISD = 0b00000000;
-"70
+[; ;Throttle.c: 69: TRISD = 0b00000000;
+"69
 [e = _TRISD -> -> 0 `i `uc ]
-[; ;Throttle.c: 71: TRISAbits.TRISA0 = 1;
-"71
+[; ;Throttle.c: 70: TRISAbits.TRISA0 = 1;
+"70
 [e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
-[; ;Throttle.c: 73: INTCON2bits.RBPU = 0;
-"73
+[; ;Throttle.c: 72: INTCON2bits.RBPU = 0;
+"72
 [e = . . _INTCON2bits 2 1 -> -> 0 `i `uc ]
-[; ;Throttle.c: 74: WPUBbits.WPUB0 = 1;
-"74
+[; ;Throttle.c: 73: WPUBbits.WPUB0 = 1;
+"73
 [e = . . _WPUBbits 0 0 -> -> 1 `i `uc ]
-[; ;Throttle.c: 77: TRISBbits.TRISB0 = 1;
-"77
+[; ;Throttle.c: 76: TRISBbits.TRISB0 = 1;
+"76
 [e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
-[; ;Throttle.c: 81: ADC_Init();
-"81
+[; ;Throttle.c: 80: ADC_Init();
+"80
 [e ( _ADC_Init ..  ]
-[; ;Throttle.c: 83: while (1)
-"83
+[; ;Throttle.c: 82: while (1)
+"82
 [e :U 415 ]
-[; ;Throttle.c: 84: {
-"84
+[; ;Throttle.c: 83: {
+"83
 {
-[; ;Throttle.c: 86: LED_Number = ADC_Convert();
+[; ;Throttle.c: 85: ADC_Value = ADC_Convert();
+"85
+[e = _ADC_Value ( _ADC_Convert ..  ]
+[; ;Throttle.c: 86: ADC_Value = ADC_Value >> 4;
 "86
-[e = _LED_Number ( _ADC_Convert ..  ]
-[; ;Throttle.c: 90: LED_Number++;
-"90
-[e ++ _LED_Number -> -> 1 `i `uc ]
-[; ;Throttle.c: 91: LED_Number = LED_Number / 16 ;
-"91
-[e = _LED_Number -> / -> _LED_Number `i -> 16 `i `uc ]
-[; ;Throttle.c: 94: LATD = LED_LookupTable[LED_Number];
-"94
-[e = _LATD *U + &U _LED_LookupTable * -> _LED_Number `ux -> -> # *U &U _LED_LookupTable `ui `ux ]
-[; ;Throttle.c: 97: Delay1KTCYx(30);
-"97
+[e = _ADC_Value -> >> -> _ADC_Value `i -> 4 `i `uc ]
+[; ;Throttle.c: 89: LATD = ADC_ThrottlePWM_Lookup[ADC_Value];
+"89
+[e = _LATD *U + &U _ADC_ThrottlePWM_Lookup * -> _ADC_Value `ux -> -> # *U &U _ADC_ThrottlePWM_Lookup `ui `ux ]
+[; ;Throttle.c: 92: Delay1KTCYx(30);
+"92
 [e ( _Delay1KTCYx (1 -> -> 30 `i `uc ]
-"98
+"93
 }
 [e :U 414 ]
-"83
+"82
 [e $U 415  ]
 [e :U 416 ]
-[; ;Throttle.c: 98: }
-[; ;Throttle.c: 99: }
-"99
+[; ;Throttle.c: 93: }
+[; ;Throttle.c: 94: }
+"94
 [e :UE 413 ]
 }
-"101
+"96
 [v _ADC_Init `(v ~T0 @X0 1 ef ]
-"102
+"97
 {
-[; ;Throttle.c: 101: void ADC_Init(void)
-[; ;Throttle.c: 102: {
+[; ;Throttle.c: 96: void ADC_Init(void)
+[; ;Throttle.c: 97: {
 [e :U _ADC_Init ]
 [f ]
-[; ;Throttle.c: 106: ANSEL = 0;
-"106
+[; ;Throttle.c: 101: ANSEL = 0;
+"101
 [e = _ANSEL -> -> 0 `i `uc ]
-[; ;Throttle.c: 107: ANSELH = 0;
-"107
+[; ;Throttle.c: 102: ANSELH = 0;
+"102
 [e = _ANSELH -> -> 0 `i `uc ]
-[; ;Throttle.c: 108: ANSELbits.ANS0 = 1;
-"108
+[; ;Throttle.c: 103: ANSELbits.ANS0 = 1;
+"103
 [e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
-[; ;Throttle.c: 112: ADCON1 = 0;
-"112
+[; ;Throttle.c: 107: ADCON1 = 0;
+"107
 [e = _ADCON1 -> -> 0 `i `uc ]
-[; ;Throttle.c: 130: ADCON2 = 0b00111000;
-"130
+[; ;Throttle.c: 125: ADCON2 = 0b00111000;
+"125
 [e = _ADCON2 -> -> 56 `i `uc ]
-[; ;Throttle.c: 133: ADCON0 = 0b00000001;
-"133
+[; ;Throttle.c: 128: ADCON0 = 0b00000001;
+"128
 [e = _ADCON0 -> -> 1 `i `uc ]
-[; ;Throttle.c: 135: }
-"135
+[; ;Throttle.c: 130: }
+"130
 [e :UE 417 ]
 }
-"138
+"133
 [v _ADC_Convert `(uc ~T0 @X0 1 ef ]
-"139
+"134
 {
-[; ;Throttle.c: 138: unsigned char ADC_Convert(void)
-[; ;Throttle.c: 139: {
+[; ;Throttle.c: 133: unsigned char ADC_Convert(void)
+[; ;Throttle.c: 134: {
 [e :U _ADC_Convert ]
 [f ]
-[; ;Throttle.c: 140: ADCON0bits.GO_DONE = 1;
-"140
+[; ;Throttle.c: 135: ADCON0bits.GO_DONE = 1;
+"135
 [e = . . _ADCON0bits 5 1 -> -> 1 `i `uc ]
-[; ;Throttle.c: 141: while (ADCON0bits.GO_DONE == 1);
-"141
+[; ;Throttle.c: 136: while (ADCON0bits.GO_DONE == 1);
+"136
 [e $U 419  ]
 [e :U 420 ]
 [e :U 419 ]
 [e $ == -> . . _ADCON0bits 5 1 `i -> 1 `i 420  ]
 [e :U 421 ]
-[; ;Throttle.c: 142: return ADRESH;
-"142
+[; ;Throttle.c: 137: return ADRESH;
+"137
 [e ) _ADRESH ]
 [e $UE 418  ]
-[; ;Throttle.c: 143: }
-"143
+[; ;Throttle.c: 138: }
+"138
 [e :UE 418 ]
 }

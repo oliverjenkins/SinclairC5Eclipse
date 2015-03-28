@@ -36,13 +36,13 @@ typedef enum {FALSE, TRUE} BOOL;
 
 #ifdef COMPILER_XC8
 /** V A R I A B L E S *************************************************/
-unsigned char LED_Number;  // 8-bit variable
+unsigned char ADC_Value;  // 8-bit variable
 
 
 /** D E C L A R A T I O N S *******************************************/
 // declare constant data in program memory starting at address 0x180
 
-const unsigned char LED_LookupTable[16] @ 0x180 = {
+const unsigned char ADC_ThrottlePWM_Lookup[16] @ 0x180 = {
     0b00000000,
     0b00000001,
     0b00000010,
@@ -82,14 +82,11 @@ void main (void)
     while (1)
     {
 
-        LED_Number = ADC_Convert();      // MSB from ADC
-//        if (LED_Number > 4) {
-//            LED_Number = LED_Number - 4 ;
-//        }
-        LED_Number = LED_Number / 16 ;
+        ADC_Value = ADC_Convert();      // MSB from ADC
+        ADC_Value = ADC_Value >> 4;     // We have 0 - 255 from ADC, so divide by 16 to get a lookup range
 
         // use lookup table to output one LED on based on LED_Number value
-        LATD = LED_LookupTable[LED_Number];
+        LATD = ADC_ThrottlePWM_Lookup[ADC_Value];
         
 
         Delay1KTCYx(30);	    // Delay 50 x 1000 = 50,000 cycles; 200ms @ 1MHz
