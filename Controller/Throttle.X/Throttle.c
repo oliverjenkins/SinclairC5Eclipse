@@ -38,6 +38,7 @@ typedef enum {FALSE, TRUE} BOOL;
 /** V A R I A B L E S *************************************************/
 unsigned char ADC_Value;  // 8-bit variable
 
+unsigned char ClockSpeed;
 
 /** D E C L A R A T I O N S *******************************************/
 // declare constant data in program memory starting at address 0x180
@@ -99,6 +100,9 @@ void main (void)
 
     // Init PWM
     PWM_Init();
+
+    ClockSpeed = OSCCON;
+    
     
     while (1)
     {
@@ -151,10 +155,12 @@ void ADC_Init(void)
 }
 
 void PWM_Init(void) {
+    // Use this to to calculate http://www.micro-examples.com/public/microex-navig/doc/097-pwm-calculator.html
+    // Use OSCCON to set the PICs clock frequency - page 29 of Datasheet
 
     // Set up 8-bit Timer2 to generate the PWM period (frequency)
-    T2CON = 0b00000111;// Prescale = 1:16, timer on, postscale not used with CCP module
     PR2 = 249;         // Timer 2 Period Register = 250 counts
+    T2CON = 0b00000111;// Prescale = 1:16, timer on, postscale not used with CCP module
     // Thus, the PWM frequency is:
     // 1MHz clock / 4 = 250kHz instruction rate.
     // (250kHz / 16 prescale) / 250) = 62.5Hz, a period of 16ms.

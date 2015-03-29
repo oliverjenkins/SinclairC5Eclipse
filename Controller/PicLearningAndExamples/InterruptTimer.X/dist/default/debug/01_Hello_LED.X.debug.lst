@@ -1,0 +1,216 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.34 build -361300703 
+                                                                                               Sat Mar 28 07:13:55 2015
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
+     1                           	processor	18F45K20
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+     9                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    10  0000                     _LATDbits	set	3980
+    11  0000                     _TRISD	set	3989
+    12                           
+    13                           ; 0 bytes @ 0x0
+    14 ;;
+    15 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+    16 ;;
+    17 ;; *************** function _main *****************
+    18 ;; Defined at:
+    19 ;;		line 56 in file "01_Hello_LED.c"
+    20 ;; Parameters:    Size  Location     Type
+    21 ;;		None
+    22 ;; Auto vars:     Size  Location     Type
+    23 ;;		None
+    24 ;; Return value:  Size  Location     Type
+    25 ;;		None               void
+    26 ;; Registers used:
+    27 ;;		wreg, status,2
+    28 ;; Tracked objects:
+    29 ;;		On entry : 0/0
+    30 ;;		On exit  : 0/0
+    31 ;;		Unchanged: 0/0
+    32 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+    33 ;;      Params:         0       0       0       0       0       0       0
+    34 ;;      Locals:         0       0       0       0       0       0       0
+    35 ;;      Temps:          0       0       0       0       0       0       0
+    36 ;;      Totals:         0       0       0       0       0       0       0
+    37 ;;Total ram usage:        0 bytes
+    38 ;; This function calls:
+    39 ;;		Nothing
+    40 ;; This function is called by:
+    41 ;;		Startup code after reset
+    42 ;; This function uses a non-reentrant model
+    43 ;;
+    44                           
+    45                           	psect	text0
+    46  007CF2                     __ptext0:
+    47                           	opt stack 0
+    48  007CF2                     _main:
+    49                           	opt stack 31
+    50                           
+    51                           ;01_Hello_LED.c: 58: LATDbits.LATD7 = 0;
+    52                           
+    53                           ;incstack = 0
+    54  007CF2  9E8C               	bcf	3980,7,c	;volatile
+    55                           
+    56                           ;01_Hello_LED.c: 60: TRISD = 0b01111111;
+    57  007CF4  0E7F               	movlw	127
+    58  007CF6  6E95               	movwf	3989,c	;volatile
+    59                           
+    60                           ;01_Hello_LED.c: 62: LATDbits.LATD7 = 1;
+    61  007CF8  8E8C               	bsf	3980,7,c	;volatile
+    62  007CFA  D7FF               	goto	l8
+    63  007CFC  EF01  F000         	goto	start
+    64  007D00                     __end_of_main:
+    65                           	opt stack 0
+    66  0000                     
+    67                           	psect	cinit
+    68  007CEC                     __pcinit:
+    69                           	opt stack 0
+    70  007CEC                     start_initialization:
+    71                           	opt stack 0
+    72  007CEC                     __initialization:
+    73                           	opt stack 0
+    74  007CEC                     end_of_initialization:
+    75                           	opt stack 0
+    76  007CEC                     __end_of__initialization:
+    77                           	opt stack 0
+    78  007CEC  0100               	movlb	0
+    79  007CEE  EF79  F03E         	goto	_main	;jump to C main() function
+    80                           
+    81                           	psect	cstackCOMRAM
+    82  000000                     __pcstackCOMRAM:
+    83                           	opt stack 0
+    84  000000                     
+    85                           	psect	rparam
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      0       0
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           239      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      0       0       1        0.0%
+STACK                0      0       0       2        0.0%
+BITBANK0            A0      0       0       3        0.0%
+BANK0               A0      0       0       4        0.0%
+BITBANK1           100      0       0       5        0.0%
+BANK1              100      0       0       6        0.0%
+BITBANK2           100      0       0       7        0.0%
+BANK2              100      0       0       8        0.0%
+BITBANK3           100      0       0       9        0.0%
+BANK3              100      0       0      10        0.0%
+BITBANK4           100      0       0      11        0.0%
+BANK4              100      0       0      12        0.0%
+BANK5               EF      0       0      13        0.0%
+ABS                  0      0       0      14        0.0%
+BITBANK5            EF      0       0      15        0.0%
+BIGRAM             5EE      0       0      16        0.0%
+DATA                 0      0       0      17        0.0%
+BITSFR_5             0      0       0      40        0.0%
+SFR_5                0      0       0      40        0.0%
+BITSFR_4             0      0       0      40        0.0%
+SFR_4                0      0       0      40        0.0%
+BITSFR_3             0      0       0      40        0.0%
+SFR_3                0      0       0      40        0.0%
+BITSFR_2             0      0       0      40        0.0%
+SFR_2                0      0       0      40        0.0%
+BITSFR_1             0      0       0      40        0.0%
+SFR_1                0      0       0      40        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
+Symbol Table                                                                                   Sat Mar 28 07:13:55 2015
+
+                      l8 7CFA             __CFG_CP0$OFF 000000             __CFG_CP1$OFF 000000  
+           __CFG_CP2$OFF 000000             __CFG_CP3$OFF 000000             __CFG_CPB$OFF 000000  
+           __CFG_CPD$OFF 000000             __CFG_BORV$30 000000             __CFG_LVP$OFF 000000  
+                   _main 7CF2                     start 0002            __CFG_IESO$OFF 000000  
+           ___param_bank 000010                    ?_main 0000                    _TRISD 000F95  
+          __CFG_PWRT$OFF 000000            __CFG_WRT0$OFF 000000            __CFG_WRT1$OFF 000000  
+          __CFG_WRT2$OFF 000000            __CFG_WRT3$OFF 000000           __CFG_EBTR0$OFF 000000  
+         __CFG_FCMEN$OFF 000000           __CFG_EBTR1$OFF 000000           __CFG_EBTR2$OFF 000000  
+         __CFG_EBTR3$OFF 000000            __CFG_WRTB$OFF 000000            __CFG_WRTC$OFF 000000  
+          __CFG_WRTD$OFF 000000           __CFG_EBTRB$OFF 000000           __CFG_PBADEN$ON 000000  
+        __initialization 7CEC             __end_of_main 7D00                   ??_main 0000  
+          __activetblptr 000000           __CFG_WDTEN$OFF 000000           __CFG_XINST$OFF 000000  
+         __CFG_STVREN$ON 000000               __accesstop 0060  __end_of__initialization 7CEC  
+          ___rparam_used 000001           __pcstackCOMRAM 0000          __CFG_LPT1OSC$ON 000000  
+                __Hparam 0000                  __Lparam 0000                  __pcinit 7CEC  
+                __ramtop 0600                  __ptext0 7CF2     end_of_initialization 7CEC  
+    start_initialization 7CEC        __CFG_CCP2MX$PORTC 000000                 _LATDbits 000F8C  
+       __CFG_WDTPS$32768 000000                 __Hrparam 0000                 __Lrparam 0000  
+     __CFG_BOREN$SBORDIS 000000            __size_of_main 000E        __CFG_FOSC$INTIO67 000000  

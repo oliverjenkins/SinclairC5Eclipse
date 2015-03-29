@@ -1,0 +1,99 @@
+SpeedMeasurement.txt
+
+Count the number of rotation per time interval, calculate the speed in mph base on this.
+
+== C5 wheel diameter ==
+
+* Front:	12 1/2 inch (203mm)
+* Rear:		11.8110236 (305mm)
+
+
+So for every rotation we travel
+* Front:	78.5398"
+* Rear:		74.1415"
+
+Conversions
+1" = 1.57828e-5 miles
+1 seconds = 2.777e-4 hours
+Distance = Speed * Time
+Speed = Distance / Time
+
+
+Based on N rotations per second (calculating on a count of rotation in a given time)
+* Front:	(N * 78.5398 * 1.57828e-5) / 2.777e-4 or for 1 rotation per second its 4.463Mph
+* Rear:		(N * 74.1415 * 1.57828e-5) / 2.777e-4 or for 1 rotation per second its 4.213Mph
+
+
+Based on time T (in seconds) to complete a revolution 
+* Front:	(78.5398 * 1.57828e-5) / (T * 2.777e-4) or for 1 second its 4.46Mph
+* Rear:		(74.1415 * 1.57828e-5) / (T * 2.777e-4) or for 1 rotation per second its 4.213Mph
+
+
+== Conclusion ==
+It seems that it might be better to time how long a wheel takes to rotate.  Otherwise we will need to count a large number of rotations to get an accurate speed measurement for less then 4.5 Mph.
+
+
+== Worst case of timer accuracy ==
+At N mph how long does a wheel take to rotate?
+
+T Time for wheel to rotate in seconds
+Speed = Distance / Time
+Speed = (12.5 * 1.57828e-5) / (T / 3600)
+
+T = 0.1
+Speed = (0.000197285) / (0.1 / 3600) 
+	  = 7.102 Mph
+
+Assuming a speed of 50 Mph and 49.5 Mph (will never happen)
+
+50 = (0.000197285) / (T / 3600)
+T / 3600 = 0.000197285 / 50 
+T = 0.000197285 / 50  * 3600
+T = 0.01420452 seconds
+
+49.5 Mph
+T = 0.000197285 / 49.5  * 3600
+T = 0.014348 seconds
+
+So we need to be able to resolve a time within;
+	0.00014348 seconds = 0.14348 Milliseconds = 10,000Hz
+
+== Pic Timer Details ==
+
+The timer resolution within a PIc is dependant on the clock freqency.  The clock frequency is set using the OSCCON register.  Which can be seen on page 28 of the PIC18F45K20 datasheet.  By default the frequency is 1MHz
+
+111 = 16 MHz (HFINTOSC drives clock directly)
+110 = 8 MHz
+101 = 4 MHz
+100 = 2 MHz
+011 = 1 MHz(3) - default frequency
+010 = 500 kHz
+001 = 250 kHz
+000 = 31 kHz (from either HFINTOSC/512 or LFINTOSC directly)
+
+Timer calculator is found at 
+		http://eng-serve.com/pic/pic_timer.html
+So with a clock frequency of 8MHz, a 20,000 Hz timer can be obtained with TMRO Preset of 156
+
+== Rotation / Speed Table ==
+Speed Mph	Rotation Time in Seconds
+0.5			1.42045200000
+1			0.71022600000
+1.5			0.47348400000
+2			0.35511300000
+2.5			0.28409040000
+3			0.23674200000
+3.5			0.20292171429
+4			0.17755650000
+4.5			0.15782800000
+5			0.14204520000
+5.5			0.12913200000
+6			0.11837100000
+6.5			0.10926553846
+7			0.10146085714
+7.5			0.09469680000
+8			0.08877825000
+8.5			0.08355600000
+9			0.07891400000
+9.5			0.07476063158
+10			0.07102260000

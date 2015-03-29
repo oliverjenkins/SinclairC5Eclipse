@@ -12,18 +12,18 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production\Throttle.X.production.obj
-cinit CODE 0 692 692 A 1
-text0 CODE 0 602 602 4A 1
-text1 CODE 0 676 676 E 1
-text2 CODE 0 664 664 12 1
-text3 CODE 0 64C 64C 18 1
-text4 CODE 0 684 684 E 1
-nvCOMRAM COMRAM 1 1 1 1 1
+cinit CODE 0 696 696 A 1
+text0 CODE 0 602 602 4E 1
+text1 CODE 0 67A 67A E 1
+text2 CODE 0 668 668 12 1
+text3 CODE 0 650 650 18 1
+text4 CODE 0 688 688 E 1
+nvCOMRAM COMRAM 1 1 1 2 1
 _ADC_ThrottleLED_Lookup_const CODE 0 180 180 10 1
-cstackCOMRAM COMRAM 1 2 2 1 1
+cstackCOMRAM COMRAM 1 3 3 1 1
 smallconst SMALLCONST 0 600 600 2 1
 _ADC_ThrottlePWM_Lookup_const CODE 0 180 180 10 1
-$C:\Users\ADMINI~1\AppData\Local\Temp\s32g.obj
+$C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.obj
 idloc IDLOC 0 200000 200000 8 1
 end_init CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 E 1
@@ -43,16 +43,16 @@ BANK4 400-4FF 1
 BANK5 500-5FF 1
 CONST 4-17F 1
 CONST 190-5FF 1
-CONST 69C-7FFF 1
+CONST 6A0-7FFF 1
 STACK 60-5FF 1
-SMALLCONST 69C-7FFF 1
+SMALLCONST 6A0-7FFF 1
 CODE 4-17F 1
 CODE 190-5FF 1
-CODE 69C-7FFF 1
-BIGRAM 3-5FF 1
-COMRAM 3-5F 1
+CODE 6A0-7FFF 1
+BIGRAM 4-5FF 1
+COMRAM 4-5F 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST 69C-7FFF 1
+MEDIUMCONST 6A0-7FFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -67,50 +67,51 @@ MEDIUMCONST 69C-7FFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Throttle.X.production.obj
-602 text0 CODE >85:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-602 text0 CODE >88:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-606 text0 CODE >89:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-608 text0 CODE >91:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-60A text0 CODE >92:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-60C text0 CODE >95:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-60E text0 CODE >98:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-612 text0 CODE >101:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-618 text0 CODE >106:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-61E text0 CODE >107:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-624 text0 CODE >110:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-640 text0 CODE >113:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-646 text0 CODE >103:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-648 text0 CODE >115:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-64C text3 CODE >117:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-64C text3 CODE >122:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-650 text3 CODE >123:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-654 text3 CODE >124:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-656 text3 CODE >128:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-65A text3 CODE >146:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-65E text3 CODE >149:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-662 text3 CODE >151:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-664 text2 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
-666 text2 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
-66E text2 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
-674 text2 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
-676 text1 CODE >153:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-676 text1 CODE >156:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+602 text0 CODE >86:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+602 text0 CODE >89:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+606 text0 CODE >90:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+608 text0 CODE >92:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+60A text0 CODE >93:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+60C text0 CODE >96:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+60E text0 CODE >99:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+612 text0 CODE >102:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+616 text0 CODE >104:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+61C text0 CODE >110:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+622 text0 CODE >111:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+628 text0 CODE >114:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+644 text0 CODE >117:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+64A text0 CODE >107:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+64C text0 CODE >119:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+650 text3 CODE >121:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+650 text3 CODE >126:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+654 text3 CODE >127:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+658 text3 CODE >128:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+65A text3 CODE >132:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+65E text3 CODE >150:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+662 text3 CODE >153:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+666 text3 CODE >155:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+668 text2 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
+66A text2 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
+672 text2 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
+678 text2 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
 67A text1 CODE >157:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-67E text1 CODE >162:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-682 text1 CODE >167:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-684 text4 CODE >169:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-684 text4 CODE >171:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-686 text4 CODE >172:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-68C text4 CODE >173:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-690 text4 CODE >174:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
-692 cinit CODE >613:C:\Users\ADMINI~1\AppData\Local\Temp\s32g.
-692 cinit CODE >615:C:\Users\ADMINI~1\AppData\Local\Temp\s32g.
-692 cinit CODE >618:C:\Users\ADMINI~1\AppData\Local\Temp\s32g.
-692 cinit CODE >624:C:\Users\ADMINI~1\AppData\Local\Temp\s32g.
-692 cinit CODE >626:C:\Users\ADMINI~1\AppData\Local\Temp\s32g.
-694 cinit CODE >627:C:\Users\ADMINI~1\AppData\Local\Temp\s32g.
-696 cinit CODE >628:C:\Users\ADMINI~1\AppData\Local\Temp\s32g.
-698 cinit CODE >629:C:\Users\ADMINI~1\AppData\Local\Temp\s32g.
+67A text1 CODE >162:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+67E text1 CODE >163:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+682 text1 CODE >168:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+686 text1 CODE >173:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+688 text4 CODE >175:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+688 text4 CODE >177:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+68A text4 CODE >178:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+690 text4 CODE >179:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+694 text4 CODE >180:F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+696 cinit CODE >619:C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.
+696 cinit CODE >621:C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.
+696 cinit CODE >624:C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.
+696 cinit CODE >630:C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.
+696 cinit CODE >632:C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.
+698 cinit CODE >633:C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.
+69A cinit CODE >634:C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.
+69C cinit CODE >635:C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -125,17 +126,17 @@ $dist/default/production\Throttle.X.production.obj
 %SYMTAB
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Throttle.X.production.obj
 __Hspace_0 30000E 0 ABS 0 - dist/default/production\Throttle.X.production.obj
-__Hspace_1 3 0 ABS 0 - dist/default/production\Throttle.X.production.obj
+__Hspace_1 4 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __Hspace_2 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Throttle.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ADMINI~1\AppData\Local\Temp\s32g.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Throttle.X.production.obj
-_Delay1KTCYx 664 0 CODE 0 text2 dist/default/production\Throttle.X.production.obj
+_Delay1KTCYx 668 0 CODE 0 text2 dist/default/production\Throttle.X.production.obj
 __Lsmallconst 600 0 SMALLCONST 0 smallconst dist/default/production\Throttle.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s32g.obj
+___sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.obj
 _main 602 0 CODE 0 text0 dist/default/production\Throttle.X.production.obj
-start 0 0 CODE 0 init C:\Users\ADMINI~1\AppData\Local\Temp\s32g.obj
+start 0 0 CODE 0 init C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 _ADC_Value 1 0 COMRAM 1 nvCOMRAM dist/default/production\Throttle.X.production.obj
@@ -144,11 +145,11 @@ __H_ADC_ThrottlePWM_Lookup_const 190 0 CODE 0 _ADC_ThrottlePWM_Lookup_const dist
 __Hpowerup 0 0 CODE 0 powerup dist/default/production\Throttle.X.production.obj
 __size_of_ADC_Init 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\Throttle.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s32g.obj
-intlevel0 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s32g.obj
-intlevel1 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s32g.obj
-intlevel2 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s32g.obj
-intlevel3 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s32g.obj
+__accesstop 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.obj
+intlevel0 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.obj
+intlevel1 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.obj
+intlevel2 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.obj
+intlevel3 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Throttle.X.production.obj
 __CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
@@ -162,27 +163,28 @@ _ADCON0 FC2 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 _ADCON1 FC1 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 _ADCON2 FC0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 _ADRESH FC4 0 ABS 0 - dist/default/production\Throttle.X.production.obj
-__end_of_ADC_Convert 692 0 CODE 0 text4 dist/default/production\Throttle.X.production.obj
+__end_of_ADC_Convert 696 0 CODE 0 text4 dist/default/production\Throttle.X.production.obj
 _ANSELH F7F 0 ABS 0 - dist/default/production\Throttle.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s32g.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s32g.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.obj
 _CCPR1L FBE 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\Throttle.X.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Throttle.X.production.obj
 __end_of_ADC_ThrottleLED_Lookup 190 0 CODE 0 _ADC_ThrottleLED_Lookup_const dist/default/production\Throttle.X.production.obj
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Throttle.X.production.obj
-_ADC_Init 64C 0 CODE 0 text3 dist/default/production\Throttle.X.production.obj
+_ADC_Init 650 0 CODE 0 text3 dist/default/production\Throttle.X.production.obj
 __Hintcodelo 0 0 CODE 0 intcodelo dist/default/production\Throttle.X.production.obj
-Delay1KTCYx@unit 2 0 COMRAM 1 cstackCOMRAM dist/default/production\Throttle.X.production.obj
-__end_of_ADC_Init 664 0 CODE 0 text3 dist/default/production\Throttle.X.production.obj
+Delay1KTCYx@unit 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Throttle.X.production.obj
+__end_of_ADC_Init 668 0 CODE 0 text3 dist/default/production\Throttle.X.production.obj
 __HnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\Throttle.X.production.obj
 _INTCON2bits FF1 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __Lintcodelo 0 0 CODE 0 intcodelo dist/default/production\Throttle.X.production.obj
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 _WPUBbits F7C 0 ABS 0 - dist/default/production\Throttle.X.production.obj
-start_initialization 692 0 CODE 0 cinit dist/default/production\Throttle.X.production.obj
+start_initialization 696 0 CODE 0 cinit dist/default/production\Throttle.X.production.obj
 __CFG_PBADEN$ON 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
+_OSCCON FD3 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Throttle.X.production.obj
 _TRISAbits F92 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 _TRISBbits F93 0 ABS 0 - dist/default/production\Throttle.X.production.obj
@@ -211,10 +213,10 @@ __Htext3 0 0 ABS 0 text3 dist/default/production\Throttle.X.production.obj
 __Htext4 0 0 ABS 0 text4 dist/default/production\Throttle.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Throttle.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\Throttle.X.production.obj
-__smallconst 600 0 SMALLCONST 0 smallconst C:\Users\ADMINI~1\AppData\Local\Temp\s32g.obj
+__smallconst 600 0 SMALLCONST 0 smallconst C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\Throttle.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\Throttle.X.production.obj
-__end_of_Delay1KTCYx 676 0 CODE 0 text2 dist/default/production\Throttle.X.production.obj
+__end_of_Delay1KTCYx 67A 0 CODE 0 text2 dist/default/production\Throttle.X.production.obj
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\Throttle.X.production.obj
 __Lbank1 0 0 ABS 0 bank1 dist/default/production\Throttle.X.production.obj
 __Lbank2 0 0 ABS 0 bank2 dist/default/production\Throttle.X.production.obj
@@ -257,7 +259,7 @@ __Hintret 0 0 ABS 0 intret dist/default/production\Throttle.X.production.obj
 __Hirdata 0 0 CODE 0 irdata dist/default/production\Throttle.X.production.obj
 _PR2 FCB 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __S0 30000E 0 ABS 0 - dist/default/production\Throttle.X.production.obj
-__S1 3 0 ABS 0 - dist/default/production\Throttle.X.production.obj
+__S1 4 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __S2 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 _ADC_ThrottlePWM_Lookup 180 0 CODE 0 _ADC_ThrottlePWM_Lookup_const dist/default/production\Throttle.X.production.obj
 __L_ADC_ThrottlePWM_Lookup_const 180 0 CODE 0 _ADC_ThrottlePWM_Lookup_const dist/default/production\Throttle.X.production.obj
@@ -277,8 +279,8 @@ __Lcomram 0 0 ABS 0 comram dist/default/production\Throttle.X.production.obj
 __Lconfig 300000 0 CONFIG 0 config dist/default/production\Throttle.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Throttle.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\Throttle.X.production.obj
-stackhi 5FF 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s32g.obj
-stacklo 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s32g.obj
+stackhi 5FF 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.obj
+stacklo 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.obj
 __Lintcode 0 0 CODE 0 intcode dist/default/production\Throttle.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\Throttle.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production\Throttle.X.production.obj
@@ -290,7 +292,7 @@ __Lspace_2 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __size_of_Delay1KTCYx 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __Lend_init 0 0 CODE 0 end_init dist/default/production\Throttle.X.production.obj
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Throttle.X.production.obj
-end_of_initialization 692 0 CODE 0 cinit dist/default/production\Throttle.X.production.obj
+end_of_initialization 696 0 CODE 0 cinit dist/default/production\Throttle.X.production.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\Throttle.X.production.obj
 __Hintentry 0 0 ABS 0 intentry dist/default/production\Throttle.X.production.obj
 __L_ADC_ThrottleLED_Lookup_const 180 0 CODE 0 _ADC_ThrottleLED_Lookup_const dist/default/production\Throttle.X.production.obj
@@ -300,23 +302,24 @@ __Hreset_vec 0 0 CODE 0 reset_vec dist/default/production\Throttle.X.production.
 __Lramtop 600 0 RAM 0 ramtop dist/default/production\Throttle.X.production.obj
 __size_of_PWM_Init 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\Throttle.X.production.obj
-__pcinit 692 0 CODE 0 cinit dist/default/production\Throttle.X.production.obj
+__pcinit 696 0 CODE 0 cinit dist/default/production\Throttle.X.production.obj
 __ptext0 602 0 CODE 0 text0 dist/default/production\Throttle.X.production.obj
-__ptext1 676 0 CODE 0 text1 dist/default/production\Throttle.X.production.obj
-__ptext2 664 0 CODE 0 text2 dist/default/production\Throttle.X.production.obj
-__ptext3 64C 0 CODE 0 text3 dist/default/production\Throttle.X.production.obj
-__ptext4 684 0 CODE 0 text4 dist/default/production\Throttle.X.production.obj
+__ptext1 67A 0 CODE 0 text1 dist/default/production\Throttle.X.production.obj
+__ptext2 668 0 CODE 0 text2 dist/default/production\Throttle.X.production.obj
+__ptext3 650 0 CODE 0 text3 dist/default/production\Throttle.X.production.obj
+__ptext4 688 0 CODE 0 text4 dist/default/production\Throttle.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\Throttle.X.production.obj
-__ramtop 600 0 RAM 0 ramtop C:\Users\ADMINI~1\AppData\Local\Temp\s32g.obj
+__ramtop 600 0 RAM 0 ramtop C:\Users\ADMINI~1\AppData\Local\Temp\s4k0.obj
 __end_of_ADC_ThrottlePWM_Lookup 190 0 CODE 0 _ADC_ThrottlePWM_Lookup_const dist/default/production\Throttle.X.production.obj
-_ADC_Convert 684 0 CODE 0 text4 dist/default/production\Throttle.X.production.obj
+_ADC_Convert 688 0 CODE 0 text4 dist/default/production\Throttle.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\Throttle.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Throttle.X.production.obj
 __psmallconst 600 0 SMALLCONST 0 smallconst dist/default/production\Throttle.X.production.obj
+_ClockSpeed 2 0 COMRAM 1 nvCOMRAM dist/default/production\Throttle.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\Throttle.X.production.obj
 ___param_bank 10 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Throttle.X.production.obj
-__end_of__initialization 692 0 CODE 0 cinit dist/default/production\Throttle.X.production.obj
+__end_of__initialization 696 0 CODE 0 cinit dist/default/production\Throttle.X.production.obj
 __CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __CFG_WRT2$OFF 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
@@ -328,16 +331,16 @@ __CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\Throttle.X.production.obj
 __CFG_PWRT$OFF 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 _ANSELbits F7E 0 ABS 0 - dist/default/production\Throttle.X.production.obj
-__pcstackCOMRAM 2 0 COMRAM 1 cstackCOMRAM dist/default/production\Throttle.X.production.obj
-_PWM_Init 676 0 CODE 0 text1 dist/default/production\Throttle.X.production.obj
+__pcstackCOMRAM 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Throttle.X.production.obj
+_PWM_Init 67A 0 CODE 0 text1 dist/default/production\Throttle.X.production.obj
 __Hend_init 4 0 CODE 0 end_init dist/default/production\Throttle.X.production.obj
 __CFG_BOREN$SBORDIS 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
-__end_of_main 64C 0 CODE 0 text0 dist/default/production\Throttle.X.production.obj
+__end_of_main 650 0 CODE 0 text0 dist/default/production\Throttle.X.production.obj
 _ADC_ThrottleLED_Lookup_absconstaddr 180 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 _ANSEL F7E 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 _T2CON FCA 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 _TRISD F95 0 ABS 0 - dist/default/production\Throttle.X.production.obj
-__end_of_PWM_Init 684 0 CODE 0 text1 dist/default/production\Throttle.X.production.obj
+__end_of_PWM_Init 688 0 CODE 0 text1 dist/default/production\Throttle.X.production.obj
 __CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __CFG_CP1$OFF 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 __HRAM 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
@@ -355,7 +358,7 @@ __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 _ADC_ThrottleLED_Lookup 180 0 CODE 0 _ADC_ThrottleLED_Lookup_const dist/default/production\Throttle.X.production.obj
 _CCP1CON FBD 0 ABS 0 - dist/default/production\Throttle.X.production.obj
 _ADC_ThrottlePWM_Lookup_absconstaddr 180 0 ABS 0 - dist/default/production\Throttle.X.production.obj
-__initialization 692 0 CODE 0 cinit dist/default/production\Throttle.X.production.obj
+__initialization 696 0 CODE 0 cinit dist/default/production\Throttle.X.production.obj
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production\Throttle.X.production.obj
 __Hsmallconst 602 0 SMALLCONST 0 smallconst dist/default/production\Throttle.X.production.obj
 __Lifardata 0 0 CODE 0 ifardata dist/default/production\Throttle.X.production.obj
@@ -386,8 +389,8 @@ __Hintcode 0 0 CODE 0 intcode dist/default/production\Throttle.X.production.obj
 # All other numeric quantities are in decimal.
 %SEGMENTS
 idloc 0 200000 200000 8 1
-text0 0 602 602 9A 1
-nvCOMRAM 1 1 1 2 1
+text0 0 602 602 9E 1
+nvCOMRAM 1 1 1 3 1
 _ADC_ThrottleLED_Lookup_const 0 180 180 10 1
 reset_vec 0 0 0 4 1
 smallconst 0 600 600 2 1

@@ -5243,13 +5243,18 @@ extern __nonreentrant void _delay3(unsigned char);
 
 # 16 "Throttle.h"
 void ADC_Init(void);
+void PWM_Init(void);
 unsigned char ADC_Convert(void);
 
 # 39 "Throttle.c"
-unsigned char LED_Number;
+unsigned char ADC_Value;
 
-# 45
-const unsigned char LED_LookupTable[16] @ 0x180 = {
+unsigned char ClockSpeed;
+
+
+
+
+const unsigned char ADC_ThrottleLED_Lookup[16] @ 0x180 = {
 0b00000000,
 0b00000001,
 0b00000010,
@@ -5268,6 +5273,25 @@ const unsigned char LED_LookupTable[16] @ 0x180 = {
 0b11111111,
 };
 
+const unsigned char ADC_ThrottlePWM_Lookup[16] @ 0x180 = {
+0,
+18,
+36,
+54,
+72,
+90,
+90,
+108,
+126,
+144,
+162,
+180,
+198,
+216,
+234,
+255,
+};
+
 
 
 void main (void)
@@ -5283,20 +5307,22 @@ WPUBbits.WPUB0 = 1;
 TRISBbits.TRISB0 = 1;
 
 
-
 ADC_Init();
+
+
+PWM_Init();
+
+ClockSpeed = OSCCON;
+
 
 while (1)
 {
 
-LED_Number = ADC_Convert();
+ADC_Value = ADC_Convert();
+ADC_Value = ADC_Value >> 4;
 
 
-
-LED_Number = LED_Number / 16 ;
-
-
-LATD = LED_LookupTable[LED_Number];
+CCPR1L = ADC_ThrottlePWM_Lookup[ADC_Value];
 
 
 Delay1KTCYx(30);
@@ -5316,7 +5342,7 @@ ANSELbits.ANS0 = 1;
 
 ADCON1 = 0;
 
-# 128
+# 150
 ADCON2 = 0b00111000;
 
 
@@ -5324,6 +5350,21 @@ ADCON0 = 0b00000001;
 
 }
 
+void PWM_Init(void) {
+
+
+T2CON = 0b00000111;
+PR2 = 249;
+
+
+
+
+CCP1CON = 0b01001100;
+
+
+
+
+}
 
 unsigned char ADC_Convert(void)
 {

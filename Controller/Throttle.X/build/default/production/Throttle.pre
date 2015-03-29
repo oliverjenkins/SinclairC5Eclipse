@@ -5254,7 +5254,11 @@ unsigned char ADC_Convert(void);
 # 39 "Throttle.c"
 unsigned char ADC_Value;
 
-# 45
+unsigned char ClockSpeed;
+
+
+
+
 const unsigned char ADC_ThrottleLED_Lookup[16] @ 0x180 = {
 0b00000000,
 0b00000001,
@@ -5313,6 +5317,9 @@ ADC_Init();
 
 PWM_Init();
 
+ClockSpeed = OSCCON;
+
+
 while (1)
 {
 
@@ -5340,7 +5347,7 @@ ANSELbits.ANS0 = 1;
 
 ADCON1 = 0;
 
-# 146
+# 150
 ADCON2 = 0b00111000;
 
 
@@ -5351,8 +5358,10 @@ ADCON0 = 0b00000001;
 void PWM_Init(void) {
 
 
-T2CON = 0b00000111;
+
+
 PR2 = 249;
+T2CON = 0b00000111;
 
 
 

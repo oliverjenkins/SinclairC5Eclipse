@@ -31,3 +31,14 @@ LEDs
 1101
 1110
 1111
+
+
+
+
+ADC			Power
+8 			 1
+255 		16
+
+255 - 8 = 247 Individual Valid values
+247 / 16 = 15
+

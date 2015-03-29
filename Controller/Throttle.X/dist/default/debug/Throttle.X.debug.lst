@@ -1,595 +1,527 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.34 build -361300703 
-                                                                                               Sat Mar 28 15:45:34 2015
+                                                                                               Sat Mar 28 19:58:36 2015
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
      1                           	processor	18F45K20
      2                           	fnconf	rparam,??,?,0
      3                           	opt	pw 120
      4                           	opt	lm
-     5                           	psect	_LED_LookupTable_const,global,ovrld,reloc=2,class=CODE,delta=1
-     6                           	psect	nvCOMRAM,global,class=COMRAM,space=1,delta=1
-     7                           	psect	cinit,global,reloc=2,class=CODE,delta=1
-     8                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
-     9                           	psect	text0,global,reloc=2,class=CODE,delta=1
-    10                           	psect	text1,global,reloc=2,class=CODE,delta=1
-    11                           	psect	text2,global,reloc=2,class=CODE,delta=1
-    12                           	psect	text3,global,reloc=2,class=CODE,delta=1
-    13                           	psect	text4,global,reloc=2,class=CODE,delta=1
-    14                           	psect	smallconst,global,reloc=2,class=SMALLCONST,delta=1
-    15                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
-    16                           	psect	rparam,global,class=COMRAM,space=1,delta=1
-    17  0000                     _LED_LookupTable_absconstaddr	set	384
-    18  0000                     _LED_LookupTable_absconstaddr	set	384
-    19                           
-    20                           	psect	_LED_LookupTable_const
-    21  000180                     __p_LED_LookupTable_const:
-    22                           	opt stack 0
-    23  000180                     _LED_LookupTable:
+     5                           	psect	_ADC_ThrottleLED_Lookup_const,global,ovrld,reloc=2,class=CODE,delta=1
+     6                           	psect	_ADC_ThrottlePWM_Lookup_const,global,ovrld,reloc=2,class=CODE,delta=1
+     7                           	psect	nvCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     9                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+    10                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    15                           	psect	smallconst,global,reloc=2,class=SMALLCONST,delta=1
+    16                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    17                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    18  0000                     _ADC_ThrottleLED_Lookup_absconstaddr	set	384
+    19  0000                     _ADC_ThrottlePWM_Lookup_absconstaddr	set	384
+    20  0000                     _ADC_ThrottleLED_Lookup_absconstaddr	set	384
+    21                           
+    22                           	psect	_ADC_ThrottleLED_Lookup_const
+    23  000180                     __p_ADC_ThrottleLED_Lookup_const:
     24                           	opt stack 0
-    25  000180  00                 	db	0
-    26  000181  01                 	db	1
-    27  000182  02                 	db	2
-    28  000183  03                 	db	3
-    29  000184  05                 	db	5
-    30  000185  07                 	db	7
-    31  000186  0B                 	db	11
-    32  000187  0F                 	db	15
-    33  000188  17                 	db	23
-    34  000189  1F                 	db	31
-    35  00018A  2F                 	db	47
-    36  00018B  3F                 	db	63
-    37  00018C  5F                 	db	95
-    38  00018D  7F                 	db	127
-    39  00018E  BF                 	db	191
-    40  00018F  FF                 	db	255
-    41  000190                     __end_of_LED_LookupTable:
-    42                           	opt stack 0
-    43                           
-    44                           	psect	nvCOMRAM
-    45  000009                     __pnvCOMRAM:
-    46                           	opt stack 0
-    47  000009                     _LED_Number:
-    48                           	opt stack 0
-    49  000009                     	ds	1
-    50  0000                     _ANSEL	set	3966
-    51  0000                     _ANSELH	set	3967
-    52  0000                     _ANSELbits	set	3966
-    53  0000                     _LATD	set	3980
-    54  0000                     _TRISAbits	set	3986
-    55  0000                     _TRISBbits	set	3987
-    56  0000                     _TRISD	set	3989
-    57  0000                     _WPUBbits	set	3964
-    58  0000                     _ADCON0	set	4034
-    59  0000                     _ADCON0bits	set	4034
-    60  0000                     _ADCON1	set	4033
-    61  0000                     _ADCON2	set	4032
-    62  0000                     _ADRESH	set	4036
-    63  0000                     _INTCON2bits	set	4081
-    64                           
-    65                           ; #config settings
-    66  0000                     
-    67                           	psect	cinit
-    68  000726                     __pcinit:
+    25  000180                     _ADC_ThrottleLED_Lookup:
+    26                           	opt stack 0
+    27  000180  00                 	db	0
+    28  000181  01                 	db	1
+    29  000182  02                 	db	2
+    30  000183  03                 	db	3
+    31  000184  05                 	db	5
+    32  000185  07                 	db	7
+    33  000186  0B                 	db	11
+    34  000187  0F                 	db	15
+    35  000188  17                 	db	23
+    36  000189  1F                 	db	31
+    37  00018A  2F                 	db	47
+    38  00018B  3F                 	db	63
+    39  00018C  5F                 	db	95
+    40  00018D  7F                 	db	127
+    41  00018E  BF                 	db	191
+    42  00018F  FF                 	db	255
+    43  000190                     __end_of_ADC_ThrottleLED_Lookup:
+    44                           	opt stack 0
+    45  0000                     _ADC_ThrottlePWM_Lookup_absconstaddr	set	384
+    46                           
+    47                           	psect	_ADC_ThrottlePWM_Lookup_const
+    48  000180                     __p_ADC_ThrottlePWM_Lookup_const:
+    49                           	opt stack 0
+    50  000180                     _ADC_ThrottlePWM_Lookup:
+    51                           	opt stack 0
+    52  000180  00                 	db	0
+    53  000181  12                 	db	18
+    54  000182  24                 	db	36
+    55  000183  36                 	db	54
+    56  000184  48                 	db	72
+    57  000185  5A                 	db	90
+    58  000186  5A                 	db	90
+    59  000187  6C                 	db	108
+    60  000188  7E                 	db	126
+    61  000189  90                 	db	144
+    62  00018A  A2                 	db	162
+    63  00018B  B4                 	db	180
+    64  00018C  C6                 	db	198
+    65  00018D  D8                 	db	216
+    66  00018E  EA                 	db	234
+    67  00018F  FF                 	db	255
+    68  000190                     __end_of_ADC_ThrottlePWM_Lookup:
     69                           	opt stack 0
-    70  000726                     start_initialization:
-    71                           	opt stack 0
-    72  000726                     __initialization:
+    70                           
+    71                           	psect	nvCOMRAM
+    72  000001                     __pnvCOMRAM:
     73                           	opt stack 0
-    74  000726                     end_of_initialization:
+    74  000001                     _ADC_Value:
     75                           	opt stack 0
-    76  000726                     __end_of__initialization:
-    77                           	opt stack 0
-    78  000726  0E00               	movlw	low (__Lmediumconst shr (0+16))
-    79  000728  6EF8               	movwf	tblptru,c
-    80  00072A  0100               	movlb	0
-    81  00072C  EF4C  F003         	goto	_main	;jump to C main() function
-    82                           tblptru	equ	0xFF8
-    83                           
-    84                           	psect	cstackCOMRAM
-    85  000001                     __pcstackCOMRAM:
-    86                           	opt stack 0
-    87  000001                     ?___awdiv:
-    88                           	opt stack 0
-    89  000001                     Delay1KTCYx@unit:
-    90                           	opt stack 0
-    91  000001                     ___awdiv@dividend:
-    92                           	opt stack 0
-    93                           
-    94                           ; 2 bytes @ 0x0
-    95  000001                     	ds	2
-    96  000003                     ___awdiv@divisor:
-    97                           	opt stack 0
+    76  000001                     	ds	1
+    77  000002                     _ClockSpeed:
+    78                           	opt stack 0
+    79  000002                     	ds	1
+    80  0000                     _ANSEL	set	3966
+    81  0000                     _ANSELH	set	3967
+    82  0000                     _ANSELbits	set	3966
+    83  0000                     _TRISAbits	set	3986
+    84  0000                     _TRISBbits	set	3987
+    85  0000                     _TRISD	set	3989
+    86  0000                     _WPUBbits	set	3964
+    87  0000                     _ADCON0	set	4034
+    88  0000                     _ADCON0bits	set	4034
+    89  0000                     _ADCON1	set	4033
+    90  0000                     _ADCON2	set	4032
+    91  0000                     _ADRESH	set	4036
+    92  0000                     _CCP1CON	set	4029
+    93  0000                     _CCPR1L	set	4030
+    94  0000                     _OSCCON	set	4051
+    95  0000                     _PR2	set	4043
+    96  0000                     _T2CON	set	4042
+    97  0000                     _INTCON2bits	set	4081
     98                           
-    99                           ; 2 bytes @ 0x2
-   100  000003                     	ds	2
-   101  000005                     ___awdiv@counter:
-   102                           	opt stack 0
-   103                           
-   104                           ; 1 bytes @ 0x4
-   105  000005                     	ds	1
-   106  000006                     ___awdiv@sign:
+    99                           ; #config settings
+   100  0000                     
+   101                           	psect	cinit
+   102  000696                     __pcinit:
+   103                           	opt stack 0
+   104  000696                     start_initialization:
+   105                           	opt stack 0
+   106  000696                     __initialization:
    107                           	opt stack 0
-   108                           
-   109                           ; 1 bytes @ 0x5
-   110  000006                     	ds	1
-   111  000007                     ___awdiv@quotient:
-   112                           	opt stack 0
-   113                           
-   114                           ; 2 bytes @ 0x6
-   115  000007                     	ds	2
-   116  000009                     tblptru	equ	0xFF8
+   108  000696                     end_of_initialization:
+   109                           	opt stack 0
+   110  000696                     __end_of__initialization:
+   111                           	opt stack 0
+   112  000696  0E00               	movlw	low (__Lmediumconst shr (0+16))
+   113  000698  6EF8               	movwf	tblptru,c
+   114  00069A  0100               	movlb	0
+   115  00069C  EF01  F003         	goto	_main	;jump to C main() function
+   116                           tblptru	equ	0xFF8
    117                           
-   118                           ; 0 bytes @ 0x8
-   119 ;;
-   120 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-   121 ;;
-   122 ;; *************** function _main *****************
-   123 ;; Defined at:
-   124 ;;		line 66 in file "Throttle.c"
-   125 ;; Parameters:    Size  Location     Type
-   126 ;;		None
-   127 ;; Auto vars:     Size  Location     Type
-   128 ;;		None
-   129 ;; Return value:  Size  Location     Type
-   130 ;;		None               void
-   131 ;; Registers used:
-   132 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
-   133 ;; Tracked objects:
-   134 ;;		On entry : 0/0
-   135 ;;		On exit  : 0/0
-   136 ;;		Unchanged: 0/0
-   137 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   138 ;;      Params:         0       0       0       0       0       0       0
-   139 ;;      Locals:         0       0       0       0       0       0       0
-   140 ;;      Temps:          0       0       0       0       0       0       0
-   141 ;;      Totals:         0       0       0       0       0       0       0
-   142 ;;Total ram usage:        0 bytes
-   143 ;; Hardware stack levels required when called:    1
-   144 ;; This function calls:
-   145 ;;		_ADC_Convert
-   146 ;;		_ADC_Init
-   147 ;;		_Delay1KTCYx
-   148 ;;		___awdiv
-   149 ;; This function is called by:
-   150 ;;		Startup code after reset
-   151 ;; This function uses a non-reentrant model
-   152 ;;
-   153                           
-   154                           	psect	text0
-   155  000698                     __ptext0:
-   156                           	opt stack 0
-   157  000698                     _main:
-   158                           	opt stack 30
-   159                           
-   160                           ;Throttle.c: 69: TRISD = 0b00000000;
-   161                           
-   162                           ;incstack = 0
-   163  000698  0E00               	movlw	0
-   164  00069A  6E95               	movwf	3989,c	;volatile
-   165                           
-   166                           ;Throttle.c: 70: TRISAbits.TRISA0 = 1;
-   167  00069C  8092               	bsf	3986,0,c	;volatile
-   168                           
-   169                           ;Throttle.c: 72: INTCON2bits.RBPU = 0;
-   170  00069E  9EF1               	bcf	intcon2,7,c	;volatile
+   118                           	psect	cstackCOMRAM
+   119  000003                     __pcstackCOMRAM:
+   120                           	opt stack 0
+   121  000003                     Delay1KTCYx@unit:
+   122                           	opt stack 0
+   123                           
+   124                           ; 1 bytes @ 0x0
+   125  000003                     	ds	1
+   126  000004                     tblptru	equ	0xFF8
+   127                           
+   128                           ; 0 bytes @ 0x1
+   129 ;;
+   130 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   131 ;;
+   132 ;; *************** function _main *****************
+   133 ;; Defined at:
+   134 ;;		line 86 in file "Throttle.c"
+   135 ;; Parameters:    Size  Location     Type
+   136 ;;		None
+   137 ;; Auto vars:     Size  Location     Type
+   138 ;;		None
+   139 ;; Return value:  Size  Location     Type
+   140 ;;		None               void
+   141 ;; Registers used:
+   142 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+   143 ;; Tracked objects:
+   144 ;;		On entry : 0/0
+   145 ;;		On exit  : 0/0
+   146 ;;		Unchanged: 0/0
+   147 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   148 ;;      Params:         0       0       0       0       0       0       0
+   149 ;;      Locals:         0       0       0       0       0       0       0
+   150 ;;      Temps:          0       0       0       0       0       0       0
+   151 ;;      Totals:         0       0       0       0       0       0       0
+   152 ;;Total ram usage:        0 bytes
+   153 ;; Hardware stack levels required when called:    1
+   154 ;; This function calls:
+   155 ;;		_ADC_Convert
+   156 ;;		_ADC_Init
+   157 ;;		_Delay1KTCYx
+   158 ;;		_PWM_Init
+   159 ;; This function is called by:
+   160 ;;		Startup code after reset
+   161 ;; This function uses a non-reentrant model
+   162 ;;
+   163                           
+   164                           	psect	text0
+   165  000602                     __ptext0:
+   166                           	opt stack 0
+   167  000602                     _main:
+   168                           	opt stack 30
+   169                           
+   170                           ;Throttle.c: 89: TRISD = 0b00000000;
    171                           
-   172                           ;Throttle.c: 73: WPUBbits.WPUB0 = 1;
-   173  0006A0  807C               	bsf	3964,0,c	;volatile
-   174                           
-   175                           ;Throttle.c: 76: TRISBbits.TRISB0 = 1;
-   176  0006A2  8093               	bsf	3987,0,c	;volatile
-   177                           
-   178                           ;Throttle.c: 80: ADC_Init();
-   179  0006A4  EC77  F003         	call	_ADC_Init	;wreg free
-   180  0006A8  D000               	goto	l776
-   181  0006AA                     l776:
-   182                           
-   183                           ;Throttle.c: 83: {
-   184                           ;Throttle.c: 85: LED_Number = ADC_Convert();
-   185  0006AA  EC8C  F003         	call	_ADC_Convert	;wreg free
-   186  0006AE  6E09               	movwf	_LED_Number,c
+   172                           ;incstack = 0
+   173  000602  0E00               	movlw	0
+   174  000604  6E95               	movwf	3989,c	;volatile
+   175                           
+   176                           ;Throttle.c: 90: TRISAbits.TRISA0 = 1;
+   177  000606  8092               	bsf	3986,0,c	;volatile
+   178                           
+   179                           ;Throttle.c: 92: INTCON2bits.RBPU = 0;
+   180  000608  9EF1               	bcf	intcon2,7,c	;volatile
+   181                           
+   182                           ;Throttle.c: 93: WPUBbits.WPUB0 = 1;
+   183  00060A  807C               	bsf	3964,0,c	;volatile
+   184                           
+   185                           ;Throttle.c: 96: TRISBbits.TRISB0 = 1;
+   186  00060C  8093               	bsf	3987,0,c	;volatile
    187                           
-   188                           ;Throttle.c: 89: LED_Number = LED_Number / 16 ;
-   189  0006B0  C009  F001         	movff	_LED_Number,___awdiv@dividend
-   190  0006B4  6A02               	clrf	___awdiv@dividend+1,c
-   191  0006B6  0E00               	movlw	0
-   192  0006B8  6E04               	movwf	___awdiv@divisor+1,c
-   193  0006BA  0E10               	movlw	16
-   194  0006BC  6E03               	movwf	___awdiv@divisor,c
-   195  0006BE  EC01  F003         	call	___awdiv	;wreg free
-   196  0006C2  5001               	movf	?___awdiv,w,c
-   197  0006C4  6E09               	movwf	_LED_Number,c
+   188                           ;Throttle.c: 99: ADC_Init();
+   189  00060E  EC28  F003         	call	_ADC_Init	;wreg free
+   190                           
+   191                           ;Throttle.c: 102: PWM_Init();
+   192  000612  EC3D  F003         	call	_PWM_Init	;wreg free
+   193                           
+   194                           ;Throttle.c: 104: ClockSpeed = OSCCON;
+   195  000616  CFD3 F002          	movff	4051,_ClockSpeed	;volatile
+   196  00061A  D000               	goto	l691
+   197  00061C                     l691:
    198                           
-   199                           ;Throttle.c: 92: LATD = LED_LookupTable[LED_Number];
-   200  0006C6  5009               	movf	_LED_Number,w,c
-   201  0006C8  0D01               	mullw	1
-   202  0006CA  0E80               	movlw	128
-   203  0006CC  24F3               	addwf	prodl,w,c
-   204  0006CE  6EF6               	movwf	tblptrl,c
-   205  0006D0  0E01               	movlw	1
-   206  0006D2  20F4               	addwfc	prodh,w,c
-   207  0006D4  6EF7               	movwf	tblptrh,c
-   208  0006D6  6AF8               	clrf	tblptru,c
-   209  0006D8  0E00               	movlw	0
-   210  0006DA  22F8               	addwfc	tblptru,f,c
-   211  0006DC  0008               	tblrd		*
-   212  0006DE  CFF5 FF8C          	movff	tablat,3980	;volatile
-   213                           
-   214                           ;Throttle.c: 95: Delay1KTCYx(30);
-   215  0006E2  0E1E               	movlw	30
-   216  0006E4  EC83  F003         	call	_Delay1KTCYx
-   217  0006E8  D7E0               	goto	l776
-   218  0006EA  EF01  F000         	goto	start
-   219  0006EE                     __end_of_main:
-   220                           	opt stack 0
-   221                           tblptru	equ	0xFF8
-   222                           tblptrh	equ	0xFF7
-   223                           tblptrl	equ	0xFF6
-   224                           tablat	equ	0xFF5
-   225                           prodh	equ	0xFF4
-   226                           prodl	equ	0xFF3
-   227                           intcon2	equ	0xFF1
-   228                           
-   229 ;; *************** function ___awdiv *****************
-   230 ;; Defined at:
-   231 ;;		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\awdiv.c"
-   232 ;; Parameters:    Size  Location     Type
-   233 ;;  dividend        2    0[COMRAM] int 
-   234 ;;  divisor         2    2[COMRAM] int 
-   235 ;; Auto vars:     Size  Location     Type
-   236 ;;  quotient        2    6[COMRAM] int 
-   237 ;;  sign            1    5[COMRAM] unsigned char 
-   238 ;;  counter         1    4[COMRAM] unsigned char 
-   239 ;; Return value:  Size  Location     Type
-   240 ;;                  2    0[COMRAM] int 
-   241 ;; Registers used:
-   242 ;;		wreg, status,2, status,0
-   243 ;; Tracked objects:
-   244 ;;		On entry : 0/0
-   245 ;;		On exit  : 0/0
-   246 ;;		Unchanged: 0/0
-   247 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   248 ;;      Params:         4       0       0       0       0       0       0
-   249 ;;      Locals:         4       0       0       0       0       0       0
-   250 ;;      Temps:          0       0       0       0       0       0       0
-   251 ;;      Totals:         8       0       0       0       0       0       0
-   252 ;;Total ram usage:        8 bytes
-   253 ;; Hardware stack levels used:    1
-   254 ;; This function calls:
-   255 ;;		Nothing
-   256 ;; This function is called by:
-   257 ;;		_main
-   258 ;; This function uses a non-reentrant model
-   259 ;;
-   260                           
-   261                           	psect	text1
-   262  000602                     __ptext1:
-   263                           	opt stack 0
-   264  000602                     ___awdiv:
-   265                           	opt stack 30
-   266                           
-   267                           ;incstack = 0
-   268  000602  0E00               	movlw	0
-   269  000604  6E06               	movwf	___awdiv@sign,c
-   270  000606  AE04               	btfss	___awdiv@divisor+1,7,c
-   271  000608  D007               	goto	l728
-   272  00060A  6C03               	negf	___awdiv@divisor,c
-   273  00060C  1E04               	comf	___awdiv@divisor+1,f,c
-   274  00060E  B0D8               	btfsc	status,0,c
-   275  000610  2A04               	incf	___awdiv@divisor+1,f,c
-   276  000612  0E01               	movlw	1
-   277  000614  6E06               	movwf	___awdiv@sign,c
-   278  000616  D000               	goto	l728
-   279  000618                     l728:
-   280  000618  AE02               	btfss	___awdiv@dividend+1,7,c
-   281  00061A  D007               	goto	l734
-   282  00061C  6C01               	negf	___awdiv@dividend,c
-   283  00061E  1E02               	comf	___awdiv@dividend+1,f,c
-   284  000620  B0D8               	btfsc	status,0,c
-   285  000622  2A02               	incf	___awdiv@dividend+1,f,c
-   286  000624  0E01               	movlw	1
-   287  000626  1A06               	xorwf	___awdiv@sign,f,c
-   288  000628  D000               	goto	l734
-   289  00062A                     l734:
-   290  00062A  0E00               	movlw	0
-   291  00062C  6E08               	movwf	___awdiv@quotient+1,c
-   292  00062E  0E00               	movlw	0
-   293  000630  6E07               	movwf	___awdiv@quotient,c
-   294  000632  5003               	movf	___awdiv@divisor,w,c
-   295  000634  1004               	iorwf	___awdiv@divisor+1,w,c
-   296  000636  B4D8               	btfsc	status,2,c
-   297  000638  D021               	goto	l756
-   298  00063A  0E01               	movlw	1
-   299  00063C  6E05               	movwf	___awdiv@counter,c
-   300  00063E  D005               	goto	l742
-   301  000640                     l740:
-   302  000640  90D8               	bcf	status,0,c
-   303  000642  3603               	rlcf	___awdiv@divisor,f,c
-   304  000644  3604               	rlcf	___awdiv@divisor+1,f,c
-   305  000646  2A05               	incf	___awdiv@counter,f,c
-   306  000648  D000               	goto	l742
-   307  00064A                     l742:
-   308  00064A  BE04               	btfsc	___awdiv@divisor+1,7,c
-   309  00064C  D002               	goto	l744
-   310  00064E  D7F8               	goto	l740
-   311  000650  D000               	goto	l744
-   312  000652                     l744:
-   313  000652  90D8               	bcf	status,0,c
-   314  000654  3607               	rlcf	___awdiv@quotient,f,c
-   315  000656  3608               	rlcf	___awdiv@quotient+1,f,c
-   316  000658  5003               	movf	___awdiv@divisor,w,c
-   317  00065A  5C01               	subwf	___awdiv@dividend,w,c
-   318  00065C  5004               	movf	___awdiv@divisor+1,w,c
-   319  00065E  5802               	subwfb	___awdiv@dividend+1,w,c
-   320  000660  A0D8               	btfss	status,0,c
-   321  000662  D006               	goto	l752
-   322  000664  5003               	movf	___awdiv@divisor,w,c
-   323  000666  5E01               	subwf	___awdiv@dividend,f,c
-   324  000668  5004               	movf	___awdiv@divisor+1,w,c
-   325  00066A  5A02               	subwfb	___awdiv@dividend+1,f,c
-   326  00066C  8007               	bsf	___awdiv@quotient,0,c
-   327  00066E  D000               	goto	l752
-   328  000670                     l752:
-   329  000670  90D8               	bcf	status,0,c
-   330  000672  3204               	rrcf	___awdiv@divisor+1,f,c
-   331  000674  3203               	rrcf	___awdiv@divisor,f,c
-   332  000676  2E05               	decfsz	___awdiv@counter,f,c
-   333  000678  D7EC               	goto	l744
-   334  00067A  D000               	goto	l756
-   335  00067C                     l756:
-   336  00067C  5006               	movf	___awdiv@sign,w,c
-   337  00067E  B4D8               	btfsc	status,2,c
-   338  000680  D005               	goto	l760
-   339  000682  6C07               	negf	___awdiv@quotient,c
-   340  000684  1E08               	comf	___awdiv@quotient+1,f,c
-   341  000686  B0D8               	btfsc	status,0,c
-   342  000688  2A08               	incf	___awdiv@quotient+1,f,c
-   343  00068A  D000               	goto	l760
-   344  00068C                     l760:
-   345  00068C  C007  F001         	movff	___awdiv@quotient,?___awdiv
-   346  000690  C008  F002         	movff	___awdiv@quotient+1,?___awdiv+1
-   347  000694  0012               	return	
-   348  000696  0012               	return		;funcret
-   349  000698                     __end_of___awdiv:
-   350                           	opt stack 0
-   351                           tblptru	equ	0xFF8
-   352                           tblptrh	equ	0xFF7
-   353                           tblptrl	equ	0xFF6
-   354                           tablat	equ	0xFF5
-   355                           prodh	equ	0xFF4
-   356                           prodl	equ	0xFF3
-   357                           intcon2	equ	0xFF1
-   358                           status	equ	0xFD8
-   359                           
-   360 ;; *************** function _Delay1KTCYx *****************
-   361 ;; Defined at:
-   362 ;;		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c"
-   363 ;; Parameters:    Size  Location     Type
-   364 ;;  unit            1    wreg     unsigned char 
-   365 ;; Auto vars:     Size  Location     Type
-   366 ;;  unit            1    0[COMRAM] unsigned char 
-   367 ;; Return value:  Size  Location     Type
-   368 ;;		None               void
-   369 ;; Registers used:
-   370 ;;		wreg
-   371 ;; Tracked objects:
-   372 ;;		On entry : 0/0
-   373 ;;		On exit  : 0/0
-   374 ;;		Unchanged: 0/0
-   375 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   376 ;;      Params:         0       0       0       0       0       0       0
-   377 ;;      Locals:         1       0       0       0       0       0       0
-   378 ;;      Temps:          0       0       0       0       0       0       0
-   379 ;;      Totals:         1       0       0       0       0       0       0
-   380 ;;Total ram usage:        1 bytes
-   381 ;; Hardware stack levels used:    1
-   382 ;; This function calls:
-   383 ;;		Nothing
-   384 ;; This function is called by:
-   385 ;;		_main
-   386 ;; This function uses a non-reentrant model
-   387 ;;
-   388                           
-   389                           	psect	text2
-   390  000706                     __ptext2:
-   391                           	opt stack 0
-   392  000706                     _Delay1KTCYx:
-   393                           	opt stack 30
-   394                           
-   395                           ;incstack = 0
-   396                           ;Delay1KTCYx@unit stored from wreg
-   397  000706  6E01               	movwf	Delay1KTCYx@unit,c
-   398  000708  0EFA               	movlw	250
-   399  00070A                     u147:
-   400  00070A  F000               	nop	
-   401  00070C  2EE8               	decfsz	wreg,f,c
-   402  00070E  D7FD               	goto	u147
-   403  000710  2E01               	decfsz	Delay1KTCYx@unit,f,c
-   404  000712  D7FA               	goto	l652
-   405  000714  0012               	return	
-   406  000716  0012               	return		;funcret
-   407  000718                     __end_of_Delay1KTCYx:
-   408                           	opt stack 0
-   409                           tblptru	equ	0xFF8
-   410                           tblptrh	equ	0xFF7
-   411                           tblptrl	equ	0xFF6
-   412                           tablat	equ	0xFF5
-   413                           prodh	equ	0xFF4
-   414                           prodl	equ	0xFF3
-   415                           intcon2	equ	0xFF1
-   416                           wreg	equ	0xFE8
-   417                           status	equ	0xFD8
-   418                           
-   419 ;; *************** function _ADC_Init *****************
-   420 ;; Defined at:
-   421 ;;		line 99 in file "Throttle.c"
-   422 ;; Parameters:    Size  Location     Type
-   423 ;;		None
-   424 ;; Auto vars:     Size  Location     Type
-   425 ;;		None
-   426 ;; Return value:  Size  Location     Type
-   427 ;;		None               void
-   428 ;; Registers used:
-   429 ;;		wreg, status,2
-   430 ;; Tracked objects:
-   431 ;;		On entry : 0/0
-   432 ;;		On exit  : 0/0
-   433 ;;		Unchanged: 0/0
-   434 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   435 ;;      Params:         0       0       0       0       0       0       0
-   436 ;;      Locals:         0       0       0       0       0       0       0
-   437 ;;      Temps:          0       0       0       0       0       0       0
-   438 ;;      Totals:         0       0       0       0       0       0       0
-   439 ;;Total ram usage:        0 bytes
-   440 ;; Hardware stack levels used:    1
-   441 ;; This function calls:
-   442 ;;		Nothing
-   443 ;; This function is called by:
-   444 ;;		_main
-   445 ;; This function uses a non-reentrant model
-   446 ;;
-   447                           
-   448                           	psect	text3
-   449  0006EE                     __ptext3:
-   450                           	opt stack 0
-   451  0006EE                     _ADC_Init:
-   452                           	opt stack 30
-   453                           
-   454                           ;Throttle.c: 104: ANSEL = 0;
+   199                           ;Throttle.c: 108: {
+   200                           ;Throttle.c: 110: ADC_Value = ADC_Convert();
+   201  00061C  EC44  F003         	call	_ADC_Convert	;wreg free
+   202  000620  6E01               	movwf	_ADC_Value,c
+   203                           
+   204                           ;Throttle.c: 111: ADC_Value = ADC_Value >> 4;
+   205  000622  3801               	swapf	_ADC_Value,w,c
+   206  000624  0B0F               	andlw	15
+   207  000626  6E01               	movwf	_ADC_Value,c
+   208                           
+   209                           ;Throttle.c: 114: CCPR1L = ADC_ThrottlePWM_Lookup[ADC_Value];
+   210  000628  5001               	movf	_ADC_Value,w,c
+   211  00062A  0D01               	mullw	1
+   212  00062C  0E80               	movlw	128
+   213  00062E  24F3               	addwf	prodl,w,c
+   214  000630  6EF6               	movwf	tblptrl,c
+   215  000632  0E01               	movlw	1
+   216  000634  20F4               	addwfc	prodh,w,c
+   217  000636  6EF7               	movwf	tblptrh,c
+   218  000638  6AF8               	clrf	tblptru,c
+   219  00063A  0E00               	movlw	0
+   220  00063C  22F8               	addwfc	tblptru,f,c
+   221  00063E  0008               	tblrd		*
+   222  000640  CFF5 FFBE          	movff	tablat,4030	;volatile
+   223                           
+   224                           ;Throttle.c: 117: Delay1KTCYx(30);
+   225  000644  0E1E               	movlw	30
+   226  000646  EC34  F003         	call	_Delay1KTCYx
+   227  00064A  D7E8               	goto	l691
+   228  00064C  EF01  F000         	goto	start
+   229  000650                     __end_of_main:
+   230                           	opt stack 0
+   231                           tblptru	equ	0xFF8
+   232                           tblptrh	equ	0xFF7
+   233                           tblptrl	equ	0xFF6
+   234                           tablat	equ	0xFF5
+   235                           prodh	equ	0xFF4
+   236                           prodl	equ	0xFF3
+   237                           intcon2	equ	0xFF1
+   238                           
+   239 ;; *************** function _PWM_Init *****************
+   240 ;; Defined at:
+   241 ;;		line 157 in file "Throttle.c"
+   242 ;; Parameters:    Size  Location     Type
+   243 ;;		None
+   244 ;; Auto vars:     Size  Location     Type
+   245 ;;		None
+   246 ;; Return value:  Size  Location     Type
+   247 ;;		None               void
+   248 ;; Registers used:
+   249 ;;		wreg, status,2
+   250 ;; Tracked objects:
+   251 ;;		On entry : 0/0
+   252 ;;		On exit  : 0/0
+   253 ;;		Unchanged: 0/0
+   254 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   255 ;;      Params:         0       0       0       0       0       0       0
+   256 ;;      Locals:         0       0       0       0       0       0       0
+   257 ;;      Temps:          0       0       0       0       0       0       0
+   258 ;;      Totals:         0       0       0       0       0       0       0
+   259 ;;Total ram usage:        0 bytes
+   260 ;; Hardware stack levels used:    1
+   261 ;; This function calls:
+   262 ;;		Nothing
+   263 ;; This function is called by:
+   264 ;;		_main
+   265 ;; This function uses a non-reentrant model
+   266 ;;
+   267                           
+   268                           	psect	text1
+   269  00067A                     __ptext1:
+   270                           	opt stack 0
+   271  00067A                     _PWM_Init:
+   272                           	opt stack 30
+   273                           
+   274                           ;Throttle.c: 160: T2CON = 0b00000111;
+   275                           
+   276                           ;incstack = 0
+   277  00067A  0E07               	movlw	7
+   278  00067C  6ECA               	movwf	4042,c	;volatile
+   279                           
+   280                           ;Throttle.c: 161: PR2 = 249;
+   281  00067E  0EF9               	movlw	249
+   282  000680  6ECB               	movwf	4043,c	;volatile
+   283                           
+   284                           ;Throttle.c: 166: CCP1CON = 0b01001100;
+   285  000682  0E4C               	movlw	76
+   286  000684  6EBD               	movwf	4029,c	;volatile
+   287  000686  0012               	return		;funcret
+   288  000688                     __end_of_PWM_Init:
+   289                           	opt stack 0
+   290                           tblptru	equ	0xFF8
+   291                           tblptrh	equ	0xFF7
+   292                           tblptrl	equ	0xFF6
+   293                           tablat	equ	0xFF5
+   294                           prodh	equ	0xFF4
+   295                           prodl	equ	0xFF3
+   296                           intcon2	equ	0xFF1
+   297                           
+   298 ;; *************** function _Delay1KTCYx *****************
+   299 ;; Defined at:
+   300 ;;		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c"
+   301 ;; Parameters:    Size  Location     Type
+   302 ;;  unit            1    wreg     unsigned char 
+   303 ;; Auto vars:     Size  Location     Type
+   304 ;;  unit            1    0[COMRAM] unsigned char 
+   305 ;; Return value:  Size  Location     Type
+   306 ;;		None               void
+   307 ;; Registers used:
+   308 ;;		wreg
+   309 ;; Tracked objects:
+   310 ;;		On entry : 0/0
+   311 ;;		On exit  : 0/0
+   312 ;;		Unchanged: 0/0
+   313 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   314 ;;      Params:         0       0       0       0       0       0       0
+   315 ;;      Locals:         1       0       0       0       0       0       0
+   316 ;;      Temps:          0       0       0       0       0       0       0
+   317 ;;      Totals:         1       0       0       0       0       0       0
+   318 ;;Total ram usage:        1 bytes
+   319 ;; Hardware stack levels used:    1
+   320 ;; This function calls:
+   321 ;;		Nothing
+   322 ;; This function is called by:
+   323 ;;		_main
+   324 ;; This function uses a non-reentrant model
+   325 ;;
+   326                           
+   327                           	psect	text2
+   328  000668                     __ptext2:
+   329                           	opt stack 0
+   330  000668                     _Delay1KTCYx:
+   331                           	opt stack 30
+   332                           
+   333                           ;incstack = 0
+   334                           ;Delay1KTCYx@unit stored from wreg
+   335  000668  6E03               	movwf	Delay1KTCYx@unit,c
+   336  00066A  0EFA               	movlw	250
+   337  00066C                     u27:
+   338  00066C  F000               	nop	
+   339  00066E  2EE8               	decfsz	wreg,f,c
+   340  000670  D7FD               	goto	u27
+   341  000672  2E03               	decfsz	Delay1KTCYx@unit,f,c
+   342  000674  D7FA               	goto	l671
+   343  000676  0012               	return	
+   344  000678  0012               	return		;funcret
+   345  00067A                     __end_of_Delay1KTCYx:
+   346                           	opt stack 0
+   347                           tblptru	equ	0xFF8
+   348                           tblptrh	equ	0xFF7
+   349                           tblptrl	equ	0xFF6
+   350                           tablat	equ	0xFF5
+   351                           prodh	equ	0xFF4
+   352                           prodl	equ	0xFF3
+   353                           intcon2	equ	0xFF1
+   354                           wreg	equ	0xFE8
+   355                           
+   356 ;; *************** function _ADC_Init *****************
+   357 ;; Defined at:
+   358 ;;		line 121 in file "Throttle.c"
+   359 ;; Parameters:    Size  Location     Type
+   360 ;;		None
+   361 ;; Auto vars:     Size  Location     Type
+   362 ;;		None
+   363 ;; Return value:  Size  Location     Type
+   364 ;;		None               void
+   365 ;; Registers used:
+   366 ;;		wreg, status,2
+   367 ;; Tracked objects:
+   368 ;;		On entry : 0/0
+   369 ;;		On exit  : 0/0
+   370 ;;		Unchanged: 0/0
+   371 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   372 ;;      Params:         0       0       0       0       0       0       0
+   373 ;;      Locals:         0       0       0       0       0       0       0
+   374 ;;      Temps:          0       0       0       0       0       0       0
+   375 ;;      Totals:         0       0       0       0       0       0       0
+   376 ;;Total ram usage:        0 bytes
+   377 ;; Hardware stack levels used:    1
+   378 ;; This function calls:
+   379 ;;		Nothing
+   380 ;; This function is called by:
+   381 ;;		_main
+   382 ;; This function uses a non-reentrant model
+   383 ;;
+   384                           
+   385                           	psect	text3
+   386  000650                     __ptext3:
+   387                           	opt stack 0
+   388  000650                     _ADC_Init:
+   389                           	opt stack 30
+   390                           
+   391                           ;Throttle.c: 126: ANSEL = 0;
+   392                           
+   393                           ;incstack = 0
+   394  000650  0E00               	movlw	0
+   395  000652  6E7E               	movwf	3966,c	;volatile
+   396                           
+   397                           ;Throttle.c: 127: ANSELH = 0;
+   398  000654  0E00               	movlw	0
+   399  000656  6E7F               	movwf	3967,c	;volatile
+   400                           
+   401                           ;Throttle.c: 128: ANSELbits.ANS0 = 1;
+   402  000658  807E               	bsf	3966,0,c	;volatile
+   403                           
+   404                           ;Throttle.c: 132: ADCON1 = 0;
+   405  00065A  0E00               	movlw	0
+   406  00065C  6EC1               	movwf	4033,c	;volatile
+   407                           
+   408                           ;Throttle.c: 150: ADCON2 = 0b00111000;
+   409  00065E  0E38               	movlw	56
+   410  000660  6EC0               	movwf	4032,c	;volatile
+   411                           
+   412                           ;Throttle.c: 153: ADCON0 = 0b00000001;
+   413  000662  0E01               	movlw	1
+   414  000664  6EC2               	movwf	4034,c	;volatile
+   415  000666  0012               	return		;funcret
+   416  000668                     __end_of_ADC_Init:
+   417                           	opt stack 0
+   418                           tblptru	equ	0xFF8
+   419                           tblptrh	equ	0xFF7
+   420                           tblptrl	equ	0xFF6
+   421                           tablat	equ	0xFF5
+   422                           prodh	equ	0xFF4
+   423                           prodl	equ	0xFF3
+   424                           intcon2	equ	0xFF1
+   425                           wreg	equ	0xFE8
+   426                           
+   427 ;; *************** function _ADC_Convert *****************
+   428 ;; Defined at:
+   429 ;;		line 173 in file "Throttle.c"
+   430 ;; Parameters:    Size  Location     Type
+   431 ;;		None
+   432 ;; Auto vars:     Size  Location     Type
+   433 ;;		None
+   434 ;; Return value:  Size  Location     Type
+   435 ;;                  1    wreg      unsigned char 
+   436 ;; Registers used:
+   437 ;;		wreg, status,2
+   438 ;; Tracked objects:
+   439 ;;		On entry : 0/0
+   440 ;;		On exit  : 0/0
+   441 ;;		Unchanged: 0/0
+   442 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   443 ;;      Params:         0       0       0       0       0       0       0
+   444 ;;      Locals:         0       0       0       0       0       0       0
+   445 ;;      Temps:          0       0       0       0       0       0       0
+   446 ;;      Totals:         0       0       0       0       0       0       0
+   447 ;;Total ram usage:        0 bytes
+   448 ;; Hardware stack levels used:    1
+   449 ;; This function calls:
+   450 ;;		Nothing
+   451 ;; This function is called by:
+   452 ;;		_main
+   453 ;; This function uses a non-reentrant model
+   454 ;;
    455                           
-   456                           ;incstack = 0
-   457  0006EE  0E00               	movlw	0
-   458  0006F0  6E7E               	movwf	3966,c	;volatile
-   459                           
-   460                           ;Throttle.c: 105: ANSELH = 0;
-   461  0006F2  0E00               	movlw	0
-   462  0006F4  6E7F               	movwf	3967,c	;volatile
+   456                           	psect	text4
+   457  000688                     __ptext4:
+   458                           	opt stack 0
+   459  000688                     _ADC_Convert:
+   460                           	opt stack 30
+   461                           
+   462                           ;Throttle.c: 175: ADCON0bits.GO_DONE = 1;
    463                           
-   464                           ;Throttle.c: 106: ANSELbits.ANS0 = 1;
-   465  0006F6  807E               	bsf	3966,0,c	;volatile
+   464                           ;incstack = 0
+   465  000688  82C2               	bsf	4034,1,c	;volatile
    466                           
-   467                           ;Throttle.c: 110: ADCON1 = 0;
-   468  0006F8  0E00               	movlw	0
-   469  0006FA  6EC1               	movwf	4033,c	;volatile
-   470                           
-   471                           ;Throttle.c: 128: ADCON2 = 0b00111000;
-   472  0006FC  0E38               	movlw	56
-   473  0006FE  6EC0               	movwf	4032,c	;volatile
-   474                           
-   475                           ;Throttle.c: 131: ADCON0 = 0b00000001;
-   476  000700  0E01               	movlw	1
-   477  000702  6EC2               	movwf	4034,c	;volatile
-   478  000704  0012               	return		;funcret
-   479  000706                     __end_of_ADC_Init:
-   480                           	opt stack 0
-   481                           tblptru	equ	0xFF8
-   482                           tblptrh	equ	0xFF7
-   483                           tblptrl	equ	0xFF6
-   484                           tablat	equ	0xFF5
-   485                           prodh	equ	0xFF4
-   486                           prodl	equ	0xFF3
-   487                           intcon2	equ	0xFF1
-   488                           wreg	equ	0xFE8
-   489                           status	equ	0xFD8
-   490                           
-   491 ;; *************** function _ADC_Convert *****************
-   492 ;; Defined at:
-   493 ;;		line 136 in file "Throttle.c"
-   494 ;; Parameters:    Size  Location     Type
-   495 ;;		None
-   496 ;; Auto vars:     Size  Location     Type
-   497 ;;		None
-   498 ;; Return value:  Size  Location     Type
-   499 ;;                  1    wreg      unsigned char 
-   500 ;; Registers used:
-   501 ;;		wreg, status,2
-   502 ;; Tracked objects:
-   503 ;;		On entry : 0/0
-   504 ;;		On exit  : 0/0
-   505 ;;		Unchanged: 0/0
-   506 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   507 ;;      Params:         0       0       0       0       0       0       0
-   508 ;;      Locals:         0       0       0       0       0       0       0
-   509 ;;      Temps:          0       0       0       0       0       0       0
-   510 ;;      Totals:         0       0       0       0       0       0       0
-   511 ;;Total ram usage:        0 bytes
-   512 ;; Hardware stack levels used:    1
-   513 ;; This function calls:
-   514 ;;		Nothing
-   515 ;; This function is called by:
-   516 ;;		_main
-   517 ;; This function uses a non-reentrant model
-   518 ;;
-   519                           
-   520                           	psect	text4
-   521  000718                     __ptext4:
-   522                           	opt stack 0
-   523  000718                     _ADC_Convert:
-   524                           	opt stack 30
-   525                           
-   526                           ;Throttle.c: 138: ADCON0bits.GO_DONE = 1;
-   527                           
-   528                           ;incstack = 0
-   529  000718  82C2               	bsf	4034,1,c	;volatile
-   530                           
-   531                           ;Throttle.c: 139: while (ADCON0bits.GO_DONE == 1);
-   532  00071A  D000               	goto	l50
-   533  00071C                     l50:
-   534  00071C  B2C2               	btfsc	4034,1,c	;volatile
-   535  00071E  D7FE               	goto	l50
-   536                           
-   537                           ;Throttle.c: 140: return ADRESH;
-   538  000720  50C4               	movf	4036,w,c	;volatile
-   539  000722  0012               	return	
-   540  000724  0012               	return		;funcret
-   541  000726                     __end_of_ADC_Convert:
-   542                           	opt stack 0
-   543                           tblptru	equ	0xFF8
-   544                           tblptrh	equ	0xFF7
-   545                           tblptrl	equ	0xFF6
-   546                           tablat	equ	0xFF5
-   547                           prodh	equ	0xFF4
-   548                           prodl	equ	0xFF3
-   549                           intcon2	equ	0xFF1
-   550                           wreg	equ	0xFE8
-   551                           status	equ	0xFD8
-   552                           
-   553                           	psect	smallconst
-   554  000600                     __psmallconst:
-   555                           	opt stack 0
-   556  000600  00                 	db	0
-   557  000601  00                 	db	0	; dummy byte at the end
-   558  0000                     tblptru	equ	0xFF8
-   559                           tblptrh	equ	0xFF7
-   560                           tblptrl	equ	0xFF6
-   561                           tablat	equ	0xFF5
-   562                           prodh	equ	0xFF4
-   563                           prodl	equ	0xFF3
-   564                           intcon2	equ	0xFF1
-   565                           wreg	equ	0xFE8
-   566                           status	equ	0xFD8
-   567                           tblptru	equ	0xFF8
-   568                           tblptrh	equ	0xFF7
-   569                           tblptrl	equ	0xFF6
-   570                           tablat	equ	0xFF5
-   571                           prodh	equ	0xFF4
-   572                           prodl	equ	0xFF3
-   573                           intcon2	equ	0xFF1
-   574                           wreg	equ	0xFE8
-   575                           status	equ	0xFD8
-   576                           
-   577                           	psect	rparam
-   578  0000                     tblptru	equ	0xFF8
-   579                           tblptrh	equ	0xFF7
-   580                           tblptrl	equ	0xFF6
-   581                           tablat	equ	0xFF5
-   582                           prodh	equ	0xFF4
-   583                           prodl	equ	0xFF3
-   584                           intcon2	equ	0xFF1
-   585                           wreg	equ	0xFE8
-   586                           status	equ	0xFD8
+   467                           ;Throttle.c: 176: while (ADCON0bits.GO_DONE == 1);
+   468  00068A  D000               	goto	l67
+   469  00068C                     l67:
+   470  00068C  B2C2               	btfsc	4034,1,c	;volatile
+   471  00068E  D7FE               	goto	l67
+   472                           
+   473                           ;Throttle.c: 177: return ADRESH;
+   474  000690  50C4               	movf	4036,w,c	;volatile
+   475  000692  0012               	return	
+   476  000694  0012               	return		;funcret
+   477  000696                     __end_of_ADC_Convert:
+   478                           	opt stack 0
+   479                           tblptru	equ	0xFF8
+   480                           tblptrh	equ	0xFF7
+   481                           tblptrl	equ	0xFF6
+   482                           tablat	equ	0xFF5
+   483                           prodh	equ	0xFF4
+   484                           prodl	equ	0xFF3
+   485                           intcon2	equ	0xFF1
+   486                           wreg	equ	0xFE8
+   487                           
+   488                           	psect	smallconst
+   489  000600                     __psmallconst:
+   490                           	opt stack 0
+   491  000600  00                 	db	0
+   492  000601  00                 	db	0	; dummy byte at the end
+   493  0000                     tblptru	equ	0xFF8
+   494                           tblptrh	equ	0xFF7
+   495                           tblptrl	equ	0xFF6
+   496                           tablat	equ	0xFF5
+   497                           prodh	equ	0xFF4
+   498                           prodl	equ	0xFF3
+   499                           intcon2	equ	0xFF1
+   500                           wreg	equ	0xFE8
+   501                           tblptru	equ	0xFF8
+   502                           tblptrh	equ	0xFF7
+   503                           tblptrl	equ	0xFF6
+   504                           tablat	equ	0xFF5
+   505                           prodh	equ	0xFF4
+   506                           prodl	equ	0xFF3
+   507                           intcon2	equ	0xFF1
+   508                           wreg	equ	0xFE8
+   509                           
+   510                           	psect	rparam
+   511  0000                     tblptru	equ	0xFF8
+   512                           tblptrh	equ	0xFF7
+   513                           tblptrl	equ	0xFF6
+   514                           tablat	equ	0xFF5
+   515                           prodh	equ	0xFF4
+   516                           prodl	equ	0xFF3
+   517                           intcon2	equ	0xFF1
+   518                           wreg	equ	0xFE8
 
 
 Data Sizes:
@@ -597,12 +529,12 @@ Data Sizes:
     Constant    0
     Data        0
     BSS         0
-    Persistent  1
+    Persistent  2
     Stack       0
 
 Auto Spaces:
     Space          Size  Autos    Used
-    COMRAM           95      8       9
+    COMRAM           95      1       3
     BANK0           160      0       0
     BANK1           256      0       0
     BANK2           256      0       0
@@ -616,7 +548,7 @@ Pointer List with Targets:
 
 Critical Paths under _main in COMRAM
 
-    _main->___awdiv
+    _main->_Delay1KTCYx
 
 Critical Paths under _main in BANK0
 
@@ -647,14 +579,13 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 0     0      0     401
+ (0) _main                                                 0     0      0      15
                         _ADC_Convert
                            _ADC_Init
                         _Delay1KTCYx
-                            ___awdiv
+                           _PWM_Init
  ---------------------------------------------------------------------------------
- (1) ___awdiv                                              8     4      4     386
-                                              0 COMRAM     8     4      4
+ (1) _PWM_Init                                             0     0      0       0
  ---------------------------------------------------------------------------------
  (1) _Delay1KTCYx                                          1     1      0      15
                                               0 COMRAM     1     1      0
@@ -672,7 +603,7 @@ Call Graph Tables:
    _ADC_Convert
    _ADC_Init
    _Delay1KTCYx
-   ___awdiv
+   _PWM_Init
 
  Address spaces:
 Name               Size   Autos  Total    Cost      Usage
@@ -680,7 +611,7 @@ BITCOMRAM           5F      0       0       0        0.0%
 EEDATA             100      0       0       0        0.0%
 NULL                 0      0       0       0        0.0%
 CODE                 0      0       0       0        0.0%
-COMRAM              5F      8       9       1        9.5%
+COMRAM              5F      1       3       1        3.2%
 STACK                0      0       0       2        0.0%
 BITBANK0            A0      0       0       3        0.0%
 BANK0               A0      0       0       4        0.0%
@@ -693,10 +624,10 @@ BANK3              100      0       0      10        0.0%
 BITBANK4           100      0       0      11        0.0%
 BANK4              100      0       0      12        0.0%
 BANK5               EF      0       0      13        0.0%
-ABS                  0      0       9      14        0.0%
+ABS                  0      0       3      14        0.0%
 BITBANK5            EF      0       0      15        0.0%
 BIGRAM             5EE      0       0      16        0.0%
-DATA                 0      0       9      17        0.0%
+DATA                 0      0       3      17        0.0%
 BITSFR_5             0      0       0      40        0.0%
 SFR_5                0      0       0      40        0.0%
 BITSFR_4             0      0       0      40        0.0%
@@ -712,48 +643,67 @@ SFR                  0      0       0      40        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
-Symbol Table                                                                                   Sat Mar 28 15:45:34 2015
+Symbol Table                                                                                   Sat Mar 28 19:58:36 2015
 
-                          l50 071C                  ___awdiv@sign 0006                  __CFG_CP0$OFF 000000  
-                __CFG_CP1$OFF 000000                  __CFG_CP2$OFF 000000                  __CFG_CP3$OFF 000000  
-                         l652 0708                           l740 0640                           l742 064A  
-                         l734 062A                           l760 068C                           l752 0670  
-                         l744 0652                           l728 0618                           l756 067C  
-                         l776 06AA                  __CFG_CPB$OFF 000000                           u147 070A  
-                __CFG_CPD$OFF 000000                  __CFG_BORV$30 000000                           wreg 000FE8  
-                __CFG_LVP$OFF 000000          __size_of_ADC_Convert 000E                          _LATD 000F8C  
-                        _main 0698              __end_of_ADC_Init 0706                          prodh 000FF4  
-                        prodl 000FF3                          start 0002                 __CFG_IESO$OFF 000000  
-                ___param_bank 000010                   _Delay1KTCYx 0706                         ?_main 0001  
-             __end_of___awdiv 0698                         _ANSEL 000F7E               ___awdiv@divisor 0003  
-             ___awdiv@counter 0005                         _TRISD 000F95                 __CFG_PWRT$OFF 000000  
-               __CFG_WRT0$OFF 000000                 __CFG_WRT1$OFF 000000                 __CFG_WRT2$OFF 000000  
-               __CFG_WRT3$OFF 000000                __CFG_EBTR0$OFF 000000                __CFG_FCMEN$OFF 000000  
-              __CFG_EBTR1$OFF 000000                __CFG_EBTR2$OFF 000000                __CFG_EBTR3$OFF 000000  
-               __CFG_WRTB$OFF 000000                 __CFG_WRTC$OFF 000000                 __CFG_WRTD$OFF 000000  
-              __CFG_EBTRB$OFF 000000                         tablat 000FF5                         status 000FD8  
-              __CFG_PBADEN$ON 000000               __initialization 0726                  __end_of_main 06EE  
-                      ??_main 0009                 __activetblptr 000002                        _ADCON0 000FC2  
-                      _ADCON1 000FC1                        _ADCON2 000FC0                        _ADRESH 000FC4  
-            ___awdiv@dividend 0001                        _ANSELH 000F7F                __CFG_WDTEN$OFF 000000  
-              __CFG_XINST$OFF 000000                     ??___awdiv 0005                __CFG_STVREN$ON 000000  
-            ___awdiv@quotient 0007                     ?_ADC_Init 0001                  __mediumconst 0000  
-                      tblptrh 000FF7                        tblptrl 000FF6                        tblptru 000FF8  
-                  __accesstop 0060       __end_of__initialization 0726                 ___rparam_used 000001  
-              __pcstackCOMRAM 0001                    ??_ADC_Init 0001               __CFG_LPT1OSC$ON 000000  
-                  __pnvCOMRAM 0009                  ?_Delay1KTCYx 0001  _LED_LookupTable_absconstaddr 000180  
-             _LED_LookupTable 0180                 ??_ADC_Convert 0001                       __Hparam 0000  
-                     __Lparam 0000                       ___awdiv 0602                  __psmallconst 0600  
-                     __pcinit 0726                     _ANSELbits 000F7E                       __ramtop 0600  
-                     __ptext0 0698                       __ptext1 0602                       __ptext2 0706  
-                     __ptext3 06EE                       __ptext4 0718          end_of_initialization 0726  
-         __end_of_ADC_Convert 0726                 __Lmediumconst 0000       __end_of_LED_LookupTable 0190  
-                   _TRISAbits 000F92                     _TRISBbits 000F93             __size_of_ADC_Init 0018  
-        __size_of_Delay1KTCYx 0012           start_initialization 0726                   _ADC_Convert 0718  
-             Delay1KTCYx@unit 0001             __CFG_CCP2MX$PORTC 000000                      ?___awdiv 0001  
-                 __smallconst 0600                      _ADC_Init 06EE              __CFG_WDTPS$32768 000000  
-                  _ADCON0bits 000FC2                      _WPUBbits 000F7C                   _INTCON2bits 000FF1  
-                    __Hrparam 0000                      __Lrparam 0000            __CFG_BOREN$SBORDIS 000000  
-            __size_of___awdiv 0096                  ?_ADC_Convert 0001                 __size_of_main 0056  
-               ??_Delay1KTCYx 0001      __p_LED_LookupTable_const 0180                    _LED_Number 0009  
-         __end_of_Delay1KTCYx 0718             __CFG_FOSC$INTIO67 000000  
+                                 l67 068C                                   u27 066C  
+                       __CFG_CP0$OFF 000000                         __CFG_CP1$OFF 000000  
+                       __CFG_CP2$OFF 000000                         __CFG_CP3$OFF 000000  
+             _ADC_ThrottleLED_Lookup 0180                                  l671 066A  
+                                l691 061C                         __CFG_CPB$OFF 000000  
+                                _PR2 000FCB                         __CFG_CPD$OFF 000000  
+                       __CFG_BORV$30 000000                                  wreg 000FE8  
+    __p_ADC_ThrottleLED_Lookup_const 0180                         __CFG_LVP$OFF 000000  
+               __size_of_ADC_Convert 000E                                 _main 0602  
+                   __end_of_ADC_Init 0668                                 prodh 000FF4  
+                               prodl 000FF3                                 start 0002  
+                      __CFG_IESO$OFF 000000                         ___param_bank 000010  
+                         _ClockSpeed 0002                          _Delay1KTCYx 0668  
+                              ?_main 0003                                _ANSEL 000F7E  
+                              _T2CON 000FCA                                _TRISD 000F95  
+                      __CFG_PWRT$OFF 000000                        __CFG_WRT0$OFF 000000  
+                      __CFG_WRT1$OFF 000000                        __CFG_WRT2$OFF 000000  
+                      __CFG_WRT3$OFF 000000                       __CFG_EBTR0$OFF 000000  
+                     __CFG_FCMEN$OFF 000000                       __CFG_EBTR1$OFF 000000  
+                     __CFG_EBTR2$OFF 000000                       __CFG_EBTR3$OFF 000000  
+                      __CFG_WRTB$OFF 000000                        __CFG_WRTC$OFF 000000  
+                      __CFG_WRTD$OFF 000000                       __CFG_EBTRB$OFF 000000  
+                   __end_of_PWM_Init 0688                                tablat 000FF5  
+                     __CFG_PBADEN$ON 000000                      __initialization 0696  
+                       __end_of_main 0650               _ADC_ThrottlePWM_Lookup 0180  
+                             ??_main 0004                        __activetblptr 000002  
+                             _ADCON0 000FC2                               _ADCON1 000FC1  
+                             _ADCON2 000FC0                               _ADRESH 000FC4  
+                             _CCPR1L 000FBE                               _ANSELH 000F7F  
+                     __CFG_WDTEN$OFF 000000                               _OSCCON 000FD3  
+                     __CFG_XINST$OFF 000000                       __CFG_STVREN$ON 000000  
+                          ?_ADC_Init 0003                         __mediumconst 0000  
+                             tblptrh 000FF7                               tblptrl 000FF6  
+                             tblptru 000FF8                           __accesstop 0060  
+            __end_of__initialization 0696                        ___rparam_used 000001  
+                     __pcstackCOMRAM 0003                            ?_PWM_Init 0003  
+                         ??_ADC_Init 0003      __p_ADC_ThrottlePWM_Lookup_const 0180  
+                    __CFG_LPT1OSC$ON 000000                           __pnvCOMRAM 0001  
+     __end_of_ADC_ThrottleLED_Lookup 0190                              _CCP1CON 000FBD  
+                       ?_Delay1KTCYx 0003                           ??_PWM_Init 0003  
+                      ??_ADC_Convert 0003  _ADC_ThrottlePWM_Lookup_absconstaddr 000180  
+                          _ADC_Value 0001                              __Hparam 0000  
+                            __Lparam 0000                         __psmallconst 0600  
+                            __pcinit 0696                            _ANSELbits 000F7E  
+                            __ramtop 0600                              __ptext0 0602  
+                            __ptext1 067A                              __ptext2 0668  
+                            __ptext3 0650                              __ptext4 0688  
+               end_of_initialization 0696                  __end_of_ADC_Convert 0696  
+                      __Lmediumconst 0000       __end_of_ADC_ThrottlePWM_Lookup 0190  
+                          _TRISAbits 000F92                            _TRISBbits 000F93  
+                  __size_of_ADC_Init 0018                 __size_of_Delay1KTCYx 0012  
+                  __size_of_PWM_Init 000E                  start_initialization 0696  
+                        _ADC_Convert 0688                      Delay1KTCYx@unit 0003  
+                  __CFG_CCP2MX$PORTC 000000                          __smallconst 0600  
+                           _ADC_Init 0650                     __CFG_WDTPS$32768 000000  
+                         _ADCON0bits 000FC2                             _PWM_Init 067A  
+                           _WPUBbits 000F7C                          _INTCON2bits 000FF1  
+                           __Hrparam 0000                             __Lrparam 0000  
+                 __CFG_BOREN$SBORDIS 000000                         ?_ADC_Convert 0003  
+                      __size_of_main 004E                        ??_Delay1KTCYx 0003  
+                __end_of_Delay1KTCYx 067A                    __CFG_FOSC$INTIO67 000000  
+_ADC_ThrottleLED_Lookup_absconstaddr 000180  
