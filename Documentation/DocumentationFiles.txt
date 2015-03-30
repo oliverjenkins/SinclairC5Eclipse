@@ -1,13 +1,5 @@
- Volume in drive F has no label.
- Volume Serial Number is A4DA-97AB
+== DocumentationFiles ==
 
- Directory of F:\Projects\SinclairC5Eclipse\Documentation
-
-30/03/2015  09:41    <DIR>          .
-30/03/2015  09:41    <DIR>          ..
-30/03/2015  09:41                 0 DocumentationFiles.txt
-29/03/2015  19:41         3,899,878 PIC18F45K20.pdf
-29/03/2015  19:40         3,344,216 PICDebugExpress.pdf
-29/03/2015  19:33         6,107,495 PicTipsAndTricks.pdf
-               4 File(s)     13,351,589 bytes
-               2 Dir(s)  371,092,197,376 bytes free
+PIC18F45K20.pdf
+PICDebugExpress.pdf
+PicTipsAndTricks.pdf
