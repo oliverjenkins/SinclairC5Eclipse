@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Sun Mar 29 17:03:01 2015
+Linker Map File - Created Sun Mar 29 17:51:41 2015
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -9,17 +9,17 @@ Linker Map File - Created Sun Mar 29 17:03:01 2015
          InterruptHandler       code   0x000008    program   0x000006
                    .cinit    romdata   0x00000e    program   0x00000e
                _cinit_scn       code   0x00001c    program   0x00009e
-             .code_main.o       code   0x0000ba    program   0x000068
-              D1KTCYXCODE       code   0x000122    program   0x000020
-                    .code       code   0x000142    program   0x000020
-             _startup_scn       code   0x000162    program   0x00001c
-         .romdata_c018i.o    romdata   0x00017e    program   0x000000
-          .idata_main.o_i    romdata   0x00017e    program   0x000001
-          .romdata_main.o    romdata   0x00017e    program   0x000000
-        .romdata___init.o    romdata   0x00017e    program   0x000000
-        .idata___init.o_i    romdata   0x00017f    program   0x000000
-         .idata_c018i.o_i    romdata   0x00017f    program   0x000000
-            .code_c018i.o       code   0x000180    program   0x000000
+             .code_main.o       code   0x0000ba    program   0x000066
+              D1KTCYXCODE       code   0x000120    program   0x000020
+                    .code       code   0x000140    program   0x000020
+             _startup_scn       code   0x000160    program   0x00001c
+         .romdata_c018i.o    romdata   0x00017c    program   0x000000
+          .idata_main.o_i    romdata   0x00017c    program   0x000001
+          .romdata_main.o    romdata   0x00017c    program   0x000000
+        .romdata___init.o    romdata   0x00017c    program   0x000000
+        .idata___init.o_i    romdata   0x00017d    program   0x000000
+         .idata_c018i.o_i    romdata   0x00017d    program   0x000000
+            .code_c018i.o       code   0x00017e    program   0x000000
     .config_300001_main.o    romdata   0x300001    program   0x000001
     .config_300002_main.o    romdata   0x300002    program   0x000001
     .config_300003_main.o    romdata   0x300003    program   0x000001
@@ -49,26 +49,26 @@ Linker Map File - Created Sun Mar 29 17:03:01 2015
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x00017e      
+                            0x000000    0x00017c      
                             0x300001    0x300003      
                             0x300005    0x300006      
                             0x300008    0x30000d      
-            394 out of 33048 program addresses used, program memory utilization is 1%
+            392 out of 33048 program addresses used, program memory utilization is 1%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                    D1K_1   0x00012e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-                     D1Kx   0x00012c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-              Delay1KTCYx   0x000122    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-     InterruptHandlerHigh   0x000108    program     extern F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\Interrupt\Interupt.X\main.c
+                    D1K_1   0x00012c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+                     D1Kx   0x00012a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+              Delay1KTCYx   0x000120    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+     InterruptHandlerHigh   0x000106    program     extern F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\Interrupt\Interupt.X\main.c
       InterruptVectorHigh   0x000008    program     extern F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\Interrupt\Interupt.X\main.c
-        _D1KTCYXCODE_0010   0x000132    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0016   0x000138    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0010   0x000130    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0016   0x000136    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x00017c    program     static                          
+       ___return_lbl00001   0x00017a    program     static                          
        ___return_lbl00002   0x0000b8    program     static                          
        ___return_lbl00009   0x00000c    program     static                          
                __config_0   0x300001    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\Interrupt\Interupt.X\main.c
@@ -83,21 +83,21 @@ Linker Map File - Created Sun Mar 29 17:03:01 2015
                __config_8   0x30000b    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\Interrupt\Interupt.X\main.c
                __config_9   0x30000c    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\Interrupt\Interupt.X\main.c
                    __init   0x000006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-            __zero_memory   0x000142    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+            __zero_memory   0x000140    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
                 _do_cinit   0x00001c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 _startup   0x000162    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                compare_l   0x000158    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+                 _startup   0x000160    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                compare_l   0x000156    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
                 copy_loop   0x00008e    program     static                          
             copy_one_byte   0x000094    program     static                          
                      done   0x0000b8    program     static                          
              done_copying   0x0000a2    program     static                          
-                     loop   0x000172    program     static                          
-                   loop_h   0x000150    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
-                   loop_l   0x00015a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+                     loop   0x000170    program     static                          
+                   loop_h   0x00014e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+                   loop_l   0x000158    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
                      main   0x0000ba    program     extern F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\Interrupt\Interupt.X\main.c
                      test   0x000036    program     static                          
-               zero_block   0x000150    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+               zero_block   0x00014e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
@@ -333,20 +333,20 @@ Linker Map File - Created Sun Mar 29 17:03:01 2015
        ___return_lbl00002   0x0000b8    program     static                          
                      done   0x0000b8    program     static                          
                      main   0x0000ba    program     extern F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\Interrupt\Interupt.X\main.c
-     InterruptHandlerHigh   0x000108    program     extern F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\Interrupt\Interupt.X\main.c
-              Delay1KTCYx   0x000122    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-                     D1Kx   0x00012c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-                    D1K_1   0x00012e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0010   0x000132    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0016   0x000138    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-            __zero_memory   0x000142    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
-               zero_block   0x000150    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
-                   loop_h   0x000150    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
-                compare_l   0x000158    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
-                   loop_l   0x00015a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
-                 _startup   0x000162    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x000172    program     static                          
-       ___return_lbl00001   0x00017c    program     static                          
+     InterruptHandlerHigh   0x000106    program     extern F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\Interrupt\Interupt.X\main.c
+              Delay1KTCYx   0x000120    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+                     D1Kx   0x00012a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+                    D1K_1   0x00012c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0010   0x000130    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0016   0x000136    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+            __zero_memory   0x000140    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+               zero_block   0x00014e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+                   loop_h   0x00014e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+                compare_l   0x000156    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+                   loop_l   0x000158    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f45k20.asm
+                 _startup   0x000160    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x000170    program     static                          
+       ___return_lbl00001   0x00017a    program     static                          
                __config_0   0x300001    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\Interrupt\Interupt.X\main.c
                __config_1   0x300002    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\Interrupt\Interupt.X\main.c
                __config_2   0x300003    program     static F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\Interrupt\Interupt.X\main.c

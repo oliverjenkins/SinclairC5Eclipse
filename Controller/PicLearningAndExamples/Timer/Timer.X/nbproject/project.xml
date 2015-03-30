@@ -2,8 +2,8 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>Interupt</name>
-            <creation-uuid>492dbe30-bb19-4d1b-ba8c-21e422c3ce95</creation-uuid>
+            <name>Timer</name>
+            <creation-uuid>3badd155-54ad-4bab-bff5-0bc08364cfd1</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
             <cpp-extensions/>

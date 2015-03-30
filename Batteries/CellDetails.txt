@@ -1,5 +1,13 @@
-Cell Number		Battery Number	Battery Voltage		Battery Current		Source		Voltage-Before 		T t=0		Initial Charge Start	Initial Charge End		Charge Enmd V
-001				001														JessLaptop	1.74v				15 deg		2015-03-28 13:13								3.92v
-002				001														JessLaptop	3.38v				16.6 deg	2015-03-28 13:13								3.97v
-003				001														JessLaptop	1.81v				16.4 deg	2015-03-29 14:15								
-003				001														JessLaptop	2.67v				16.4 deg	2015-03-29 14:15								
+Battery Number	Cell Number		Colour/Make		Source			Battery Specs		Voltage-Before 		Initial Charge Start	Initial Charge End		Charge End V
+001				001				Red				JessLaptop							1.74v				2015-03-28 13:13		aborted around 16:00	3.92v
+001				002				Red				JessLaptop							3.38v				2015-03-28 13:13		aborted around 16:00	3.97v
+001				003				Red				JessLaptop							1.81v				2015-03-29 14:15		aborted at 19:42		4.01v
+001				004				Red				JessLaptop							2.67v				2015-03-29 14:15		aborted at 19:42		4.09v		
+001				005				Red				JessLaptop							3.38v				2015-03-30 07:54				
+001				006				Red				JessLaptop							2.67v				2015-03-30 07:54				
+002				007				Green/Samsung	Ebay Auction 1	HP 10.8v 4200 mHA	0v							
+002				008				Green/Samsung	Ebay Auction 1	HP 10.8v 4200 mHA	0v						
+002				009				Green/Samsung	Ebay Auction 1	HP 10.8v 4200 mHA	4.03v						
+002				010				Green/Samsung	Ebay Auction 1	HP 10.8v 4200 mHA	4.03v						
+002				011				Green/Samsung	Ebay Auction 1	HP 10.8v 4200 mHA	4.07v						
+002				012				Green/Samsung	Ebay Auction 1	HP 10.8v 4200 mHA	4.07v						

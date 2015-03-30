@@ -92,8 +92,37 @@ Speed Mph	Rotation Time in Seconds
 6.5			0.10926553846
 7			0.10146085714
 7.5			0.09469680000
-8			0.08877825000
-8.5			0.08355600000
+8			0.0887782500
+08.5			0.08355600000
 9			0.07891400000
 9.5			0.07476063158
 10			0.07102260000
+
+
+== Pic details ==
+
+Timer0 can count between 0 and 255 (8-bit) or 0 and 65535 (16-bit)
+
+In 16 bit read TMROL then TMROH - just because it goes wrong in the other order
+
+== Testing ==
+Delay1KTCYx seems to be about a second
+T0CON = 0b01001010 means 1:4 prescales 
+
+		// The clock runs at 1Mhz = 1 000 000 hertz
+        // 1 / 1 000 000 = 0.000001 or 1uS to complete a clock cycle
+        // Four clock cycles per operation = 0.000004
+        // Delay1KTCYx will delay for n thousand of operations
+        // 1 second = 250 * 1000 * 0.000004
+ 		TMR0L = 0;                  // clear timer
+        
+        Delay1KTCYx(250); // should be a second
+        LATD = TMR0L;   // Set the Leds to be the same as the timer
+
+== Alternative approach ==
+Rather than using timers, a better method may be using the CCP module
+http://www.ccsinfo.com/forum/viewtopic.php?t=29963&highlight=tachometer
+https://www.youtube.com/watch?v=eD2myo1YFk4
+
+Gold Dust - page 32 = http://ww1.microchip.com/downloads/en/DeviceDoc/01146B.pdf
+http://ww1.microchip.com/downloads/en/AppNotes/00594B.PDF

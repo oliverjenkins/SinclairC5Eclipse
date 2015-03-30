@@ -39,14 +39,7 @@ LVP = OFF
 #include "p18f45K20.h"
 #include "delays.h"
 
-#define Switch          PORTBbits.RB0
-#define DetectsInARow   5
-
 /** V A R I A B L E S *************************************************/
- // declare statically allocated uninitialized variables
-#pragma udata mysection = 0x300 
-unsigned char LED_Display; // 8-bit variable
-unsigned char LedDir = 0;
 
 
 /** D E C L A R A T I O N S *******************************************/
@@ -55,69 +48,40 @@ unsigned char LedDir = 0;
 #pragma code
 void main (void)
 {
-    
-    // Initial variable configue
-    LED_Display = 1;
 
-    // Configure the Switch on PortB.RA0
-    INTCON2bits.RBPU = 0; // enable PORTB internal pullups
-    WPUBbits.WPUB0 = 1; // enable pull up on RB0
-    ANSELH = 0x00; // Turn a few pins to digital input rather than ADC
-    TRISBbits.TRISB0 = 1; // PORTB bit 0 (connected to switch) is input (1)
-
+  
     // Configure the LEDS on PORTD
     TRISD = 0b00000000;// PORTD bit 7 to output (0); bits 6:0 are inputs (1)
 
-    // Set up switch interrupts on INT0
-    INTCON2bits.INTEDG0 = 0;        // falling edge of
-    INTCONbits.INT0IF = 0;      // ensure flag is cleared
-    INTCONbits.INT0IE = 1;      // enable INT0 interrupt
 
-    // Set-up Interrupts
-    RCONbits.IPEN = 0;          // No priority on interupts - branches to 0008h  
-    INTCONbits.GIEH = 1;        // Interrupting enabled.
-
+     // Init Timer
+    INTCONbits.TMR0IF = 0;      // clear roll-over interrupt flag
+    T0CON = 0b00001011;         // 16Bit Timer, Prescale 1:4 or in line with operation cycle
+    TMR0H = 0;                  // clear timer - always write upper byte first
+    TMR0L = 0;
 
 
     while (1) {
-        LATD = LED_Display;
-        if (LedDir == 0) {
-            LED_Display <<= 1;
+        LATD = 0b11110000;
 
-            if (LED_Display == 0) {
-                LED_Display = 1;
-            }
-        } else {
-            LED_Display >>= 1;
-            if (LED_Display == 0) {
-                LED_Display = 128;
-            }
-        }
-        Delay1KTCYx(50);//
+        // The clock runs at 1Mhz = 1 000 000 hertz
+        // 1 / 1 000 000 = 0.000001 or 1uS to complete a clock cycle
+        // Four clock cycles per operation = 0.000004
+        // Delay1KTCYx will delay for n thousand of operations
+        // 1 second = 250 * 1000 * 0.000004
+        TMR0H = 0;                  // clear timer - always write upper byte first
+        TMR0L = 0;
+        T0CONbits.TMR0ON = 1;       // start timer
+        Delay1KTCYx(250); // should be a second
+        T0CONbits.TMR0ON = 0;       // start timer
+        LATD = 0b00001111;
+
+
+         T0CONbits.TMR0ON = 0;
+         TMR0H = 0;                  // clear timer - always write upper byte first
+         TMR0L = 0;
+        Delay1KTCYx(250);
 
     }
 }
 
-
-/** I N T E R  U P T S ******************************************/
-//Need both function per prority level i.e. InterruptHandlerHigh and InterruptVectorHigh to work
-#pragma interrupt InterruptHandlerHigh
-void InterruptHandlerHigh () {
-    // Check for INT0 interrupt
-    if (INTCONbits.INT0IF)
-    {
-        // clear (reset) flag
-        INTCONbits.INT0IF = 0;
-
-        LedDir = ~ LedDir;
-    }
-    return;
-}
-
-#pragma code InterruptHandler = 0x08
-void InterruptVectorHigh (void)
-{
-  _asm
-    goto InterruptHandlerHigh //jump to interrupt routine
-  _endasm
-}
