@@ -25,7 +25,7 @@ Battery Number	Cell Number		Colour/Make		Source			Battery Specs		Voltage-Before 
 004				024				Unknown/Unknown	Ebay Auction 1	Odd Shape - on video	2.13v
 004				025				Unknown/Unknown	Ebay Auction 1	Odd Shape - on video	2.10v
 004				026				Unknown/Unknown	Ebay Auction 1	Odd Shape - on video	2.13v
-005				027				Green/Samsung				Ebay Auction 1	HP 10.8v 4200mHA	2.62v
+005				027				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.62v
 005				028				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	3.58v
 005				029				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.62v
 005				030				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	3.58v
@@ -43,4 +43,91 @@ Battery Number	Cell Number		Colour/Make		Source			Battery Specs		Voltage-Before 
 007				042				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	3.65v
 007				043				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	3.54v
 007				044				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	3.53v
-
+008				045				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	1.55v
+008				046				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	1.11v
+008				047				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	3.53v
+008				048				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	3.53v
+008								* Two were disposed off as I cut in to the shell
+009				049				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.60v
+009				050				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	3.60v
+009				051				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.60v
+009				052				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	3.62v
+009				053				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	3.27v
+009				054				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	3.25v
+010				055				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.36v
+010				056				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.36v
+010				057				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	0v		Bubbled Surface
+010				058				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	0v		Bubbled Surface
+010				059				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	1.68v
+010				060				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	1.68v
+011				061				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.44v
+011				062				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.44v
+011				063				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.52v
+011				064				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	3.62v
+011				065				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	3.27v
+011				066				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.55v
+012				068				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.46v
+012				067				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.67v
+012				069				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.60v
+012				070				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.62v
+012				071				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.67v
+012				072				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.65v
+013				073				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	1.77v
+013				074				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.51v
+013				075				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	0.12v
+013				076				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	0.13v
+013				077				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	1.77v
+013				078				Green/Samsung	Ebay Auction 1	HP 10.8v 4200mHA	2.52v
+014				079				Blue/Unknown	Ebay Auction 1	HP 10.8v 4200mHA	1.81v
+014				080				Blue/Unknown	Ebay Auction 1	HP 10.8v 4200mHA	2.35v
+014				081				Blue/Unknown	Ebay Auction 1	HP 10.8v 4200mHA	2.35v
+014				082				Blue/Unknown	Ebay Auction 1	HP 10.8v 4200mHA	1.81v
+014				083				Blue/Unknown	Ebay Auction 1	HP 10.8v 4200mHA	0.01v
+014				084				Blue/Unknown	Ebay Auction 1	HP 10.8v 4200mHA	0.03v
+015				085				Green/Panasonic	Ebay Auction 1	HP 10.8v 4000mHA	3.80v
+015				086				Green/Panasonic	Ebay Auction 1	HP 10.8v 4000mHA	0
+015				087				Green/Panasonic	Ebay Auction 1	HP 10.8v 4000mHA	3.81v
+015				088				Green/Panasonic	Ebay Auction 1	HP 10.8v 4000mHA	3.81v
+015				089				Green/Panasonic	Ebay Auction 1	HP 10.8v 4000mHA	0v
+015				090				Green/Panasonic	Ebay Auction 1	HP 10.8v 4000mHA	3.80v
+016				091				Dark Green		Ebay Auction 1	HP 9.6v 4500mHA		0v
+016				092				Dark Green		Ebay Auction 1	HP 9.6v 4500mHA		0v
+016				093				Dark Green		Ebay Auction 1	HP 9.6v 4500mHA		0v
+016				094				Dark Green		Ebay Auction 1	HP 9.6v 4500mHA		0.5v
+016				095				Dark Green		Ebay Auction 1	HP 9.6v 4500mHA		0v
+016				096				Dark Green		Ebay Auction 1	HP 9.6v 4500mHA		0v
+016				097				Dark Green		Ebay Auction 1	HP 9.6v 4500mHA		0v
+016				098				Dark Green		Ebay Auction 1	HP 9.6v 4500mHA		0v
+017				099				Red				Ebay Auction 1	HP 9.6v 4500mHA		0v
+017				100				Red				Ebay Auction 1	HP 9.6v 4500mHA		0.25v
+017				101				Red				Ebay Auction 1	HP 9.6v 4500mHA		0v
+017				102				Red				Ebay Auction 1	HP 9.6v 4500mHA		0v
+017				103				Red				Ebay Auction 1	HP 9.6v 4500mHA		0v
+017				104				Red				Ebay Auction 1	HP 9.6v 4500mHA		0v
+017				105				Red				Ebay Auction 1	HP 9.6v 4500mHA		0v
+017				106				Red				Ebay Auction 1	HP 9.6v 4500mHA		0v
+017				107				Red				Ebay Auction 1	HP 9.6v 4500mHA		0.1v
+018				107				Pink/LG			Ebay Auction 1	HP 9.6v 4500mHA		0.1v
+018				108				Pink/LG			Ebay Auction 1	HP 9.6v 4500mHA		0.1v
+018				109				Pink/LG			Ebay Auction 1	HP 9.6v 4500mHA		0.1v
+018				110				Pink/LG			Ebay Auction 1	HP 9.6v 4500mHA		0.1v
+018				111				Pink/LG			Ebay Auction 1	HP 9.6v 4500mHA		0.1v
+018				112				Pink/LG			Ebay Auction 1	HP 9.6v 4500mHA		0.1v
+018				113				Pink/LG			Ebay Auction 1	HP 9.6v 4500mHA		0.1v
+018				114				Pink/LG			Ebay Auction 1	HP 9.6v 4500mHA		0.1v
+019				115				Green/Unknown	Ebay Auction 1	HP 14.8v 4400mHA	1.7v
+019				116				Green/Unknown	Ebay Auction 1	HP 14.8v 4400mHA	1.99v
+019				117				Green/Unknown	Ebay Auction 1	HP 14.8v 4400mHA	1.7v
+019				118				Green/Unknown	Ebay Auction 1	HP 14.8v 4400mHA	1.99v
+019				119				Green/Unknown	Ebay Auction 1	HP 14.8v 4400mHA	1.6v
+019				120				Green/Unknown	Ebay Auction 1	HP 14.8v 4400mHA	1.5v
+019				121				Green/Unknown	Ebay Auction 1	HP 14.8v 4400mHA	0.87v
+019				122				Green/Unknown	Ebay Auction 1	HP 14.8v 4400mHA	0.8v
+020				123				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	2.81v
+020				124				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	3.09v
+020				125				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	2.81v
+020				126				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	3.09v
+020				127				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	2.97v
+020				128				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	2.97v
+020				129				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	1.99v
+020				130				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	1.99v
