@@ -131,3 +131,11 @@ Battery Number	Cell Number		Colour/Make		Source			Battery Specs		Voltage-Before 
 020				128				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	2.97v
 020				129				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	1.99v
 020				130				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	1.99v
+021				131				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	0v
+021				132				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	2.23v
+021				133				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	2.24v
+021				134				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	1.76v
+021				135				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	2.39v
+021				136				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	0v
+021				137				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	2.39v
+021				138				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	1.76v
