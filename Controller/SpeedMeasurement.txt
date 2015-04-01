@@ -93,7 +93,7 @@ Speed Mph	Rotation Time in Seconds
 7			0.10146085714
 7.5			0.09469680000
 8			0.0887782500
-08.5			0.08355600000
+08.5		0.08355600000
 9			0.07891400000
 9.5			0.07476063158
 10			0.07102260000
@@ -126,3 +126,12 @@ https://www.youtube.com/watch?v=eD2myo1YFk4
 
 Gold Dust - page 32 = http://ww1.microchip.com/downloads/en/DeviceDoc/01146B.pdf
 http://ww1.microchip.com/downloads/en/AppNotes/00594B.PDF
+
+
+=== Test Circuit ===
+
+To provide a square wave in order to test speed measurement through a PIC.  A simple 555 circuit was implimented - Flashing-LED.jpg.  As it stands on the breadboard using R1 at 100k, and R2 at 10k, and 10uF cap.  Power was set at 3.2v
+
+This gave 76 flashes in 30 seconds, or 1 flash every 0.39 seconds.  Equivalent to 1.5 - 2 Mph (if above table is correct).
+
+R1 was changed to a 21K7 and blinking was too fast to count, but visible.   
