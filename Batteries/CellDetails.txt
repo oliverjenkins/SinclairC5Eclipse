@@ -139,3 +139,16 @@ Battery Number	Cell Number		Colour/Make		Source			Battery Specs		Voltage-Before 
 021				136				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	0v
 021				137				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	2.39v
 021				138				Green/Samsung	Ebay Auction 1	HP 14.8v 4400mHA	1.76v
+022				139				Pink/Samsung	Ebay Auction 2	Dell Type PC764 11.1v 65Wh	3.8v
+022				140				Pink/Samsung	Ebay Auction 2	Dell Type PC764 11.1v 65Wh	3.78v
+022				141				Pink/Samsung	Ebay Auction 2	Dell Type PC764 11.1v 65Wh	3.92v
+022				142				Pink/Samsung	Ebay Auction 2	Dell Type PC764 11.1v 65Wh	3.92v
+022				143				Pink/Samsung	Ebay Auction 2	Dell Type PC764 11.1v 65Wh	3.78v
+022				144				Pink/Samsung	Ebay Auction 2	Dell Type PC764 11.1v 65Wh	3.87v
+023				145				Green/Unknown	Ebay Auction 2	Dell Type PC764 11.1v 65Wh	1.78v
+023				146				Green/Unknown	Ebay Auction 2	Dell Type PC764 11.1v 65Wh	2.73v
+023				147				Green/Unknown	Ebay Auction 2	Dell Type PC764 11.1v 65Wh	2.73v
+023				148				Green/Unknown	Ebay Auction 2	Dell Type PC764 11.1v 65Wh	2.47v
+023				149				Green/Unknown	Ebay Auction 2	Dell Type PC764 11.1v 65Wh	2.46v
+023				150				Green/Unknown	Ebay Auction 2	Dell Type PC764 11.1v 65Wh	1.42v
+
