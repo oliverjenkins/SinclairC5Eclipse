@@ -6,7 +6,7 @@ Battery Number	Cell Number		Colour/Make		Source			Battery Specs		Voltage-Before 
 001				005				Red				JessLaptop							3.38v				2015-03-30 07:54		
 001				006				Red				JessLaptop							2.67v				2015-03-30 07:54				
 002				007				Green/Samsung	Ebay Auction 1	HP 10.8v 4200 mHA	0v							
-002				008				Green/Samsung	Ebay Auction 1	HP 10.8v 4200 mHA	0v						
+002					008				Green/Samsung	Ebay Auction 1	HP 10.8v 4200 mHA	0v						
 002				009				Green/Samsung	Ebay Auction 1	HP 10.8v 4200 mHA	4.03v						
 002				010				Green/Samsung	Ebay Auction 1	HP 10.8v 4200 mHA	4.03v						
 002				011				Green/Samsung	Ebay Auction 1	HP 10.8v 4200 mHA	4.07v						

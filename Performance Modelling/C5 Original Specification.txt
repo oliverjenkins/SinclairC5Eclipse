@@ -1,0 +1,51 @@
+== Performance ==
+
+* Acceleration:
+	Standing Start:	1.7m/s^2
+	0-8 km/h		1.8 s
+	0-16 km/h		6.9s
+
+* Maximum Speed:	22 km/h
+
+* Braking (dry) 
+	16 km/h - 0km/h		3m
+	22 mk/h - 0km/h		5.5m			
+
+* Hill-climbing:		
+	10% Grade:		13 km/h for 1500 m with 60 amp draw
+	20% Grade:		3.5 km/h with 105 amp draw
+
+* Range: 			21 km or 52km (two batteries)
+
+== Motor == 
+	
+* Power:		250w
+* Speed:		4100 rpm
+* Gearbox:		13:1
+
+== Battery ==
+
+* Weight:		15Kg
+* Capacity:		36 Ah
+
+== Body work ==
+
+* Material:		Polypropylene
+* Length:		174.4 cm 
+* Width:		74.4 cm
+* Height:		79.5 cm
+* Kerb weight:	30 kg (without battery)
+* Ground clearance:	56mm
+* Wheelbase:	130.4 cm
+
+== Wheels & Tyres ==
+* Front
+	Diameter:	317mm
+	Pressure	2.1 bar (30psi)
+* Rear
+	Diameter:	406mm
+	Pressure:	2.4 bar (35psi)
+
+
+== Aerodynamics == 
+
