@@ -1,100 +1,67 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[p mainexit ]
-"2931 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
-[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
-"2034
-[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
-"68 xlcd.h
-[v _InitLCD `(v ~T0 @X0 0 ef ]
-"75
-[v _SetLCDCGRamAddr `(v ~T0 @X0 0 ef1`uc ]
-"79
-[v _WriteDataLCD `(v ~T0 @X0 0 ef1`uc ]
+"73 xlcd.h
+[v _OpenLCD `(v ~T0 @X0 0 ef1`uc ]
+"77
+[v _BusyLCD `(uc ~T0 @X0 0 ef ]
 "74
 [v _WriteCmdLCD `(v ~T0 @X0 0 ef1`uc ]
-"78
-[v _putLCD `(v ~T0 @X0 0 ef1`*uc ]
-"76
+"13 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h
+[v _Delay1TCYx `(v ~T0 @X0 0 ef1`uc ]
+"2721 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
+[s S145 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S145 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"2731
+[s S146 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S146 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"2720
+[u S144 `S145 1 `S146 1 ]
+[n S144 . . . ]
+"2742
+[v _TRISCbits `VS144 ~T0 @X0 0 e@3988 ]
+"1908
+[s S103 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S103 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"1918
+[s S104 :1 `uc 1 ]
+[n S104 . LC0 ]
+"1921
+[s S105 :1 `uc 1 :1 `uc 1 ]
+[n S105 . . LC1 ]
+"1925
+[s S106 :2 `uc 1 :1 `uc 1 ]
+[n S106 . . LC2 ]
+"1929
+[s S107 :3 `uc 1 :1 `uc 1 ]
+[n S107 . . LC3 ]
+"1933
+[s S108 :4 `uc 1 :1 `uc 1 ]
+[n S108 . . LC4 ]
+"1937
+[s S109 :5 `uc 1 :1 `uc 1 ]
+[n S109 . . LC5 ]
+"1941
+[s S110 :6 `uc 1 :1 `uc 1 ]
+[n S110 . . LC6 ]
+"1945
+[s S111 :7 `uc 1 :1 `uc 1 ]
+[n S111 . . LC7 ]
+"1907
+[u S102 `S103 1 `S104 1 `S105 1 `S106 1 `S107 1 `S108 1 `S109 1 `S110 1 `S111 1 ]
+[n S102 . . . . . . . . . . ]
+"1950
+[v _LATCbits `VS102 ~T0 @X0 0 e@3979 ]
+"25 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h
+[v _Delay100TCYx `(v ~T0 @X0 0 ef1`uc ]
+"37
+[v _Delay10KTCYx `(v ~T0 @X0 0 ef1`uc ]
+"76 xlcd.h
 [v _SetLCDDDRamAddr `(v ~T0 @X0 0 ef1`uc ]
-"2040 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
-[s S113 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S113 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"2050
-[s S114 :1 `uc 1 ]
-[n S114 . LD0 ]
-"2053
-[s S115 :1 `uc 1 :1 `uc 1 ]
-[n S115 . . LD1 ]
-"2057
-[s S116 :2 `uc 1 :1 `uc 1 ]
-[n S116 . . LD2 ]
-"2061
-[s S117 :3 `uc 1 :1 `uc 1 ]
-[n S117 . . LD3 ]
-"2065
-[s S118 :4 `uc 1 :1 `uc 1 ]
-[n S118 . . LD4 ]
-"2069
-[s S119 :5 `uc 1 :1 `uc 1 ]
-[n S119 . . LD5 ]
-"2073
-[s S120 :6 `uc 1 :1 `uc 1 ]
-[n S120 . . LD6 ]
-"2077
-[s S121 :7 `uc 1 :1 `uc 1 ]
-[n S121 . . LD7 ]
-"2039
-[u S112 `S113 1 `S114 1 `S115 1 `S116 1 `S117 1 `S118 1 `S119 1 `S120 1 `S121 1 ]
-[n S112 . . . . . . . . . . ]
-"2082
-[v _LATDbits `VS112 ~T0 @X0 0 e@3980 ]
-"31 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h
-[v _Delay1KTCYx `(v ~T0 @X0 0 ef1`uc ]
-"10 main.c
-[p x FOSC=INTIO67 ]
-[p x FCMEN=OFF ]
-[p x IESO=OFF ]
-"11
-[p x PWRT=OFF ]
-[p x BOREN=SBORDIS ]
-[p x BORV=30 ]
-"12
-[p x WDTEN=OFF ]
-[p x WDTPS=32768 ]
-"13
-[p x LPT1OSC=ON ]
-[p x PBADEN=ON ]
-[p x CCP2MX=PORTC ]
-"14
-[p x STVREN=ON ]
-[p x LVP=OFF ]
-[p x XINST=OFF ]
-"15
-[p x CP0=OFF ]
-[p x CP1=OFF ]
-[p x CP2=OFF ]
-[p x CP3=OFF ]
-"16
-[p x CPB=OFF ]
-[p x CPD=OFF ]
-"17
-[p x WRT0=OFF ]
-[p x WRT1=OFF ]
-[p x WRT2=OFF ]
-[p x WRT3=OFF ]
-"18
-[p x WRTB=OFF ]
-[p x WRTC=OFF ]
-[p x WRTD=OFF ]
-"19
-[p x EBTR0=OFF ]
-[p x EBTR1=OFF ]
-[p x EBTR2=OFF ]
-[p x EBTR3=OFF ]
-"20
-[p x EBTRB=OFF ]
-"25
-[p x MCLRE=OFF ]
+"2710 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
+[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
+"976
+[v _PORTC `Vuc ~T0 @X0 0 e@3970 ]
+"79 xlcd.h
+[v _WriteDataLCD `(v ~T0 @X0 0 ef1`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f45k20.h: 49: extern volatile unsigned char SSPMSK @ 0xF77;
@@ -4005,171 +3972,563 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xlcd.h: 77: unsigned char BusyLCD(void);
 [; ;xlcd.h: 78: void putLCD(char *buffer);
 [; ;xlcd.h: 79: void WriteDataLCD(char data);
-"36 main.c
-[v _main `(v ~T0 @X0 1 ef ]
-"37
+"6 xlcd.c
+[v _InitLCD `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 36: void main (void)
-[; ;main.c: 37: {
-[e :U _main ]
+[; ;xlcd.c: 6: void InitLCD(void) {
+[e :U _InitLCD ]
 [f ]
-[; ;main.c: 38: TRISD = 0b00000000;
-"38
-[e = _TRISD -> -> 0 `i `uc ]
-[; ;main.c: 39: LATD = 0;
-"39
-[e = _LATD -> -> 0 `i `uc ]
-[; ;main.c: 41: InitLCD();
-"41
-[e ( _InitLCD ..  ]
-[; ;main.c: 43: SetLCDCGRamAddr(0x00);
-"43
-[e ( _SetLCDCGRamAddr (1 -> -> 0 `i `uc ]
-[; ;main.c: 44: WriteDataLCD(0b00000);
-"44
-[e ( _WriteDataLCD (1 -> -> 0 `i `uc ]
-[; ;main.c: 45: WriteDataLCD(0b01111);
-"45
-[e ( _WriteDataLCD (1 -> -> 15 `i `uc ]
-[; ;main.c: 46: WriteDataLCD(0b10001);
-"46
-[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
-[; ;main.c: 47: WriteDataLCD(0b10001);
-"47
-[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
-[; ;main.c: 48: WriteDataLCD(0b10001);
-"48
-[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
-[; ;main.c: 49: WriteDataLCD(0b01111);
-"49
-[e ( _WriteDataLCD (1 -> -> 15 `i `uc ]
-[; ;main.c: 50: WriteDataLCD(0b00111);
-"50
-[e ( _WriteDataLCD (1 -> -> 7 `i `uc ]
-[; ;main.c: 51: WriteDataLCD(0b00111);
-"51
-[e ( _WriteDataLCD (1 -> -> 7 `i `uc ]
-[; ;main.c: 54: SetLCDCGRamAddr(0x08);
-"54
-[e ( _SetLCDCGRamAddr (1 -> -> 8 `i `uc ]
-[; ;main.c: 55: WriteDataLCD(0b11111);
-"55
-[e ( _WriteDataLCD (1 -> -> 31 `i `uc ]
-[; ;main.c: 56: WriteDataLCD(0b10001);
-"56
-[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
-[; ;main.c: 57: WriteDataLCD(0b10001);
-"57
-[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
-[; ;main.c: 58: WriteDataLCD(0b10101);
-"58
-[e ( _WriteDataLCD (1 -> -> 21 `i `uc ]
-[; ;main.c: 59: WriteDataLCD(0b10001);
-"59
-[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
-[; ;main.c: 60: WriteDataLCD(0b10001);
-"60
-[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
-[; ;main.c: 61: WriteDataLCD(0b10001);
-"61
-[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
-[; ;main.c: 62: WriteDataLCD(0b11111);
-"62
-[e ( _WriteDataLCD (1 -> -> 31 `i `uc ]
-[; ;main.c: 64: WriteCmdLCD(0b00000010);
-"64
-[e ( _WriteCmdLCD (1 -> -> 2 `i `uc ]
-[; ;main.c: 65: putLCD("Testing Message");
-"65
-[e ( _putLCD (1 -> :s 1C `*uc ]
-[; ;main.c: 67: SetLCDDDRamAddr(0x040);
-"67
-[e ( _SetLCDDDRamAddr (1 -> -> 64 `i `uc ]
-[; ;main.c: 68: putLCD("LCD Line 2 ");
-"68
-[e ( _putLCD (1 -> :s 2C `*uc ]
-[; ;main.c: 69: WriteDataLCD(0);
-"69
-[e ( _WriteDataLCD (1 -> -> 0 `i `uc ]
-[; ;main.c: 70: WriteDataLCD(1);
-"70
-[e ( _WriteDataLCD (1 -> -> 1 `i `uc ]
-[; ;main.c: 71: WriteDataLCD(2);
-"71
-[e ( _WriteDataLCD (1 -> -> 2 `i `uc ]
-[; ;main.c: 72: WriteDataLCD(3);
-"72
-[e ( _WriteDataLCD (1 -> -> 3 `i `uc ]
-[; ;main.c: 75: while (1)
-"75
+[; ;xlcd.c: 7: OpenLCD(0b00101100 & 0b00111000);
+"7
+[e ( _OpenLCD (1 -> & -> 44 `i -> 56 `i `uc ]
+[; ;xlcd.c: 8: while(BusyLCD());
+"8
+[e $U 414  ]
 [e :U 415 ]
-[; ;main.c: 76: {
-"76
-{
-[; ;main.c: 77: LATDbits.LD0 = 1;
-"77
-[e = . . _LATDbits 1 0 -> -> 1 `i `uc ]
-[; ;main.c: 78: Delay1KTCYx(50);
-"78
-[e ( _Delay1KTCYx (1 -> -> 50 `i `uc ]
-[; ;main.c: 80: LATDbits.LD1 = 1;
-"80
-[e = . . _LATDbits 2 1 -> -> 1 `i `uc ]
-[; ;main.c: 81: Delay1KTCYx(50);
-"81
-[e ( _Delay1KTCYx (1 -> -> 50 `i `uc ]
-[; ;main.c: 83: LATDbits.LD2 = 1;
-"83
-[e = . . _LATDbits 3 1 -> -> 1 `i `uc ]
-[; ;main.c: 84: Delay1KTCYx(50);
-"84
-[e ( _Delay1KTCYx (1 -> -> 50 `i `uc ]
-[; ;main.c: 86: LATDbits.LD3 = 1;
-"86
-[e = . . _LATDbits 4 1 -> -> 1 `i `uc ]
-[; ;main.c: 87: Delay1KTCYx(50);
-"87
-[e ( _Delay1KTCYx (1 -> -> 50 `i `uc ]
-[; ;main.c: 89: LATDbits.LD4 = 1;
-"89
-[e = . . _LATDbits 5 1 -> -> 1 `i `uc ]
-[; ;main.c: 90: Delay1KTCYx(50);
-"90
-[e ( _Delay1KTCYx (1 -> -> 50 `i `uc ]
-[; ;main.c: 92: LATDbits.LD5 = 1;
-"92
-[e = . . _LATDbits 6 1 -> -> 1 `i `uc ]
-[; ;main.c: 93: Delay1KTCYx(50);
-"93
-[e ( _Delay1KTCYx (1 -> -> 50 `i `uc ]
-[; ;main.c: 95: LATDbits.LD6 = 1;
-"95
-[e = . . _LATDbits 7 1 -> -> 1 `i `uc ]
-[; ;main.c: 96: Delay1KTCYx(50);
-"96
-[e ( _Delay1KTCYx (1 -> -> 50 `i `uc ]
-[; ;main.c: 98: LATDbits.LD7 = 1;
-"98
-[e = . . _LATDbits 8 1 -> -> 1 `i `uc ]
-[; ;main.c: 99: Delay1KTCYx(50);
-"99
-[e ( _Delay1KTCYx (1 -> -> 50 `i `uc ]
-[; ;main.c: 101: LATD = 0;
-"101
-[e = _LATD -> -> 0 `i `uc ]
-[; ;main.c: 102: Delay1KTCYx(50);
-"102
-[e ( _Delay1KTCYx (1 -> -> 50 `i `uc ]
-"103
-}
 [e :U 414 ]
-"75
-[e $U 415  ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 415  ]
 [e :U 416 ]
-[; ;main.c: 103: }
-[; ;main.c: 104: }
-"104
+[; ;xlcd.c: 9: WriteCmdLCD(0x06);
+"9
+[e ( _WriteCmdLCD (1 -> -> 6 `i `uc ]
+[; ;xlcd.c: 10: WriteCmdLCD(0x0C);
+"10
+[e ( _WriteCmdLCD (1 -> -> 12 `i `uc ]
+[; ;xlcd.c: 11: }
+"11
 [e :UE 413 ]
 }
-[a 1C 84 101 115 116 105 110 103 32 77 101 115 115 97 103 101 0 ]
-[a 2C 76 67 68 32 76 105 110 101 32 50 32 0 ]
+"13
+[v _DelayFor18TCY `(v ~T0 @X0 1 ef ]
+{
+[; ;xlcd.c: 13: void DelayFor18TCY(void) {
+[e :U _DelayFor18TCY ]
+[f ]
+[; ;xlcd.c: 15: Delay1TCYx(18);
+"15
+[e ( _Delay1TCYx (1 -> -> 18 `i `uc ]
+[; ;xlcd.c: 16: }
+"16
+[e :UE 417 ]
+}
+"19
+[v _OpenLCD `(v ~T0 @X0 1 ef1`uc ]
+"20
+{
+[; ;xlcd.c: 19: void OpenLCD(unsigned char lcdtype)
+[; ;xlcd.c: 20: {
+[e :U _OpenLCD ]
+"19
+[v _lcdtype `uc ~T0 @X0 1 r1 ]
+"20
+[f ]
+[; ;xlcd.c: 23: TRISCbits.TRISC5 = 0;
+"23
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
+[; ;xlcd.c: 24: TRISCbits.TRISC4 = 0;
+"24
+[e = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
+[; ;xlcd.c: 25: TRISCbits.TRISC6 = 0;
+"25
+[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
+[; ;xlcd.c: 26: LATCbits.LATC5 = 0;
+"26
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+[; ;xlcd.c: 27: LATCbits.LATC4 = 0;
+"27
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+[; ;xlcd.c: 28: LATCbits.LATC6 = 0;
+"28
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+[; ;xlcd.c: 35: Delay100TCYx(38);
+"35
+[e ( _Delay100TCYx (1 -> -> 38 `i `uc ]
+[; ;xlcd.c: 38: WriteCmdLCD(0x30);
+"38
+[e ( _WriteCmdLCD (1 -> -> 48 `i `uc ]
+[; ;xlcd.c: 39: Delay10KTCYx(0x05);
+"39
+[e ( _Delay10KTCYx (1 -> -> 5 `i `uc ]
+[; ;xlcd.c: 41: WriteCmdLCD(0x30);
+"41
+[e ( _WriteCmdLCD (1 -> -> 48 `i `uc ]
+[; ;xlcd.c: 42: Delay10KTCYx(0x01);
+"42
+[e ( _Delay10KTCYx (1 -> -> 1 `i `uc ]
+[; ;xlcd.c: 44: WriteCmdLCD(0x32);
+"44
+[e ( _WriteCmdLCD (1 -> -> 50 `i `uc ]
+[; ;xlcd.c: 45: while( BusyLCD() );
+"45
+[e $U 419  ]
+[e :U 420 ]
+[e :U 419 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 420  ]
+[e :U 421 ]
+[; ;xlcd.c: 50: while(BusyLCD());
+"50
+[e $U 422  ]
+[e :U 423 ]
+[e :U 422 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 423  ]
+[e :U 424 ]
+[; ;xlcd.c: 51: WriteCmdLCD(lcdtype);
+"51
+[e ( _WriteCmdLCD (1 _lcdtype ]
+[; ;xlcd.c: 54: while(BusyLCD());
+"54
+[e $U 425  ]
+[e :U 426 ]
+[e :U 425 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 426  ]
+[e :U 427 ]
+[; ;xlcd.c: 55: WriteCmdLCD(0b00001011&0b00001101&0b00001110);
+"55
+[e ( _WriteCmdLCD (1 -> & & -> 11 `i -> 13 `i -> 14 `i `uc ]
+[; ;xlcd.c: 56: while(BusyLCD());
+"56
+[e $U 428  ]
+[e :U 429 ]
+[e :U 428 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 429  ]
+[e :U 430 ]
+[; ;xlcd.c: 57: WriteCmdLCD(0b00001111&0b00001111&0b00001111);
+"57
+[e ( _WriteCmdLCD (1 -> & & -> 15 `i -> 15 `i -> 15 `i `uc ]
+[; ;xlcd.c: 60: while(BusyLCD());
+"60
+[e $U 431  ]
+[e :U 432 ]
+[e :U 431 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 432  ]
+[e :U 433 ]
+[; ;xlcd.c: 61: WriteCmdLCD(0x01);
+"61
+[e ( _WriteCmdLCD (1 -> -> 1 `i `uc ]
+[; ;xlcd.c: 64: while(BusyLCD());
+"64
+[e $U 434  ]
+[e :U 435 ]
+[e :U 434 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 435  ]
+[e :U 436 ]
+[; ;xlcd.c: 65: WriteCmdLCD(0b00000100);
+"65
+[e ( _WriteCmdLCD (1 -> -> 4 `i `uc ]
+[; ;xlcd.c: 68: while(BusyLCD());
+"68
+[e $U 437  ]
+[e :U 438 ]
+[e :U 437 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 438  ]
+[e :U 439 ]
+[; ;xlcd.c: 69: SetLCDDDRamAddr(0x80);
+"69
+[e ( _SetLCDDDRamAddr (1 -> -> 128 `i `uc ]
+[; ;xlcd.c: 71: return;
+"71
+[e $UE 418  ]
+[; ;xlcd.c: 72: }
+"72
+[e :UE 418 ]
+}
+"74
+[v _WriteCmdLCD `(v ~T0 @X0 1 ef1`uc ]
+"75
+{
+[; ;xlcd.c: 74: void WriteCmdLCD(unsigned char cmd)
+[; ;xlcd.c: 75: {
+[e :U _WriteCmdLCD ]
+"74
+[v _cmd `uc ~T0 @X0 1 r1 ]
+"75
+[f ]
+[; ;xlcd.c: 77: TRISC &= 0xf0;
+"77
+[e =& _TRISC -> -> 240 `i `uc ]
+[; ;xlcd.c: 78: PORTC &= 0xf0;
+"78
+[e =& _PORTC -> -> 240 `i `uc ]
+[; ;xlcd.c: 79: PORTC |= (cmd>>4)&0x0f;
+"79
+[e =| _PORTC -> & >> -> _cmd `i -> 4 `i -> 15 `i `uc ]
+[; ;xlcd.c: 81: LATCbits.LATC5 = 0;
+"81
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+[; ;xlcd.c: 82: LATCbits.LATC4 = 0;
+"82
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+[; ;xlcd.c: 83: DelayFor18TCY();
+"83
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 84: LATCbits.LATC6 = 1;
+"84
+[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
+[; ;xlcd.c: 85: DelayFor18TCY();
+"85
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 86: LATCbits.LATC6 = 0;
+"86
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+[; ;xlcd.c: 88: PORTC &= 0xf0;
+"88
+[e =& _PORTC -> -> 240 `i `uc ]
+[; ;xlcd.c: 89: PORTC |= cmd&0x0f;
+"89
+[e =| _PORTC -> & -> _cmd `i -> 15 `i `uc ]
+[; ;xlcd.c: 91: DelayFor18TCY();
+"91
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 92: LATCbits.LATC6 = 1;
+"92
+[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
+[; ;xlcd.c: 93: DelayFor18TCY();
+"93
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 94: LATCbits.LATC6 = 0;
+"94
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+[; ;xlcd.c: 96: TRISC |= 0x0f;
+"96
+[e =| _TRISC -> -> 15 `i `uc ]
+[; ;xlcd.c: 98: return;
+"98
+[e $UE 440  ]
+[; ;xlcd.c: 99: }
+"99
+[e :UE 440 ]
+}
+"101
+[v _BusyLCD `(uc ~T0 @X0 1 ef ]
+"102
+{
+[; ;xlcd.c: 101: unsigned char BusyLCD(void)
+[; ;xlcd.c: 102: {
+[e :U _BusyLCD ]
+[f ]
+[; ;xlcd.c: 103: LATCbits.LATC5 = 1;
+"103
+[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
+[; ;xlcd.c: 104: LATCbits.LATC4 = 0;
+"104
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+[; ;xlcd.c: 105: DelayFor18TCY();
+"105
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 106: LATCbits.LATC6 = 1;
+"106
+[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
+[; ;xlcd.c: 107: DelayFor18TCY();
+"107
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 109: if(PORTC&0x08)
+"109
+[e $ ! != & -> _PORTC `i -> 8 `i -> 0 `i 442  ]
+[; ;xlcd.c: 110: {
+"110
+{
+[; ;xlcd.c: 111: LATCbits.LATC6 = 0;
+"111
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+[; ;xlcd.c: 112: DelayFor18TCY();
+"112
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 113: LATCbits.LATC6 = 1;
+"113
+[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
+[; ;xlcd.c: 114: DelayFor18TCY();
+"114
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 115: LATCbits.LATC6 = 0;
+"115
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+[; ;xlcd.c: 116: LATCbits.LATC5 = 0;
+"116
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+[; ;xlcd.c: 117: return 1;
+"117
+[e ) -> -> 1 `i `uc ]
+[e $UE 441  ]
+"118
+}
+[; ;xlcd.c: 118: }
+[e $U 443  ]
+"119
+[e :U 442 ]
+[; ;xlcd.c: 119: else
+[; ;xlcd.c: 120: {
+"120
+{
+[; ;xlcd.c: 121: LATCbits.LATC6 = 0;
+"121
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+[; ;xlcd.c: 122: DelayFor18TCY();
+"122
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 123: LATCbits.LATC6 = 1;
+"123
+[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
+[; ;xlcd.c: 124: DelayFor18TCY();
+"124
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 125: LATCbits.LATC6 = 0;
+"125
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+[; ;xlcd.c: 126: LATCbits.LATC5 = 0;
+"126
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+[; ;xlcd.c: 127: return 0;
+"127
+[e ) -> -> 0 `i `uc ]
+[e $UE 441  ]
+"128
+}
+[e :U 443 ]
+[; ;xlcd.c: 128: }
+[; ;xlcd.c: 129: }
+"129
+[e :UE 441 ]
+}
+"132
+[v _SetLCDDDRamAddr `(v ~T0 @X0 1 ef1`uc ]
+"133
+{
+[; ;xlcd.c: 132: void SetLCDDDRamAddr(unsigned char DDaddr)
+[; ;xlcd.c: 133: {
+[e :U _SetLCDDDRamAddr ]
+"132
+[v _DDaddr `uc ~T0 @X0 1 r1 ]
+"133
+[f ]
+[; ;xlcd.c: 135: TRISC &= 0xf0;
+"135
+[e =& _TRISC -> -> 240 `i `uc ]
+[; ;xlcd.c: 136: PORTC &= 0xf0;
+"136
+[e =& _PORTC -> -> 240 `i `uc ]
+[; ;xlcd.c: 137: PORTC |= (((DDaddr | 0b10000000)>>4) & 0x0f);
+"137
+[e =| _PORTC -> & >> | -> _DDaddr `i -> 128 `i -> 4 `i -> 15 `i `uc ]
+[; ;xlcd.c: 139: LATCbits.LATC5 = 0;
+"139
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+[; ;xlcd.c: 140: LATCbits.LATC4 = 0;
+"140
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+[; ;xlcd.c: 141: DelayFor18TCY();
+"141
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 142: LATCbits.LATC6 = 1;
+"142
+[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
+[; ;xlcd.c: 143: DelayFor18TCY();
+"143
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 144: LATCbits.LATC6 = 0;
+"144
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+[; ;xlcd.c: 146: PORTC &= 0xf0;
+"146
+[e =& _PORTC -> -> 240 `i `uc ]
+[; ;xlcd.c: 147: PORTC |= (DDaddr&0x0f);
+"147
+[e =| _PORTC -> & -> _DDaddr `i -> 15 `i `uc ]
+[; ;xlcd.c: 149: DelayFor18TCY();
+"149
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 150: LATCbits.LATC6 = 1;
+"150
+[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
+[; ;xlcd.c: 151: DelayFor18TCY();
+"151
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 152: LATCbits.LATC6 = 0;
+"152
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+[; ;xlcd.c: 154: TRISC |= 0x0f;
+"154
+[e =| _TRISC -> -> 15 `i `uc ]
+[; ;xlcd.c: 156: return;
+"156
+[e $UE 444  ]
+[; ;xlcd.c: 157: }
+"157
+[e :UE 444 ]
+}
+"159
+[v _SetLCDCGRamAddr `(v ~T0 @X0 1 ef1`uc ]
+"160
+{
+[; ;xlcd.c: 159: void SetLCDCGRamAddr(unsigned char CGaddr)
+[; ;xlcd.c: 160: {
+[e :U _SetLCDCGRamAddr ]
+"159
+[v _CGaddr `uc ~T0 @X0 1 r1 ]
+"160
+[f ]
+[; ;xlcd.c: 163: TRISC &= 0xf0;
+"163
+[e =& _TRISC -> -> 240 `i `uc ]
+[; ;xlcd.c: 164: PORTC &= 0xf0;
+"164
+[e =& _PORTC -> -> 240 `i `uc ]
+[; ;xlcd.c: 165: PORTC |= (((CGaddr |0b01000000)>>4) & 0x0f);
+"165
+[e =| _PORTC -> & >> | -> _CGaddr `i -> 64 `i -> 4 `i -> 15 `i `uc ]
+[; ;xlcd.c: 167: LATCbits.LATC5 = 0;
+"167
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+[; ;xlcd.c: 168: LATCbits.LATC4 = 0;
+"168
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+[; ;xlcd.c: 169: DelayFor18TCY();
+"169
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 170: LATCbits.LATC6 = 1;
+"170
+[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
+[; ;xlcd.c: 171: DelayFor18TCY();
+"171
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 172: LATCbits.LATC6 = 0;
+"172
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+[; ;xlcd.c: 174: PORTC &= 0xf0;
+"174
+[e =& _PORTC -> -> 240 `i `uc ]
+[; ;xlcd.c: 175: PORTC |= (CGaddr&0x0f);
+"175
+[e =| _PORTC -> & -> _CGaddr `i -> 15 `i `uc ]
+[; ;xlcd.c: 177: DelayFor18TCY();
+"177
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 178: LATCbits.LATC6 = 1;
+"178
+[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
+[; ;xlcd.c: 179: DelayFor18TCY();
+"179
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 180: LATCbits.LATC6 = 0;
+"180
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+[; ;xlcd.c: 182: TRISC |= 0x0f;
+"182
+[e =| _TRISC -> -> 15 `i `uc ]
+[; ;xlcd.c: 183: return;
+"183
+[e $UE 445  ]
+[; ;xlcd.c: 184: }
+"184
+[e :UE 445 ]
+}
+"186
+[v _putLCD `(v ~T0 @X0 1 ef1`*uc ]
+"187
+{
+[; ;xlcd.c: 186: void putLCD(char *buffer)
+[; ;xlcd.c: 187: {
+[e :U _putLCD ]
+"186
+[v _buffer `*uc ~T0 @X0 1 r1 ]
+"187
+[f ]
+[; ;xlcd.c: 188: while(*buffer)
+"188
+[e $U 447  ]
+[e :U 448 ]
+[; ;xlcd.c: 189: {
+"189
+{
+[; ;xlcd.c: 190: while(BusyLCD());
+"190
+[e $U 450  ]
+[e :U 451 ]
+[e :U 450 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 451  ]
+[e :U 452 ]
+[; ;xlcd.c: 191: WriteDataLCD(*buffer);
+"191
+[e ( _WriteDataLCD (1 *U _buffer ]
+[; ;xlcd.c: 192: buffer++;
+"192
+[e ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x ]
+"193
+}
+[e :U 447 ]
+"188
+[e $ != -> *U _buffer `i -> -> -> 0 `i `uc `i 448  ]
+[e :U 449 ]
+[; ;xlcd.c: 193: }
+[; ;xlcd.c: 194: return;
+"194
+[e $UE 446  ]
+[; ;xlcd.c: 195: }
+"195
+[e :UE 446 ]
+}
+"197
+[v _WriteDataLCD `(v ~T0 @X0 1 ef1`uc ]
+"198
+{
+[; ;xlcd.c: 197: void WriteDataLCD(char data)
+[; ;xlcd.c: 198: {
+[e :U _WriteDataLCD ]
+"197
+[v _data `uc ~T0 @X0 1 r1 ]
+"198
+[f ]
+[; ;xlcd.c: 200: TRISC &= 0xf0;
+"200
+[e =& _TRISC -> -> 240 `i `uc ]
+[; ;xlcd.c: 201: PORTC &= 0xf0;
+"201
+[e =& _PORTC -> -> 240 `i `uc ]
+[; ;xlcd.c: 202: PORTC |= ((data>>4)&0x0f);
+"202
+[e =| _PORTC -> & >> -> _data `i -> 4 `i -> 15 `i `uc ]
+[; ;xlcd.c: 204: LATCbits.LATC4 = 1;
+"204
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+[; ;xlcd.c: 205: LATCbits.LATC5 = 0;
+"205
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+[; ;xlcd.c: 206: DelayFor18TCY();
+"206
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 207: LATCbits.LATC6 = 1;
+"207
+[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
+[; ;xlcd.c: 208: DelayFor18TCY();
+"208
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 209: LATCbits.LATC6 = 0;
+"209
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+[; ;xlcd.c: 211: PORTC &= 0xf0;
+"211
+[e =& _PORTC -> -> 240 `i `uc ]
+[; ;xlcd.c: 212: PORTC |= (data&0x0f);
+"212
+[e =| _PORTC -> & -> _data `i -> 15 `i `uc ]
+[; ;xlcd.c: 214: DelayFor18TCY();
+"214
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 215: LATCbits.LATC6 = 1;
+"215
+[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
+[; ;xlcd.c: 216: DelayFor18TCY();
+"216
+[e ( _DelayFor18TCY ..  ]
+[; ;xlcd.c: 217: LATCbits.LATC6 = 0;
+"217
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+[; ;xlcd.c: 219: TRISC |= 0x0f;
+"219
+[e =| _TRISC -> -> 15 `i `uc ]
+[; ;xlcd.c: 221: return;
+"221
+[e $UE 453  ]
+[; ;xlcd.c: 222: }
+"222
+[e :UE 453 ]
+}
