@@ -62,7 +62,7 @@
 #define FOUR_BIT   0b00101100  /* 4-bit Interface               */
 #define EIGHT_BIT  0b00111100  /* 8-bit Interface               */
 #define LINE_5X7   0b00110000  /* 5x7 characters, single line   */
-#define LINES_5X10  0b00110100  /* 5x10 characters               */
+#define LINE_5X10  0b00110100  /* 5x10 characters               */
 #define LINES_5X7  0b00111000  /* 5x7 characters, multiple line */
 
 void InitLCD(void);
@@ -76,4 +76,5 @@ void SetLCDCGRamAddr(unsigned char CGaddr);
 void SetLCDDDRamAddr(unsigned char DDaddr);
 unsigned char BusyLCD(void);
 void putLCD(char *buffer);
+void putIntLCD(short int n);
 void WriteDataLCD(char data);

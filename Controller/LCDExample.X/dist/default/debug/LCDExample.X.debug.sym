@@ -14,7 +14,7 @@ _LATD F8C 0 ABS 0
 _utoa 7F2 0 CODE 0
 _main 618 0 CODE 0
 ___sp 0 0 STACK 2
-start 0 0 CODE 0
+start 2 0 CODE 0
 _Delay100TCYx B70 0 CODE 0
 _TRISC F94 0 ABS 0
 _TRISD F95 0 ABS 0
@@ -73,8 +73,8 @@ __Lmediumconst 0 0 MEDIUMCONST 0
 __Hfarbss 0 0 FARRAM 0
 __Lfarbss 0 0 FARRAM 0
 _putLCD 89C 0 CODE 0
-__Hintcode 0 0 CODE 0
-__Lintcode 0 0 CODE 0
+__Hintcode 2 0 CODE 0
+__Lintcode 2 0 CODE 0
 __Hfardata 0 0 FARRAM 0
 __Lfardata 0 0 FARRAM 0
 __Habs1 0 0 ABS 0
@@ -97,17 +97,17 @@ __size_of_SetLCDCGRamAddr 0 0 ABS 0
 __Hdata 0 0 ABS 0
 __Ldata 0 0 ABS 0
 __CFG_EBTR3$OFF 0 0 ABS 0
-stackhi 5FF 0 ABS 0
+stackhi 5EE 0 ABS 0
 __size_of_Delay1TCYx 0 0 ABS 0
 __Htemp 0 0 COMRAM 1
 __Ltemp 0 0 COMRAM 1
 stacklo 60 0 ABS 0
 __Hrbit 0 0 COMRAM 1
 __Lrbit 0 0 COMRAM 1
-__Hinit 0 0 CODE 0
-__Linit 0 0 CODE 0
-__Hintcodelo 0 0 CODE 0
-__Lintcodelo 0 0 CODE 0
+__Hinit 2 0 CODE 0
+__Linit 2 0 CODE 0
+__Hintcodelo 2 0 CODE 0
+__Lintcodelo 2 0 CODE 0
 __Hrbss 0 0 COMRAM 1
 __end_of_main 742 0 CODE 0
 __Lrbss 0 0 COMRAM 1
@@ -141,8 +141,8 @@ __Hbank4 0 0 ABS 0
 __Lbank4 0 0 ABS 0
 __Hbank5 0 0 ABS 0
 __Lbank5 0 0 ABS 0
-__Hpowerup 0 0 CODE 0
-__Lpowerup 0 0 CODE 0
+__Hpowerup 2 0 CODE 0
+__Lpowerup 2 0 CODE 0
 __end_of_Delay1TCYx BAC 0 CODE 0
 __Htext0 0 0 ABS 0
 __Ltext0 0 0 ABS 0
@@ -234,7 +234,6 @@ __size_of_main 0 0 ABS 0
 __Hconst 0 0 CODE 0
 __Lconst 0 0 CODE 0
 __end_of_InitLCD B58 0 CODE 0
-__CFG_MCLRE$OFF 0 0 ABS 0
 __CFG_WRT0$OFF 0 0 ABS 0
 __CFG_WRT1$OFF 0 0 ABS 0
 _Delay1KTCYx B82 0 CODE 0
@@ -274,15 +273,15 @@ __end_of___lwmod A52 0 CODE 0
 ___lwmod@divisor 3 0 COMRAM 1
 __CFG_WDTEN$OFF 0 0 ABS 0
 ___intlo_sp 0 0 STACK 2
-__Hend_init 4 0 CODE 0
-__Lend_init 0 0 CODE 0
+__Hend_init 6 0 CODE 0
+__Lend_init 2 0 CODE 0
 __size_of_putIntLCD 0 0 ABS 0
 ___lwdiv@divisor 3 0 COMRAM 1
 __size_of_WriteCmdLCD 0 0 ABS 0
 __CFG_CP0$OFF 0 0 ABS 0
 __smallconst 600 0 SMALLCONST 0
 __CFG_CP1$OFF 0 0 ABS 0
-__Hreset_vec 0 0 CODE 0
+__Hreset_vec 2 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 __CFG_CP2$OFF 0 0 ABS 0
 __CFG_CP3$OFF 0 0 ABS 0
@@ -318,25 +317,25 @@ Delay1KTCYx@unit 1 0 COMRAM 1
 __CFG_LVP$OFF 0 0 ABS 0
 Delay1TCYx@unit 1 0 COMRAM 1
 %segments
-reset_vec 0 3 CODE 0 0
+reset_vec 0 5 CODE 0 0
 smallconst 600 617 SMALLCONST 600 0
 config 300000 30000D CONFIG 300000 0
 idloc 200000 200007 IDLOC 200000 0
 cstackCOMRAM 1 17 COMRAM 1 1
 text0 618 BB3 CODE 618 0
 %locals
-dist/default/production\LCDExample.X.production.obj
+dist/default/debug\LCDExample.X.debug.obj
 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
-C:\Users\ADMINI~1\AppData\Local\Temp\s42o.
+C:\Users\ADMINI~1\AppData\Local\Temp\s3c0.
+873 B94 0 CODE 0
 875 B94 0 CODE 0
-877 B94 0 CODE 0
-880 B94 0 CODE 0
-891 B94 0 CODE 0
+878 B94 0 CODE 0
+889 B94 0 CODE 0
+895 B96 0 CODE 0
 897 B96 0 CODE 0
-899 B96 0 CODE 0
-900 B98 0 CODE 0
-901 B9A 0 CODE 0
-902 B9C 0 CODE 0
+898 B98 0 CODE 0
+899 B9A 0 CODE 0
+900 B9C 0 CODE 0
 main.c
 39 618 0 CODE 0
 42 618 0 CODE 0
@@ -390,9 +389,9 @@ main.c
 110 722 0 CODE 0
 113 728 0 CODE 0
 114 72C 0 CODE 0
-115 732 0 CODE 0
+116 732 0 CODE 0
 83 73C 0 CODE 0
-117 73E 0 CODE 0
+118 73E 0 CODE 0
 xlcd.c
 188 B0E 0 CODE 0
 190 B0E 0 CODE 0

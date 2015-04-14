@@ -5259,11 +5259,17 @@ void SetLCDCGRamAddr(unsigned char CGaddr);
 void SetLCDDDRamAddr(unsigned char DDaddr);
 unsigned char BusyLCD(void);
 void putLCD(char *buffer);
+void putIntLCD(short int n);
 void WriteDataLCD(char data);
 
-# 36 "main.c"
+# 35 "main.c"
+unsigned char counter;
+
+
+
 void main (void)
 {
+
 TRISD = 0b00000000;
 LATD = 0;
 
@@ -5291,7 +5297,9 @@ WriteDataLCD(0b10001);
 WriteDataLCD(0b11111);
 
 WriteCmdLCD(0b00000010);
-putLCD("Testing Message");
+putLCD("Testing ");
+
+putIntLCD(3455);
 
 SetLCDDDRamAddr(0x040);
 putLCD("LCD Line 2 ");
@@ -5301,33 +5309,40 @@ WriteDataLCD(2);
 WriteDataLCD(3);
 
 
+counter = 100;
+
 while (1)
 {
 LATDbits.LD0 = 1;
-Delay1KTCYx(50);
+Delay1KTCYx(10);
 
 LATDbits.LD1 = 1;
-Delay1KTCYx(50);
+Delay1KTCYx(10);
 
 LATDbits.LD2 = 1;
-Delay1KTCYx(50);
+Delay1KTCYx(10);
 
 LATDbits.LD3 = 1;
-Delay1KTCYx(50);
+Delay1KTCYx(10);
 
 LATDbits.LD4 = 1;
-Delay1KTCYx(50);
+Delay1KTCYx(10);
 
 LATDbits.LD5 = 1;
-Delay1KTCYx(50);
+Delay1KTCYx(10);
 
 LATDbits.LD6 = 1;
-Delay1KTCYx(50);
+Delay1KTCYx(10);
 
 LATDbits.LD7 = 1;
-Delay1KTCYx(50);
+Delay1KTCYx(10);
 
 LATD = 0;
-Delay1KTCYx(50);
+Delay1KTCYx(10);
+
+
+counter = counter + 1;
+SetLCDDDRamAddr(0x044);
+putIntLCD(counter);
 }
 }

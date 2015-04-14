@@ -31,10 +31,14 @@
 #include <delays.h>
 #include "xlcd.h"
 
+/** V A R I A B L E S *************************************************/
+unsigned char counter;  // 8-bit variable
+
 
 /** M A I N   F U N C T I O N ***************************************/
 void main (void)
-{    
+{
+
     TRISD = 0b00000000;
     LATD = 0;
 
@@ -62,7 +66,9 @@ void main (void)
     WriteDataLCD(0b11111);
 
     WriteCmdLCD(0b00000010);        // Cursor to home
-    putLCD("Testing Message");
+    putLCD("Testing ");
+    
+    putIntLCD(3455);
 
     SetLCDDDRamAddr(0x040);         // Cursor to second line
     putLCD("LCD Line 2 ");
@@ -72,33 +78,40 @@ void main (void)
     WriteDataLCD(3);              // Write Forth Custom Char
 
 
+    counter = 100;
+
     while (1)
     {
         LATDbits.LD0 = 1;
-        Delay1KTCYx(50);
+        Delay1KTCYx(10);
 
         LATDbits.LD1 = 1;
-        Delay1KTCYx(50);
+        Delay1KTCYx(10);
 
         LATDbits.LD2 = 1;
-        Delay1KTCYx(50);
+        Delay1KTCYx(10);
 
         LATDbits.LD3 = 1;
-        Delay1KTCYx(50);
+        Delay1KTCYx(10);
 
         LATDbits.LD4 = 1;
-        Delay1KTCYx(50);
+        Delay1KTCYx(10);
 
         LATDbits.LD5 = 1;
-        Delay1KTCYx(50);
+        Delay1KTCYx(10);
 
         LATDbits.LD6 = 1;
-        Delay1KTCYx(50);
+        Delay1KTCYx(10);
 
         LATDbits.LD7 = 1;
-        Delay1KTCYx(50);
+        Delay1KTCYx(10);
 
         LATD = 0;
-        Delay1KTCYx(50);
+        Delay1KTCYx(10);
+
+        // Move the cursor to a specific location and display a counter
+        counter = counter + 1;
+        SetLCDDDRamAddr(0x044);         // Cursor to second line
+        putIntLCD(counter);
     }
 }

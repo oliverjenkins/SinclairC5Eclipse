@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.34 build -361300703 
-                                                                                               Tue Apr 14 12:48:36 2015
+                                                                                               Tue Apr 14 12:45:53 2015
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
      1                           	processor	18F45K20
@@ -433,32 +433,32 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    427                           ;main.c: 106: LATDbits.LD7 = 1;
    428  000716  8E8C               	bsf	3980,7,c	;volatile
    429                           
-   430                           ;main.c: 107: Delay1KTCYx(10);
-   431  000718  0E0A               	movlw	10
+   430                           ;main.c: 107: Delay1KTCYx(50);
+   431  000718  0E32               	movlw	50
    432  00071A  ECC1  F005         	call	_Delay1KTCYx
    433                           
    434                           ;main.c: 109: LATD = 0;
    435  00071E  0E00               	movlw	0
    436  000720  6E8C               	movwf	3980,c	;volatile
    437                           
-   438                           ;main.c: 110: Delay1KTCYx(10);
-   439  000722  0E0A               	movlw	10
+   438                           ;main.c: 110: Delay1KTCYx(50);
+   439  000722  0E32               	movlw	50
    440  000724  ECC1  F005         	call	_Delay1KTCYx
    441                           
    442                           ;main.c: 113: counter = counter + 1;
    443  000728  2817               	incf	_counter,w,c
    444  00072A  6E17               	movwf	_counter,c
    445                           
-   446                           ;main.c: 114: SetLCDDDRamAddr(0x044);
-   447  00072C  0E44               	movlw	68
+   446                           ;main.c: 114: SetLCDDDRamAddr(0x040);
+   447  00072C  0E40               	movlw	64
    448  00072E  ECD9  F004         	call	_SetLCDDDRamAddr
    449                           
-   450                           ;main.c: 115: putIntLCD(counter);
+   450                           ;main.c: 116: putIntLCD(counter);
    451  000732  C017  F011         	movff	_counter,putIntLCD@n
    452  000736  6A12               	clrf	putIntLCD@n+1,c
    453  000738  EC87  F005         	call	_putIntLCD	;wreg free
    454  00073C  D7D0               	goto	l1272
-   455  00073E  EF00  F000         	goto	start
+   455  00073E  EF01  F000         	goto	start
    456  000742                     __end_of_main:
    457                           	opt stack 0
    458                           tblptru	equ	0xFF8
@@ -2151,7 +2151,7 @@ Auto Spaces:
     BANK2           256      0       0
     BANK3           256      0       0
     BANK4           256      0       0
-    BANK5           256      0       0
+    BANK5           239      0       0
 
 Pointer List with Targets:
 
@@ -2343,33 +2343,43 @@ Call Graph Tables:
 
  Address spaces:
 Name               Size   Autos  Total    Cost      Usage
-BIGRAM             5FF      0       0      17        0.0%
+BIGRAM             5EE      0       0      16        0.0%
 EEDATA             100      0       0       0        0.0%
-BITBANK5           100      0       0      16        0.0%
-BANK5              100      0       0      14        0.0%
-BITBANK4           100      0       0      12        0.0%
-BANK4              100      0       0      13        0.0%
-BITBANK3           100      0       0      10        0.0%
-BANK3              100      0       0      11        0.0%
-BITBANK2           100      0       0       8        0.0%
-BANK2              100      0       0       9        0.0%
-BITBANK1           100      0       0       6        0.0%
-BANK1              100      0       0       7        0.0%
-BITBANK0            A0      0       0       4        0.0%
-BANK0               A0      0       0       5        0.0%
+BITBANK4           100      0       0      11        0.0%
+BANK4              100      0       0      12        0.0%
+BITBANK3           100      0       0       9        0.0%
+BANK3              100      0       0      10        0.0%
+BITBANK2           100      0       0       7        0.0%
+BANK2              100      0       0       8        0.0%
+BITBANK1           100      0       0       5        0.0%
+BANK1              100      0       0       6        0.0%
+BITBANK5            EF      0       0      15        0.0%
+BANK5               EF      0       0      13        0.0%
+BITBANK0            A0      0       0       3        0.0%
+BANK0               A0      0       0       4        0.0%
 BITCOMRAM           5F      0       0       0        0.0%
 COMRAM              5F     16      17       1       24.2%
+BITSFR_5             0      0       0      40        0.0%
+SFR_5                0      0       0      40        0.0%
+BITSFR_4             0      0       0      40        0.0%
+SFR_4                0      0       0      40        0.0%
+BITSFR_3             0      0       0      40        0.0%
+SFR_3                0      0       0      40        0.0%
+BITSFR_2             0      0       0      40        0.0%
+SFR_2                0      0       0      40        0.0%
+BITSFR_1             0      0       0      40        0.0%
+SFR_1                0      0       0      40        0.0%
 BITSFR               0      0       0      40        0.0%
 SFR                  0      0       0      40        0.0%
 STACK                0      0       0       2        0.0%
 NULL                 0      0       0       0        0.0%
-ABS                  0      0      17      15        0.0%
-DATA                 0      0      17       3        0.0%
+ABS                  0      0      17      14        0.0%
+DATA                 0      0      17      17        0.0%
 CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
-Symbol Table                                                                                   Tue Apr 14 12:48:36 2015
+Symbol Table                                                                                   Tue Apr 14 12:45:53 2015
 
                       l97 0AF8                        u15 09C8      __size_of_WriteCmdLCD 0040  
             __CFG_CP0$OFF 000000              __CFG_CP1$OFF 000000              __CFG_CP2$OFF 000000  
@@ -2391,7 +2401,7 @@ Symbol Table                                                                    
                     STR_2 0601                      _LATD 000F8C                      _main 0618  
    SetLCDDDRamAddr@DDaddr 0005                      fsr0h 000FEA                      indf0 000FEF  
                     fsr0l 000FE9                      fsr2h 000FDA                      indf2 000FDF  
-                    fsr2l 000FD9                      _utoa 07F2                      start 0000  
+                    fsr2l 000FD9                      _utoa 07F2                      start 0002  
            __CFG_IESO$OFF 000000              ___param_bank 000010           __end_of_BusyLCD 0B0E  
          __end_of_InitLCD 0B58           __end_of_OpenLCD 07F2              _WriteDataLCD 0A52  
              _Delay1KTCYx 0B82                     ?_main 0001     __size_of_Delay100TCYx 0012  
@@ -2404,52 +2414,52 @@ Symbol Table                                                                    
            __CFG_WRTC$OFF 000000             __CFG_WRTD$OFF 000000            __CFG_EBTRB$OFF 000000  
                    tablat 000FF5                     utoa@c 0010                     utoa@v 000E  
                    status 000FD8            __CFG_PBADEN$ON 000000         ??_SetLCDDDRamAddr 0002  
-          __CFG_MCLRE$OFF 000000         ??_SetLCDCGRamAddr 0002           __initialization 0B94  
-            _Delay100TCYx 0B70              __end_of_main 0742              __end_of_utoa 089C  
-          WriteCmdLCD@cmd 0002              _Delay10KTCYx 0B58                    ??_main 0017  
-                  ??_utoa 000E             __activetblptr 000002               ?_Delay1TCYx 0001  
-          __CFG_WDTEN$OFF 000000                 ??_BusyLCD 0002                 ??_InitLCD 0007  
-               ??_OpenLCD 0006            __CFG_XINST$OFF 000000            __CFG_STVREN$ON 000000  
-               ??___lwdiv 0005                 ??___lwmod 0005                    _putLCD 089C  
-            __mediumconst 0000                    tblptrh 000FF7                    tblptrl 000FF6  
-                  tblptru 000FF8                __accesstop 0060   __end_of__initialization 0B96  
-           ___rparam_used 000001            __pcstackCOMRAM 0001       __size_of_Delay1TCYx 000C  
-         __CFG_LPT1OSC$ON 000000    __size_of_DelayFor18TCY 0008     SetLCDCGRamAddr@CGaddr 0005  
-           ??_WriteCmdLCD 0002              ?_Delay1KTCYx 0001                   ?_putLCD 0003  
-      __size_of_putIntLCD 002A           _SetLCDDDRamAddr 09B2           _SetLCDCGRamAddr 0958  
-                 _BusyLCD 0AD2                   _InitLCD 0B38                   _OpenLCD 0742  
-                 __Hparam 0000                   __Lparam 0000             _DelayFor18TCY 0BAC  
-                 ___lwdiv 08FC                   ___lwmod 0A06              __psmallconst 0600  
-                 __pcinit 0B94                   __ramtop 0600           __size_of_putLCD 0060  
-                 __ptext0 0618                   __ptext1 0B0E                   __ptext2 07F2  
-                 __ptext3 0A06                   __ptext4 08FC                   __ptext5 089C  
-                 __ptext6 0A52                   __ptext7 0958                   __ptext8 0B38  
-                 __ptext9 0742       __end_of_WriteCmdLCD 0AD2                   _counter 0017  
-            ??_Delay1TCYx 0001      end_of_initialization 0B96             __Lmediumconst 0000  
-       __end_of_putIntLCD 0B38            ?_DelayFor18TCY 0001                   utoa@buf 0008  
-                 utoa@val 000A        __end_of_Delay1TCYx 0BAC   __end_of_SetLCDDDRamAddr 0A06  
- __end_of_SetLCDCGRamAddr 09B2                 _TRISCbits 000F94          Delay100TCYx@unit 0001  
-             _WriteCmdLCD 0A92      __size_of_Delay1KTCYx 0012            __end_of_putLCD 08FC  
-     start_initialization 0B94           ??_DelayFor18TCY 0002             ?_WriteDataLCD 0001  
-                ??_putLCD 0005            OpenLCD@lcdtype 0006          ?_SetLCDDDRamAddr 0001  
-        ?_SetLCDCGRamAddr 0001               __pbssCOMRAM 0017          WriteDataLCD@data 0002  
-         Delay1KTCYx@unit 0001                  ?_BusyLCD 0001                  ?_InitLCD 0001  
-                ?_OpenLCD 0001          ___lwdiv@dividend 0001         __CFG_CCP2MX$PORTC 000000  
-           ?_Delay100TCYx 0001            ??_WriteDataLCD 0002             ?_Delay10KTCYx 0001  
-                ?___lwdiv 0001                  ?___lwmod 0001               __smallconst 0600  
-        ___lwdiv@quotient 0005                  _LATCbits 000F8B                  _LATDbits 000F8C  
-          ??_Delay100TCYx 0001          __CFG_WDTPS$32768 000000            ??_Delay10KTCYx 0001  
-               _putIntLCD 0B0E                putIntLCD@n 0011              putLCD@buffer 0003  
-        Delay10KTCYx@unit 0002          __size_of_BusyLCD 003C          __size_of_InitLCD 0020  
-                __Hrparam 0000          __size_of_OpenLCD 00B0                  __Lrparam 0000  
-      __CFG_BOREN$SBORDIS 000000              ?_WriteCmdLCD 0001                ?_putIntLCD 0011  
-        __size_of___lwdiv 005C          __size_of___lwmod 004C           ___lwdiv@divisor 0003  
-         ___lwdiv@counter 0007                  __ptext10 0A92                  __ptext11 09B2  
-                __ptext12 0B58                  __ptext13 0B70                  __ptext14 0AD2  
-                __ptext15 0BAC                  __ptext16 0BA0                  __ptext17 0B82  
-    __end_of_WriteDataLCD 0A92             __size_of_main 012A             __size_of_utoa 00AA  
-          Delay1TCYx@unit 0001             ??_Delay1KTCYx 0001      __end_of_Delay100TCYx 0B82  
-    __end_of_Delay10KTCYx 0B70          ___lwmod@dividend 0001     __end_of_DelayFor18TCY 0BB4  
-             ??_putIntLCD 0013           putIntLCD@result 0013                  utoa@base 000C  
-         ___lwmod@divisor 0003       __end_of_Delay1KTCYx 0B94           ___lwmod@counter 0005  
-__size_of_SetLCDDDRamAddr 0054  __size_of_SetLCDCGRamAddr 005A         __CFG_FOSC$INTIO67 000000  
+       ??_SetLCDCGRamAddr 0002           __initialization 0B94              _Delay100TCYx 0B70  
+            __end_of_main 0742              __end_of_utoa 089C            WriteCmdLCD@cmd 0002  
+            _Delay10KTCYx 0B58                    ??_main 0017                    ??_utoa 000E  
+           __activetblptr 000002               ?_Delay1TCYx 0001            __CFG_WDTEN$OFF 000000  
+               ??_BusyLCD 0002                 ??_InitLCD 0007                 ??_OpenLCD 0006  
+          __CFG_XINST$OFF 000000            __CFG_STVREN$ON 000000                 ??___lwdiv 0005  
+               ??___lwmod 0005                    _putLCD 089C              __mediumconst 0000  
+                  tblptrh 000FF7                    tblptrl 000FF6                    tblptru 000FF8  
+              __accesstop 0060   __end_of__initialization 0B96             ___rparam_used 000001  
+          __pcstackCOMRAM 0001       __size_of_Delay1TCYx 000C           __CFG_LPT1OSC$ON 000000  
+  __size_of_DelayFor18TCY 0008     SetLCDCGRamAddr@CGaddr 0005             ??_WriteCmdLCD 0002  
+            ?_Delay1KTCYx 0001                   ?_putLCD 0003        __size_of_putIntLCD 002A  
+         _SetLCDDDRamAddr 09B2           _SetLCDCGRamAddr 0958                   _BusyLCD 0AD2  
+                 _InitLCD 0B38                   _OpenLCD 0742                   __Hparam 0000  
+                 __Lparam 0000             _DelayFor18TCY 0BAC                   ___lwdiv 08FC  
+                 ___lwmod 0A06              __psmallconst 0600                   __pcinit 0B94  
+                 __ramtop 0600           __size_of_putLCD 0060                   __ptext0 0618  
+                 __ptext1 0B0E                   __ptext2 07F2                   __ptext3 0A06  
+                 __ptext4 08FC                   __ptext5 089C                   __ptext6 0A52  
+                 __ptext7 0958                   __ptext8 0B38                   __ptext9 0742  
+     __end_of_WriteCmdLCD 0AD2                   _counter 0017              ??_Delay1TCYx 0001  
+    end_of_initialization 0B96             __Lmediumconst 0000         __end_of_putIntLCD 0B38  
+          ?_DelayFor18TCY 0001                   utoa@buf 0008                   utoa@val 000A  
+      __end_of_Delay1TCYx 0BAC   __end_of_SetLCDDDRamAddr 0A06   __end_of_SetLCDCGRamAddr 09B2  
+               _TRISCbits 000F94          Delay100TCYx@unit 0001               _WriteCmdLCD 0A92  
+    __size_of_Delay1KTCYx 0012            __end_of_putLCD 08FC       start_initialization 0B94  
+         ??_DelayFor18TCY 0002             ?_WriteDataLCD 0001                  ??_putLCD 0005  
+          OpenLCD@lcdtype 0006          ?_SetLCDDDRamAddr 0001          ?_SetLCDCGRamAddr 0001  
+             __pbssCOMRAM 0017          WriteDataLCD@data 0002           Delay1KTCYx@unit 0001  
+                ?_BusyLCD 0001                  ?_InitLCD 0001                  ?_OpenLCD 0001  
+        ___lwdiv@dividend 0001         __CFG_CCP2MX$PORTC 000000             ?_Delay100TCYx 0001  
+          ??_WriteDataLCD 0002             ?_Delay10KTCYx 0001                  ?___lwdiv 0001  
+                ?___lwmod 0001               __smallconst 0600          ___lwdiv@quotient 0005  
+                _LATCbits 000F8B                  _LATDbits 000F8C            ??_Delay100TCYx 0001  
+        __CFG_WDTPS$32768 000000            ??_Delay10KTCYx 0001                 _putIntLCD 0B0E  
+              putIntLCD@n 0011              putLCD@buffer 0003          Delay10KTCYx@unit 0002  
+        __size_of_BusyLCD 003C          __size_of_InitLCD 0020                  __Hrparam 0000  
+        __size_of_OpenLCD 00B0                  __Lrparam 0000        __CFG_BOREN$SBORDIS 000000  
+            ?_WriteCmdLCD 0001                ?_putIntLCD 0011          __size_of___lwdiv 005C  
+        __size_of___lwmod 004C           ___lwdiv@divisor 0003           ___lwdiv@counter 0007  
+                __ptext10 0A92                  __ptext11 09B2                  __ptext12 0B58  
+                __ptext13 0B70                  __ptext14 0AD2                  __ptext15 0BAC  
+                __ptext16 0BA0                  __ptext17 0B82      __end_of_WriteDataLCD 0A92  
+           __size_of_main 012A             __size_of_utoa 00AA            Delay1TCYx@unit 0001  
+           ??_Delay1KTCYx 0001      __end_of_Delay100TCYx 0B82      __end_of_Delay10KTCYx 0B70  
+        ___lwmod@dividend 0001     __end_of_DelayFor18TCY 0BB4               ??_putIntLCD 0013  
+         putIntLCD@result 0013                  utoa@base 000C           ___lwmod@divisor 0003  
+     __end_of_Delay1KTCYx 0B94           ___lwmod@counter 0005  __size_of_SetLCDDDRamAddr 0054  
+__size_of_SetLCDCGRamAddr 005A         __CFG_FOSC$INTIO67 000000  

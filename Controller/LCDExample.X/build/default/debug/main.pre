@@ -5242,261 +5242,103 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 90 "main.c"
+# 68 "xlcd.h"
 void InitLCD(void);
 void DelayFor18TCY(void);
 void DelayPORLCD(void);
-void DelayLCD(void);
+
 
 void OpenLCD(unsigned char lcdtype);
 void WriteCmdLCD(unsigned char cmd);
+void SetLCDCGRamAddr(unsigned char CGaddr);
 void SetLCDDDRamAddr(unsigned char DDaddr);
 unsigned char BusyLCD(void);
 void putLCD(char *buffer);
+void putIntLCD(short int n);
 void WriteDataLCD(char data);
+
+# 35 "main.c"
+unsigned char counter;
+
+
 
 void main (void)
 {
+
 TRISD = 0b00000000;
 LATD = 0;
-InitLCD();
-putLCD("Hello World");
 
+InitLCD();
+
+SetLCDCGRamAddr(0x00);
+WriteDataLCD(0b00000);
+WriteDataLCD(0b01111);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b01111);
+WriteDataLCD(0b00111);
+WriteDataLCD(0b00111);
+
+
+SetLCDCGRamAddr(0x08);
+WriteDataLCD(0b11111);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10101);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b11111);
+
+WriteCmdLCD(0b00000010);
+putLCD("Testing ");
+
+putIntLCD(3455);
+
+SetLCDDDRamAddr(0x040);
+putLCD("LCD Line 2 ");
+WriteDataLCD(0);
+WriteDataLCD(1);
+WriteDataLCD(2);
+WriteDataLCD(3);
+
+
+counter = 100;
 
 while (1)
 {
-
 LATDbits.LD0 = 1;
-Delay1KTCYx(50);
+Delay1KTCYx(10);
 
 LATDbits.LD1 = 1;
-Delay1KTCYx(50);
+Delay1KTCYx(10);
 
 LATDbits.LD2 = 1;
-Delay1KTCYx(50);
+Delay1KTCYx(10);
 
 LATDbits.LD3 = 1;
-Delay1KTCYx(50);
+Delay1KTCYx(10);
 
 LATDbits.LD4 = 1;
-Delay1KTCYx(50);
+Delay1KTCYx(10);
 
 LATDbits.LD5 = 1;
-Delay1KTCYx(50);
+Delay1KTCYx(10);
 
 LATDbits.LD6 = 1;
-Delay1KTCYx(50);
+Delay1KTCYx(10);
 
 LATDbits.LD7 = 1;
 Delay1KTCYx(50);
 
-
 LATD = 0;
 Delay1KTCYx(50);
+
+
+counter = counter + 1;
+SetLCDDDRamAddr(0x040);
+
+putIntLCD(counter);
 }
-}
-
-void InitLCD(void) {
-OpenLCD(0b00101100 & 0b00111000);
-while(BusyLCD());
-WriteCmdLCD(0x06);
-WriteCmdLCD(0x0C);
-}
-
-void DelayFor18TCY(void) {
-Delay1TCYx(18);
-}
-void DelayPORLCD(void) {
-Delay1TCYx(30);
-}
-void DelayLCD(void) {
-Delay1TCYx(10);
-}
-
-# 164
-void OpenLCD(unsigned char lcdtype)
-{
-
-
-
-TRISCbits.TRISC5 = 0;
-TRISCbits.TRISC4 = 0;
-TRISCbits.TRISC6 = 0;
-LATCbits.LATC5 = 0;
-LATCbits.LATC4 = 0;
-LATCbits.LATC6 = 0;
-
-
-DelayPORLCD();
-
-WriteCmdLCD(0x30);
-Delay10KTCYx(0x05);
-
-WriteCmdLCD(0x30);
-Delay10KTCYx(0x01);
-
-WriteCmdLCD(0x32);
-while( BusyLCD() );
-
-
-
-
-while(BusyLCD());
-WriteCmdLCD(lcdtype);
-
-
-while(BusyLCD());
-WriteCmdLCD(0b00001011&0b00001101&0b00001110);
-while(BusyLCD());
-WriteCmdLCD(0b00001111&0b00001111&0b00001111);
-
-
-while(BusyLCD());
-WriteCmdLCD(0x01);
-
-
-while(BusyLCD());
-WriteCmdLCD(0b00000100);
-
-
-while(BusyLCD());
-SetLCDDDRamAddr(0x80);
-
-return;
-}
-
-void WriteCmdLCD(unsigned char cmd)
-{
-
-TRISC &= 0xf0;
-PORTC &= 0xf0;
-PORTC |= (cmd>>4)&0x0f;
-
-LATCbits.LATC5 = 0;
-LATCbits.LATC4 = 0;
-DelayFor18TCY();
-LATCbits.LATC6 = 1;
-DelayFor18TCY();
-LATCbits.LATC6 = 0;
-
-PORTC &= 0xf0;
-PORTC |= cmd&0x0f;
-
-DelayFor18TCY();
-LATCbits.LATC6 = 1;
-DelayFor18TCY();
-LATCbits.LATC6 = 0;
-
-
-
-TRISC |= 0x0f;
-
-return;
-}
-
-unsigned char BusyLCD(void)
-{
-LATCbits.LATC5 = 1;
-LATCbits.LATC4 = 0;
-DelayFor18TCY();
-LATCbits.LATC6 = 1;
-DelayFor18TCY();
-
-# 268
-if(PORTC&0x08)
-
-{
-LATCbits.LATC6 = 0;
-DelayFor18TCY();
-LATCbits.LATC6 = 1;
-DelayFor18TCY();
-LATCbits.LATC6 = 0;
-LATCbits.LATC5 = 0;
-return 1;
-}
-else
-{
-LATCbits.LATC6 = 0;
-DelayFor18TCY();
-LATCbits.LATC6 = 1;
-DelayFor18TCY();
-LATCbits.LATC6 = 0;
-LATCbits.LATC5 = 0;
-return 0;
-}
-
-}
-
-
-
-void SetLCDDDRamAddr(unsigned char DDaddr)
-{
-
-# 313
-TRISC &= 0xf0;
-PORTC &= 0xf0;
-PORTC |= (((DDaddr | 0b10000000)>>4) & 0x0f);
-
-LATCbits.LATC5 = 0;
-LATCbits.LATC4 = 0;
-DelayFor18TCY();
-LATCbits.LATC6 = 1;
-DelayFor18TCY();
-LATCbits.LATC6 = 0;
-
-
-
-
-PORTC &= 0xf0;
-PORTC |= (DDaddr&0x0f);
-
-DelayFor18TCY();
-LATCbits.LATC6 = 1;
-DelayFor18TCY();
-LATCbits.LATC6 = 0;
-
-
-
-TRISC |= 0x0f;
-
-
-return;
-}
-
-void putLCD(char *buffer)
-{
-while(*buffer)
-{
-while(BusyLCD());
-WriteDataLCD(*buffer);
-buffer++;
-}
-return;
-}
-
-void WriteDataLCD(char data)
-{
-
-TRISC &= 0xf0;
-PORTC &= 0xf0;
-PORTC |= ((data>>4)&0x0f);
-
-LATCbits.LATC4 = 1;
-LATCbits.LATC5 = 0;
-DelayFor18TCY();
-LATCbits.LATC6 = 1;
-DelayFor18TCY();
-LATCbits.LATC6 = 0;
-
-PORTC &= 0xf0;
-PORTC |= (data&0x0f);
-
-DelayFor18TCY();
-LATCbits.LATC6 = 1;
-DelayFor18TCY();
-LATCbits.LATC6 = 0;
-
-TRISC |= 0x0f;
-
-return;
 }
