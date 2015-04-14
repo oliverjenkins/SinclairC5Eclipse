@@ -88,10 +88,11 @@ void main (void)
     // Init I/O
     TRISD = 0b00000000;         // PORTD bits 7:0 are all outputs (0)
     TRISAbits.TRISA0 = 1;       // TRISA0 input
+    TRISE = 0b00000000;         // TRISE Output
 
     INTCON2bits.RBPU = 0;       // enable PORTB internal pullups
     WPUBbits.WPUB0 = 1;         // enable pull up on RB0
-
+    
     // ADCON1 is now set up in the InitADC() function.
     TRISBbits.TRISB0 = 1;       // PORTB bit 0 (connected to switch) is input (1)
 
@@ -101,12 +102,13 @@ void main (void)
     // Init PWM
     PWM_Init();
 
+    
     ClockSpeed = OSCCON;
     
     
     while (1)
     {
-
+        
         ADC_Value = ADC_Convert();      // MSB from ADC
         ADC_Value = ADC_Value >> 4;     // We have 0 - 255 from ADC, so divide by 16 to get a lookup range
 
@@ -115,6 +117,7 @@ void main (void)
         
 
         Delay1KTCYx(30);	    // Delay 50 x 1000 = 50,000 cycles; 200ms @ 1MHz
+    
     }
 }
 

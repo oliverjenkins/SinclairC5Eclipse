@@ -2,8 +2,42 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "2931 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"3152
+[v _TRISE `Vuc ~T0 @X0 0 e@3990 ]
 "2034
 [v _LATD `Vuc ~T0 @X0 0 e@3980 ]
+"2172
+[s S123 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S123 . LATE0 LATE1 LATE2 ]
+"2177
+[s S124 :1 `uc 1 ]
+[n S124 . LE0 ]
+"2180
+[s S125 :1 `uc 1 :1 `uc 1 ]
+[n S125 . . LE1 ]
+"2184
+[s S126 :2 `uc 1 :1 `uc 1 ]
+[n S126 . . LE2 ]
+"2188
+[s S127 :3 `uc 1 :1 `uc 1 ]
+[n S127 . . LE3 ]
+"2192
+[s S128 :4 `uc 1 :1 `uc 1 ]
+[n S128 . . LE4 ]
+"2196
+[s S129 :5 `uc 1 :1 `uc 1 ]
+[n S129 . . LE5 ]
+"2200
+[s S130 :6 `uc 1 :1 `uc 1 ]
+[n S130 . . LE6 ]
+"2204
+[s S131 :7 `uc 1 :1 `uc 1 ]
+[n S131 . . LE7 ]
+"2171
+[u S122 `S123 1 `S124 1 `S125 1 `S126 1 `S127 1 `S128 1 `S129 1 `S130 1 `S131 1 ]
+[n S122 . . . . . . . . . . ]
+"2209
+[v _LATEbits `VS122 ~T0 @X0 0 e@3981 ]
 "31 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h
 [v _Delay1KTCYx `(v ~T0 @X0 0 ef1`uc ]
 "31 01_Hello_LED.c
@@ -3928,19 +3962,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;usart.h: 599: void putsUSART ( char *data);
 [; ;usart.h: 600: void putrsUSART ( const  char *data);
 [; ;usart.h: 654: void baudUSART ( unsigned char baudconfig);
-[; ;xlcd.h: 87: void OpenXLCD( unsigned char);
-[; ;xlcd.h: 92: void SetCGRamAddr( unsigned char);
-[; ;xlcd.h: 97: void SetDDRamAddr( unsigned char);
-[; ;xlcd.h: 102: unsigned char BusyXLCD(void);
-[; ;xlcd.h: 107: unsigned char ReadAddrXLCD(void);
-[; ;xlcd.h: 112: char ReadDataXLCD(void);
-[; ;xlcd.h: 117: void WriteCmdXLCD( unsigned char);
-[; ;xlcd.h: 122: void WriteDataXLCD( char);
-[; ;xlcd.h: 132: void putsXLCD( char *);
-[; ;xlcd.h: 137: void putrsXLCD(const char *);
-[; ;xlcd.h: 140: extern void DelayFor18TCY(void);
-[; ;xlcd.h: 141: extern void DelayPORXLCD(void);
-[; ;xlcd.h: 142: extern void DelayXLCD(void);
+[; ;xlcd.h: 89: void OpenXLCD( unsigned char);
+[; ;xlcd.h: 94: void SetCGRamAddr( unsigned char);
+[; ;xlcd.h: 99: void SetDDRamAddr( unsigned char);
+[; ;xlcd.h: 104: unsigned char BusyXLCD(void);
+[; ;xlcd.h: 109: unsigned char ReadAddrXLCD(void);
+[; ;xlcd.h: 114: char ReadDataXLCD(void);
+[; ;xlcd.h: 119: void WriteCmdXLCD( unsigned char);
+[; ;xlcd.h: 124: void WriteDataXLCD( char);
+[; ;xlcd.h: 134: void putsXLCD( char *);
+[; ;xlcd.h: 139: void putrsXLCD(const char *);
+[; ;xlcd.h: 142: extern void DelayFor18TCY(void);
+[; ;xlcd.h: 143: extern void DelayPORXLCD(void);
+[; ;xlcd.h: 144: extern void DelayXLCD(void);
 [; ;delays.h: 13: void Delay1TCYx(unsigned char);
 [; ;delays.h: 19: void Delay10TCYx(unsigned char);
 [; ;delays.h: 25: void Delay100TCYx(unsigned char);
@@ -3951,82 +3985,88 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
-"69 01_Hello_LED.c
+"70 01_Hello_LED.c
 [v _LED_Number `uc ~T0 @X0 1 e ]
-[; ;01_Hello_LED.c: 69: unsigned char LED_Number;
-"74
+[; ;01_Hello_LED.c: 70: unsigned char LED_Number;
+"75
 [v _LED_LookupTable `Cuc ~T0 @X0 -> 14 `i e@384 ]
 [i _LED_LookupTable
 :U ..
-"75
+"76
 -> -> 1 `i `uc
 -> -> 2 `i `uc
 -> -> 4 `i `uc
 -> -> 8 `i `uc
-"76
+"77
 -> -> 16 `i `uc
 -> -> 32 `i `uc
 -> -> 64 `i `uc
 -> -> 128 `i `uc
-"77
+"78
 -> -> 64 `i `uc
 -> -> 32 `i `uc
 -> -> 16 `i `uc
-"78
+"79
 -> -> 8 `i `uc
 -> -> 4 `i `uc
 -> -> 2 `i `uc
 ..
 ]
-[; ;01_Hello_LED.c: 74: const unsigned char LED_LookupTable[14] @ 0x180 = {
-[; ;01_Hello_LED.c: 75: 0x01, 0x02, 0x04, 0x08,
-[; ;01_Hello_LED.c: 76: 0x10, 0x20, 0x40, 0x80,
-[; ;01_Hello_LED.c: 77: 0x40, 0x20, 0x10,
-[; ;01_Hello_LED.c: 78: 0x08, 0x04, 0x02};
-"82
-[v _main `(v ~T0 @X0 1 ef ]
+[; ;01_Hello_LED.c: 75: const unsigned char LED_LookupTable[14] @ 0x180 = {
+[; ;01_Hello_LED.c: 76: 0x01, 0x02, 0x04, 0x08,
+[; ;01_Hello_LED.c: 77: 0x10, 0x20, 0x40, 0x80,
+[; ;01_Hello_LED.c: 78: 0x40, 0x20, 0x10,
+[; ;01_Hello_LED.c: 79: 0x08, 0x04, 0x02};
 "83
+[v _main `(v ~T0 @X0 1 ef ]
+"84
 {
-[; ;01_Hello_LED.c: 82: void main (void)
-[; ;01_Hello_LED.c: 83: {
+[; ;01_Hello_LED.c: 83: void main (void)
+[; ;01_Hello_LED.c: 84: {
 [e :U _main ]
 [f ]
-[; ;01_Hello_LED.c: 84: LED_Number = 0;
-"84
+[; ;01_Hello_LED.c: 85: LED_Number = 0;
+"85
 [e = _LED_Number -> -> 0 `i `uc ]
-[; ;01_Hello_LED.c: 86: TRISD = 0b00000000;
-"86
+[; ;01_Hello_LED.c: 87: TRISD = 0b00000000;
+"87
 [e = _TRISD -> -> 0 `i `uc ]
-[; ;01_Hello_LED.c: 88: while (1)
+[; ;01_Hello_LED.c: 88: TRISE = 0b11111110;
 "88
-[e :U 415 ]
-[; ;01_Hello_LED.c: 89: {
+[e = _TRISE -> -> 254 `i `uc ]
+[; ;01_Hello_LED.c: 89: while (1)
 "89
+[e :U 415 ]
+[; ;01_Hello_LED.c: 90: {
+"90
 {
-[; ;01_Hello_LED.c: 91: LATD = LED_LookupTable[LED_Number];
-"91
+[; ;01_Hello_LED.c: 92: LATD = LED_LookupTable[LED_Number];
+"92
 [e = _LATD *U + &U _LED_LookupTable * -> _LED_Number `ux -> -> # *U &U _LED_LookupTable `ui `ux ]
-[; ;01_Hello_LED.c: 93: LED_Number++;
+[; ;01_Hello_LED.c: 93: LATEbits.LATE0 = 1;
 "93
-[e ++ _LED_Number -> -> 1 `i `uc ]
-[; ;01_Hello_LED.c: 95: if (LED_Number == 14)
+[e = . . _LATEbits 0 0 -> -> 1 `i `uc ]
+[; ;01_Hello_LED.c: 95: LED_Number++;
 "95
+[e ++ _LED_Number -> -> 1 `i `uc ]
+[; ;01_Hello_LED.c: 97: if (LED_Number == 14)
+"97
 [e $ ! == -> _LED_Number `i -> 14 `i 417  ]
-[; ;01_Hello_LED.c: 96: LED_Number = 0;
-"96
+[; ;01_Hello_LED.c: 98: LED_Number = 0;
+"98
 [e = _LED_Number -> -> 0 `i `uc ]
 [e :U 417 ]
-[; ;01_Hello_LED.c: 98: Delay1KTCYx(30);
-"98
+[; ;01_Hello_LED.c: 100: Delay1KTCYx(30);
+"100
 [e ( _Delay1KTCYx (1 -> -> 30 `i `uc ]
-"99
+"101
 }
 [e :U 414 ]
-"88
+"89
 [e $U 415  ]
 [e :U 416 ]
-[; ;01_Hello_LED.c: 99: }
-[; ;01_Hello_LED.c: 100: }
-"100
+[; ;01_Hello_LED.c: 101: }
+[; ;01_Hello_LED.c: 102: }
+"102
 [e :UE 413 ]
 }

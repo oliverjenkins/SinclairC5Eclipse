@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.34 build -361300703 
-                                                                                               Sat Mar 28 07:23:44 2015
+                                                                                               Mon Apr 13 18:10:16 2015
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
      1                           	processor	18F45K20
@@ -42,234 +42,243 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
     36  00018E                     __end_of_LED_LookupTable:
     37                           	opt stack 0
     38  0000                     _LATD	set	3980
-    39  0000                     _TRISD	set	3989
-    40                           
-    41                           ; #config settings
-    42  0000                     
-    43                           	psect	cinit
-    44  000656                     __pcinit:
-    45                           	opt stack 0
-    46  000656                     start_initialization:
+    39  0000                     _LATEbits	set	3981
+    40  0000                     _TRISD	set	3989
+    41  0000                     _TRISE	set	3990
+    42                           
+    43                           ; #config settings
+    44  0000                     
+    45                           	psect	cinit
+    46  00065C                     __pcinit:
     47                           	opt stack 0
-    48  000656                     __initialization:
+    48  00065C                     start_initialization:
     49                           	opt stack 0
-    50                           
-    51                           ; Clear objects allocated to COMRAM (1 bytes)
-    52  000656  6A01               	clrf	__pbssCOMRAM& (0+255),c
-    53  000658                     end_of_initialization:
-    54                           	opt stack 0
-    55  000658                     __end_of__initialization:
+    50  00065C                     __initialization:
+    51                           	opt stack 0
+    52                           
+    53                           ; Clear objects allocated to COMRAM (1 bytes)
+    54  00065C  6A01               	clrf	__pbssCOMRAM& (0+255),c
+    55  00065E                     end_of_initialization:
     56                           	opt stack 0
-    57  000658  0E00               	movlw	low (__Lmediumconst shr (0+16))
-    58  00065A  6EF8               	movwf	tblptru,c
-    59  00065C  0100               	movlb	0
-    60  00065E  EF01  F003         	goto	_main	;jump to C main() function
-    61                           tblptru	equ	0xFF8
-    62                           
-    63                           	psect	bssCOMRAM
-    64  000001                     __pbssCOMRAM:
-    65                           	opt stack 0
-    66  000001                     _LED_Number:
+    57  00065E                     __end_of__initialization:
+    58                           	opt stack 0
+    59  00065E  0E00               	movlw	low (__Lmediumconst shr (0+16))
+    60  000660  6EF8               	movwf	tblptru,c
+    61  000662  0100               	movlb	0
+    62  000664  EF01  F003         	goto	_main	;jump to C main() function
+    63                           tblptru	equ	0xFF8
+    64                           
+    65                           	psect	bssCOMRAM
+    66  000001                     __pbssCOMRAM:
     67                           	opt stack 0
-    68  000001                     	ds	1
-    69                           tblptru	equ	0xFF8
-    70                           
-    71                           	psect	cstackCOMRAM
-    72  000002                     __pcstackCOMRAM:
-    73                           	opt stack 0
-    74  000002                     Delay1KTCYx@unit:
+    68  000001                     _LED_Number:
+    69                           	opt stack 0
+    70  000001                     	ds	1
+    71                           tblptru	equ	0xFF8
+    72                           
+    73                           	psect	cstackCOMRAM
+    74  000002                     __pcstackCOMRAM:
     75                           	opt stack 0
-    76                           
-    77                           ; 1 bytes @ 0x0
-    78  000002                     	ds	1
-    79  000003                     tblptru	equ	0xFF8
-    80                           
-    81                           ; 0 bytes @ 0x1
-    82 ;;
-    83 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+    76  000002                     Delay1KTCYx@unit:
+    77                           	opt stack 0
+    78                           
+    79                           ; 1 bytes @ 0x0
+    80  000002                     	ds	1
+    81  000003                     tblptru	equ	0xFF8
+    82                           
+    83                           ; 0 bytes @ 0x1
     84 ;;
-    85 ;; *************** function _main *****************
-    86 ;; Defined at:
-    87 ;;		line 82 in file "01_Hello_LED.c"
-    88 ;; Parameters:    Size  Location     Type
-    89 ;;		None
-    90 ;; Auto vars:     Size  Location     Type
+    85 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+    86 ;;
+    87 ;; *************** function _main *****************
+    88 ;; Defined at:
+    89 ;;		line 83 in file "01_Hello_LED.c"
+    90 ;; Parameters:    Size  Location     Type
     91 ;;		None
-    92 ;; Return value:  Size  Location     Type
-    93 ;;		None               void
-    94 ;; Registers used:
-    95 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
-    96 ;; Tracked objects:
-    97 ;;		On entry : 0/0
-    98 ;;		On exit  : 0/0
-    99 ;;		Unchanged: 0/0
-   100 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   101 ;;      Params:         0       0       0       0       0       0       0
-   102 ;;      Locals:         0       0       0       0       0       0       0
-   103 ;;      Temps:          0       0       0       0       0       0       0
-   104 ;;      Totals:         0       0       0       0       0       0       0
-   105 ;;Total ram usage:        0 bytes
-   106 ;; Hardware stack levels required when called:    1
-   107 ;; This function calls:
-   108 ;;		_Delay1KTCYx
-   109 ;; This function is called by:
-   110 ;;		Startup code after reset
-   111 ;; This function uses a non-reentrant model
-   112 ;;
-   113                           
-   114                           	psect	text0
-   115  000602                     __ptext0:
-   116                           	opt stack 0
-   117  000602                     _main:
-   118                           	opt stack 30
-   119                           
-   120                           ;01_Hello_LED.c: 84: LED_Number = 0;
+    92 ;; Auto vars:     Size  Location     Type
+    93 ;;		None
+    94 ;; Return value:  Size  Location     Type
+    95 ;;		None               void
+    96 ;; Registers used:
+    97 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+    98 ;; Tracked objects:
+    99 ;;		On entry : 0/0
+   100 ;;		On exit  : 0/0
+   101 ;;		Unchanged: 0/0
+   102 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   103 ;;      Params:         0       0       0       0       0       0       0
+   104 ;;      Locals:         0       0       0       0       0       0       0
+   105 ;;      Temps:          0       0       0       0       0       0       0
+   106 ;;      Totals:         0       0       0       0       0       0       0
+   107 ;;Total ram usage:        0 bytes
+   108 ;; Hardware stack levels required when called:    1
+   109 ;; This function calls:
+   110 ;;		_Delay1KTCYx
+   111 ;; This function is called by:
+   112 ;;		Startup code after reset
+   113 ;; This function uses a non-reentrant model
+   114 ;;
+   115                           
+   116                           	psect	text0
+   117  000602                     __ptext0:
+   118                           	opt stack 0
+   119  000602                     _main:
+   120                           	opt stack 30
    121                           
-   122                           ;incstack = 0
-   123  000602  0E00               	movlw	0
-   124  000604  6E01               	movwf	_LED_Number,c
-   125                           
-   126                           ;01_Hello_LED.c: 86: TRISD = 0b00000000;
-   127  000606  0E00               	movlw	0
-   128  000608  6E95               	movwf	3989,c	;volatile
-   129  00060A  D000               	goto	l612
-   130  00060C                     l612:
+   122                           ;01_Hello_LED.c: 85: LED_Number = 0;
+   123                           
+   124                           ;incstack = 0
+   125  000602  0E00               	movlw	0
+   126  000604  6E01               	movwf	_LED_Number,c
+   127                           
+   128                           ;01_Hello_LED.c: 87: TRISD = 0b00000000;
+   129  000606  0E00               	movlw	0
+   130  000608  6E95               	movwf	3989,c	;volatile
    131                           
-   132                           ;01_Hello_LED.c: 89: {
-   133                           ;01_Hello_LED.c: 91: LATD = LED_LookupTable[LED_Number];
-   134  00060C  5001               	movf	_LED_Number,w,c
-   135  00060E  0D01               	mullw	1
-   136  000610  0E80               	movlw	128
-   137  000612  24F3               	addwf	prodl,w,c
-   138  000614  6EF6               	movwf	tblptrl,c
-   139  000616  0E01               	movlw	1
-   140  000618  20F4               	addwfc	prodh,w,c
-   141  00061A  6EF7               	movwf	tblptrh,c
-   142  00061C  6AF8               	clrf	tblptru,c
-   143  00061E  0E00               	movlw	0
-   144  000620  22F8               	addwfc	tblptru,f,c
-   145  000622  0008               	tblrd		*
-   146  000624  CFF5 FF8C          	movff	tablat,3980	;volatile
-   147                           
-   148                           ;01_Hello_LED.c: 93: LED_Number++;
-   149  000628  2A01               	incf	_LED_Number,f,c
-   150                           
-   151                           ;01_Hello_LED.c: 95: if (LED_Number == 14)
-   152  00062A  0E0E               	movlw	14
-   153  00062C  1801               	xorwf	_LED_Number,w,c
-   154  00062E  A4D8               	btfss	status,2,c
-   155  000630  D003               	goto	l620
+   132                           ;01_Hello_LED.c: 88: TRISE = 0b11111110;
+   133  00060A  0EFE               	movlw	254
+   134  00060C  6E96               	movwf	3990,c	;volatile
+   135  00060E  D000               	goto	l616
+   136  000610                     l616:
+   137                           
+   138                           ;01_Hello_LED.c: 90: {
+   139                           ;01_Hello_LED.c: 92: LATD = LED_LookupTable[LED_Number];
+   140  000610  5001               	movf	_LED_Number,w,c
+   141  000612  0D01               	mullw	1
+   142  000614  0E80               	movlw	128
+   143  000616  24F3               	addwf	prodl,w,c
+   144  000618  6EF6               	movwf	tblptrl,c
+   145  00061A  0E01               	movlw	1
+   146  00061C  20F4               	addwfc	prodh,w,c
+   147  00061E  6EF7               	movwf	tblptrh,c
+   148  000620  6AF8               	clrf	tblptru,c
+   149  000622  0E00               	movlw	0
+   150  000624  22F8               	addwfc	tblptru,f,c
+   151  000626  0008               	tblrd		*
+   152  000628  CFF5 FF8C          	movff	tablat,3980	;volatile
+   153                           
+   154                           ;01_Hello_LED.c: 93: LATEbits.LATE0 = 1;
+   155  00062C  808D               	bsf	3981,0,c	;volatile
    156                           
-   157                           ;01_Hello_LED.c: 96: LED_Number = 0;
-   158  000632  0E00               	movlw	0
-   159  000634  6E01               	movwf	_LED_Number,c
-   160  000636  D000               	goto	l620
-   161  000638                     l620:
-   162                           
-   163                           ;01_Hello_LED.c: 98: Delay1KTCYx(30);
-   164  000638  0E1E               	movlw	30
-   165  00063A  EC22  F003         	call	_Delay1KTCYx
-   166  00063E  D7E6               	goto	l612
-   167  000640  EF00  F000         	goto	start
-   168  000644                     __end_of_main:
-   169                           	opt stack 0
-   170                           tblptru	equ	0xFF8
-   171                           tblptrh	equ	0xFF7
-   172                           tblptrl	equ	0xFF6
-   173                           tablat	equ	0xFF5
-   174                           prodh	equ	0xFF4
-   175                           prodl	equ	0xFF3
-   176                           status	equ	0xFD8
-   177                           
-   178 ;; *************** function _Delay1KTCYx *****************
-   179 ;; Defined at:
-   180 ;;		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c"
-   181 ;; Parameters:    Size  Location     Type
-   182 ;;  unit            1    wreg     unsigned char 
-   183 ;; Auto vars:     Size  Location     Type
-   184 ;;  unit            1    0[COMRAM] unsigned char 
-   185 ;; Return value:  Size  Location     Type
-   186 ;;		None               void
-   187 ;; Registers used:
-   188 ;;		wreg
-   189 ;; Tracked objects:
-   190 ;;		On entry : 0/0
-   191 ;;		On exit  : 0/0
-   192 ;;		Unchanged: 0/0
-   193 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   194 ;;      Params:         0       0       0       0       0       0       0
-   195 ;;      Locals:         1       0       0       0       0       0       0
-   196 ;;      Temps:          0       0       0       0       0       0       0
-   197 ;;      Totals:         1       0       0       0       0       0       0
-   198 ;;Total ram usage:        1 bytes
-   199 ;; Hardware stack levels used:    1
-   200 ;; This function calls:
-   201 ;;		Nothing
-   202 ;; This function is called by:
-   203 ;;		_main
-   204 ;; This function uses a non-reentrant model
-   205 ;;
-   206                           
-   207                           	psect	text1
-   208  000644                     __ptext1:
-   209                           	opt stack 0
-   210  000644                     _Delay1KTCYx:
-   211                           	opt stack 30
-   212                           
-   213                           ;incstack = 0
-   214                           ;Delay1KTCYx@unit stored from wreg
-   215  000644  6E02               	movwf	Delay1KTCYx@unit,c
-   216  000646  0EFA               	movlw	250
-   217  000648                     u27:
-   218  000648  F000               	nop	
-   219  00064A  2EE8               	decfsz	wreg,f,c
-   220  00064C  D7FD               	goto	u27
-   221  00064E  2E02               	decfsz	Delay1KTCYx@unit,f,c
-   222  000650  D7FA               	goto	l606
-   223  000652  0012               	return	
-   224  000654  0012               	return		;funcret
-   225  000656                     __end_of_Delay1KTCYx:
-   226                           	opt stack 0
-   227                           tblptru	equ	0xFF8
-   228                           tblptrh	equ	0xFF7
-   229                           tblptrl	equ	0xFF6
-   230                           tablat	equ	0xFF5
-   231                           prodh	equ	0xFF4
-   232                           prodl	equ	0xFF3
-   233                           wreg	equ	0xFE8
-   234                           status	equ	0xFD8
-   235                           
-   236                           	psect	smallconst
-   237  000600                     __psmallconst:
-   238                           	opt stack 0
-   239  000600  00                 	db	0
-   240  000601  00                 	db	0	; dummy byte at the end
-   241  0000                     tblptru	equ	0xFF8
-   242                           tblptrh	equ	0xFF7
-   243                           tblptrl	equ	0xFF6
-   244                           tablat	equ	0xFF5
-   245                           prodh	equ	0xFF4
-   246                           prodl	equ	0xFF3
-   247                           wreg	equ	0xFE8
-   248                           status	equ	0xFD8
-   249                           tblptru	equ	0xFF8
-   250                           tblptrh	equ	0xFF7
-   251                           tblptrl	equ	0xFF6
-   252                           tablat	equ	0xFF5
-   253                           prodh	equ	0xFF4
-   254                           prodl	equ	0xFF3
-   255                           wreg	equ	0xFE8
-   256                           status	equ	0xFD8
-   257                           
-   258                           	psect	rparam
-   259  0000                     tblptru	equ	0xFF8
-   260                           tblptrh	equ	0xFF7
-   261                           tblptrl	equ	0xFF6
-   262                           tablat	equ	0xFF5
-   263                           prodh	equ	0xFF4
-   264                           prodl	equ	0xFF3
-   265                           wreg	equ	0xFE8
-   266                           status	equ	0xFD8
+   157                           ;01_Hello_LED.c: 95: LED_Number++;
+   158  00062E  2A01               	incf	_LED_Number,f,c
+   159                           
+   160                           ;01_Hello_LED.c: 97: if (LED_Number == 14)
+   161  000630  0E0E               	movlw	14
+   162  000632  1801               	xorwf	_LED_Number,w,c
+   163  000634  A4D8               	btfss	status,2,c
+   164  000636  D003               	goto	l626
+   165                           
+   166                           ;01_Hello_LED.c: 98: LED_Number = 0;
+   167  000638  0E00               	movlw	0
+   168  00063A  6E01               	movwf	_LED_Number,c
+   169  00063C  D000               	goto	l626
+   170  00063E                     l626:
+   171                           
+   172                           ;01_Hello_LED.c: 100: Delay1KTCYx(30);
+   173  00063E  0E1E               	movlw	30
+   174  000640  EC25  F003         	call	_Delay1KTCYx
+   175  000644  D7E5               	goto	l616
+   176  000646  EF00  F000         	goto	start
+   177  00064A                     __end_of_main:
+   178                           	opt stack 0
+   179                           tblptru	equ	0xFF8
+   180                           tblptrh	equ	0xFF7
+   181                           tblptrl	equ	0xFF6
+   182                           tablat	equ	0xFF5
+   183                           prodh	equ	0xFF4
+   184                           prodl	equ	0xFF3
+   185                           status	equ	0xFD8
+   186                           
+   187 ;; *************** function _Delay1KTCYx *****************
+   188 ;; Defined at:
+   189 ;;		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c"
+   190 ;; Parameters:    Size  Location     Type
+   191 ;;  unit            1    wreg     unsigned char 
+   192 ;; Auto vars:     Size  Location     Type
+   193 ;;  unit            1    0[COMRAM] unsigned char 
+   194 ;; Return value:  Size  Location     Type
+   195 ;;		None               void
+   196 ;; Registers used:
+   197 ;;		wreg
+   198 ;; Tracked objects:
+   199 ;;		On entry : 0/0
+   200 ;;		On exit  : 0/0
+   201 ;;		Unchanged: 0/0
+   202 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   203 ;;      Params:         0       0       0       0       0       0       0
+   204 ;;      Locals:         1       0       0       0       0       0       0
+   205 ;;      Temps:          0       0       0       0       0       0       0
+   206 ;;      Totals:         1       0       0       0       0       0       0
+   207 ;;Total ram usage:        1 bytes
+   208 ;; Hardware stack levels used:    1
+   209 ;; This function calls:
+   210 ;;		Nothing
+   211 ;; This function is called by:
+   212 ;;		_main
+   213 ;; This function uses a non-reentrant model
+   214 ;;
+   215                           
+   216                           	psect	text1
+   217  00064A                     __ptext1:
+   218                           	opt stack 0
+   219  00064A                     _Delay1KTCYx:
+   220                           	opt stack 30
+   221                           
+   222                           ;incstack = 0
+   223                           ;Delay1KTCYx@unit stored from wreg
+   224  00064A  6E02               	movwf	Delay1KTCYx@unit,c
+   225  00064C  0EFA               	movlw	250
+   226  00064E                     u27:
+   227  00064E  F000               	nop	
+   228  000650  2EE8               	decfsz	wreg,f,c
+   229  000652  D7FD               	goto	u27
+   230  000654  2E02               	decfsz	Delay1KTCYx@unit,f,c
+   231  000656  D7FA               	goto	l610
+   232  000658  0012               	return	
+   233  00065A  0012               	return		;funcret
+   234  00065C                     __end_of_Delay1KTCYx:
+   235                           	opt stack 0
+   236                           tblptru	equ	0xFF8
+   237                           tblptrh	equ	0xFF7
+   238                           tblptrl	equ	0xFF6
+   239                           tablat	equ	0xFF5
+   240                           prodh	equ	0xFF4
+   241                           prodl	equ	0xFF3
+   242                           wreg	equ	0xFE8
+   243                           status	equ	0xFD8
+   244                           
+   245                           	psect	smallconst
+   246  000600                     __psmallconst:
+   247                           	opt stack 0
+   248  000600  00                 	db	0
+   249  000601  00                 	db	0	; dummy byte at the end
+   250  0000                     tblptru	equ	0xFF8
+   251                           tblptrh	equ	0xFF7
+   252                           tblptrl	equ	0xFF6
+   253                           tablat	equ	0xFF5
+   254                           prodh	equ	0xFF4
+   255                           prodl	equ	0xFF3
+   256                           wreg	equ	0xFE8
+   257                           status	equ	0xFD8
+   258                           tblptru	equ	0xFF8
+   259                           tblptrh	equ	0xFF7
+   260                           tblptrl	equ	0xFF6
+   261                           tablat	equ	0xFF5
+   262                           prodh	equ	0xFF4
+   263                           prodl	equ	0xFF3
+   264                           wreg	equ	0xFE8
+   265                           status	equ	0xFD8
+   266                           
+   267                           	psect	rparam
+   268  0000                     tblptru	equ	0xFF8
+   269                           tblptrh	equ	0xFF7
+   270                           tblptrl	equ	0xFF6
+   271                           tablat	equ	0xFF5
+   272                           prodh	equ	0xFF4
+   273                           prodl	equ	0xFF3
+   274                           wreg	equ	0xFE8
+   275                           status	equ	0xFD8
 
 
 Data Sizes:
@@ -369,34 +378,35 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
-Symbol Table                                                                                   Sat Mar 28 07:23:44 2015
+Symbol Table                                                                                   Mon Apr 13 18:10:16 2015
 
-                          u27 0648                  __CFG_CP0$OFF 000000                  __CFG_CP1$OFF 000000  
-                __CFG_CP2$OFF 000000                  __CFG_CP3$OFF 000000                           l620 0638  
-                         l612 060C                           l606 0646                  __CFG_CPB$OFF 000000  
+                          u27 064E                  __CFG_CP0$OFF 000000                  __CFG_CP1$OFF 000000  
+                __CFG_CP2$OFF 000000                  __CFG_CP3$OFF 000000                           l610 064C  
+                         l616 0610                           l626 063E                  __CFG_CPB$OFF 000000  
                 __CFG_CPD$OFF 000000                  __CFG_BORV$30 000000                           wreg 000FE8  
                 __CFG_LVP$OFF 000000                          _LATD 000F8C                          _main 0602  
                         prodh 000FF4                          prodl 000FF3                          start 0000  
-               __CFG_IESO$OFF 000000                  ___param_bank 000010                   _Delay1KTCYx 0644  
-                       ?_main 0002                         _TRISD 000F95                 __CFG_PWRT$OFF 000000  
-               __CFG_WRT0$OFF 000000                 __CFG_WRT1$OFF 000000                 __CFG_WRT2$OFF 000000  
-               __CFG_WRT3$OFF 000000                __CFG_EBTR0$OFF 000000                __CFG_FCMEN$OFF 000000  
-              __CFG_EBTR1$OFF 000000                __CFG_EBTR2$OFF 000000                __CFG_EBTR3$OFF 000000  
-               __CFG_WRTB$OFF 000000                 __CFG_WRTC$OFF 000000                 __CFG_WRTD$OFF 000000  
-              __CFG_EBTRB$OFF 000000                         tablat 000FF5                         status 000FD8  
-              __CFG_PBADEN$ON 000000                __CFG_MCLRE$OFF 000000               __initialization 0656  
-                __end_of_main 0644                        ??_main 0003                 __activetblptr 000002  
-              __CFG_WDTEN$OFF 000000                __CFG_XINST$OFF 000000                __CFG_STVREN$ON 000000  
-                __mediumconst 0000                        tblptrh 000FF7                        tblptrl 000FF6  
-                      tblptru 000FF8                    __accesstop 0060       __end_of__initialization 0658  
-               ___rparam_used 000001                __pcstackCOMRAM 0002               __CFG_LPT1OSC$ON 000000  
-                ?_Delay1KTCYx 0002  _LED_LookupTable_absconstaddr 000180               _LED_LookupTable 0180  
-                     __Hparam 0000                       __Lparam 0000                  __psmallconst 0600  
-                     __pcinit 0656                       __ramtop 0600                       __ptext0 0602  
-                     __ptext1 0644          end_of_initialization 0658                 __Lmediumconst 0000  
-     __end_of_LED_LookupTable 018E          __size_of_Delay1KTCYx 0012           start_initialization 0656  
-                 __pbssCOMRAM 0001               Delay1KTCYx@unit 0002             __CFG_CCP2MX$PORTC 000000  
-                 __smallconst 0600              __CFG_WDTPS$32768 000000                      __Hrparam 0000  
-                    __Lrparam 0000            __CFG_BOREN$SBORDIS 000000                 __size_of_main 0042  
-               ??_Delay1KTCYx 0002      __p_LED_LookupTable_const 0180                    _LED_Number 0001  
-         __end_of_Delay1KTCYx 0656             __CFG_FOSC$INTIO67 000000  
+               __CFG_IESO$OFF 000000                  ___param_bank 000010                   _Delay1KTCYx 064A  
+                       ?_main 0002                         _TRISD 000F95                         _TRISE 000F96  
+               __CFG_PWRT$OFF 000000                 __CFG_WRT0$OFF 000000                 __CFG_WRT1$OFF 000000  
+               __CFG_WRT2$OFF 000000                 __CFG_WRT3$OFF 000000                __CFG_EBTR0$OFF 000000  
+              __CFG_FCMEN$OFF 000000                __CFG_EBTR1$OFF 000000                __CFG_EBTR2$OFF 000000  
+              __CFG_EBTR3$OFF 000000                 __CFG_WRTB$OFF 000000                 __CFG_WRTC$OFF 000000  
+               __CFG_WRTD$OFF 000000                __CFG_EBTRB$OFF 000000                         tablat 000FF5  
+                       status 000FD8                __CFG_PBADEN$ON 000000                __CFG_MCLRE$OFF 000000  
+             __initialization 065C                  __end_of_main 064A                        ??_main 0003  
+               __activetblptr 000002                __CFG_WDTEN$OFF 000000                __CFG_XINST$OFF 000000  
+              __CFG_STVREN$ON 000000                  __mediumconst 0000                        tblptrh 000FF7  
+                      tblptrl 000FF6                        tblptru 000FF8                    __accesstop 0060  
+     __end_of__initialization 065E                 ___rparam_used 000001                __pcstackCOMRAM 0002  
+             __CFG_LPT1OSC$ON 000000                  ?_Delay1KTCYx 0002  _LED_LookupTable_absconstaddr 000180  
+             _LED_LookupTable 0180                       __Hparam 0000                       __Lparam 0000  
+                __psmallconst 0600                       __pcinit 065C                       __ramtop 0600  
+                     __ptext0 0602                       __ptext1 064A          end_of_initialization 065E  
+               __Lmediumconst 0000       __end_of_LED_LookupTable 018E          __size_of_Delay1KTCYx 0012  
+         start_initialization 065C                   __pbssCOMRAM 0001               Delay1KTCYx@unit 0002  
+           __CFG_CCP2MX$PORTC 000000                   __smallconst 0600                      _LATEbits 000F8D  
+            __CFG_WDTPS$32768 000000                      __Hrparam 0000                      __Lrparam 0000  
+          __CFG_BOREN$SBORDIS 000000                 __size_of_main 0048                 ??_Delay1KTCYx 0002  
+    __p_LED_LookupTable_const 0180                    _LED_Number 0001           __end_of_Delay1KTCYx 065C  
+           __CFG_FOSC$INTIO67 000000  

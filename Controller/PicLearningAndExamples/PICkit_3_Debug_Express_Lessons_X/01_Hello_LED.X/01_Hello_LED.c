@@ -48,8 +48,10 @@
 
 
 /** I N C L U D E S **************************************************/
+
 #include "..\compilertype.h"
 #include <delays.h>
+#include <xlcd.h>
 
 #ifdef COMPILER_C18
 /** V A R I A B L E S *************************************************/
@@ -84,11 +86,12 @@ void main (void)
     LED_Number = 0;            // initialize
 
     TRISD = 0b00000000;     	// PORTD bits 7:0 are all outputs (0)
-
+    TRISE = 0b11111110;     	// PORTE bits 7:0 are all outputs (0)
     while (1)
     {
 	// use lookup table to output one LED on based on LED_Number value
         LATD = LED_LookupTable[LED_Number];
+        LATEbits.LATE0 = 1;
 
         LED_Number++;      // rotate display by 1
 

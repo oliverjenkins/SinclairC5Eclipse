@@ -1,39 +1,15 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"2040 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
-[s S113 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S113 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"2050
-[s S114 :1 `uc 1 ]
-[n S114 . LD0 ]
-"2053
-[s S115 :1 `uc 1 :1 `uc 1 ]
-[n S115 . . LD1 ]
-"2057
-[s S116 :2 `uc 1 :1 `uc 1 ]
-[n S116 . . LD2 ]
-"2061
-[s S117 :3 `uc 1 :1 `uc 1 ]
-[n S117 . . LD3 ]
-"2065
-[s S118 :4 `uc 1 :1 `uc 1 ]
-[n S118 . . LD4 ]
-"2069
-[s S119 :5 `uc 1 :1 `uc 1 ]
-[n S119 . . LD5 ]
-"2073
-[s S120 :6 `uc 1 :1 `uc 1 ]
-[n S120 . . LD6 ]
-"2077
-[s S121 :7 `uc 1 :1 `uc 1 ]
-[n S121 . . LD7 ]
-"2039
-[u S112 `S113 1 `S114 1 `S115 1 `S116 1 `S117 1 `S118 1 `S119 1 `S120 1 `S121 1 ]
-[n S112 . . . . . . . . . . ]
-"2082
-[v _LATDbits `VS112 ~T0 @X0 0 e@3980 ]
-"2931
+"2931 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"3152
+[v _TRISE `Vuc ~T0 @X0 0 e@3990 ]
+"2034
+[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
+"2166
+[v _LATE `Vuc ~T0 @X0 0 e@3981 ]
+"31 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h
+[v _Delay1KTCYx `(v ~T0 @X0 0 ef1`uc ]
 "31 01_Hello_LED.c
 [p x FOSC=INTIO67 ]
 [p x FCMEN=OFF ]
@@ -3977,30 +3953,88 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
-"56 01_Hello_LED.c
+"69 01_Hello_LED.c
+[v _LED_Number `uc ~T0 @X0 1 e ]
+[; ;01_Hello_LED.c: 69: unsigned char LED_Number;
+"74
+[v _LED_LookupTable `Cuc ~T0 @X0 -> 14 `i e@384 ]
+[i _LED_LookupTable
+:U ..
+"75
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> -> 8 `i `uc
+"76
+-> -> 16 `i `uc
+-> -> 32 `i `uc
+-> -> 64 `i `uc
+-> -> 128 `i `uc
+"77
+-> -> 64 `i `uc
+-> -> 32 `i `uc
+-> -> 16 `i `uc
+"78
+-> -> 8 `i `uc
+-> -> 4 `i `uc
+-> -> 2 `i `uc
+..
+]
+[; ;01_Hello_LED.c: 74: const unsigned char LED_LookupTable[14] @ 0x180 = {
+[; ;01_Hello_LED.c: 75: 0x01, 0x02, 0x04, 0x08,
+[; ;01_Hello_LED.c: 76: 0x10, 0x20, 0x40, 0x80,
+[; ;01_Hello_LED.c: 77: 0x40, 0x20, 0x10,
+[; ;01_Hello_LED.c: 78: 0x08, 0x04, 0x02};
+"82
 [v _main `(v ~T0 @X0 1 ef ]
-"57
+"83
 {
-[; ;01_Hello_LED.c: 56: void main (void)
-[; ;01_Hello_LED.c: 57: {
+[; ;01_Hello_LED.c: 82: void main (void)
+[; ;01_Hello_LED.c: 83: {
 [e :U _main ]
 [f ]
-[; ;01_Hello_LED.c: 58: LATDbits.LATD7 = 0;
-"58
-[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
-[; ;01_Hello_LED.c: 60: TRISD = 0b01111111;
-"60
-[e = _TRISD -> -> 127 `i `uc ]
-[; ;01_Hello_LED.c: 62: LATDbits.LATD7 = 1;
-"62
-[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
-[; ;01_Hello_LED.c: 64: while (1);
-"64
+[; ;01_Hello_LED.c: 84: LED_Number = 0;
+"84
+[e = _LED_Number -> -> 0 `i `uc ]
+[; ;01_Hello_LED.c: 86: TRISD = 0b00000000;
+"86
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;01_Hello_LED.c: 87: TRISE = 0b00000000;
+"87
+[e = _TRISE -> -> 0 `i `uc ]
+[; ;01_Hello_LED.c: 88: while (1)
+"88
 [e :U 415 ]
+[; ;01_Hello_LED.c: 89: {
+"89
+{
+[; ;01_Hello_LED.c: 91: LATD = LED_LookupTable[LED_Number];
+"91
+[e = _LATD *U + &U _LED_LookupTable * -> _LED_Number `ux -> -> # *U &U _LED_LookupTable `ui `ux ]
+[; ;01_Hello_LED.c: 92: LATE = LED_LookupTable[LED_Number];
+"92
+[e = _LATE *U + &U _LED_LookupTable * -> _LED_Number `ux -> -> # *U &U _LED_LookupTable `ui `ux ]
+[; ;01_Hello_LED.c: 94: LED_Number++;
+"94
+[e ++ _LED_Number -> -> 1 `i `uc ]
+[; ;01_Hello_LED.c: 96: if (LED_Number == 14)
+"96
+[e $ ! == -> _LED_Number `i -> 14 `i 417  ]
+[; ;01_Hello_LED.c: 97: LED_Number = 0;
+"97
+[e = _LED_Number -> -> 0 `i `uc ]
+[e :U 417 ]
+[; ;01_Hello_LED.c: 99: Delay1KTCYx(30);
+"99
+[e ( _Delay1KTCYx (1 -> -> 30 `i `uc ]
+"100
+}
 [e :U 414 ]
+"88
 [e $U 415  ]
 [e :U 416 ]
-[; ;01_Hello_LED.c: 66: }
-"66
+[; ;01_Hello_LED.c: 100: }
+[; ;01_Hello_LED.c: 101: }
+"101
 [e :UE 413 ]
 }

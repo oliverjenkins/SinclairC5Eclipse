@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 18F45K20 ]
 [d frameptr 4065 ]
-"82 F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\01_Hello_LED.X\01_Hello_LED.c
+"83 F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\01_Hello_LED.X\01_Hello_LED.c
 [v _main main `(v  1 e 0 0 ]
 "63 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\double.c
 [v ___flpack __flpack `(d  1 e 3 0 ]
@@ -29,18 +29,50 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
 [v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]
-"69 F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\01_Hello_LED.X\01_Hello_LED.c
+"70 F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\01_Hello_LED.X\01_Hello_LED.c
 [v _LED_Number LED_Number `uc  1 e 1 0 ]
-"74
+"75
 [v _LED_LookupTable LED_LookupTable `C[14]uc  1 e 14 @384 ]
 "2034 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
+[s S24 . 1 `uc 1 LATE0 1 0 :1:0 
+`uc 1 LATE1 1 0 :1:1 
+`uc 1 LATE2 1 0 :1:2 
+]
+"2209
+[s S28 . 1 `uc 1 LE0 1 0 :1:0 
+]
+[s S30 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 LE1 1 0 :1:1 
+]
+[s S33 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LE2 1 0 :1:2 
+]
+[s S36 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 LE3 1 0 :1:3 
+]
+[s S39 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 LE4 1 0 :1:4 
+]
+[s S42 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LE5 1 0 :1:5 
+]
+[s S45 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 LE6 1 0 :1:6 
+]
+[s S48 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 LE7 1 0 :1:7 
+]
+[u S51 . 1 `S24 1 . 1 0 `S28 1 . 1 0 `S30 1 . 1 0 `S33 1 . 1 0 `S36 1 . 1 0 `S39 1 . 1 0 `S42 1 . 1 0 `S45 1 . 1 0 `S48 1 . 1 0 ]
+[v _LATEbits LATEbits `VES51  1 e 1 @3981 ]
 "2931
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-"82 F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\01_Hello_LED.X\01_Hello_LED.c
+"3152
+[v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+"83 F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\01_Hello_LED.X\01_Hello_LED.c
 [v _main main `(v  1 e 0 0 ]
 {
-"100
+"102
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
 [v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]

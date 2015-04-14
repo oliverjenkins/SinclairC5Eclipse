@@ -13,6 +13,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S132 . . . ]
 "2300
 [v _TRISAbits `VS132 ~T0 @X0 0 e@3986 ]
+"3152
+[v _TRISE `Vuc ~T0 @X0 0 e@3990 ]
 "7165
 [s S365 :7 `uc 1 :1 `uc 1 ]
 [n S365 . . NOT_RBPU ]
@@ -4193,125 +4195,128 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Throttle.c: 90: TRISAbits.TRISA0 = 1;
 "90
 [e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
-[; ;Throttle.c: 92: INTCON2bits.RBPU = 0;
-"92
-[e = . . _INTCON2bits 2 1 -> -> 0 `i `uc ]
-[; ;Throttle.c: 93: WPUBbits.WPUB0 = 1;
+[; ;Throttle.c: 91: TRISE = 0b00000000;
+"91
+[e = _TRISE -> -> 0 `i `uc ]
+[; ;Throttle.c: 93: INTCON2bits.RBPU = 0;
 "93
+[e = . . _INTCON2bits 2 1 -> -> 0 `i `uc ]
+[; ;Throttle.c: 94: WPUBbits.WPUB0 = 1;
+"94
 [e = . . _WPUBbits 0 0 -> -> 1 `i `uc ]
-[; ;Throttle.c: 96: TRISBbits.TRISB0 = 1;
-"96
+[; ;Throttle.c: 97: TRISBbits.TRISB0 = 1;
+"97
 [e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
-[; ;Throttle.c: 99: ADC_Init();
-"99
+[; ;Throttle.c: 100: ADC_Init();
+"100
 [e ( _ADC_Init ..  ]
-[; ;Throttle.c: 102: PWM_Init();
-"102
+[; ;Throttle.c: 103: PWM_Init();
+"103
 [e ( _PWM_Init ..  ]
-[; ;Throttle.c: 104: ClockSpeed = OSCCON;
-"104
+[; ;Throttle.c: 106: ClockSpeed = OSCCON;
+"106
 [e = _ClockSpeed _OSCCON ]
-[; ;Throttle.c: 107: while (1)
-"107
+[; ;Throttle.c: 109: while (1)
+"109
 [e :U 415 ]
-[; ;Throttle.c: 108: {
-"108
-{
-[; ;Throttle.c: 110: ADC_Value = ADC_Convert();
+[; ;Throttle.c: 110: {
 "110
+{
+[; ;Throttle.c: 112: ADC_Value = ADC_Convert();
+"112
 [e = _ADC_Value ( _ADC_Convert ..  ]
-[; ;Throttle.c: 111: ADC_Value = ADC_Value >> 4;
-"111
+[; ;Throttle.c: 113: ADC_Value = ADC_Value >> 4;
+"113
 [e = _ADC_Value -> >> -> _ADC_Value `i -> 4 `i `uc ]
-[; ;Throttle.c: 114: CCPR1L = ADC_ThrottlePWM_Lookup[ADC_Value];
-"114
+[; ;Throttle.c: 116: CCPR1L = ADC_ThrottlePWM_Lookup[ADC_Value];
+"116
 [e = _CCPR1L *U + &U _ADC_ThrottlePWM_Lookup * -> _ADC_Value `ux -> -> # *U &U _ADC_ThrottlePWM_Lookup `ui `ux ]
-[; ;Throttle.c: 117: Delay1KTCYx(30);
-"117
+[; ;Throttle.c: 119: Delay1KTCYx(30);
+"119
 [e ( _Delay1KTCYx (1 -> -> 30 `i `uc ]
-"118
+"121
 }
 [e :U 414 ]
-"107
+"109
 [e $U 415  ]
 [e :U 416 ]
-[; ;Throttle.c: 118: }
-[; ;Throttle.c: 119: }
-"119
+[; ;Throttle.c: 121: }
+[; ;Throttle.c: 122: }
+"122
 [e :UE 413 ]
 }
-"121
+"124
 [v _ADC_Init `(v ~T0 @X0 1 ef ]
-"122
+"125
 {
-[; ;Throttle.c: 121: void ADC_Init(void)
-[; ;Throttle.c: 122: {
+[; ;Throttle.c: 124: void ADC_Init(void)
+[; ;Throttle.c: 125: {
 [e :U _ADC_Init ]
 [f ]
-[; ;Throttle.c: 126: ANSEL = 0;
-"126
+[; ;Throttle.c: 129: ANSEL = 0;
+"129
 [e = _ANSEL -> -> 0 `i `uc ]
-[; ;Throttle.c: 127: ANSELH = 0;
-"127
+[; ;Throttle.c: 130: ANSELH = 0;
+"130
 [e = _ANSELH -> -> 0 `i `uc ]
-[; ;Throttle.c: 128: ANSELbits.ANS0 = 1;
-"128
+[; ;Throttle.c: 131: ANSELbits.ANS0 = 1;
+"131
 [e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
-[; ;Throttle.c: 132: ADCON1 = 0;
-"132
+[; ;Throttle.c: 135: ADCON1 = 0;
+"135
 [e = _ADCON1 -> -> 0 `i `uc ]
-[; ;Throttle.c: 150: ADCON2 = 0b00111000;
-"150
-[e = _ADCON2 -> -> 56 `i `uc ]
-[; ;Throttle.c: 153: ADCON0 = 0b00000001;
+[; ;Throttle.c: 153: ADCON2 = 0b00111000;
 "153
+[e = _ADCON2 -> -> 56 `i `uc ]
+[; ;Throttle.c: 156: ADCON0 = 0b00000001;
+"156
 [e = _ADCON0 -> -> 1 `i `uc ]
-[; ;Throttle.c: 155: }
-"155
+[; ;Throttle.c: 158: }
+"158
 [e :UE 417 ]
 }
-"157
+"160
 [v _PWM_Init `(v ~T0 @X0 1 ef ]
 {
-[; ;Throttle.c: 157: void PWM_Init(void) {
+[; ;Throttle.c: 160: void PWM_Init(void) {
 [e :U _PWM_Init ]
 [f ]
-[; ;Throttle.c: 162: PR2 = 249;
-"162
+[; ;Throttle.c: 165: PR2 = 249;
+"165
 [e = _PR2 -> -> 249 `i `uc ]
-[; ;Throttle.c: 163: T2CON = 0b00000111;
-"163
+[; ;Throttle.c: 166: T2CON = 0b00000111;
+"166
 [e = _T2CON -> -> 7 `i `uc ]
-[; ;Throttle.c: 168: CCP1CON = 0b01001100;
-"168
+[; ;Throttle.c: 171: CCP1CON = 0b01001100;
+"171
 [e = _CCP1CON -> -> 76 `i `uc ]
-[; ;Throttle.c: 173: }
-"173
+[; ;Throttle.c: 176: }
+"176
 [e :UE 418 ]
 }
-"175
+"178
 [v _ADC_Convert `(uc ~T0 @X0 1 ef ]
-"176
+"179
 {
-[; ;Throttle.c: 175: unsigned char ADC_Convert(void)
-[; ;Throttle.c: 176: {
+[; ;Throttle.c: 178: unsigned char ADC_Convert(void)
+[; ;Throttle.c: 179: {
 [e :U _ADC_Convert ]
 [f ]
-[; ;Throttle.c: 177: ADCON0bits.GO_DONE = 1;
-"177
+[; ;Throttle.c: 180: ADCON0bits.GO_DONE = 1;
+"180
 [e = . . _ADCON0bits 5 1 -> -> 1 `i `uc ]
-[; ;Throttle.c: 178: while (ADCON0bits.GO_DONE == 1);
-"178
+[; ;Throttle.c: 181: while (ADCON0bits.GO_DONE == 1);
+"181
 [e $U 420  ]
 [e :U 421 ]
 [e :U 420 ]
 [e $ == -> . . _ADCON0bits 5 1 `i -> 1 `i 421  ]
 [e :U 422 ]
-[; ;Throttle.c: 179: return ADRESH;
-"179
+[; ;Throttle.c: 182: return ADRESH;
+"182
 [e ) _ADRESH ]
 [e $UE 419  ]
-[; ;Throttle.c: 180: }
-"180
+[; ;Throttle.c: 183: }
+"183
 [e :UE 419 ]
 }

@@ -1,0 +1,244 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F45K20 ]
+[d frameptr 4065 ]
+"63 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\double.c
+[v ___flpack __flpack `(d  1 e 3 0 ]
+"88 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fladd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fldiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\flmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\flsub.c
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
+[v _Delay10KTCYx Delay10KTCYx `(v  1 e 0 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
+[v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
+[v _Delay1TCYx Delay1TCYx `(v  1 e 0 0 ]
+"102 F:\Projects\SinclairC5Eclipse\Controller\LCDTest\LCD2.X\main.c
+[v _main main `(v  1 e 0 0 ]
+"143
+[v _InitLCD InitLCD `(v  1 e 0 0 ]
+"150
+[v _DelayFor18TCY DelayFor18TCY `(v  1 e 0 0 ]
+"153
+[v _DelayPORLCD DelayPORLCD `(v  1 e 0 0 ]
+"164
+[v _OpenLCD OpenLCD `(v  1 e 0 0 ]
+"215
+[v _WriteCmdLCD WriteCmdLCD `(v  1 e 0 0 ]
+"244
+[v _BusyLCD BusyLCD `(uc  1 e 1 0 ]
+"294
+[v _SetLCDDDRamAddr SetLCDDDRamAddr `(v  1 e 0 0 ]
+"343
+[v _putLCD putLCD `(v  1 e 0 0 ]
+"354
+[v _WriteDataLCD WriteDataLCD `(v  1 e 0 0 ]
+"976 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
+[v _PORTC PORTC `VEuc  1 e 1 @3970 ]
+[s S171 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"1950
+[s S180 . 1 `uc 1 LC0 1 0 :1:0 
+]
+[s S182 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 LC1 1 0 :1:1 
+]
+[s S185 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LC2 1 0 :1:2 
+]
+[s S188 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 LC3 1 0 :1:3 
+]
+[s S191 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 LC4 1 0 :1:4 
+]
+[s S194 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LC5 1 0 :1:5 
+]
+[s S197 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 LC6 1 0 :1:6 
+]
+[s S200 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 LC7 1 0 :1:7 
+]
+[u S203 . 1 `S171 1 . 1 0 `S180 1 . 1 0 `S182 1 . 1 0 `S185 1 . 1 0 `S188 1 . 1 0 `S191 1 . 1 0 `S194 1 . 1 0 `S197 1 . 1 0 `S200 1 . 1 0 ]
+[v _LATCbits LATCbits `VES203  1 e 1 @3979 ]
+"2034
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+[s S32 . 1 `uc 1 LATD0 1 0 :1:0 
+`uc 1 LATD1 1 0 :1:1 
+`uc 1 LATD2 1 0 :1:2 
+`uc 1 LATD3 1 0 :1:3 
+`uc 1 LATD4 1 0 :1:4 
+`uc 1 LATD5 1 0 :1:5 
+`uc 1 LATD6 1 0 :1:6 
+`uc 1 LATD7 1 0 :1:7 
+]
+"2082
+[s S41 . 1 `uc 1 LD0 1 0 :1:0 
+]
+[s S43 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 LD1 1 0 :1:1 
+]
+[s S46 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LD2 1 0 :1:2 
+]
+[s S49 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 LD3 1 0 :1:3 
+]
+[s S52 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 LD4 1 0 :1:4 
+]
+[s S55 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LD5 1 0 :1:5 
+]
+[s S58 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 LD6 1 0 :1:6 
+]
+[s S61 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 LD7 1 0 :1:7 
+]
+[u S64 . 1 `S32 1 . 1 0 `S41 1 . 1 0 `S43 1 . 1 0 `S46 1 . 1 0 `S49 1 . 1 0 `S52 1 . 1 0 `S55 1 . 1 0 `S58 1 . 1 0 `S61 1 . 1 0 ]
+[v _LATDbits LATDbits `VES64  1 e 1 @3980 ]
+"2710
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+[s S131 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"2742
+[s S140 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S149 . 1 `S131 1 . 1 0 `S140 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES149  1 e 1 @3988 ]
+"2931
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"102 F:\Projects\SinclairC5Eclipse\Controller\LCDTest\LCD2.X\main.c
+[v _main main `(v  1 e 0 0 ]
+{
+"141
+} 0
+"343
+[v _putLCD putLCD `(v  1 e 0 0 ]
+{
+[v putLCD@buffer buffer `*.32uc  1 p 2 2 ]
+"352
+} 0
+"354
+[v _WriteDataLCD WriteDataLCD `(v  1 e 0 0 ]
+{
+[v WriteDataLCD@data data `uc  1 a 1 wreg ]
+[v WriteDataLCD@data data `uc  1 a 1 wreg ]
+"357
+[v WriteDataLCD@data data `uc  1 a 1 1 ]
+"379
+} 0
+"143
+[v _InitLCD InitLCD `(v  1 e 0 0 ]
+{
+"148
+} 0
+"164
+[v _OpenLCD OpenLCD `(v  1 e 0 0 ]
+{
+[v OpenLCD@lcdtype lcdtype `uc  1 a 1 wreg ]
+[v OpenLCD@lcdtype lcdtype `uc  1 a 1 wreg ]
+"169
+[v OpenLCD@lcdtype lcdtype `uc  1 a 1 5 ]
+"213
+} 0
+"215
+[v _WriteCmdLCD WriteCmdLCD `(v  1 e 0 0 ]
+{
+[v WriteCmdLCD@cmd cmd `uc  1 a 1 wreg ]
+[v WriteCmdLCD@cmd cmd `uc  1 a 1 wreg ]
+"218
+[v WriteCmdLCD@cmd cmd `uc  1 a 1 1 ]
+"242
+} 0
+"294
+[v _SetLCDDDRamAddr SetLCDDDRamAddr `(v  1 e 0 0 ]
+{
+[v SetLCDDDRamAddr@DDaddr DDaddr `uc  1 a 1 wreg ]
+[v SetLCDDDRamAddr@DDaddr DDaddr `uc  1 a 1 wreg ]
+"313
+[v SetLCDDDRamAddr@DDaddr DDaddr `uc  1 a 1 4 ]
+"341
+} 0
+"153
+[v _DelayPORLCD DelayPORLCD `(v  1 e 0 0 ]
+{
+"155
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
+[v _Delay10KTCYx Delay10KTCYx `(v  1 e 0 0 ]
+{
+[v Delay10KTCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay10KTCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay10KTCYx@unit unit `uc  1 a 1 1 ]
+"13
+} 0
+"244 F:\Projects\SinclairC5Eclipse\Controller\LCDTest\LCD2.X\main.c
+[v _BusyLCD BusyLCD `(uc  1 e 1 0 ]
+{
+"290
+} 0
+"150
+[v _DelayFor18TCY DelayFor18TCY `(v  1 e 0 0 ]
+{
+"152
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
+[v _Delay1TCYx Delay1TCYx `(v  1 e 0 0 ]
+{
+[v Delay1TCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay1TCYx@unit unit `uc  1 a 1 wreg ]
+"7
+[v Delay1TCYx@unit unit `uc  1 a 1 0 ]
+"9
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
+[v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]
+{
+[v Delay1KTCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay1KTCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay1KTCYx@unit unit `uc  1 a 1 0 ]
+"13
+} 0

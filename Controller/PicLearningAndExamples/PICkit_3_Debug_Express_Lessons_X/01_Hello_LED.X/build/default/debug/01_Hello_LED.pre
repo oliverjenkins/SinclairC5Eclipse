@@ -5242,15 +5242,37 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 56 "01_Hello_LED.c"
+# 69 "01_Hello_LED.c"
+unsigned char LED_Number;
+
+
+
+
+const unsigned char LED_LookupTable[14] @ 0x180 = {
+0x01, 0x02, 0x04, 0x08,
+0x10, 0x20, 0x40, 0x80,
+0x40, 0x20, 0x10,
+0x08, 0x04, 0x02};
+
+
+
 void main (void)
 {
-LATDbits.LATD7 = 0;
+LED_Number = 0;
 
-TRISD = 0b01111111;
+TRISD = 0b00000000;
+TRISE = 0b00000000;
+while (1)
+{
 
-LATDbits.LATD7 = 1;
+LATD = LED_LookupTable[LED_Number];
+LATE = LED_LookupTable[LED_Number];
 
-while (1);
+LED_Number++;
 
+if (LED_Number == 14)
+LED_Number = 0;
+
+Delay1KTCYx(30);
+}
 }

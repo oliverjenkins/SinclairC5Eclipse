@@ -47,7 +47,7 @@ LVP = OFF
 #pragma udata mysection = 0x300 
 unsigned char LED_Display; // 8-bit variable
 unsigned char LedDir = 0;
-
+unsigned char portbval = 0;
 
 /** D E C L A R A T I O N S *******************************************/
 
@@ -59,25 +59,31 @@ void main (void)
     // Initial variable configue
     LED_Display = 1;
 
-    // Configure the Switch on PortB.RA0
-    INTCON2bits.RBPU = 0; // enable PORTB internal pullups
-    WPUBbits.WPUB0 = 1; // enable pull up on RB0
-    ANSELH = 0x00; // Turn a few pins to digital input rather than ADC
-    TRISBbits.TRISB0 = 1; // PORTB bit 0 (connected to switch) is input (1)
-
     // Configure the LEDS on PORTD
     TRISD = 0b00000000;// PORTD bit 7 to output (0); bits 6:0 are inputs (1)
 
-    // Set up switch interrupts on INT0
-    INTCON2bits.INTEDG0 = 0;        // falling edge of
+    // Configure the Switch on PortB.RA0
+    WPUBbits.WPUB0 = 1; // enable pull up on RB0
+    WPUBbits.WPUB1 = 1;
+    WPUBbits.WPUB4 = 1;
+    
+    ANSELH = 0x00; // Turn a few pins to digital input rather than ADC
+    TRISB = 0b11111111; // All of PortB to inputs
+
+    INTCONbits.PEIE_GIEL =1;
     INTCONbits.INT0IF = 0;      // ensure flag is cleared
     INTCONbits.INT0IE = 1;      // enable INT0 interrupt
-
+    INTCONbits.GIEH = 1;        // Interrupting enabled.
+    INTCONbits.RBIE = 1;
+    IOCBbits.IOCB4 =1;
+    // Set up switch interrupts on INT0
+    INTCON2bits.RBPU = 0; // enable PORTB internal pullups
+    INTCON2bits.INTEDG0 = 0;        // falling edge of
+    INTCON2bits.INTEDG1 = 0;
+       
     // Set-up Interrupts
     RCONbits.IPEN = 0;          // No priority on interupts - branches to 0008h  
-    INTCONbits.GIEH = 1;        // Interrupting enabled.
-
-
+    
 
     while (1) {
         LATD = LED_Display;
@@ -93,7 +99,7 @@ void main (void)
                 LED_Display = 128;
             }
         }
-        Delay1KTCYx(50);//
+        Delay1KTCYx(25);//
 
     }
 }
@@ -104,13 +110,14 @@ void main (void)
 #pragma interrupt InterruptHandlerHigh
 void InterruptHandlerHigh () {
     // Check for INT0 interrupt
-    if (INTCONbits.INT0IF)
-    {
+    
+    
         // clear (reset) flag
+        portbval = PORTB;
         INTCONbits.INT0IF = 0;
 
         LedDir = ~ LedDir;
-    }
+    
     return;
 }
 

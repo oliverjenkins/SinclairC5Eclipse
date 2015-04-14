@@ -5304,6 +5304,7 @@ void main (void)
 
 TRISD = 0b00000000;
 TRISAbits.TRISA0 = 1;
+TRISE = 0b00000000;
 
 INTCON2bits.RBPU = 0;
 WPUBbits.WPUB0 = 1;
@@ -5316,6 +5317,7 @@ ADC_Init();
 
 
 PWM_Init();
+
 
 ClockSpeed = OSCCON;
 
@@ -5331,6 +5333,7 @@ CCPR1L = ADC_ThrottlePWM_Lookup[ADC_Value];
 
 
 Delay1KTCYx(30);
+
 }
 }
 
@@ -5347,7 +5350,7 @@ ANSELbits.ANS0 = 1;
 
 ADCON1 = 0;
 
-# 150
+# 153
 ADCON2 = 0b00111000;
 
 
