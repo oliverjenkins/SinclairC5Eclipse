@@ -5255,6 +5255,7 @@ void DelayLCD(void);
 
 void OpenLCD(unsigned char lcdtype);
 void WriteCmdLCD(unsigned char cmd);
+void SetLCDCGRamAddr(unsigned char CGaddr);
 void SetLCDDDRamAddr(unsigned char DDaddr);
 unsigned char BusyLCD(void);
 void putLCD(char *buffer);
@@ -5266,10 +5267,37 @@ TRISD = 0b00000000;
 LATD = 0;
 
 InitLCD();
-putLCD("Hello World!");
-SetLCDDDRamAddr(0x040);
-putLCD("LCD Upside Down");
 
+SetLCDCGRamAddr(0x00);
+WriteDataLCD(0b00000);
+WriteDataLCD(0b01111);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b01111);
+WriteDataLCD(0b00111);
+WriteDataLCD(0b00111);
+
+
+SetLCDCGRamAddr(0x08);
+WriteDataLCD(0b11111);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10101);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b11111);
+
+WriteCmdLCD(0b00000010);
+putLCD("Hello World9");
+
+SetLCDDDRamAddr(0x040);
+putLCD("LCD Down");
+WriteDataLCD(0);
+WriteDataLCD(1);
+
+# 151
 while (1)
 {
 
@@ -5394,8 +5422,6 @@ LATCbits.LATC6 = 1;
 DelayFor18TCY();
 LATCbits.LATC6 = 0;
 
-
-
 TRISC |= 0x0f;
 
 return;
@@ -5409,9 +5435,7 @@ DelayFor18TCY();
 LATCbits.LATC6 = 1;
 DelayFor18TCY();
 
-# 272
 if(PORTC&0x08)
-
 {
 LATCbits.LATC6 = 0;
 DelayFor18TCY();
@@ -5431,14 +5455,12 @@ LATCbits.LATC6 = 0;
 LATCbits.LATC5 = 0;
 return 0;
 }
-
 }
 
 
 void SetLCDDDRamAddr(unsigned char DDaddr)
 {
 
-# 316
 TRISC &= 0xf0;
 PORTC &= 0xf0;
 PORTC |= (((DDaddr | 0b10000000)>>4) & 0x0f);
@@ -5450,9 +5472,6 @@ LATCbits.LATC6 = 1;
 DelayFor18TCY();
 LATCbits.LATC6 = 0;
 
-
-
-
 PORTC &= 0xf0;
 PORTC |= (DDaddr&0x0f);
 
@@ -5461,11 +5480,35 @@ LATCbits.LATC6 = 1;
 DelayFor18TCY();
 LATCbits.LATC6 = 0;
 
-
-
 TRISC |= 0x0f;
 
+return;
+}
 
+void SetLCDCGRamAddr(unsigned char CGaddr)
+{
+
+
+TRISC &= 0xf0;
+PORTC &= 0xf0;
+PORTC |= (((CGaddr |0b01000000)>>4) & 0x0f);
+
+LATCbits.LATC5 = 0;
+LATCbits.LATC4 = 0;
+DelayFor18TCY();
+LATCbits.LATC6 = 1;
+DelayFor18TCY();
+LATCbits.LATC6 = 0;
+
+PORTC &= 0xf0;
+PORTC |= (CGaddr&0x0f);
+
+DelayFor18TCY();
+LATCbits.LATC6 = 1;
+DelayFor18TCY();
+LATCbits.LATC6 = 0;
+
+TRISC |= 0x0f;
 return;
 }
 
