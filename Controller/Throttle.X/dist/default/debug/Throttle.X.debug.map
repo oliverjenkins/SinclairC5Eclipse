@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.34\dat\en_msgs.txt -cs \
   -h+dist/default/debug\Throttle.X.debug.sym \
   --cmf=dist/default/debug\Throttle.X.debug.cmf -z -Q18F45K20 \
-  -oC:\Users\ADMINI~1\AppData\Local\Temp\s1vk.6 \
+  -oC:\Users\ADMINI~1\AppData\Local\Temp\s4l0.6 \
   -Mdist/default/debug/Throttle.X.debug.map -E1 -ver=XC8 -ASTACK=060h-05eeh \
   -pstack=STACK -p_ADC_ThrottlePWM_Lookup_const=180h \
   -p_ADC_ThrottleLED_Lookup_const=180h -ACODE=00h-07CFFh -ACONST=00h-07CFFh \
@@ -24,7 +24,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\ADMINI~1\AppData\Local\Temp\s1vk.obj \
+  C:\Users\ADMINI~1\AppData\Local\Temp\s4l0.obj \
   dist/default/debug\Throttle.X.debug.obj 
 
 Object code version is 3.11
@@ -37,20 +37,20 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ADMINI~1\AppData\Local\Temp\s1vk.obj
+C:\Users\ADMINI~1\AppData\Local\Temp\s4l0.obj
                 end_init                              2        2        4        0       0
                 reset_vec                             0        0        2        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/debug\Throttle.X.debug.obj
                 smallconst                          600      600        2      300       0
-                text4                               688      688        E      301       0
-                text3                               650      650       18      301       0
-                text2                               668      668       12      301       0
-                text1                               67A      67A        E      301       0
-                text0                               602      602       4E      301       0
+                text4                               690      690        E      301       0
+                text3                               656      656       1A      301       0
+                text2                               670      670       12      301       0
+                text1                               682      682        E      301       0
+                text0                               602      602       54      301       0
                 cstackCOMRAM                          3        3        1        1       1
-                cinit                               696      696        A      301       0
+                cinit                               69E      69E        A      301       0
                 nvCOMRAM                              1        1        2        1       1
                 _ADC_ThrottlePWM_Lookup_const       180      180       10       C0       0
                 _ADC_ThrottleLED_Lookup_const       180      180       10       C0       0
@@ -61,12 +61,12 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   CODE           
                 end_init                              2        2        4         0
                 reset_vec                             0        0        2         0
-                text4                               688      688        E         0
-                text3                               650      650       18         0
-                text2                               668      668       12         0
-                text1                               67A      67A        E         0
-                text0                               602      602       4E         0
-                cinit                               696      696        A         0
+                text4                               690      690        E         0
+                text3                               656      656       1A         0
+                text2                               670      670       12         0
+                text1                               682      682        E         0
+                text0                               602      602       54         0
+                cinit                               69E      69E        A         0
                 _ADC_ThrottlePWM_Lookup_const       180      180       10         0
                 _ADC_ThrottleLED_Lookup_const       180      180       10         0
 
@@ -120,7 +120,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 _ADC_ThrottleLED_Lookup_const  000180  000010  000190        C0       0  CODE    
                 _ADC_ThrottlePWM_Lookup_const  000180  000010  000190        C0       0  CODE    
                 smallconst                     000600  000002  000602       300       0  SMALLCON
-                text0                          000602  00009E  0006A0       301       0  CODE    
+                text0                          000602  0000A6  0006A8       301       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -137,13 +137,13 @@ UNUSED ADDRESS RANGES
         BIGRAM           000004-0005EE              5EB
         CODE             000006-00017F              17A
                          000190-0005FF              470
-                         0006A0-007CFF             7660
+                         0006A8-007CFF             7658
         COMRAM           000004-00005F               5C
         CONST            000006-00017F              17A
                          000190-0005FF              470
-                         0006A0-007CFF             7660
+                         0006A8-007CFF             7658
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      0006A0-007CFF             7660
+        MEDIUMCONST      0006A8-007CFF             7658
         RAM              000060-0005EE              100
         SFR              000F60-000F9B               3C
                          000F9D-000FD3               37
@@ -151,7 +151,7 @@ UNUSED ADDRESS RANGES
                          000FE0-000FE2                3
                          000FE8-000FEA                3
                          000FF0-000FFB                C
-        SMALLCONST       0006A0-007CFF              100
+        SMALLCONST       0006A8-007CFF              100
         STACK            000060-0005EE              58F
 
                                   Symbol Table
@@ -161,8 +161,8 @@ _ADCON0                              (abs)                         000FC2
 _ADCON0bits                          (abs)                         000FC2
 _ADCON1                              (abs)                         000FC1
 _ADCON2                              (abs)                         000FC0
-_ADC_Convert                         text4                         000688
-_ADC_Init                            text3                         000650
+_ADC_Convert                         text4                         000690
+_ADC_Init                            text3                         000656
 _ADC_ThrottleLED_Lookup              _ADC_ThrottleLED_Lookup_const 000180
 _ADC_ThrottleLED_Lookup_absconstaddr (abs)                         000180
 _ADC_ThrottlePWM_Lookup              _ADC_ThrottlePWM_Lookup_const 000180
@@ -175,15 +175,16 @@ _ANSELbits                           (abs)                         000F7E
 _CCP1CON                             (abs)                         000FBD
 _CCPR1L                              (abs)                         000FBE
 _ClockSpeed                          nvCOMRAM                      000002
-_Delay1KTCYx                         text2                         000668
+_Delay1KTCYx                         text2                         000670
 _INTCON2bits                         (abs)                         000FF1
 _OSCCON                              (abs)                         000FD3
 _PR2                                 (abs)                         000FCB
-_PWM_Init                            text1                         00067A
+_PWM_Init                            text1                         000682
 _T2CON                               (abs)                         000FCA
 _TRISAbits                           (abs)                         000F92
 _TRISBbits                           (abs)                         000F93
 _TRISD                               (abs)                         000F95
+_TRISE                               (abs)                         000F96
 _WPUBbits                            (abs)                         000F7C
 __CFG_BOREN$SBORDIS                  (abs)                         000000
 __CFG_BORV$30                        (abs)                         000000
@@ -357,27 +358,27 @@ ___rparam_used                       (abs)                         000001
 ___sp                                stack                         000000
 __accesstop                          (abs)                         000060
 __activetblptr                       (abs)                         000002
-__end_of_ADC_Convert                 text4                         000696
-__end_of_ADC_Init                    text3                         000668
+__end_of_ADC_Convert                 text4                         00069E
+__end_of_ADC_Init                    text3                         000670
 __end_of_ADC_ThrottleLED_Lookup      _ADC_ThrottleLED_Lookup_const 000190
 __end_of_ADC_ThrottlePWM_Lookup      _ADC_ThrottlePWM_Lookup_const 000190
-__end_of_Delay1KTCYx                 text2                         00067A
-__end_of_PWM_Init                    text1                         000688
-__end_of__initialization             cinit                         000696
-__end_of_main                        text0                         000650
-__initialization                     cinit                         000696
+__end_of_Delay1KTCYx                 text2                         000682
+__end_of_PWM_Init                    text1                         000690
+__end_of__initialization             cinit                         00069E
+__end_of_main                        text0                         000656
+__initialization                     cinit                         00069E
 __mediumconst                        mediumconst                   000000
 __p_ADC_ThrottleLED_Lookup_const     _ADC_ThrottleLED_Lookup_const 000180
 __p_ADC_ThrottlePWM_Lookup_const     _ADC_ThrottlePWM_Lookup_const 000180
-__pcinit                             cinit                         000696
+__pcinit                             cinit                         00069E
 __pcstackCOMRAM                      cstackCOMRAM                  000003
 __pnvCOMRAM                          nvCOMRAM                      000001
 __psmallconst                        smallconst                    000600
 __ptext0                             text0                         000602
-__ptext1                             text1                         00067A
-__ptext2                             text2                         000668
-__ptext3                             text3                         000650
-__ptext4                             text4                         000688
+__ptext1                             text1                         000682
+__ptext2                             text2                         000670
+__ptext3                             text3                         000656
+__ptext4                             text4                         000690
 __ramtop                             ramtop                        000600
 __size_of_ADC_Convert                (abs)                         000000
 __size_of_ADC_Init                   (abs)                         000000
@@ -386,7 +387,7 @@ __size_of_PWM_Init                   (abs)                         000000
 __size_of_main                       (abs)                         000000
 __smallconst                         smallconst                    000600
 _main                                text0                         000602
-end_of_initialization                cinit                         000696
+end_of_initialization                cinit                         00069E
 intlevel0                            text                          000000
 intlevel1                            text                          000000
 intlevel2                            text                          000000
@@ -394,7 +395,7 @@ intlevel3                            text                          000000
 stackhi                              (abs)                         0005EE
 stacklo                              (abs)                         000060
 start                                init                          000002
-start_initialization                 cinit                         000696
+start_initialization                 cinit                         00069E
 
 
 FUNCTION INFORMATION:
@@ -433,7 +434,7 @@ Total ram usage:        0 bytes
 
  *************** function _PWM_Init *****************
  Defined at:
-		line 157 in file "Throttle.c"
+		line 163 in file "Throttle.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -491,7 +492,7 @@ Total ram usage:        1 bytes
 
  *************** function _ADC_Init *****************
  Defined at:
-		line 121 in file "Throttle.c"
+		line 126 in file "Throttle.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -520,7 +521,7 @@ Total ram usage:        0 bytes
 
  *************** function _ADC_Convert *****************
  Defined at:
-		line 173 in file "Throttle.c"
+		line 181 in file "Throttle.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -552,20 +553,20 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
-		_Delay1KTCYx   		CODE           	0668	0000	19
+		_Delay1KTCYx   		CODE           	0670	0000	19
 
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c estimated size: 19
 
 Throttle.c
-		_main          		CODE           	0602	0000	79
-		_ADC_Convert   		CODE           	0688	0000	15
-		_PWM_Init      		CODE           	067A	0000	15
-		_ADC_Init      		CODE           	0650	0000	25
+		_main          		CODE           	0602	0000	85
+		_ADC_Convert   		CODE           	0690	0000	15
+		_PWM_Init      		CODE           	0682	0000	15
+		_ADC_Init      		CODE           	0656	0000	27
 
-Throttle.c estimated size: 134
+Throttle.c estimated size: 142
 
 shared
-		__initializatio		CODE           	0696	0000	1
+		__initializatio		CODE           	069E	0000	1
 		_ADC_ThrottleLE		CODE           	0180	0000	17
 		_ADC_ThrottlePW		CODE           	0180	0000	17
 

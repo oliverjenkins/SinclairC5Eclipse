@@ -18,8 +18,20 @@ void DelayFor18TCY(void) {
 /* LIBRARY FUNCTIONS */
 void OpenLCD(unsigned char lcdtype)
 {
-
-        // Data must be in Lower 4-bits of a port.
+        // The data bits must be either a 8-bit port or the upper or
+        // lower 4-bits of a port. These pins are made into inputs
+#ifdef BIT8                             // 8-bit mode, use whole port
+        LCD_DATA_PORT = 0;
+        LCD_TRIS_DATA_PORT = 0x00;
+#else                                   // 4-bit mode
+#ifdef UPPER                            // Upper 4-bits of the port
+        LCD_DATA_PORT &= 0x0f;
+        LCD_TRIS_DATA_PORT &= 0x0F;
+#else                                   // Lower 4-bits of the port
+        LCD_DATA_PORT &= 0xf0;
+        LCD_TRIS_DATA_PORT &= 0xF0;
+#endif
+#endif
         LCD_TRIS_RW = 0;                    // All control signals made outputs
         LCD_TRIS_RS = 0;
         LCD_TRIS_E = 0;
@@ -73,29 +85,52 @@ void OpenLCD(unsigned char lcdtype)
 
 void WriteCmdLCD(unsigned char cmd)
 {
-         // Lower nibble interface
-        LCD_TRIS_DATA_PORT &= 0xf0;
-        LCD_DATA_PORT &= 0xf0;
-        LCD_DATA_PORT |= (cmd>>4)&0x0f;
+    #ifdef BIT8                             // 8-bit interface
+            LCD_TRIS_DATA_PORT = 0;             // Data port output
+            LCD_DATA_PORT = cmd;                // Write command to data port
+            LCD_RW_PIN = 0;                     // Set the control signals
+            LCD_RS_PIN = 0;                     // for sending a command
+            DelayFor18TCY();
+            LCD_E_PIN = 1;                      // Clock the command in
+            DelayFor18TCY();
+            LCD_E_PIN = 0;
+            DelayFor18TCY();
+            LCD_TRIS_DATA_PORT = 0xff;          // Data port input
+    #else                                   // 4-bit interface
+    #ifdef UPPER                            // Upper nibble interface
+            TRIS_DATA_PORT &= 0x0f;
+            DATA_PORT &= 0x0f;
+            DATA_PORT |= cmd&0xf0;
+    #else                                   // Lower nibble interface
+            LCD_TRIS_DATA_PORT &= 0xf0;
+            LCD_DATA_PORT &= 0xf0;
+            LCD_DATA_PORT |= (cmd>>4)&0x0f;
+    #endif
+            LCD_RW_PIN = 0;                     // Set control signals for command
+            LCD_RS_PIN = 0;
+            DelayFor18TCY();
+            LCD_E_PIN = 1;                      // Clock command in
+            DelayFor18TCY();
+            LCD_E_PIN = 0;
+    #ifdef UPPER                            // Upper nibble interface
+            LCD_DATA_PORT &= 0x0f;
+            LCD_DATA_PORT |= (cmd<<4)&0xf0;
+    #else                                   // Lower nibble interface
+            LCD_DATA_PORT &= 0xf0;
+            LCD_DATA_PORT |= cmd&0x0f;
+    #endif
+            DelayFor18TCY();
+            LCD_E_PIN = 1;                      // Clock command in
+            DelayFor18TCY();
+            LCD_E_PIN = 0;
+    #ifdef UPPER                            // Make data nibble input
+            LCD_TRIS_DATA_PORT |= 0xf0;
+    #else
+            LCD_TRIS_DATA_PORT |= 0x0f;
+    #endif
+    #endif
 
-        LCD_RW_PIN = 0;                     // Set control signals for command
-        LCD_RS_PIN = 0;
-        DelayFor18TCY();
-        LCD_E_PIN = 1;                      // Clock command in
-        DelayFor18TCY();
-        LCD_E_PIN = 0;
-                               // Lower nibble interface
-        LCD_DATA_PORT &= 0xf0;
-        LCD_DATA_PORT |= cmd&0x0f;
-
-        DelayFor18TCY();
-        LCD_E_PIN = 1;                      // Clock command in
-        DelayFor18TCY();
-        LCD_E_PIN = 0;
-
-        LCD_TRIS_DATA_PORT |= 0x0f;
-
-        return;
+    return;
 }
 
 unsigned char BusyLCD(void)
@@ -105,8 +140,25 @@ unsigned char BusyLCD(void)
         DelayFor18TCY();
         LCD_E_PIN = 1;                      // Clock in the command
         DelayFor18TCY();
-                           // Lower nibble interface
+#ifdef BIT8                             // 8-bit interface
+        if(LCD_DATA_PORT&0x80)                      // Read bit 7 (busy bit)
+        {                               // If high
+                LCD_E_PIN = 0;              // Reset clock line
+                LCD_RW_PIN = 0;             // Reset control line
+                return 1;               // Return TRUE
+        }
+        else                            // Bit 7 low
+        {
+                LCD_E_PIN = 0;              // Reset clock line
+                LCD_RW_PIN = 0;             // Reset control line
+                return 0;               // Return FALSE
+        }
+#else                                   // 4-bit interface
+#ifdef UPPER                            // Upper nibble interface
+        if(LCD_DATA_PORT&0x80)
+#else                                   // Lower nibble interface
         if(LCD_DATA_PORT&0x08)
+#endif
         {
                 LCD_E_PIN = 0;              // Reset clock line
                 DelayFor18TCY();
@@ -126,60 +178,105 @@ unsigned char BusyLCD(void)
                 LCD_RW_PIN = 0;             // Reset control line
                 return 0;               // Return FALSE
         }
+#endif    
 }
 
 
 void SetLCDDDRamAddr(unsigned char DDaddr)
 {
-        // Lower nibble interface
-        LCD_TRIS_DATA_PORT &= 0xf0;                 // Make port output
-        LCD_DATA_PORT &= 0xf0;                      // and write upper nibble
-        LCD_DATA_PORT |= (((DDaddr | 0b10000000)>>4) & 0x0f);
-
-        LCD_RW_PIN = 0;                             // Set control bits
-        LCD_RS_PIN = 0;
-        DelayFor18TCY();
-        LCD_E_PIN = 1;                              // Clock the cmd and address in
-        DelayFor18TCY();
-        LCD_E_PIN = 0;
-                                    // Lower nibble interface
-        LCD_DATA_PORT &= 0xf0;                      // Write lower nibble
-        LCD_DATA_PORT |= (DDaddr&0x0f);
-
-        DelayFor18TCY();
-        LCD_E_PIN = 1;                              // Clock the cmd and address in
-        DelayFor18TCY();
-        LCD_E_PIN = 0;
-                                    // Lower nibble interface
-        LCD_TRIS_DATA_PORT |= 0x0f;                 // Make port input
-
-        return;
+    #ifdef BIT8                                     // 8-bit interface
+            LCD_TRIS_DATA_PORT = 0;                     // Make port output
+            LCD_DATA_PORT = DDaddr | 0b10000000;        // Write cmd and address to port
+            LCD_RW_PIN = 0;                             // Set the control bits
+            LCD_RS_PIN = 0;
+            DelayFor18TCY();
+            LCD_E_PIN = 1;                              // Clock the cmd and address in
+            DelayFor18TCY();
+            LCD_E_PIN = 0;
+            DelayFor18TCY();
+            LCD_TRIS_DATA_PORT = 0xff;                  // Make port input
+    #else                                           // 4-bit interface
+    #ifdef UPPER                                    // Upper nibble  interface
+            LCD_TRIS_DATA_PORT &= 0x0f;                 // Make port output
+            LCD_DATA_PORT &= 0x0f;                      // and write upper nibble
+            LCD_DATA_PORT |= ((DDaddr | 0b10000000) & 0xf0);
+    #else                                           // Lower nibble interface
+            LCD_TRIS_DATA_PORT &= 0xf0;                 // Make port output
+            LCD_DATA_PORT &= 0xf0;                      // and write upper nibble
+            LCD_DATA_PORT |= (((DDaddr | 0b10000000)>>4) & 0x0f);
+    #endif
+            LCD_RW_PIN = 0;                             // Set control bits
+            LCD_RS_PIN = 0;
+            DelayFor18TCY();
+            LCD_E_PIN = 1;                              // Clock the cmd and address in
+            DelayFor18TCY();
+            LCD_E_PIN = 0;
+    #ifdef UPPER                                    // Upper nibble interface
+            LCD_DATA_PORT &= 0x0f;                      // Write lower nibble
+            LCD_DATA_PORT |= ((DDaddr<<4)&0xf0);
+    #else                                           // Lower nibble interface
+            LCD_DATA_PORT &= 0xf0;                      // Write lower nibble
+            LCD_DATA_PORT |= (DDaddr&0x0f);
+    #endif
+            DelayFor18TCY();
+            LCD_E_PIN = 1;                              // Clock the cmd and address in
+            DelayFor18TCY();
+            LCD_E_PIN = 0;
+    #ifdef UPPER                                    // Upper nibble interface
+            LCD_TRIS_DATA_PORT |= 0xf0;                 // Make port input
+    #else                                           // Lower nibble interface
+            LCD_TRIS_DATA_PORT |= 0x0f;                 // Make port input
+    #endif
+    #endif
+    return;
 }
 
 void SetLCDCGRamAddr(unsigned char CGaddr)
 {
-
-                                       // Lower nibble interface
-        LCD_TRIS_DATA_PORT &= 0xf0;                 // Make nibble input
-        LCD_DATA_PORT &= 0xf0;                      // and write upper nibble
-        LCD_DATA_PORT |= (((CGaddr |0b01000000)>>4) & 0x0f);
-
+#ifdef BIT8                                     // 8-bit interface
+        LCD_TRIS_DATA_PORT = 0;                     // Make data port ouput
+        LCD_DATA_PORT = CGaddr | 0b01000000;        // Write cmd and address to port
         LCD_RW_PIN = 0;                             // Set control signals
         LCD_RS_PIN = 0;
         DelayFor18TCY();
         LCD_E_PIN = 1;                              // Clock cmd and address in
         DelayFor18TCY();
         LCD_E_PIN = 0;
-                                       // Lower nibble interface
-        LCD_DATA_PORT &= 0xf0;                      // Write lower nibble
-        LCD_DATA_PORT |= (CGaddr&0x0f);
-
+        DelayFor18TCY();
+        LCD_TRIS_DATA_PORT = 0xff;                  // Make data port inputs
+#else                                           // 4-bit interface
+#ifdef UPPER                                    // Upper nibble interface
+        LCD_TRIS_DATA_PORT &= 0x0f;                 // Make nibble input
+        LCD_DATA_PORT &= 0x0f;                      // and write upper nibble
+        LCD_DATA_PORT |= ((CGaddr | 0b01000000) & 0xf0);
+#else                                           // Lower nibble interface
+        LCD_TRIS_DATA_PORT &= 0xf0;                 // Make nibble input
+        LCD_DATA_PORT &= 0xf0;                      // and write upper nibble
+        LCD_DATA_PORT |= (((CGaddr |0b01000000)>>4) & 0x0f);
+#endif
+        LCD_RW_PIN = 0;                             // Set control signals
+        LCD_RS_PIN = 0;
         DelayFor18TCY();
         LCD_E_PIN = 1;                              // Clock cmd and address in
         DelayFor18TCY();
         LCD_E_PIN = 0;
-                                        // Lower nibble interface
+#ifdef UPPER                                    // Upper nibble interface
+        LCD_DATA_PORT &= 0x0f;                      // Write lower nibble
+        LCD_DATA_PORT |= ((CGaddr<<4)&0xf0);
+#else                                           // Lower nibble interface
+        LCD_DATA_PORT &= 0xf0;                      // Write lower nibble
+        LCD_DATA_PORT |= (CGaddr&0x0f);
+#endif
+        DelayFor18TCY();
+        LCD_E_PIN = 1;                              // Clock cmd and address in
+        DelayFor18TCY();
+        LCD_E_PIN = 0;
+#ifdef UPPER                                    // Upper nibble interface
+        LCD_TRIS_DATA_PORT |= 0xf0;                 // Make inputs
+#else                                           // Lower nibble interface
         LCD_TRIS_DATA_PORT |= 0x0f;                 // Make inputs
+#endif
+#endif
         return;
 }
 
@@ -188,39 +285,7 @@ void SetLCDCGRamAddr(unsigned char CGaddr)
 void putIntLCD(short int n) {
     unsigned char result[4];
     utoa((char*)result, n, 10);
-    putLCD(result);
-    //
-//    unsigned char d3, d2, d1, d0, q;
-//
-//    if (n < 0) {
-//        WriteDataLCD( '-' );
-//        n = -n;
-//    }
-//
-//    d1 = (n>>4)  & 0xF;
-//    d2 = (n>>8)  & 0xF;
-//    d3 = (n>>12) & 0xF;
-//
-//    d0 = 6*(d3 + d2 + d1) + (n & 0xF);
-//    q = (d0 * 0xCD) >> 11;
-//    d0 = d0 - 10*q;
-//
-//    d1 = q + 9*d3 + 5*d2 + d1;
-//    q = (d1 * 0xCD) >> 11;
-//    d1 = d1 - 10*q;
-//
-//    d2 = q + 2*d2;
-//    q = (d2 * 0x1A) >> 8;
-//    d2 = d2 - 10*q;
-//
-//    d3 = q + 4*d3;
-////    d4 = (d3 * 0x1A) >> 8;
-////    d3 = d3 - 10*d4;
-//
-//    WriteDataLCD( d3 + '0' );
-//    WriteDataLCD( d2 + '0' );
-//    WriteDataLCD( d1 + '0' );
-//    WriteDataLCD( d0 + '0' );
+    putLCD(result);    
 }
 
 void putLCD(char *buffer)
@@ -236,27 +301,49 @@ void putLCD(char *buffer)
 
 void WriteDataLCD(char data)
 {
-        // Lower nibble interface
-        LCD_TRIS_DATA_PORT &= 0xf0;
-        LCD_DATA_PORT &= 0xf0;
-        LCD_DATA_PORT |= ((data>>4)&0x0f);
-
-        LCD_RS_PIN = 1;                     // Set control bits
-        LCD_RW_PIN = 0;
-        DelayFor18TCY();
-        LCD_E_PIN = 1;                      // Clock nibble into LCD
-        DelayFor18TCY();
-        LCD_E_PIN = 0;
-                              // Lower nibble interface
-        LCD_DATA_PORT &= 0xf0;
-        LCD_DATA_PORT |= (data&0x0f);
-
-        DelayFor18TCY();
-        LCD_E_PIN = 1;                      // Clock nibble into LCD
-        DelayFor18TCY();
-        LCD_E_PIN = 0;
-                             // Lower nibble interface
-        LCD_TRIS_DATA_PORT |= 0x0f;
-
-        return;
+    #ifdef BIT8                             // 8-bit interface
+            LCD_TRIS_DATA_PORT = 0;             // Make port output
+            LCD_DATA_PORT = data;               // Write data to port
+            LCD_RS_PIN = 1;                     // Set control bits
+            LCD_RW_PIN = 0;
+            DelayFor18TCY();
+            LCD_E_PIN = 1;                      // Clock data into LCD
+            DelayFor18TCY();
+            LCD_E_PIN = 0;
+            LCD_RS_PIN = 0;                     // Reset control bits
+            LCD_TRIS_DATA_PORT = 0xff;          // Make port input
+    #else                                   // 4-bit interface
+    #ifdef UPPER                            // Upper nibble interface
+            LCD_TRIS_DATA_PORT &= 0x0f;
+            LCD_DATA_PORT &= 0x0f;
+            LCD_DATA_PORT |= data&0xf0;
+    #else                                   // Lower nibble interface
+            LCD_TRIS_DATA_PORT &= 0xf0;
+            LCD_DATA_PORT &= 0xf0;
+            LCD_DATA_PORT |= ((data>>4)&0x0f);
+    #endif
+            LCD_RS_PIN = 1;                     // Set control bits
+            LCD_RW_PIN = 0;
+            DelayFor18TCY();
+            LCD_E_PIN = 1;                      // Clock nibble into LCD
+            DelayFor18TCY();
+            LCD_E_PIN = 0;
+    #ifdef UPPER                            // Upper nibble interface
+            LCD_DATA_PORT &= 0x0f;
+            LCD_DATA_PORT |= ((data<<4)&0xf0);
+    #else                                   // Lower nibble interface
+            LCD_DATA_PORT &= 0xf0;
+            LCD_DATA_PORT |= (data&0x0f);
+    #endif
+            DelayFor18TCY();
+            LCD_E_PIN = 1;                      // Clock nibble into LCD
+            DelayFor18TCY();
+            LCD_E_PIN = 0;
+    #ifdef UPPER                            // Upper nibble interface
+            LCD_TRIS_DATA_PORT |= 0xf0;
+    #else                                   // Lower nibble interface
+            LCD_TRIS_DATA_PORT |= 0x0f;
+    #endif
+    #endif
+    return;
 }

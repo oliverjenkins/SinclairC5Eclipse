@@ -29,13 +29,13 @@
 [v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]
 "86 F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
 [v _main main `(v  1 e 0 0 ]
-"121
+"126
 [v _ADC_Init ADC_Init `(v  1 e 0 0 ]
-"157
+"163
 [v _PWM_Init PWM_Init `(v  1 e 0 0 ]
-"173
+"181
 [v _ADC_Convert ADC_Convert `(uc  1 e 1 0 ]
-[s S97 . 1 `uc 1 WPUB0 1 0 :1:0 
+[s S98 . 1 `uc 1 WPUB0 1 0 :1:0 
 `uc 1 WPUB1 1 0 :1:1 
 `uc 1 WPUB2 1 0 :1:2 
 `uc 1 WPUB3 1 0 :1:3 
@@ -45,11 +45,11 @@
 `uc 1 WPUB7 1 0 :1:7 
 ]
 "346 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
-[u S106 . 1 `S97 1 . 1 0 ]
-[v _WPUBbits WPUBbits `VES106  1 e 1 @3964 ]
+[u S107 . 1 `S98 1 . 1 0 ]
+[v _WPUBbits WPUBbits `VES107  1 e 1 @3964 ]
 "428
 [v _ANSEL ANSEL `VEuc  1 e 1 @3966 ]
-[s S179 . 1 `uc 1 ANS0 1 0 :1:0 
+[s S180 . 1 `uc 1 ANS0 1 0 :1:0 
 `uc 1 ANS1 1 0 :1:1 
 `uc 1 ANS2 1 0 :1:2 
 `uc 1 ANS3 1 0 :1:3 
@@ -59,8 +59,8 @@
 `uc 1 ANS7 1 0 :1:7 
 ]
 "445
-[u S188 . 1 `S179 1 . 1 0 ]
-[v _ANSELbits ANSELbits `VES188  1 e 1 @3966 ]
+[u S189 . 1 `S180 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES189  1 e 1 @3966 ]
 "489
 [v _ANSELH ANSELH `VEuc  1 e 1 @3967 ]
 [s S22 . 1 `uc 1 TRISA0 1 0 :1:0 
@@ -84,7 +84,7 @@
 ]
 [u S40 . 1 `S22 1 . 1 0 `S31 1 . 1 0 ]
 [v _TRISAbits TRISAbits `VES40  1 e 1 @3986 ]
-[s S118 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S119 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -94,7 +94,7 @@
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "2521
-[s S127 . 1 `uc 1 RB0 1 0 :1:0 
+[s S128 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -103,10 +103,12 @@
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-[u S136 . 1 `S118 1 . 1 0 `S127 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES136  1 e 1 @3987 ]
+[u S137 . 1 `S119 1 . 1 0 `S128 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES137  1 e 1 @3987 ]
 "2931
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"3152
+[v _TRISE TRISE `VEuc  1 e 1 @3990 ]
 "5203
 [v _CCP1CON CCP1CON `VEuc  1 e 1 @4029 ]
 "5290
@@ -117,38 +119,38 @@
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "5425
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
-[s S206 . 1 `uc 1 . 1 0 :1:0 
+[s S207 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "5469
-[s S209 . 1 `uc 1 ADON 1 0 :1:0 
+[s S210 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 ]
-[s S213 . 1 `uc 1 . 1 0 :1:0 
+[s S214 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
 `uc 1 CHS2 1 0 :1:4 
 `uc 1 CHS3 1 0 :1:5 
 ]
-[s S220 . 1 `uc 1 . 1 0 :1:0 
+[s S221 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S223 . 1 `uc 1 . 1 0 :1:0 
+[s S224 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S226 . 1 `uc 1 . 1 0 :1:0 
+[s S227 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[s S229 . 1 `uc 1 . 1 0 :1:0 
+[s S230 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[s S232 . 1 `uc 1 . 1 0 :1:0 
+[s S233 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S235 . 1 `S206 1 . 1 0 `S209 1 . 1 0 `S213 1 . 1 0 `S220 1 . 1 0 `S223 1 . 1 0 `S226 1 . 1 0 `S229 1 . 1 0 `S232 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES235  1 e 1 @4034 ]
+[u S236 . 1 `S207 1 . 1 0 `S210 1 . 1 0 `S214 1 . 1 0 `S221 1 . 1 0 `S224 1 . 1 0 `S227 1 . 1 0 `S230 1 . 1 0 `S233 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES236  1 e 1 @4034 ]
 "5555
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
 "5931
@@ -157,11 +159,11 @@
 [v _PR2 PR2 `VEuc  1 e 1 @4043 ]
 "6666
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
-[s S62 . 1 `uc 1 . 1 0 :7:0 
+[s S63 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_RBPU 1 0 :1:7 
 ]
 "7184
-[s S65 . 1 `uc 1 RBIP 1 0 :1:0 
+[s S66 . 1 `uc 1 RBIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 TMR0IP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -170,11 +172,11 @@
 `uc 1 INTEDG0 1 0 :1:6 
 `uc 1 nRBPU 1 0 :1:7 
 ]
-[s S74 . 1 `uc 1 . 1 0 :7:0 
+[s S75 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 RBPU 1 0 :1:7 
 ]
-[u S77 . 1 `S62 1 . 1 0 `S65 1 . 1 0 `S74 1 . 1 0 ]
-[v _INTCON2bits INTCON2bits `VES77  1 e 1 @4081 ]
+[u S78 . 1 `S63 1 . 1 0 `S66 1 . 1 0 `S75 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES78  1 e 1 @4081 ]
 "39 F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
 [v _ADC_Value ADC_Value `uc  1 e 1 0 ]
 "41
@@ -186,12 +188,12 @@
 "86
 [v _main main `(v  1 e 0 0 ]
 {
-"119
+"124
 } 0
-"157
+"163
 [v _PWM_Init PWM_Init `(v  1 e 0 0 ]
 {
-"171
+"179
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
 [v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]
@@ -201,13 +203,13 @@
 [v Delay1KTCYx@unit unit `uc  1 a 1 0 ]
 "13
 } 0
-"121 F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
+"126 F:\Projects\SinclairC5Eclipse\Controller\Throttle.X\Throttle.c
 [v _ADC_Init ADC_Init `(v  1 e 0 0 ]
 {
-"155
+"161
 } 0
-"173
+"181
 [v _ADC_Convert ADC_Convert `(uc  1 e 1 0 ]
 {
-"178
+"186
 } 0

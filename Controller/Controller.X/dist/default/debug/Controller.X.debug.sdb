@@ -1,0 +1,406 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F45K20 ]
+[d frameptr 4065 ]
+"63 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\double.c
+[v ___flpack __flpack `(d  1 e 3 0 ]
+"88 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fladd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fldiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\flmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\flsub.c
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"17 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+[v _utoa utoa `(*.39uc  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
+[v _Delay100TCYx Delay100TCYx `(v  1 e 0 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
+[v _Delay10KTCYx Delay10KTCYx `(v  1 e 0 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
+[v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
+[v _Delay1TCYx Delay1TCYx `(v  1 e 0 0 ]
+"60 F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+[v _main main `(v  1 e 0 0 ]
+"112
+[v _ADC_Init ADC_Init `(v  1 e 0 0 ]
+"148
+[v _PWM_Init PWM_Init `(v  1 e 0 0 ]
+"168
+[v _ADC_Convert ADC_Convert `(uc  1 e 1 0 ]
+"6 F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
+[v _InitLCD InitLCD `(v  1 e 0 0 ]
+"13
+[v _DelayFor18TCY DelayFor18TCY `(v  1 e 0 0 ]
+"19
+[v _OpenLCD OpenLCD `(v  1 e 0 0 ]
+"74
+[v _WriteCmdLCD WriteCmdLCD `(v  1 e 0 0 ]
+"101
+[v _BusyLCD BusyLCD `(uc  1 e 1 0 ]
+"132
+[v _SetLCDDDRamAddr SetLCDDDRamAddr `(v  1 e 0 0 ]
+"188
+[v _putIntLCD putIntLCD `(v  1 e 0 0 ]
+"226
+[v _putLCD putLCD `(v  1 e 0 0 ]
+"237
+[v _WriteDataLCD WriteDataLCD `(v  1 e 0 0 ]
+[s S98 . 1 `uc 1 WPUB0 1 0 :1:0 
+`uc 1 WPUB1 1 0 :1:1 
+`uc 1 WPUB2 1 0 :1:2 
+`uc 1 WPUB3 1 0 :1:3 
+`uc 1 WPUB4 1 0 :1:4 
+`uc 1 WPUB5 1 0 :1:5 
+`uc 1 WPUB6 1 0 :1:6 
+`uc 1 WPUB7 1 0 :1:7 
+]
+"346 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
+[u S107 . 1 `S98 1 . 1 0 ]
+[v _WPUBbits WPUBbits `VES107  1 e 1 @3964 ]
+"428
+[v _ANSEL ANSEL `VEuc  1 e 1 @3966 ]
+[s S167 . 1 `uc 1 ANS0 1 0 :1:0 
+`uc 1 ANS1 1 0 :1:1 
+`uc 1 ANS2 1 0 :1:2 
+`uc 1 ANS3 1 0 :1:3 
+`uc 1 ANS4 1 0 :1:4 
+`uc 1 ANS5 1 0 :1:5 
+`uc 1 ANS6 1 0 :1:6 
+`uc 1 ANS7 1 0 :1:7 
+]
+"445
+[u S176 . 1 `S167 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES176  1 e 1 @3966 ]
+"489
+[v _ANSELH ANSELH `VEuc  1 e 1 @3967 ]
+"976
+[v _PORTC PORTC `VEuc  1 e 1 @3970 ]
+[s S352 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"1950
+[s S361 . 1 `uc 1 LC0 1 0 :1:0 
+]
+[s S363 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 LC1 1 0 :1:1 
+]
+[s S366 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LC2 1 0 :1:2 
+]
+[s S369 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 LC3 1 0 :1:3 
+]
+[s S372 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 LC4 1 0 :1:4 
+]
+[s S375 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LC5 1 0 :1:5 
+]
+[s S378 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 LC6 1 0 :1:6 
+]
+[s S381 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 LC7 1 0 :1:7 
+]
+[u S384 . 1 `S352 1 . 1 0 `S361 1 . 1 0 `S363 1 . 1 0 `S366 1 . 1 0 `S369 1 . 1 0 `S372 1 . 1 0 `S375 1 . 1 0 `S378 1 . 1 0 `S381 1 . 1 0 ]
+[v _LATCbits LATCbits `VES384  1 e 1 @3979 ]
+"2034
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+[s S22 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"2300
+[s S31 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+[u S40 . 1 `S22 1 . 1 0 `S31 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES40  1 e 1 @3986 ]
+"2710
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+[s S312 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"2742
+[s S321 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S330 . 1 `S312 1 . 1 0 `S321 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES330  1 e 1 @3988 ]
+"2931
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"5203
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @4029 ]
+"5290
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @4030 ]
+"5302
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
+"5372
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"5425
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
+[s S194 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_NOT_DONE 1 0 :1:1 
+]
+"5469
+[s S197 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+]
+[s S201 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 DONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+]
+[s S208 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_DONE 1 0 :1:1 
+]
+[s S211 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S214 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[s S217 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[s S220 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GODONE 1 0 :1:1 
+]
+[u S223 . 1 `S194 1 . 1 0 `S197 1 . 1 0 `S201 1 . 1 0 `S208 1 . 1 0 `S211 1 . 1 0 `S214 1 . 1 0 `S217 1 . 1 0 `S220 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES223  1 e 1 @4034 ]
+"5555
+[v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+"5931
+[v _T2CON T2CON `VEuc  1 e 1 @4042 ]
+"6001
+[v _PR2 PR2 `VEuc  1 e 1 @4043 ]
+[s S63 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_RBPU 1 0 :1:7 
+]
+"7184
+[s S66 . 1 `uc 1 RBIP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 TMR0IP 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INTEDG2 1 0 :1:4 
+`uc 1 INTEDG1 1 0 :1:5 
+`uc 1 INTEDG0 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+[s S75 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RBPU 1 0 :1:7 
+]
+[u S78 . 1 `S63 1 . 1 0 `S66 1 . 1 0 `S75 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES78  1 e 1 @4081 ]
+"36 F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+[v _ADC_ThrottlePWM_Lookup ADC_ThrottlePWM_Lookup `C[16]uc  1 e 16 @384 ]
+"56
+[v _ADC_Value ADC_Value `uc  1 e 1 0 ]
+"57
+[v _Counter Counter `uc  1 e 1 0 ]
+"60
+[v _main main `(v  1 e 0 0 ]
+{
+"110
+} 0
+"188 F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
+[v _putIntLCD putIntLCD `(v  1 e 0 0 ]
+{
+"189
+[v putIntLCD@result result `[4]uc  1 a 4 18 ]
+"188
+[v putIntLCD@n n `s  1 p 2 16 ]
+"224
+} 0
+"17 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+[v _utoa utoa `(*.39uc  1 e 2 0 ]
+{
+"19
+[v utoa@v v `ui  1 a 2 13 ]
+"20
+[v utoa@c c `uc  1 a 1 15 ]
+"17
+[v utoa@buf buf `*.39uc  1 p 2 7 ]
+[v utoa@val val `ui  1 p 2 9 ]
+[v utoa@base base `i  1 p 2 11 ]
+"37
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwmod@counter counter `uc  1 a 1 4 ]
+"8
+[v ___lwmod@dividend dividend `ui  1 p 2 0 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 2 ]
+"26
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwdiv@quotient quotient `ui  1 a 2 4 ]
+"12
+[v ___lwdiv@counter counter `uc  1 a 1 6 ]
+"8
+[v ___lwdiv@dividend dividend `ui  1 p 2 0 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
+"31
+} 0
+"226 F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
+[v _putLCD putLCD `(v  1 e 0 0 ]
+{
+[v putLCD@buffer buffer `*.35uc  1 p 2 2 ]
+"235
+} 0
+"237
+[v _WriteDataLCD WriteDataLCD `(v  1 e 0 0 ]
+{
+[v WriteDataLCD@data data `uc  1 a 1 wreg ]
+[v WriteDataLCD@data data `uc  1 a 1 wreg ]
+"240
+[v WriteDataLCD@data data `uc  1 a 1 1 ]
+"262
+} 0
+"148 F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+[v _PWM_Init PWM_Init `(v  1 e 0 0 ]
+{
+"166
+} 0
+"6 F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
+[v _InitLCD InitLCD `(v  1 e 0 0 ]
+{
+"11
+} 0
+"19
+[v _OpenLCD OpenLCD `(v  1 e 0 0 ]
+{
+[v OpenLCD@lcdtype lcdtype `uc  1 a 1 wreg ]
+[v OpenLCD@lcdtype lcdtype `uc  1 a 1 wreg ]
+"23
+[v OpenLCD@lcdtype lcdtype `uc  1 a 1 5 ]
+"72
+} 0
+"74
+[v _WriteCmdLCD WriteCmdLCD `(v  1 e 0 0 ]
+{
+[v WriteCmdLCD@cmd cmd `uc  1 a 1 wreg ]
+[v WriteCmdLCD@cmd cmd `uc  1 a 1 wreg ]
+"77
+[v WriteCmdLCD@cmd cmd `uc  1 a 1 1 ]
+"99
+} 0
+"132
+[v _SetLCDDDRamAddr SetLCDDDRamAddr `(v  1 e 0 0 ]
+{
+[v SetLCDDDRamAddr@DDaddr DDaddr `uc  1 a 1 wreg ]
+[v SetLCDDDRamAddr@DDaddr DDaddr `uc  1 a 1 wreg ]
+"135
+[v SetLCDDDRamAddr@DDaddr DDaddr `uc  1 a 1 4 ]
+"157
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
+[v _Delay10KTCYx Delay10KTCYx `(v  1 e 0 0 ]
+{
+[v Delay10KTCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay10KTCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay10KTCYx@unit unit `uc  1 a 1 1 ]
+"13
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
+[v _Delay100TCYx Delay100TCYx `(v  1 e 0 0 ]
+{
+[v Delay100TCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay100TCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay100TCYx@unit unit `uc  1 a 1 0 ]
+"13
+} 0
+"101 F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
+[v _BusyLCD BusyLCD `(uc  1 e 1 0 ]
+{
+"129
+} 0
+"13
+[v _DelayFor18TCY DelayFor18TCY `(v  1 e 0 0 ]
+{
+"16
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
+[v _Delay1TCYx Delay1TCYx `(v  1 e 0 0 ]
+{
+[v Delay1TCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay1TCYx@unit unit `uc  1 a 1 wreg ]
+"7
+[v Delay1TCYx@unit unit `uc  1 a 1 0 ]
+"9
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
+[v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]
+{
+[v Delay1KTCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay1KTCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay1KTCYx@unit unit `uc  1 a 1 0 ]
+"13
+} 0
+"112 F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+[v _ADC_Init ADC_Init `(v  1 e 0 0 ]
+{
+"146
+} 0
+"168
+[v _ADC_Convert ADC_Convert `(uc  1 e 1 0 ]
+{
+"173
+} 0

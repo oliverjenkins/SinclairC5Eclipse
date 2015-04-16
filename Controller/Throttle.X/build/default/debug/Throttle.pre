@@ -5174,34 +5174,34 @@ void putrsUSART ( const  char *data);
 # 654
 void baudUSART ( unsigned char baudconfig);
 
-# 87 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\xlcd.h"
+# 89 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\xlcd.h"
 void OpenXLCD( unsigned char);
 
-# 92
+# 94
 void SetCGRamAddr( unsigned char);
 
-# 97
+# 99
 void SetDDRamAddr( unsigned char);
 
-# 102
+# 104
 unsigned char BusyXLCD(void);
 
-# 107
+# 109
 unsigned char ReadAddrXLCD(void);
 
-# 112
+# 114
 char ReadDataXLCD(void);
 
-# 117
+# 119
 void WriteCmdXLCD( unsigned char);
 
-# 122
+# 124
 void WriteDataXLCD( char);
 
-# 132
+# 134
 void putsXLCD( char *);
 
-# 137
+# 139
 void putrsXLCD(const char *);
 
 
@@ -5299,6 +5299,9 @@ void main (void)
 
 TRISD = 0b00000000;
 TRISAbits.TRISA0 = 1;
+TRISAbits.TRISA1 = 1;
+
+TRISE = 0b00000000;
 
 INTCON2bits.RBPU = 0;
 WPUBbits.WPUB0 = 1;
@@ -5311,6 +5314,7 @@ ADC_Init();
 
 
 PWM_Init();
+
 
 ClockSpeed = OSCCON;
 
@@ -5326,6 +5330,7 @@ CCPR1L = ADC_ThrottlePWM_Lookup[ADC_Value];
 
 
 Delay1KTCYx(30);
+
 }
 }
 
@@ -5337,24 +5342,27 @@ void ADC_Init(void)
 ANSEL = 0;
 ANSELH = 0;
 ANSELbits.ANS0 = 1;
+ANSELbits.ANS1 = 1;
 
 
 
 ADCON1 = 0;
 
-# 150
+# 156
 ADCON2 = 0b00111000;
 
 
-ADCON0 = 0b00000001;
+ADCON0 = 0b00000101;
 
 }
 
 void PWM_Init(void) {
 
 
-T2CON = 0b00000111;
+
+
 PR2 = 249;
+T2CON = 0b00000111;
 
 
 

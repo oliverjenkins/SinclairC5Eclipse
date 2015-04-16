@@ -88,6 +88,8 @@ void main (void)
     // Init I/O
     TRISD = 0b00000000;         // PORTD bits 7:0 are all outputs (0)
     TRISAbits.TRISA0 = 1;       // TRISA0 input
+    TRISAbits.TRISA1 = 1;       // TRISA1 input
+
     TRISE = 0b00000000;         // TRISE Output
 
     INTCON2bits.RBPU = 0;       // enable PORTB internal pullups
@@ -129,6 +131,7 @@ void ADC_Init(void)
     ANSEL = 0;          //turn off all other analog inputs
     ANSELH = 0;
     ANSELbits.ANS0 = 1; // turn on RA0 analog
+    ANSELbits.ANS1 = 1; // turn on RA0 analog
 
     // Sets bits VCFG1 and VCFG0 in ADCON1 so the ADC voltage reference is VSS to VDD
 
@@ -153,7 +156,7 @@ void ADC_Init(void)
     ADCON2 = 0b00111000;
 
     // Select channel 0 (AN0) to read the potentiometer voltage and turn on ADC
-    ADCON0 = 0b00000001;
+    ADCON0 = 0b00000101;
 
 }
 
