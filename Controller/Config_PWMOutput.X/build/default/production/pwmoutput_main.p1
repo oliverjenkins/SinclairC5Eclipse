@@ -4041,62 +4041,59 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pwmoutput_main.c: 119: CCPR1L = 25;
 "119
 [e = _CCPR1L -> -> 25 `i `uc ]
-[; ;pwmoutput_main.c: 120: CCP2CON = 0b00111100;
+[; ;pwmoutput_main.c: 120: CCPR2L = 255;
 "120
-[e = _CCP2CON -> -> 60 `i `uc ]
-[; ;pwmoutput_main.c: 121: CCPR2L = 255;
-"121
 [e = _CCPR2L -> -> 255 `i `uc ]
-[; ;pwmoutput_main.c: 123: while (1)
-"123
+[; ;pwmoutput_main.c: 122: while (1)
+"122
 [e :U 415 ]
-[; ;pwmoutput_main.c: 124: {
-"124
+[; ;pwmoutput_main.c: 123: {
+"123
 {
-[; ;pwmoutput_main.c: 126: LATDbits.LD2 = 1;
-"126
+[; ;pwmoutput_main.c: 125: LATDbits.LD2 = 1;
+"125
 [e = . . _LATDbits 3 1 -> -> 1 `i `uc ]
-[; ;pwmoutput_main.c: 128: CCPR1L = 10;
-"128
+[; ;pwmoutput_main.c: 127: CCPR1L = 10;
+"127
 [e = _CCPR1L -> -> 10 `i `uc ]
-[; ;pwmoutput_main.c: 130: Delay1KTCYx(150);
-"130
+[; ;pwmoutput_main.c: 129: Delay1KTCYx(150);
+"129
 [e ( _Delay1KTCYx (1 -> -> 150 `i `uc ]
-[; ;pwmoutput_main.c: 132: CCPR1L = 60;
-"132
+[; ;pwmoutput_main.c: 131: CCPR1L = 60;
+"131
 [e = _CCPR1L -> -> 60 `i `uc ]
-[; ;pwmoutput_main.c: 134: Delay1KTCYx(150);
-"134
+[; ;pwmoutput_main.c: 133: Delay1KTCYx(150);
+"133
 [e ( _Delay1KTCYx (1 -> -> 150 `i `uc ]
-[; ;pwmoutput_main.c: 136: CCPR1L = 120;
-"136
+[; ;pwmoutput_main.c: 135: CCPR1L = 120;
+"135
 [e = _CCPR1L -> -> 120 `i `uc ]
-[; ;pwmoutput_main.c: 138: Delay1KTCYx(150);
-"138
+[; ;pwmoutput_main.c: 137: Delay1KTCYx(150);
+"137
 [e ( _Delay1KTCYx (1 -> -> 150 `i `uc ]
-[; ;pwmoutput_main.c: 140: LATDbits.LD2 = 0;
-"140
+[; ;pwmoutput_main.c: 139: LATDbits.LD2 = 0;
+"139
 [e = . . _LATDbits 3 1 -> -> 0 `i `uc ]
-[; ;pwmoutput_main.c: 142: CCPR1L = 180;
-"142
+[; ;pwmoutput_main.c: 141: CCPR1L = 180;
+"141
 [e = _CCPR1L -> -> 180 `i `uc ]
-[; ;pwmoutput_main.c: 144: Delay1KTCYx(150);
-"144
+[; ;pwmoutput_main.c: 143: Delay1KTCYx(150);
+"143
 [e ( _Delay1KTCYx (1 -> -> 150 `i `uc ]
-[; ;pwmoutput_main.c: 146: CCPR1L = 255;
-"146
+[; ;pwmoutput_main.c: 145: CCPR1L = 255;
+"145
 [e = _CCPR1L -> -> 255 `i `uc ]
-[; ;pwmoutput_main.c: 148: Delay1KTCYx(150);
-"148
+[; ;pwmoutput_main.c: 147: Delay1KTCYx(150);
+"147
 [e ( _Delay1KTCYx (1 -> -> 150 `i `uc ]
-"151
+"150
 }
 [e :U 414 ]
-"123
+"122
 [e $U 415  ]
 [e :U 416 ]
+[; ;pwmoutput_main.c: 150: }
 [; ;pwmoutput_main.c: 151: }
-[; ;pwmoutput_main.c: 152: }
-"152
+"151
 [e :UE 413 ]
 }

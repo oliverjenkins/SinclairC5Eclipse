@@ -1,7 +1,7 @@
 Function			Requirement
 Motor PWM				1 x PWM output									PortC.RC1/T1OSI/CCP2
 Motor Speed (back emf)	1 x ADC input									PortA.RA1/AN1/C12IN1-
-Wheel Speed				1 x Edge triggered input - Compare module		PortC.RC2/CCP1/P1A
+Wheel Speed				1 x Edge triggered input - Compare module		PortB.RB2/INT2/AN8
 LCD Display				Enable											RE0/RD/AN5
 						ReadWrite										RE1/WR/AN6
 						Reg Select										RE2/CS/AN7
@@ -49,7 +49,7 @@ Operation Mode 			1 Digital input									RD7/PSP7/P1D
  * 32	OSC1/CLKIN/RA7				RA7		A		7
  * 8    RB0/INT0/FLT0/AN12          RB0     B       0	Lights On Button
  * 9    RB1/INT1/AN10/C12IN3-       RB1     B       1	Brakes On Button
- * 10   RB2/INT2/AN8                RB2     B       2
+ * 10   RB2/INT2/AN8                RB2     B       2	Wheel RPM 
  * 11   RB3/AN9/C12IN2-/CCP2(1)     RB3     B       3
  * 14   RB4/KBI0/AN11               RB4     B       4	Left turn Button
  * 15   RB5/KBI1/PGM                RB5     B       5	Right turn Button
@@ -57,7 +57,7 @@ Operation Mode 			1 Digital input									RD7/PSP7/P1D
  * 17   RB7/KBI3/PGD                RB7     B       7	LCD function button
  * 32   RC0/T1OSO/T13CKI            RC0     C       0
  * 35   RC1/T1OSI/CCP2              RC1     C       1	Motor PWM		
- * 36   RC2/CCP1/P1A                RC2     C       2	Wheel Speed
+ * 36   RC2/CCP1/P1A                RC2     C       2	
  * 37   RC3/SCK/SCL                 RC3     C       3	Digital Output
  * 42   RC4/SDI/SDA                 RC4     C       4	Digital Output
  * 43   RC5/SDO                     RC5     C       5	Digital Output
@@ -78,7 +78,7 @@ Operation Mode 			1 Digital input									RD7/PSP7/P1D
 4 Pins un-used
 * 31	SC2/CLKOUT/RA6				RA6		A		6
 * 32	OSC1/CLKIN/RA7				RA7		A		7
-* 10  	RB2/INT2/AN8                RB2     B       2
+* 36    RC2/CCP1/P1A                RC2     C       2
 * 11   	RB3/AN9/C12IN2-/CCP2(1)     RB3     B       3
 * 32   	RC0/T1OSO/T13CKI            RC0     C       0
 * 3     RD5/PSP5/P1B                RD5     D       5	

@@ -5180,34 +5180,34 @@ void putrsUSART ( const  char *data);
 # 654
 void baudUSART ( unsigned char baudconfig);
 
-# 87 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\xlcd.h"
+# 89 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\xlcd.h"
 void OpenXLCD( unsigned char);
 
-# 92
+# 94
 void SetCGRamAddr( unsigned char);
 
-# 97
+# 99
 void SetDDRamAddr( unsigned char);
 
-# 102
+# 104
 unsigned char BusyXLCD(void);
 
-# 107
+# 109
 unsigned char ReadAddrXLCD(void);
 
-# 112
+# 114
 char ReadDataXLCD(void);
 
-# 117
+# 119
 void WriteCmdXLCD( unsigned char);
 
-# 122
+# 124
 void WriteDataXLCD( char);
 
-# 132
+# 134
 void putsXLCD( char *);
 
-# 137
+# 139
 void putrsXLCD(const char *);
 
 
