@@ -1,51 +1,64 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"3163 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
-[s S157 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S157 . TRISE0 TRISE1 TRISE2 . PSPMODE IBOV OBF IBF ]
-"3173
-[s S158 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S158 . RE0 RE1 RE2 ]
-"3162
-[u S156 `S157 1 `S158 1 ]
-[n S156 . . . ]
-"3179
-[v _TRISEbits `VS156 ~T0 @X0 0 e@3990 ]
-"2172
-[s S123 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S123 . LATE0 LATE1 LATE2 ]
-"2177
-[s S124 :1 `uc 1 ]
-[n S124 . LE0 ]
-"2180
-[s S125 :1 `uc 1 :1 `uc 1 ]
-[n S125 . . LE1 ]
-"2184
-[s S126 :2 `uc 1 :1 `uc 1 ]
-[n S126 . . LE2 ]
-"2188
-[s S127 :3 `uc 1 :1 `uc 1 ]
-[n S127 . . LE3 ]
-"2192
-[s S128 :4 `uc 1 :1 `uc 1 ]
-[n S128 . . LE4 ]
-"2196
-[s S129 :5 `uc 1 :1 `uc 1 ]
-[n S129 . . LE5 ]
-"2200
-[s S130 :6 `uc 1 :1 `uc 1 ]
-[n S130 . . LE6 ]
-"2204
-[s S131 :7 `uc 1 :1 `uc 1 ]
-[n S131 . . LE7 ]
-"2171
-[u S122 `S123 1 `S124 1 `S125 1 `S126 1 `S127 1 `S128 1 `S129 1 `S130 1 `S131 1 ]
-[n S122 . . . . . . . . . . ]
-"2209
-[v _LATEbits `VS122 ~T0 @X0 0 e@3981 ]
-"31 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h
-[v _Delay1KTCYx `(v ~T0 @X0 0 ef1`uc ]
-"12 digitaloutput_main.c
+"2931 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
+[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"2279
+[s S133 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S133 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
+"2289
+[s S134 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S134 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"2278
+[u S132 `S133 1 `S134 1 ]
+[n S132 . . . ]
+"2300
+[v _TRISAbits `VS132 ~T0 @X0 0 e@3986 ]
+"428
+[v _ANSEL `Vuc ~T0 @X0 0 e@3966 ]
+"489
+[v _ANSELH `Vuc ~T0 @X0 0 e@3967 ]
+"5372
+[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
+"5302
+[v _ADCON2 `Vuc ~T0 @X0 0 e@4032 ]
+"5425
+[v _ADCON0 `Vuc ~T0 @X0 0 e@4034 ]
+"61 analogueinput_main.c
+[v _ADC_Convert `(uc ~T0 @X0 0 ef ]
+"2034 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
+[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
+"5431
+[s S278 :1 `uc 1 :1 `uc 1 ]
+[n S278 . . GO_NOT_DONE ]
+"5435
+[s S279 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S279 . ADON GO_nDONE CHS ]
+"5440
+[s S280 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S280 . . DONE CHS0 CHS1 CHS2 CHS3 ]
+"5448
+[s S281 :1 `uc 1 :1 `uc 1 ]
+[n S281 . . NOT_DONE ]
+"5452
+[s S282 :1 `uc 1 :1 `uc 1 ]
+[n S282 . . nDONE ]
+"5456
+[s S283 :1 `uc 1 :1 `uc 1 ]
+[n S283 . . GO_DONE ]
+"5460
+[s S284 :1 `uc 1 :1 `uc 1 ]
+[n S284 . . GO ]
+"5464
+[s S285 :1 `uc 1 :1 `uc 1 ]
+[n S285 . . GODONE ]
+"5430
+[u S277 `S278 1 `S279 1 `S280 1 `S281 1 `S282 1 `S283 1 `S284 1 `S285 1 ]
+[n S277 . . . . . . . . . ]
+"5469
+[v _ADCON0bits `VS277 ~T0 @X0 0 e@4034 ]
+"5555
+[v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
+"12 analogueinput_main.c
 [p x FOSC=INTIO67 ]
 [p x FCMEN=OFF ]
 [p x IESO=OFF ]
@@ -90,6 +103,65 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x EBTRB=OFF ]
 "27
 [p x MCLRE=OFF ]
+"31
+[v _ADC_Value `uc ~T0 @X0 1 e ]
+[; ;analogueinput_main.c: 31: unsigned char ADC_Value;
+"37
+[v _ADC_LED_Lookup `Cuc ~T0 @X0 -> 16 `i e@384 ]
+[i _ADC_LED_Lookup
+:U ..
+"38
+-> -> 0 `i `uc
+"39
+-> -> 1 `i `uc
+"40
+-> -> 2 `i `uc
+"41
+-> -> 3 `i `uc
+"42
+-> -> 5 `i `uc
+"43
+-> -> 7 `i `uc
+"44
+-> -> 11 `i `uc
+"45
+-> -> 15 `i `uc
+"46
+-> -> 23 `i `uc
+"47
+-> -> 31 `i `uc
+"48
+-> -> 47 `i `uc
+"49
+-> -> 63 `i `uc
+"50
+-> -> 95 `i `uc
+"51
+-> -> 127 `i `uc
+"52
+-> -> 191 `i `uc
+"53
+-> -> 255 `i `uc
+..
+]
+[; ;analogueinput_main.c: 37: const unsigned char ADC_LED_Lookup[16] @ 0x180 = {
+[; ;analogueinput_main.c: 38: 0b00000000,
+[; ;analogueinput_main.c: 39: 0b00000001,
+[; ;analogueinput_main.c: 40: 0b00000010,
+[; ;analogueinput_main.c: 41: 0b00000011,
+[; ;analogueinput_main.c: 42: 0b00000101,
+[; ;analogueinput_main.c: 43: 0b00000111,
+[; ;analogueinput_main.c: 44: 0b00001011,
+[; ;analogueinput_main.c: 45: 0b00001111,
+[; ;analogueinput_main.c: 46: 0b00010111,
+[; ;analogueinput_main.c: 47: 0b00011111,
+[; ;analogueinput_main.c: 48: 0b00101111,
+[; ;analogueinput_main.c: 49: 0b00111111,
+[; ;analogueinput_main.c: 50: 0b01011111,
+[; ;analogueinput_main.c: 51: 0b01111111,
+[; ;analogueinput_main.c: 52: 0b10111111,
+[; ;analogueinput_main.c: 53: 0b11111111,
+[; ;analogueinput_main.c: 54: };
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f45k20.h: 49: extern volatile unsigned char SSPMSK @ 0xF77;
@@ -3990,43 +4062,85 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
-"81 digitaloutput_main.c
+[; ;analogueinput_main.c: 61: unsigned char ADC_Convert(void);
+"123 analogueinput_main.c
 [v _main `(v ~T0 @X0 1 ef ]
-"82
+"124
 {
-[; ;digitaloutput_main.c: 81: void main (void)
-[; ;digitaloutput_main.c: 82: {
+[; ;analogueinput_main.c: 123: void main (void)
+[; ;analogueinput_main.c: 124: {
 [e :U _main ]
 [f ]
-[; ;digitaloutput_main.c: 84: TRISEbits.RE2 = 0;
-"84
-[e = . . _TRISEbits 1 2 -> -> 0 `i `uc ]
-[; ;digitaloutput_main.c: 86: while (1)
-"86
+[; ;analogueinput_main.c: 125: TRISD = 0b00000000;
+"125
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;analogueinput_main.c: 128: TRISAbits.TRISA0 = 1;
+"128
+[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
+[; ;analogueinput_main.c: 137: ANSEL = 0b10000000;
+"137
+[e = _ANSEL -> -> 128 `i `uc ]
+[; ;analogueinput_main.c: 138: ANSELH = 0b00000000;
+"138
+[e = _ANSELH -> -> 0 `i `uc ]
+[; ;analogueinput_main.c: 141: ADCON1 = 0b00000000;
+"141
+[e = _ADCON1 -> -> 0 `i `uc ]
+[; ;analogueinput_main.c: 142: ADCON2 = 0b00111000;
+"142
+[e = _ADCON2 -> -> 56 `i `uc ]
+[; ;analogueinput_main.c: 160: ADCON0 = 0b00011101;
+"160
+[e = _ADCON0 -> -> 29 `i `uc ]
+[; ;analogueinput_main.c: 163: while (1)
+"163
 [e :U 415 ]
-[; ;digitaloutput_main.c: 87: {
-"87
+[; ;analogueinput_main.c: 164: {
+"164
 {
-[; ;digitaloutput_main.c: 88: LATEbits.LE2 = 1;
-"88
-[e = . . _LATEbits 3 1 -> -> 1 `i `uc ]
-[; ;digitaloutput_main.c: 89: Delay1KTCYx(50);
-"89
-[e ( _Delay1KTCYx (1 -> -> 50 `i `uc ]
-[; ;digitaloutput_main.c: 92: LATEbits.LE2 = 0;
-"92
-[e = . . _LATEbits 3 1 -> -> 0 `i `uc ]
-[; ;digitaloutput_main.c: 93: Delay1KTCYx(50);
-"93
-[e ( _Delay1KTCYx (1 -> -> 50 `i `uc ]
-"94
+[; ;analogueinput_main.c: 165: ADC_Value = ADC_Convert();
+"165
+[e = _ADC_Value ( _ADC_Convert ..  ]
+[; ;analogueinput_main.c: 166: ADC_Value = ADC_Value >> 4;
+"166
+[e = _ADC_Value -> >> -> _ADC_Value `i -> 4 `i `uc ]
+[; ;analogueinput_main.c: 169: LATD = ADC_LED_Lookup[ADC_Value];
+"169
+[e = _LATD *U + &U _ADC_LED_Lookup * -> _ADC_Value `ux -> -> # *U &U _ADC_LED_Lookup `ui `ux ]
+"171
 }
 [e :U 414 ]
-"86
+"163
 [e $U 415  ]
 [e :U 416 ]
-[; ;digitaloutput_main.c: 94: }
-[; ;digitaloutput_main.c: 95: }
-"95
+[; ;analogueinput_main.c: 171: }
+[; ;analogueinput_main.c: 172: }
+"172
 [e :UE 413 ]
+}
+"175
+[v _ADC_Convert `(uc ~T0 @X0 1 ef ]
+"176
+{
+[; ;analogueinput_main.c: 175: unsigned char ADC_Convert(void)
+[; ;analogueinput_main.c: 176: {
+[e :U _ADC_Convert ]
+[f ]
+[; ;analogueinput_main.c: 177: ADCON0bits.GO_DONE = 1;
+"177
+[e = . . _ADCON0bits 5 1 -> -> 1 `i `uc ]
+[; ;analogueinput_main.c: 178: while (ADCON0bits.GO_DONE == 1);
+"178
+[e $U 418  ]
+[e :U 419 ]
+[e :U 418 ]
+[e $ == -> . . _ADCON0bits 5 1 `i -> 1 `i 419  ]
+[e :U 420 ]
+[; ;analogueinput_main.c: 179: return ADRESH;
+"179
+[e ) _ADRESH ]
+[e $UE 417  ]
+[; ;analogueinput_main.c: 180: }
+"180
+[e :UE 417 ]
 }

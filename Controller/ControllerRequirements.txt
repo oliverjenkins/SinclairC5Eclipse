@@ -1,0 +1,29 @@
+Function			Requirement
+Motor PWM			1 x PWM output
+Motor Speed (back emf)		1 x ADC input
+Wheel Speed			1 x Edge triggered input - Compare module
+LCD Display			7 Digital IO
+Throttle Input			1 x ADC input
+Battery Voltage			4 x ADC input
+Lights On Button		1 Edge triggered interrupt
+Light on LED 			1 Digital Output
+Brakes On Button		1 Edge triggered interrupt
+Brake on LED			1 Digital Output
+Left turn Button		1 Edge triggered interrupt
+Left indicator LED		1 Digital Output
+Right turn Button		1 Edge triggered interrupt
+Right indicator LED		1 Digital Output
+Horn button			1 Edge triggered interrupt
+Horn Piezo			1 Digital Output
+LCD function button		1 Edge triggered interrupt
+Mode control (Road legal)	1 Digital input
+			
+
+1  x PWM output
+6  x ADC input
+1  x Edge triggered input - Compare module
+6  x Edge triggered input 
+13 x Digital IO
+
+
+27 Total lines

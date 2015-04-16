@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.34 build -361300703 
-                                                                                               Thu Apr 16 10:39:07 2015
+                                                                                               Thu Apr 16 10:44:33 2015
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
      1                           	processor	18F45K20
@@ -23,7 +23,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
     17 ;;
     18 ;; *************** function _main *****************
     19 ;; Defined at:
-    20 ;;		line 82 in file "digitaloutput_main.c"
+    20 ;;		line 81 in file "digitaloutput_main.c"
     21 ;; Parameters:    Size  Location     Type
     22 ;;		None
     23 ;; Auto vars:     Size  Location     Type
@@ -56,24 +56,24 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
     50  007FE8                     _main:
     51                           	opt stack 30
     52                           
-    53                           ;digitaloutput_main.c: 85: TRISEbits.RE2 = 0;
+    53                           ;digitaloutput_main.c: 84: TRISEbits.RE2 = 0;
     54                           
     55                           ;incstack = 0
     56  007FE8  9496               	bcf	3990,2,c	;volatile
     57  007FEA                     l9:
     58                           
-    59                           ;digitaloutput_main.c: 88: {
-    60                           ;digitaloutput_main.c: 89: LATEbits.LE2 = 1;
+    59                           ;digitaloutput_main.c: 87: {
+    60                           ;digitaloutput_main.c: 88: LATEbits.LE2 = 1;
     61  007FEA  848D               	bsf	3981,2,c	;volatile
     62                           
-    63                           ;digitaloutput_main.c: 90: Delay1KTCYx(50);
+    63                           ;digitaloutput_main.c: 89: Delay1KTCYx(50);
     64  007FEC  0E32               	movlw	50
     65  007FEE  ECEB  F03F         	call	_Delay1KTCYx
     66                           
-    67                           ;digitaloutput_main.c: 93: LATEbits.LE2 = 0;
+    67                           ;digitaloutput_main.c: 92: LATEbits.LE2 = 0;
     68  007FF2  948D               	bcf	3981,2,c	;volatile
     69                           
-    70                           ;digitaloutput_main.c: 94: Delay1KTCYx(50);
+    70                           ;digitaloutput_main.c: 93: Delay1KTCYx(50);
     71  007FF4  0E32               	movlw	50
     72  007FF6  ECEB  F03F         	call	_Delay1KTCYx
     73  007FFA  D7F7               	goto	l9
@@ -257,7 +257,7 @@ SFR                  0      0       0      40        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
-Symbol Table                                                                                   Thu Apr 16 10:39:07 2015
+Symbol Table                                                                                   Thu Apr 16 10:44:33 2015
 
                       l9 7FEA                       u17 7FDA             __CFG_CP0$OFF 000000  
            __CFG_CP1$OFF 000000             __CFG_CP2$OFF 000000             __CFG_CP3$OFF 000000  

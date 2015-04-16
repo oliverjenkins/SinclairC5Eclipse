@@ -19,7 +19,7 @@ text2 CODE 0 7F5C 7F5C 18 1
 text3 CODE 0 7F3C 7F3C E 1
 nvCOMRAM COMRAM 1 3 3 1 1
 cstackCOMRAM COMRAM 1 1 1 2 1
-$C:\Users\ADMINI~1\AppData\Local\Temp\ss8.obj
+$C:\Users\ADMINI~1\AppData\Local\Temp\s31o.obj
 idloc IDLOC 0 200000 200000 8 1
 end_init CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 E 1
@@ -59,68 +59,68 @@ MEDIUMCONST 600-7F35 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\07_ADC.X.production.obj
-7F36 cinit CODE >561:C:\Users\ADMINI~1\AppData\Local\Temp\ss8.
-7F36 cinit CODE >563:C:\Users\ADMINI~1\AppData\Local\Temp\ss8.
-7F36 cinit CODE >566:C:\Users\ADMINI~1\AppData\Local\Temp\ss8.
-7F36 cinit CODE >572:C:\Users\ADMINI~1\AppData\Local\Temp\ss8.
-7F36 cinit CODE >573:C:\Users\ADMINI~1\AppData\Local\Temp\ss8.
-7F38 cinit CODE >574:C:\Users\ADMINI~1\AppData\Local\Temp\ss8.
-7F3C text3 CODE >182:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F3C text3 CODE >184:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F3E text3 CODE >185:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F44 text3 CODE >186:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F48 text3 CODE >187:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F4A text1 CODE >138:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F4A text1 CODE >140:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F4C text1 CODE >141:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F50 text1 CODE >142:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F54 text1 CODE >143:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F58 text1 CODE >144:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F5A text1 CODE >145:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F5C text2 CODE >147:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F5C text2 CODE >152:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F60 text2 CODE >153:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F64 text2 CODE >154:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F66 text2 CODE >158:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F6A text2 CODE >176:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F6E text2 CODE >179:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F72 text2 CODE >180:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F74 text0 CODE >69:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F74 text0 CODE >71:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F78 text0 CODE >72:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F7C text0 CODE >74:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F80 text0 CODE >77:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F84 text0 CODE >78:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F86 text0 CODE >80:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F88 text0 CODE >81:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F8A text0 CODE >84:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F8C text0 CODE >87:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F90 text0 CODE >90:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F94 text0 CODE >92:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F94 text0 CODE >95:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F9A text0 CODE >97:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7F9E text0 CODE >98:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FA4 text0 CODE >99:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FAA text0 CODE >101:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FB0 text0 CODE >103:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FB4 text0 CODE >104:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FBA text0 CODE >105:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FC0 text0 CODE >108:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FC6 text0 CODE >112:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FCA text0 CODE >114:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FCE text0 CODE >115:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FD0 text0 CODE >116:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FD6 text0 CODE >118:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FDA text0 CODE >120:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FE0 text0 CODE >121:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FE4 text0 CODE >123:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FE8 text0 CODE >124:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FEA text0 CODE >126:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FEE text0 CODE >129:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FF0 text0 CODE >132:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FF6 text0 CODE >133:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FFA text0 CODE >92:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
-7FFC text0 CODE >136:F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F36 cinit CODE >561:C:\Users\ADMINI~1\AppData\Local\Temp\s31o.
+7F36 cinit CODE >563:C:\Users\ADMINI~1\AppData\Local\Temp\s31o.
+7F36 cinit CODE >566:C:\Users\ADMINI~1\AppData\Local\Temp\s31o.
+7F36 cinit CODE >572:C:\Users\ADMINI~1\AppData\Local\Temp\s31o.
+7F36 cinit CODE >573:C:\Users\ADMINI~1\AppData\Local\Temp\s31o.
+7F38 cinit CODE >574:C:\Users\ADMINI~1\AppData\Local\Temp\s31o.
+7F3C text3 CODE >182:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F3C text3 CODE >184:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F3E text3 CODE >185:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F44 text3 CODE >186:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F48 text3 CODE >187:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F4A text1 CODE >138:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F4A text1 CODE >140:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F4C text1 CODE >141:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F50 text1 CODE >142:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F54 text1 CODE >143:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F58 text1 CODE >144:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F5A text1 CODE >145:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F5C text2 CODE >147:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F5C text2 CODE >152:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F60 text2 CODE >153:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F64 text2 CODE >154:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F66 text2 CODE >158:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F6A text2 CODE >176:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F6E text2 CODE >179:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F72 text2 CODE >180:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F74 text0 CODE >69:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F74 text0 CODE >71:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F78 text0 CODE >72:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F7C text0 CODE >74:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F80 text0 CODE >77:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F84 text0 CODE >78:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F86 text0 CODE >80:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F88 text0 CODE >81:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F8A text0 CODE >84:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F8C text0 CODE >87:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F90 text0 CODE >90:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F94 text0 CODE >92:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F94 text0 CODE >95:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F9A text0 CODE >97:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7F9E text0 CODE >98:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FA4 text0 CODE >99:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FAA text0 CODE >101:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FB0 text0 CODE >103:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FB4 text0 CODE >104:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FBA text0 CODE >105:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FC0 text0 CODE >108:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FC6 text0 CODE >112:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FCA text0 CODE >114:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FCE text0 CODE >115:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FD0 text0 CODE >116:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FD6 text0 CODE >118:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FDA text0 CODE >120:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FE0 text0 CODE >121:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FE4 text0 CODE >123:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FE8 text0 CODE >124:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FEA text0 CODE >126:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FEE text0 CODE >129:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FF0 text0 CODE >132:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FF6 text0 CODE >133:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FFA text0 CODE >92:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+7FFC text0 CODE >136:F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -139,24 +139,24 @@ __Hspace_1 4 0 ABS 0 - dist/default/production\07_ADC.X.production.obj
 __Hspace_2 0 0 ABS 0 - dist/default/production\07_ADC.X.production.obj
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\07_ADC.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\07_ADC.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ADMINI~1\AppData\Local\Temp\ss8.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ADMINI~1\AppData\Local\Temp\s31o.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\07_ADC.X.production.obj
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\07_ADC.X.production.obj
 _LATD F8C 0 ABS 0 - dist/default/production\07_ADC.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\ss8.obj
+___sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s31o.obj
 _main 7F74 0 CODE 0 text0 dist/default/production\07_ADC.X.production.obj
-start 0 0 CODE 0 init C:\Users\ADMINI~1\AppData\Local\Temp\ss8.obj
+start 0 0 CODE 0 init C:\Users\ADMINI~1\AppData\Local\Temp\s31o.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\07_ADC.X.production.obj
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\07_ADC.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup dist/default/production\07_ADC.X.production.obj
 _T0CONbits FD5 0 ABS 0 - dist/default/production\07_ADC.X.production.obj
 __size_of_ADC_Init 0 0 ABS 0 - dist/default/production\07_ADC.X.production.obj
 __LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\07_ADC.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\ss8.obj
-intlevel0 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\ss8.obj
-intlevel1 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\ss8.obj
-intlevel2 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\ss8.obj
-intlevel3 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\ss8.obj
+__accesstop 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s31o.obj
+intlevel0 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s31o.obj
+intlevel1 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s31o.obj
+intlevel2 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s31o.obj
+intlevel3 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s31o.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\07_ADC.X.production.obj
 __CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\07_ADC.X.production.obj
 __CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production\07_ADC.X.production.obj
@@ -173,8 +173,8 @@ _ADCON2 FC0 0 ABS 0 - dist/default/production\07_ADC.X.production.obj
 _ADRESH FC4 0 ABS 0 - dist/default/production\07_ADC.X.production.obj
 __end_of_ADC_Convert 7F4A 0 CODE 0 text3 dist/default/production\07_ADC.X.production.obj
 _ANSELH F7F 0 ABS 0 - dist/default/production\07_ADC.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\ss8.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\ss8.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s31o.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s31o.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\07_ADC.X.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\07_ADC.X.production.obj
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\07_ADC.X.production.obj
@@ -215,7 +215,7 @@ __Htext2 0 0 ABS 0 text2 dist/default/production\07_ADC.X.production.obj
 __Htext3 0 0 ABS 0 text3 dist/default/production\07_ADC.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\07_ADC.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\07_ADC.X.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\ADMINI~1\AppData\Local\Temp\ss8.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\ADMINI~1\AppData\Local\Temp\s31o.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\07_ADC.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\07_ADC.X.production.obj
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\07_ADC.X.production.obj
@@ -280,8 +280,8 @@ __Lcomram 0 0 ABS 0 comram dist/default/production\07_ADC.X.production.obj
 __Lconfig 300000 0 CONFIG 0 config dist/default/production\07_ADC.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\07_ADC.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\07_ADC.X.production.obj
-stackhi 5FF 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\ss8.obj
-stacklo 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\ss8.obj
+stackhi 5FF 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s31o.obj
+stacklo 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s31o.obj
 __Lintcode 0 0 CODE 0 intcode dist/default/production\07_ADC.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\07_ADC.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production\07_ADC.X.production.obj
@@ -306,7 +306,7 @@ __ptext1 7F4A 0 CODE 0 text1 dist/default/production\07_ADC.X.production.obj
 __ptext2 7F5C 0 CODE 0 text2 dist/default/production\07_ADC.X.production.obj
 __ptext3 7F3C 0 CODE 0 text3 dist/default/production\07_ADC.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\07_ADC.X.production.obj
-__ramtop 600 0 RAM 0 ramtop C:\Users\ADMINI~1\AppData\Local\Temp\ss8.obj
+__ramtop 600 0 RAM 0 ramtop C:\Users\ADMINI~1\AppData\Local\Temp\s31o.obj
 _ADC_Convert 7F3C 0 CODE 0 text3 dist/default/production\07_ADC.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\07_ADC.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\07_ADC.X.production.obj

@@ -75,7 +75,6 @@
  * 25   RE0/RD/AN5                  RE0     E       0
  * 26   RE1/WR/AN6                  RE1     E       1
  * 27   RE2/CS/AN7                  RE2     E       2
-
  */
 
 /** M A I N   F U N C T I O N ***************************************/

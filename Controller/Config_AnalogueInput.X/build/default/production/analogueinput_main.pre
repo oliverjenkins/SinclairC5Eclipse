@@ -1,8 +1,8 @@
 
-# 1 "07_ADC.c"
+# 1 "analogueinput_main.c"
 
 
-# 33
+# 12
 #pragma config FOSC = INTIO67, FCMEN = OFF, IESO = OFF
 #pragma config PWRT = OFF, BOREN = SBORDIS, BORV = 30
 #pragma config WDTEN = OFF, WDTPS = 32768
@@ -19,6 +19,30 @@
 
 
 #pragma config MCLRE = OFF
+
+
+
+unsigned char ADC_Value;
+
+# 37
+const unsigned char ADC_LED_Lookup[16] @ 0x180 = {
+0b00000000,
+0b00000001,
+0b00000010,
+0b00000011,
+0b00000101,
+0b00000111,
+0b00001011,
+0b00001111,
+0b00010111,
+0b00011111,
+0b00101111,
+0b00111111,
+0b01011111,
+0b01111111,
+0b10111111,
+0b11111111,
+};
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -5247,117 +5271,40 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 7 "07_ADC.h"
-typedef enum { LEFT2RIGHT,
-RIGHT2LEFT} LEDDirections;
-
-# 18
-void Timer0_Init(void);
-void ADC_Init(void);
+# 61 "analogueinput_main.c"
 unsigned char ADC_Convert(void);
 
-# 65 "07_ADC.c"
-unsigned char LED_Display;
-
-
-
+# 123
 void main (void)
 {
-LEDDirections Direction = LEFT2RIGHT;
-BOOL SwitchPressed = FALSE;
-
-LED_Display = 1;
-
-
 TRISD = 0b00000000;
+
+
 TRISAbits.TRISA0 = 1;
 
-INTCON2bits.RBPU = 0;
-WPUBbits.WPUB0 = 1;
+# 137
+ANSEL = 0b10000000;
+ANSELH = 0b00000000;
 
 
-TRISBbits.TRISB0 = 1;
+ADCON1 = 0b00000000;
+ADCON2 = 0b00111000;
 
+# 160
+ADCON0 = 0b00011101;
 
-Timer0_Init();
-
-
-ADC_Init();
 
 while (1)
 {
-
-if (Direction == LEFT2RIGHT)
-{
-LED_Display <<= 1;
-if (LED_Display == 0)
-LED_Display = 1;
-}
-if (Direction == RIGHT2LEFT)
-{
-LED_Display >>= 1;
-if (LED_Display == 0)
-LED_Display = 0x80;
-}
-
-LATD = LED_Display;
-
-do
-{
-if (PORTBbits.RB0 == 1)
-{
-SwitchPressed = FALSE;
-}
-else if (SwitchPressed == FALSE)
-{
-SwitchPressed = TRUE;
-
-if (Direction == LEFT2RIGHT)
-Direction = RIGHT2LEFT;
-else
-Direction = LEFT2RIGHT;
-}
-
-} while (INTCONbits.TMR0IF == 0);
+ADC_Value = ADC_Convert();
+ADC_Value = ADC_Value >> 4;
 
 
-INTCONbits.TMR0IF = 0;
-
-
-TMR0H = ADC_Convert();
-TMR0L = 0;
+LATD = ADC_LED_Lookup[ADC_Value];
 
 }
 }
 
-void Timer0_Init(void)
-{
-INTCONbits.TMR0IF = 0;
-T0CON = 0b00000001;
-TMR0H = 0;
-TMR0L = 0;
-T0CONbits.TMR0ON = 1;
-}
-
-void ADC_Init(void)
-{
-
-
-
-ANSEL = 0;
-ANSELH = 0;
-ANSELbits.ANS0 = 1;
-
-
-
-ADCON1 = 0;
-
-# 176
-ADCON2 = 0b00111000;
-
-
-ADCON0 = 0b00000001;
-}
 
 unsigned char ADC_Convert(void)
 {

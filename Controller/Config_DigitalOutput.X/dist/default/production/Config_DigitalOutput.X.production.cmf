@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\ADMINI~1\AppData\Local\Temp\s48k.obj
+$C:\Users\ADMINI~1\AppData\Local\Temp\s118.obj
 idloc IDLOC 0 200000 200000 8 1
 end_init CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 E 1
@@ -56,26 +56,26 @@ MEDIUMCONST 600-7FCF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Config_DigitalOutput.X.production.obj
-7FD0 cinit CODE >521:C:\Users\ADMINI~1\AppData\Local\Temp\s48k.
-7FD0 cinit CODE >523:C:\Users\ADMINI~1\AppData\Local\Temp\s48k.
-7FD0 cinit CODE >526:C:\Users\ADMINI~1\AppData\Local\Temp\s48k.
-7FD0 cinit CODE >532:C:\Users\ADMINI~1\AppData\Local\Temp\s48k.
-7FD0 cinit CODE >533:C:\Users\ADMINI~1\AppData\Local\Temp\s48k.
-7FD2 cinit CODE >534:C:\Users\ADMINI~1\AppData\Local\Temp\s48k.
+7FD0 cinit CODE >521:C:\Users\ADMINI~1\AppData\Local\Temp\s118.
+7FD0 cinit CODE >523:C:\Users\ADMINI~1\AppData\Local\Temp\s118.
+7FD0 cinit CODE >526:C:\Users\ADMINI~1\AppData\Local\Temp\s118.
+7FD0 cinit CODE >532:C:\Users\ADMINI~1\AppData\Local\Temp\s118.
+7FD0 cinit CODE >533:C:\Users\ADMINI~1\AppData\Local\Temp\s118.
+7FD2 cinit CODE >534:C:\Users\ADMINI~1\AppData\Local\Temp\s118.
 7FD6 text1 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
 7FD8 text1 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
 7FE0 text1 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
 7FE6 text1 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
 7FE8 text0 CODE >3179:C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
-7FE8 text0 CODE >82:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
-7FE8 text0 CODE >85:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
-7FEA text0 CODE >87:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
-7FEA text0 CODE >89:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
-7FEC text0 CODE >90:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
-7FF2 text0 CODE >93:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
-7FF4 text0 CODE >94:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
-7FFA text0 CODE >87:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
-7FFC text0 CODE >96:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
+7FE8 text0 CODE >81:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
+7FE8 text0 CODE >84:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
+7FEA text0 CODE >86:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
+7FEA text0 CODE >88:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
+7FEC text0 CODE >89:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
+7FF2 text0 CODE >92:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
+7FF4 text0 CODE >93:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
+7FFA text0 CODE >86:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
+7FFC text0 CODE >95:F:\Projects\SinclairC5Eclipse\Controller\Config_DigitalOutput.X\digitaloutput_main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -94,21 +94,21 @@ __Hspace_1 2 0 ABS 0 - dist/default/production\Config_DigitalOutput.X.production
 __Hspace_2 0 0 ABS 0 - dist/default/production\Config_DigitalOutput.X.production.obj
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\Config_DigitalOutput.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Config_DigitalOutput.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ADMINI~1\AppData\Local\Temp\s48k.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ADMINI~1\AppData\Local\Temp\s118.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Config_DigitalOutput.X.production.obj
 _Delay1KTCYx 7FD6 0 CODE 0 text1 dist/default/production\Config_DigitalOutput.X.production.obj
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\Config_DigitalOutput.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s48k.obj
+___sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s118.obj
 _main 7FE8 0 CODE 0 text0 dist/default/production\Config_DigitalOutput.X.production.obj
-start 0 0 CODE 0 init C:\Users\ADMINI~1\AppData\Local\Temp\s48k.obj
+start 0 0 CODE 0 init C:\Users\ADMINI~1\AppData\Local\Temp\s118.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\Config_DigitalOutput.X.production.obj
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\Config_DigitalOutput.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup dist/default/production\Config_DigitalOutput.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s48k.obj
-intlevel0 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s48k.obj
-intlevel1 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s48k.obj
-intlevel2 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s48k.obj
-intlevel3 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s48k.obj
+__accesstop 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s118.obj
+intlevel0 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s118.obj
+intlevel1 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s118.obj
+intlevel2 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s118.obj
+intlevel3 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s118.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Config_DigitalOutput.X.production.obj
 __CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\Config_DigitalOutput.X.production.obj
 __CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production\Config_DigitalOutput.X.production.obj
@@ -118,8 +118,8 @@ __CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\Config_DigitalOutput.X.produ
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\Config_DigitalOutput.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\Config_DigitalOutput.X.production.obj
 __CFG_FOSC$INTIO67 0 0 ABS 0 - dist/default/production\Config_DigitalOutput.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s48k.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s48k.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s118.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s118.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\Config_DigitalOutput.X.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Config_DigitalOutput.X.production.obj
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Config_DigitalOutput.X.production.obj
@@ -152,7 +152,7 @@ __Htext0 0 0 ABS 0 text0 dist/default/production\Config_DigitalOutput.X.producti
 __Htext1 0 0 ABS 0 text1 dist/default/production\Config_DigitalOutput.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Config_DigitalOutput.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\Config_DigitalOutput.X.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\ADMINI~1\AppData\Local\Temp\s48k.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\ADMINI~1\AppData\Local\Temp\s118.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\Config_DigitalOutput.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\Config_DigitalOutput.X.production.obj
 __end_of_Delay1KTCYx 7FE8 0 CODE 0 text1 dist/default/production\Config_DigitalOutput.X.production.obj
@@ -211,8 +211,8 @@ __Lconfig 300000 0 CONFIG 0 config dist/default/production\Config_DigitalOutput.
 _LATEbits F8D 0 ABS 0 - dist/default/production\Config_DigitalOutput.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Config_DigitalOutput.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\Config_DigitalOutput.X.production.obj
-stackhi 5FF 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s48k.obj
-stacklo 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s48k.obj
+stackhi 5FF 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s118.obj
+stacklo 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s118.obj
 __Lintcode 0 0 CODE 0 intcode dist/default/production\Config_DigitalOutput.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\Config_DigitalOutput.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production\Config_DigitalOutput.X.production.obj
@@ -235,7 +235,7 @@ __pcinit 7FD0 0 CODE 0 cinit dist/default/production\Config_DigitalOutput.X.prod
 __ptext0 7FE8 0 CODE 0 text0 dist/default/production\Config_DigitalOutput.X.production.obj
 __ptext1 7FD6 0 CODE 0 text1 dist/default/production\Config_DigitalOutput.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\Config_DigitalOutput.X.production.obj
-__ramtop 600 0 RAM 0 ramtop C:\Users\ADMINI~1\AppData\Local\Temp\s48k.obj
+__ramtop 600 0 RAM 0 ramtop C:\Users\ADMINI~1\AppData\Local\Temp\s118.obj
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\Config_DigitalOutput.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Config_DigitalOutput.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\Config_DigitalOutput.X.production.obj

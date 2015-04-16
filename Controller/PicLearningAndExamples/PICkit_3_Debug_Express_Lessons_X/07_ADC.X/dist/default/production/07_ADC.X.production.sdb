@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 18F45K20 ]
 [d frameptr 4065 ]
-"71 F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+"71 F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
 [e E4325 . `uc
 LEFT2RIGHT 0
 RIGHT2LEFT 1
@@ -43,7 +43,7 @@ TRUE 1
 [v ___ftsub __ftsub `(f  1 e 3 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"65 F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+"65 F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
 [v _LED_Display LED_Display `uc  1 e 1 0 ]
 [s S103 . 1 `uc 1 WPUB0 1 0 :1:0 
 `uc 1 WPUB1 1 0 :1:1 
@@ -274,7 +274,7 @@ TRUE 1
 ]
 [u S301 . 1 `S261 1 . 1 0 `S270 1 . 1 0 `S279 1 . 1 0 `S288 1 . 1 0 `S297 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES301  1 e 1 @4082 ]
-"69 F:\Projects\PicKit3\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
+"69 F:\Projects\SinclairC5Eclipse\Controller\PicLearningAndExamples\PICkit_3_Debug_Express_Lessons_X\07_ADC.X\07_ADC.c
 [v _main main `(v  1 e 0 0 ]
 {
 "71

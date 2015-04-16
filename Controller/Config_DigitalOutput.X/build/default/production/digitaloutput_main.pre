@@ -5247,7 +5247,7 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 82 "digitaloutput_main.c"
+# 81 "digitaloutput_main.c"
 void main (void)
 {
 

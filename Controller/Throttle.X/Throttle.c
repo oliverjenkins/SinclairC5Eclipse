@@ -156,7 +156,7 @@ void ADC_Init(void)
     ADCON2 = 0b00111000;
 
     // Select channel 0 (AN0) to read the potentiometer voltage and turn on ADC
-    ADCON0 = 0b00000101;
+    ADCON0 = 0b00000001;
 
 }
 
