@@ -56,8 +56,8 @@ Operation Mode 			1 Digital input									RD7/PSP7/P1D
  * 16   RB6/KBI2/PGC                RB6     B       6	Horn button
  * 17   RB7/KBI3/PGD                RB7     B       7	LCD function button
  * 32   RC0/T1OSO/T13CKI            RC0     C       0
- * 35   RC1/T1OSI/CCP2              RC1     C       1	Motor PWM		
- * 36   RC2/CCP1/P1A                RC2     C       2	
+ * 35   RC1/T1OSI/CCP2              RC1     C       1		
+ * 36   RC2/CCP1/P1A                RC2     C       2	Motor PWM Half Bridge
  * 37   RC3/SCK/SCL                 RC3     C       3	Digital Output
  * 42   RC4/SDI/SDA                 RC4     C       4	Digital Output
  * 43   RC5/SDO                     RC5     C       5	Digital Output
@@ -68,7 +68,7 @@ Operation Mode 			1 Digital input									RD7/PSP7/P1D
  * 40   RD2/PSP2                    RD2     D       2	LCD Data 3
  * 41   RD3/PSP3                    RD3     D       3	LCD Data 4
  * 2    RD4/PSP4                    RD4     D       4	Operation Mode
- * 3    RD5/PSP5/P1B                RD5     D       5	
+ * 3    RD5/PSP5/P1B                RD5     D       5	Motor PWM Half Bridge
  * 4    RD6/PSP6/P1C                RD6     D       6	ICSP
  * 5    RD7/PSP7/P1D                RD7     D       7	ICSP
  * 25   RE0/RD/AN5                  RE0     E       0	LCD Enable
@@ -78,7 +78,6 @@ Operation Mode 			1 Digital input									RD7/PSP7/P1D
 4 Pins un-used
 * 31	SC2/CLKOUT/RA6				RA6		A		6
 * 32	OSC1/CLKIN/RA7				RA7		A		7
-* 36    RC2/CCP1/P1A                RC2     C       2
 * 11   	RB3/AN9/C12IN2-/CCP2(1)     RB3     B       3
 * 32   	RC0/T1OSO/T13CKI            RC0     C       0
-* 3     RD5/PSP5/P1B                RD5     D       5	
+* 35   	RC1/T1OSI/CCP2              RC1     C       1	
