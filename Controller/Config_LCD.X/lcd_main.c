@@ -45,9 +45,9 @@
  * 1    GND
  * 2    VDD
  * 3    Contrast adjustment 10k pot, output reads 2.7v from 4.2v supply
- * 4    RS - Read Select    PortE.RD0		LCD_RS_PIN
- * 5    RW - Read/Write     PortE.RD1		LCD_RW_PIN
- * 6    E -  Enable         PortE.RD2		LCD_E_PIN
+ * 4    RS - Read Select    PortE.RE0		LCD_RS_PIN
+ * 5    RW - Read/Write     PortE.RE1		LCD_RW_PIN
+ * 6    E -  Enable         PortE.RE2		LCD_E_PIN
  * 7    GND
  * 8    GND
  * 9    GND
