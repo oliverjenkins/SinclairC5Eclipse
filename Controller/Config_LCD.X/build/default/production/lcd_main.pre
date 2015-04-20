@@ -5314,7 +5314,7 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 100 "lcd_main.c"
+# 106 "lcd_main.c"
 void InitLCD(void);
 void DelayFor18TCY(void);
 void DelayPORLCD(void);
@@ -5411,11 +5411,11 @@ void OpenLCD(unsigned char lcdtype)
 
 Delay100TCYx(38);
 
-# 205
-PORTD &= 0xf0;
-TRISD &= 0xF0;
+# 208
+PORTD &= 0x0f;
+TRISD &= 0x0F;
 
-
+# 215
 TRISEbits.TRISE1 = 0;
 TRISEbits.TRISE0 = 0;
 TRISEbits.TRISE2 = 0;
@@ -5467,11 +5467,12 @@ return;
 void WriteCmdLCD(unsigned char cmd)
 {
 
-# 276
-TRISD &= 0xf0;
-PORTD &= 0xf0;
-PORTD |= (cmd>>4)&0x0f;
+# 278
+TRISD &= 0x0f;
+PORTD &= 0x0f;
+PORTD |= cmd&0xf0;
 
+# 286
 LATEbits.LATE1 = 0;
 LATEbits.LATE0 = 0;
 DelayFor18TCY();
@@ -5479,23 +5480,18 @@ LATEbits.LATE2 = 1;
 DelayFor18TCY();
 LATEbits.LATE2 = 0;
 
+PORTD &= 0x0f;
+PORTD |= (cmd<<4)&0xf0;
 
-
-
-PORTD &= 0xf0;
-PORTD |= cmd&0x0f;
-
+# 299
 DelayFor18TCY();
 LATEbits.LATE2 = 1;
 DelayFor18TCY();
 LATEbits.LATE2 = 0;
 
+TRISD |= 0xf0;
 
-
-TRISD |= 0x0f;
-
-
-
+# 310
 return;
 }
 
@@ -5507,9 +5503,10 @@ DelayFor18TCY();
 LATEbits.LATE2 = 1;
 DelayFor18TCY();
 
-# 331
-if(PORTD&0x08)
+# 335
+if(PORTD&0x80)
 
+# 339
 {
 LATEbits.LATE2 = 0;
 DelayFor18TCY();
@@ -5536,11 +5533,12 @@ return 0;
 void SetLCDDDRamAddr(unsigned char DDaddr)
 {
 
-# 375
-TRISD &= 0xf0;
-PORTD &= 0xf0;
-PORTD |= (((DDaddr | 0b10000000)>>4) & 0x0f);
+# 377
+TRISD &= 0x0f;
+PORTD &= 0x0f;
+PORTD |= ((DDaddr | 0b10000000) & 0xf0);
 
+# 385
 LATEbits.LATE1 = 0;
 LATEbits.LATE0 = 0;
 DelayFor18TCY();
@@ -5548,34 +5546,30 @@ LATEbits.LATE2 = 1;
 DelayFor18TCY();
 LATEbits.LATE2 = 0;
 
+PORTD &= 0x0f;
+PORTD |= ((DDaddr<<4)&0xf0);
 
-
-
-PORTD &= 0xf0;
-PORTD |= (DDaddr&0x0f);
-
+# 398
 DelayFor18TCY();
 LATEbits.LATE2 = 1;
 DelayFor18TCY();
 LATEbits.LATE2 = 0;
 
+TRISD |= 0xf0;
 
-
-TRISD |= 0x0f;
-
-
-
+# 409
 return;
 }
 
 void SetLCDCGRamAddr(unsigned char CGaddr)
 {
 
-# 425
-TRISD &= 0xf0;
-PORTD &= 0xf0;
-PORTD |= (((CGaddr |0b01000000)>>4) & 0x0f);
+# 427
+TRISD &= 0x0f;
+PORTD &= 0x0f;
+PORTD |= ((CGaddr | 0b01000000) & 0xf0);
 
+# 435
 LATEbits.LATE1 = 0;
 LATEbits.LATE0 = 0;
 DelayFor18TCY();
@@ -5583,23 +5577,18 @@ LATEbits.LATE2 = 1;
 DelayFor18TCY();
 LATEbits.LATE2 = 0;
 
+PORTD &= 0x0f;
+PORTD |= ((CGaddr<<4)&0xf0);
 
-
-
-PORTD &= 0xf0;
-PORTD |= (CGaddr&0x0f);
-
+# 448
 DelayFor18TCY();
 LATEbits.LATE2 = 1;
 DelayFor18TCY();
 LATEbits.LATE2 = 0;
 
+TRISD |= 0xf0;
 
-
-TRISD |= 0x0f;
-
-
-
+# 459
 return;
 }
 
@@ -5626,11 +5615,12 @@ return;
 void WriteDataLCD(char data)
 {
 
-# 495
-TRISD &= 0xf0;
-PORTD &= 0xf0;
-PORTD |= ((data>>4)&0x0f);
+# 497
+TRISD &= 0x0f;
+PORTD &= 0x0f;
+PORTD |= data&0xf0;
 
+# 505
 LATEbits.LATE0 = 1;
 LATEbits.LATE1 = 0;
 DelayFor18TCY();
@@ -5638,21 +5628,17 @@ LATEbits.LATE2 = 1;
 DelayFor18TCY();
 LATEbits.LATE2 = 0;
 
+PORTD &= 0x0f;
+PORTD |= ((data<<4)&0xf0);
 
-
-
-PORTD &= 0xf0;
-PORTD |= (data&0x0f);
-
+# 518
 DelayFor18TCY();
 LATEbits.LATE2 = 1;
 DelayFor18TCY();
 LATEbits.LATE2 = 0;
 
+TRISD |= 0xf0;
 
-
-TRISD |= 0x0f;
-
-# 544
+# 529
 return;
 }

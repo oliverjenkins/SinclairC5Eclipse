@@ -52,14 +52,20 @@
  * 8    GND
  * 9    GND
  * 10   GND
+ * LOWER NIBBLE CONFIGURATION - DELETE #define UPPER
  * 11   Data                PortD.RD0
  * 12   Data                PortD.RD1
  * 13   Data                PortD.RD2
  * 14   Data                PortD.RD3
+ * UPPER NIBBLE CONFIGURATION - Remember to define UPPER
+ * 11   Data                PortD.RD4
+ * 12   Data                PortD.RD5
+ * 13   Data                PortD.RD6
+ * 14   Data                PortD.RD7
  * Created on 14 April 2015, 11:41
  */
 
-
+#define UPPER
  #define LCD_DATA_PORT      		PORTD
  #define LCD_TRIS_DATA_PORT 		TRISD
 
