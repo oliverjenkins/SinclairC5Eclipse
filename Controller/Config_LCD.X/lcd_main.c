@@ -45,9 +45,9 @@
  * 1    GND
  * 2    VDD
  * 3    Contrast adjustment 10k pot, output reads 2.7v from 4.2v supply
- * 4    RS - Read Select    PortE.RD4		LCD_RS_PIN
- * 5    RW - Read/Write     PortE.RD5		LCD_RW_PIN
- * 6    E -  Enable         PortE.RD6		LCD_E_PIN
+ * 4    RS - Read Select    PortE.RD0		LCD_RS_PIN
+ * 5    RW - Read/Write     PortE.RD1		LCD_RW_PIN
+ * 6    E -  Enable         PortE.RD2		LCD_E_PIN
  * 7    GND
  * 8    GND
  * 9    GND
@@ -67,14 +67,14 @@
  * These are just samples, change to match your application.
  */
 
- #define LCD_RS_PIN   LATDbits.LATD4   		/* PORT for RS */
- #define LCD_TRIS_RS  TRISDbits.TRISD4    	/* TRIS for RS */
+ #define LCD_RS_PIN   LATEbits.LATE0   		/* PORT for RS */
+ #define LCD_TRIS_RS  TRISEbits.TRISE0    	/* TRIS for RS */
 
- #define LCD_RW_PIN   LATDbits.LATD5   		/* PORT for RW */
- #define LCD_TRIS_RW  TRISDbits.TRISD5    	/* TRIS for RW */
+ #define LCD_RW_PIN   LATEbits.LATE1   		/* PORT for RW */
+ #define LCD_TRIS_RW  TRISEbits.TRISE1    	/* TRIS for RW */
 
- #define LCD_E_PIN    LATDbits.LATD6  		/* PORT for D  */
- #define LCD_TRIS_E   TRISDbits.TRISD6    	/* TRIS for E  */
+ #define LCD_E_PIN    LATEbits.LATE2  		/* PORT for D  */
+ #define LCD_TRIS_E   TRISEbits.TRISE2    	/* TRIS for E  */
 
 /* Display ON/OFF Control defines */
 #define DON         0b00001111  /* Display on      */
@@ -118,7 +118,13 @@ unsigned char counter;  // 8-bit variable
 /** M A I N   F U N C T I O N ***************************************/
 void main (void)
 {
+    // Disable analogue on PortE.AN5|AN6|AN7
+    ANSELbits.ANS5 = 0;
+    ANSELbits.ANS6 = 0;
+    ANSELbits.ANS7 = 0;
     InitLCD();
+
+
     // Create first custom char
     SetLCDCGRamAddr(0x00);
     WriteDataLCD(0b00000);
