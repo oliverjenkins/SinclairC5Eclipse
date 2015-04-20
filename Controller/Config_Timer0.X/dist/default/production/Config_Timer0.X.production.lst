@@ -1,0 +1,776 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.34 build -361300703 
+                                                                                               Sat Apr 18 08:21:44 2015
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
+     1                           	processor	18F45K20
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	intcodelo,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     9                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    10                           	psect	intcode,global,reloc=2,class=CODE,delta=1
+    11                           	psect	intcode_body,global,reloc=2,class=CODE,delta=1
+    12                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    13                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    14  0000                     _INTCON2bits	set	4081
+    15  0000                     _INTCONbits	set	4082
+    16  0000                     _LATD	set	3980
+    17  0000                     _LATDbits	set	3980
+    18  0000                     _RCONbits	set	4048
+    19  0000                     _T0CON	set	4053
+    20  0000                     _T0CONbits	set	4053
+    21  0000                     _TMR0H	set	4055
+    22  0000                     _TMR0L	set	4054
+    23  0000                     _TRISD	set	3989
+    24                           
+    25 ;; *************** function _XC8_LowISR_Handler *****************
+    26 ;; Defined at:
+    27 ;;		line 112 in file "timer0_main.c"
+    28 ;; Parameters:    Size  Location     Type
+    29 ;;		None
+    30 ;; Auto vars:     Size  Location     Type
+    31 ;;		None
+    32 ;; Return value:  Size  Location     Type
+    33 ;;		None               void
+    34 ;; Registers used:
+    35 ;;		wreg, status,2
+    36 ;; Tracked objects:
+    37 ;;		On entry : 0/0
+    38 ;;		On exit  : 0/0
+    39 ;;		Unchanged: 0/0
+    40 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+    41 ;;      Params:         0       0       0       0       0       0       0
+    42 ;;      Locals:         0       0       0       0       0       0       0
+    43 ;;      Temps:         17       0       0       0       0       0       0
+    44 ;;      Totals:        17       0       0       0       0       0       0
+    45 ;;Total ram usage:       17 bytes
+    46 ;; Hardware stack levels used:    1
+    47 ;; Hardware stack levels required when called:    1
+    48 ;; This function calls:
+    49 ;;		Nothing
+    50 ;; This function is called by:
+    51 ;;		Interrupt level 1
+    52 ;; This function uses a non-reentrant model
+    53 ;;
+    54                           
+    55                           	psect	intcodelo
+    56  000018                     __pintcodelo:
+    57                           	opt stack 0
+    58                           
+    59                           ; #config settings
+    60  000018                     _XC8_LowISR_Handler:
+    61                           	opt stack 28
+    62                           
+    63                           ;incstack = 0
+    64  000018  CFD8 F001          	movff	status,??_XC8_LowISR_Handler
+    65  00001C  CFE8 F002          	movff	wreg,??_XC8_LowISR_Handler+1
+    66  000020  CFE0 F003          	movff	bsr,??_XC8_LowISR_Handler+2
+    67  000024  CFFA F004          	movff	pclath,??_XC8_LowISR_Handler+3
+    68  000028  CFFB F005          	movff	pclatu,??_XC8_LowISR_Handler+4
+    69  00002C  CFE9 F006          	movff	fsr0l,??_XC8_LowISR_Handler+5
+    70  000030  CFEA F007          	movff	fsr0h,??_XC8_LowISR_Handler+6
+    71  000034  CFE1 F008          	movff	fsr1l,??_XC8_LowISR_Handler+7
+    72  000038  CFE2 F009          	movff	fsr1h,??_XC8_LowISR_Handler+8
+    73  00003C  CFD9 F00A          	movff	fsr2l,??_XC8_LowISR_Handler+9
+    74  000040  CFDA F00B          	movff	fsr2h,??_XC8_LowISR_Handler+10
+    75  000044  CFF3 F00C          	movff	prodl,??_XC8_LowISR_Handler+11
+    76  000048  CFF4 F00D          	movff	prodh,??_XC8_LowISR_Handler+12
+    77  00004C  CFF6 F00E          	movff	tblptrl,??_XC8_LowISR_Handler+13
+    78  000050  CFF7 F00F          	movff	tblptrh,??_XC8_LowISR_Handler+14
+    79  000054  CFF8 F010          	movff	tblptru,??_XC8_LowISR_Handler+15
+    80  000058  CFF5 F011          	movff	tablat,??_XC8_LowISR_Handler+16
+    81                           
+    82                           ;timer0_main.c: 118: if (INTCONbits.TMR0IF)
+    83  00005C  A4F2               	btfss	intcon,2,c	;volatile
+    84  00005E  D007               	goto	i1l36
+    85                           
+    86                           ;timer0_main.c: 119: {
+    87                           ;timer0_main.c: 120: INTCONbits.TMR0IF = 0;
+    88  000060  94F2               	bcf	intcon,2,c	;volatile
+    89                           
+    90                           ;timer0_main.c: 121: TMR0H = 0x00;
+    91  000062  0E00               	movlw	0
+    92  000064  6ED7               	movwf	4055,c	;volatile
+    93                           
+    94                           ;timer0_main.c: 122: TMR0L = 0x00;
+    95  000066  0E00               	movlw	0
+    96  000068  6ED6               	movwf	4054,c	;volatile
+    97                           
+    98                           ;timer0_main.c: 123: LATDbits.LATD7 = ~LATDbits.LATD7;
+    99  00006A  7E8C               	btg	3980,7,c	;volatile
+   100  00006C  D000               	goto	i1l36
+   101  00006E                     i1l36:
+   102  00006E  C011  FFF5         	movff	??_XC8_LowISR_Handler+16,tablat
+   103  000072  C010  FFF8         	movff	??_XC8_LowISR_Handler+15,tblptru
+   104  000076  C00F  FFF7         	movff	??_XC8_LowISR_Handler+14,tblptrh
+   105  00007A  C00E  FFF6         	movff	??_XC8_LowISR_Handler+13,tblptrl
+   106  00007E  C00D  FFF4         	movff	??_XC8_LowISR_Handler+12,prodh
+   107  000082  C00C  FFF3         	movff	??_XC8_LowISR_Handler+11,prodl
+   108  000086  C00B  FFDA         	movff	??_XC8_LowISR_Handler+10,fsr2h
+   109  00008A  C00A  FFD9         	movff	??_XC8_LowISR_Handler+9,fsr2l
+   110  00008E  C009  FFE2         	movff	??_XC8_LowISR_Handler+8,fsr1h
+   111  000092  C008  FFE1         	movff	??_XC8_LowISR_Handler+7,fsr1l
+   112  000096  C007  FFEA         	movff	??_XC8_LowISR_Handler+6,fsr0h
+   113  00009A  C006  FFE9         	movff	??_XC8_LowISR_Handler+5,fsr0l
+   114  00009E  C005  FFFB         	movff	??_XC8_LowISR_Handler+4,pclatu
+   115  0000A2  C004  FFFA         	movff	??_XC8_LowISR_Handler+3,pclath
+   116  0000A6  C003  FFE0         	movff	??_XC8_LowISR_Handler+2,bsr
+   117  0000AA  C002  FFE8         	movff	??_XC8_LowISR_Handler+1,wreg
+   118  0000AE  C001  FFD8         	movff	??_XC8_LowISR_Handler,status
+   119  0000B2  0010               	retfie	
+   120  0000B4                     __end_of_XC8_LowISR_Handler:
+   121                           	opt stack 0
+   122                           pclatu	equ	0xFFB
+   123                           pclath	equ	0xFFA
+   124                           tblptru	equ	0xFF8
+   125                           tblptrh	equ	0xFF7
+   126                           tblptrl	equ	0xFF6
+   127                           tablat	equ	0xFF5
+   128                           prodh	equ	0xFF4
+   129                           prodl	equ	0xFF3
+   130                           intcon	equ	0xFF2
+   131                           fsr0h	equ	0xFEA
+   132                           fsr0l	equ	0xFE9
+   133                           wreg	equ	0xFE8
+   134                           fsr1h	equ	0xFE2
+   135                           fsr1l	equ	0xFE1
+   136                           bsr	equ	0xFE0
+   137                           fsr2h	equ	0xFDA
+   138                           fsr2l	equ	0xFD9
+   139                           status	equ	0xFD8
+   140                           
+   141                           	psect	cinit
+   142  00016E                     __pcinit:
+   143                           	opt stack 0
+   144  00016E                     start_initialization:
+   145                           	opt stack 0
+   146  00016E                     __initialization:
+   147                           	opt stack 0
+   148  00016E                     end_of_initialization:
+   149                           	opt stack 0
+   150  00016E                     __end_of__initialization:
+   151                           	opt stack 0
+   152  00016E  0100               	movlb	0
+   153  000170  EF93  F000         	goto	_main	;jump to C main() function
+   154                           pclatu	equ	0xFFB
+   155                           pclath	equ	0xFFA
+   156                           tblptru	equ	0xFF8
+   157                           tblptrh	equ	0xFF7
+   158                           tblptrl	equ	0xFF6
+   159                           tablat	equ	0xFF5
+   160                           prodh	equ	0xFF4
+   161                           prodl	equ	0xFF3
+   162                           intcon	equ	0xFF2
+   163                           fsr0h	equ	0xFEA
+   164                           fsr0l	equ	0xFE9
+   165                           wreg	equ	0xFE8
+   166                           fsr1h	equ	0xFE2
+   167                           fsr1l	equ	0xFE1
+   168                           bsr	equ	0xFE0
+   169                           fsr2h	equ	0xFDA
+   170                           fsr2l	equ	0xFD9
+   171                           status	equ	0xFD8
+   172                           
+   173                           	psect	cstackCOMRAM
+   174  000001                     __pcstackCOMRAM:
+   175                           	opt stack 0
+   176  000001                     ??_XC8_LowISR_Handler:
+   177                           
+   178                           ; 0 bytes @ 0x0
+   179  000001                     	ds	17
+   180  000012                     ??_XC8_HighISR_Handler:
+   181                           
+   182                           ; 0 bytes @ 0x11
+   183  000012                     	ds	14
+   184  000020                     Delay1KTCYx@unit:
+   185                           	opt stack 0
+   186                           
+   187                           ; 1 bytes @ 0x1F
+   188  000020                     	ds	1
+   189  000021                     pclatu	equ	0xFFB
+   190                           pclath	equ	0xFFA
+   191                           tblptru	equ	0xFF8
+   192                           tblptrh	equ	0xFF7
+   193                           tblptrl	equ	0xFF6
+   194                           tablat	equ	0xFF5
+   195                           prodh	equ	0xFF4
+   196                           prodl	equ	0xFF3
+   197                           intcon	equ	0xFF2
+   198                           fsr0h	equ	0xFEA
+   199                           fsr0l	equ	0xFE9
+   200                           wreg	equ	0xFE8
+   201                           fsr1h	equ	0xFE2
+   202                           fsr1l	equ	0xFE1
+   203                           bsr	equ	0xFE0
+   204                           fsr2h	equ	0xFDA
+   205                           fsr2l	equ	0xFD9
+   206                           status	equ	0xFD8
+   207                           
+   208                           ; 0 bytes @ 0x20
+   209 ;;
+   210 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   211 ;;
+   212 ;; *************** function _main *****************
+   213 ;; Defined at:
+   214 ;;		line 37 in file "timer0_main.c"
+   215 ;; Parameters:    Size  Location     Type
+   216 ;;		None
+   217 ;; Auto vars:     Size  Location     Type
+   218 ;;		None
+   219 ;; Return value:  Size  Location     Type
+   220 ;;		None               void
+   221 ;; Registers used:
+   222 ;;		wreg, status,2, cstack
+   223 ;; Tracked objects:
+   224 ;;		On entry : 0/0
+   225 ;;		On exit  : 0/0
+   226 ;;		Unchanged: 0/0
+   227 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   228 ;;      Params:         0       0       0       0       0       0       0
+   229 ;;      Locals:         0       0       0       0       0       0       0
+   230 ;;      Temps:          0       0       0       0       0       0       0
+   231 ;;      Totals:         0       0       0       0       0       0       0
+   232 ;;Total ram usage:        0 bytes
+   233 ;; Hardware stack levels required when called:    3
+   234 ;; This function calls:
+   235 ;;		_Delay1KTCYx
+   236 ;; This function is called by:
+   237 ;;		Startup code after reset
+   238 ;; This function uses a non-reentrant model
+   239 ;;
+   240                           
+   241                           	psect	text0
+   242  000126                     __ptext0:
+   243                           	opt stack 0
+   244  000126                     _main:
+   245                           	opt stack 28
+   246                           
+   247                           ;timer0_main.c: 40: TRISD = 0;
+   248                           
+   249                           ;incstack = 0
+   250  000126  0E00               	movlw	0
+   251  000128  6E95               	movwf	3989,c	;volatile
+   252                           
+   253                           ;timer0_main.c: 41: LATD = 0b00000000;
+   254  00012A  0E00               	movlw	0
+   255  00012C  6E8C               	movwf	3980,c	;volatile
+   256                           
+   257                           ;timer0_main.c: 44: RCONbits.IPEN = 1;
+   258  00012E  8ED0               	bsf	4048,7,c	;volatile
+   259                           
+   260                           ;timer0_main.c: 45: INTCONbits.GIEL = 1;
+   261  000130  8CF2               	bsf	intcon,6,c	;volatile
+   262                           
+   263                           ;timer0_main.c: 46: INTCONbits.GIEH = 1;
+   264  000132  8EF2               	bsf	intcon,7,c	;volatile
+   265                           
+   266                           ;timer0_main.c: 49: INTCONbits.TMR0IF = 0;
+   267  000134  94F2               	bcf	intcon,2,c	;volatile
+   268                           
+   269                           ;timer0_main.c: 50: INTCON2bits.TMR0IP = 0;
+   270  000136  94F1               	bcf	intcon2,2,c	;volatile
+   271                           
+   272                           ;timer0_main.c: 51: INTCONbits.TMR0IE = 1;
+   273  000138  8AF2               	bsf	intcon,5,c	;volatile
+   274                           
+   275                           ;timer0_main.c: 54: T0CON = 0b00000000;
+   276  00013A  0E00               	movlw	0
+   277  00013C  6ED5               	movwf	4053,c	;volatile
+   278                           
+   279                           ;timer0_main.c: 58: TMR0H = 0x00;
+   280  00013E  0E00               	movlw	0
+   281  000140  6ED7               	movwf	4055,c	;volatile
+   282                           
+   283                           ;timer0_main.c: 59: TMR0L = 0x00;
+   284  000142  0E00               	movlw	0
+   285  000144  6ED6               	movwf	4054,c	;volatile
+   286                           
+   287                           ;timer0_main.c: 60: T0CONbits.TMR0ON = 1;
+   288  000146  8ED5               	bsf	4053,7,c	;volatile
+   289                           
+   290                           ;timer0_main.c: 62: LATD = 0b00001111;
+   291  000148  0E0F               	movlw	15
+   292  00014A  6E8C               	movwf	3980,c	;volatile
+   293  00014C  D000               	goto	l645
+   294  00014E                     l645:
+   295                           
+   296                           ;timer0_main.c: 64: {
+   297                           ;timer0_main.c: 66: LATDbits.LATD0 = ~LATDbits.LATD0;
+   298  00014E  708C               	btg	3980,0,c	;volatile
+   299                           
+   300                           ;timer0_main.c: 67: Delay1KTCYx(50);
+   301  000150  0E32               	movlw	50
+   302  000152  ECAE  F000         	call	_Delay1KTCYx
+   303  000156  D7FB               	goto	l645
+   304  000158  EF5A  F000         	goto	start
+   305  00015C                     __end_of_main:
+   306                           	opt stack 0
+   307                           pclatu	equ	0xFFB
+   308                           pclath	equ	0xFFA
+   309                           tblptru	equ	0xFF8
+   310                           tblptrh	equ	0xFF7
+   311                           tblptrl	equ	0xFF6
+   312                           tablat	equ	0xFF5
+   313                           prodh	equ	0xFF4
+   314                           prodl	equ	0xFF3
+   315                           intcon	equ	0xFF2
+   316                           intcon2	equ	0xFF1
+   317                           fsr0h	equ	0xFEA
+   318                           fsr0l	equ	0xFE9
+   319                           wreg	equ	0xFE8
+   320                           fsr1h	equ	0xFE2
+   321                           fsr1l	equ	0xFE1
+   322                           bsr	equ	0xFE0
+   323                           fsr2h	equ	0xFDA
+   324                           fsr2l	equ	0xFD9
+   325                           status	equ	0xFD8
+   326                           
+   327 ;; *************** function _Delay1KTCYx *****************
+   328 ;; Defined at:
+   329 ;;		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c"
+   330 ;; Parameters:    Size  Location     Type
+   331 ;;  unit            1    wreg     unsigned char 
+   332 ;; Auto vars:     Size  Location     Type
+   333 ;;  unit            1   31[COMRAM] unsigned char 
+   334 ;; Return value:  Size  Location     Type
+   335 ;;		None               void
+   336 ;; Registers used:
+   337 ;;		wreg
+   338 ;; Tracked objects:
+   339 ;;		On entry : 0/0
+   340 ;;		On exit  : 0/0
+   341 ;;		Unchanged: 0/0
+   342 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   343 ;;      Params:         0       0       0       0       0       0       0
+   344 ;;      Locals:         1       0       0       0       0       0       0
+   345 ;;      Temps:          0       0       0       0       0       0       0
+   346 ;;      Totals:         1       0       0       0       0       0       0
+   347 ;;Total ram usage:        1 bytes
+   348 ;; Hardware stack levels used:    1
+   349 ;; Hardware stack levels required when called:    2
+   350 ;; This function calls:
+   351 ;;		Nothing
+   352 ;; This function is called by:
+   353 ;;		_main
+   354 ;; This function uses a non-reentrant model
+   355 ;;
+   356                           
+   357                           	psect	text1
+   358  00015C                     __ptext1:
+   359                           	opt stack 0
+   360  00015C                     _Delay1KTCYx:
+   361                           	opt stack 28
+   362                           
+   363                           ;incstack = 0
+   364                           ;Delay1KTCYx@unit stored from wreg
+   365  00015C  6E20               	movwf	Delay1KTCYx@unit,c
+   366  00015E  0EFA               	movlw	250
+   367  000160                     u37:
+   368  000160  F000               	nop	
+   369  000162  2EE8               	decfsz	wreg,f,c
+   370  000164  D7FD               	goto	u37
+   371  000166  2E20               	decfsz	Delay1KTCYx@unit,f,c
+   372  000168  D7FA               	goto	l625
+   373  00016A  0012               	return	
+   374  00016C  0012               	return		;funcret
+   375  00016E                     __end_of_Delay1KTCYx:
+   376                           	opt stack 0
+   377                           pclatu	equ	0xFFB
+   378                           pclath	equ	0xFFA
+   379                           tblptru	equ	0xFF8
+   380                           tblptrh	equ	0xFF7
+   381                           tblptrl	equ	0xFF6
+   382                           tablat	equ	0xFF5
+   383                           prodh	equ	0xFF4
+   384                           prodl	equ	0xFF3
+   385                           intcon	equ	0xFF2
+   386                           intcon2	equ	0xFF1
+   387                           fsr0h	equ	0xFEA
+   388                           fsr0l	equ	0xFE9
+   389                           wreg	equ	0xFE8
+   390                           fsr1h	equ	0xFE2
+   391                           fsr1l	equ	0xFE1
+   392                           bsr	equ	0xFE0
+   393                           fsr2h	equ	0xFDA
+   394                           fsr2l	equ	0xFD9
+   395                           status	equ	0xFD8
+   396                           
+   397 ;; *************** function _XC8_HighISR_Handler *****************
+   398 ;; Defined at:
+   399 ;;		line 78 in file "timer0_main.c"
+   400 ;; Parameters:    Size  Location     Type
+   401 ;;		None
+   402 ;; Auto vars:     Size  Location     Type
+   403 ;;		None
+   404 ;; Return value:  Size  Location     Type
+   405 ;;		None               void
+   406 ;; Registers used:
+   407 ;;		None
+   408 ;; Tracked objects:
+   409 ;;		On entry : 0/0
+   410 ;;		On exit  : 0/0
+   411 ;;		Unchanged: 0/0
+   412 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   413 ;;      Params:         0       0       0       0       0       0       0
+   414 ;;      Locals:         0       0       0       0       0       0       0
+   415 ;;      Temps:         14       0       0       0       0       0       0
+   416 ;;      Totals:        14       0       0       0       0       0       0
+   417 ;;Total ram usage:       14 bytes
+   418 ;; Hardware stack levels used:    1
+   419 ;; This function calls:
+   420 ;;		Nothing
+   421 ;; This function is called by:
+   422 ;;		Interrupt level 2
+   423 ;; This function uses a non-reentrant model
+   424 ;;
+   425                           
+   426                           	psect	intcode
+   427  000008                     __pintcode:
+   428                           	opt stack 0
+   429  000008                     _XC8_HighISR_Handler:
+   430                           	opt stack 28
+   431                           
+   432                           ;incstack = 0
+   433  000008  CFFA F012          	movff	pclath,??_XC8_HighISR_Handler
+   434  00000C  CFFB F013          	movff	pclatu,??_XC8_HighISR_Handler+1
+   435  000010  CFE9 F014          	movff	fsr0l,??_XC8_HighISR_Handler+2
+   436  000014  EF5C  F000         	goto	int_func
+   437                           pclatu	equ	0xFFB
+   438                           pclath	equ	0xFFA
+   439                           tblptru	equ	0xFF8
+   440                           tblptrh	equ	0xFF7
+   441                           tblptrl	equ	0xFF6
+   442                           tablat	equ	0xFF5
+   443                           prodh	equ	0xFF4
+   444                           prodl	equ	0xFF3
+   445                           intcon	equ	0xFF2
+   446                           intcon2	equ	0xFF1
+   447                           fsr0h	equ	0xFEA
+   448                           fsr0l	equ	0xFE9
+   449                           wreg	equ	0xFE8
+   450                           fsr1h	equ	0xFE2
+   451                           fsr1l	equ	0xFE1
+   452                           bsr	equ	0xFE0
+   453                           fsr2h	equ	0xFDA
+   454                           fsr2l	equ	0xFD9
+   455                           status	equ	0xFD8
+   456                           
+   457                           	psect	intcode_body
+   458  0000B8                     __pintcode_body:
+   459                           	opt stack 28
+   460  0000B8                     int_func:
+   461                           	opt stack 28
+   462  0000B8  CFEA F015          	movff	fsr0h,??_XC8_HighISR_Handler+3
+   463  0000BC  CFE1 F016          	movff	fsr1l,??_XC8_HighISR_Handler+4
+   464  0000C0  CFE2 F017          	movff	fsr1h,??_XC8_HighISR_Handler+5
+   465  0000C4  CFD9 F018          	movff	fsr2l,??_XC8_HighISR_Handler+6
+   466  0000C8  CFDA F019          	movff	fsr2h,??_XC8_HighISR_Handler+7
+   467  0000CC  CFF3 F01A          	movff	prodl,??_XC8_HighISR_Handler+8
+   468  0000D0  CFF4 F01B          	movff	prodh,??_XC8_HighISR_Handler+9
+   469  0000D4  CFF6 F01C          	movff	tblptrl,??_XC8_HighISR_Handler+10
+   470  0000D8  CFF7 F01D          	movff	tblptrh,??_XC8_HighISR_Handler+11
+   471  0000DC  CFF8 F01E          	movff	tblptru,??_XC8_HighISR_Handler+12
+   472  0000E0  CFF5 F01F          	movff	tablat,??_XC8_HighISR_Handler+13
+   473                           
+   474                           ;timer0_main.c: 84: if (INTCONbits.INT0IF)
+   475  0000E4  A2F2               	btfss	intcon,1,c	;volatile
+   476  0000E6  D002               	goto	i2l32
+   477                           
+   478                           ;timer0_main.c: 85: {
+   479                           ;timer0_main.c: 87: INTCONbits.INT0IF = 0;
+   480  0000E8  92F2               	bcf	intcon,1,c	;volatile
+   481  0000EA  D000               	goto	i2l32
+   482  0000EC                     i2l32:
+   483  0000EC  C01F  FFF5         	movff	??_XC8_HighISR_Handler+13,tablat
+   484  0000F0  C01E  FFF8         	movff	??_XC8_HighISR_Handler+12,tblptru
+   485  0000F4  C01D  FFF7         	movff	??_XC8_HighISR_Handler+11,tblptrh
+   486  0000F8  C01C  FFF6         	movff	??_XC8_HighISR_Handler+10,tblptrl
+   487  0000FC  C01B  FFF4         	movff	??_XC8_HighISR_Handler+9,prodh
+   488  000100  C01A  FFF3         	movff	??_XC8_HighISR_Handler+8,prodl
+   489  000104  C019  FFDA         	movff	??_XC8_HighISR_Handler+7,fsr2h
+   490  000108  C018  FFD9         	movff	??_XC8_HighISR_Handler+6,fsr2l
+   491  00010C  C017  FFE2         	movff	??_XC8_HighISR_Handler+5,fsr1h
+   492  000110  C016  FFE1         	movff	??_XC8_HighISR_Handler+4,fsr1l
+   493  000114  C015  FFEA         	movff	??_XC8_HighISR_Handler+3,fsr0h
+   494  000118  C014  FFE9         	movff	??_XC8_HighISR_Handler+2,fsr0l
+   495  00011C  C013  FFFB         	movff	??_XC8_HighISR_Handler+1,pclatu
+   496  000120  C012  FFFA         	movff	??_XC8_HighISR_Handler,pclath
+   497  000124  0011               	retfie		f
+   498  000126                     __end_of_XC8_HighISR_Handler:
+   499                           	opt stack 0
+   500  0000                     pclatu	equ	0xFFB
+   501                           pclath	equ	0xFFA
+   502                           tblptru	equ	0xFF8
+   503                           tblptrh	equ	0xFF7
+   504                           tblptrl	equ	0xFF6
+   505                           tablat	equ	0xFF5
+   506                           prodh	equ	0xFF4
+   507                           prodl	equ	0xFF3
+   508                           intcon	equ	0xFF2
+   509                           intcon2	equ	0xFF1
+   510                           fsr0h	equ	0xFEA
+   511                           fsr0l	equ	0xFE9
+   512                           wreg	equ	0xFE8
+   513                           fsr1h	equ	0xFE2
+   514                           fsr1l	equ	0xFE1
+   515                           bsr	equ	0xFE0
+   516                           fsr2h	equ	0xFDA
+   517                           fsr2l	equ	0xFD9
+   518                           status	equ	0xFD8
+   519                           pclatu	equ	0xFFB
+   520                           pclath	equ	0xFFA
+   521                           tblptru	equ	0xFF8
+   522                           tblptrh	equ	0xFF7
+   523                           tblptrl	equ	0xFF6
+   524                           tablat	equ	0xFF5
+   525                           prodh	equ	0xFF4
+   526                           prodl	equ	0xFF3
+   527                           intcon	equ	0xFF2
+   528                           intcon2	equ	0xFF1
+   529                           fsr0h	equ	0xFEA
+   530                           fsr0l	equ	0xFE9
+   531                           wreg	equ	0xFE8
+   532                           fsr1h	equ	0xFE2
+   533                           fsr1l	equ	0xFE1
+   534                           bsr	equ	0xFE0
+   535                           fsr2h	equ	0xFDA
+   536                           fsr2l	equ	0xFD9
+   537                           status	equ	0xFD8
+   538                           
+   539                           	psect	rparam
+   540  0000                     pclatu	equ	0xFFB
+   541                           pclath	equ	0xFFA
+   542                           tblptru	equ	0xFF8
+   543                           tblptrh	equ	0xFF7
+   544                           tblptrl	equ	0xFF6
+   545                           tablat	equ	0xFF5
+   546                           prodh	equ	0xFF4
+   547                           prodl	equ	0xFF3
+   548                           intcon	equ	0xFF2
+   549                           intcon2	equ	0xFF1
+   550                           fsr0h	equ	0xFEA
+   551                           fsr0l	equ	0xFE9
+   552                           wreg	equ	0xFE8
+   553                           fsr1h	equ	0xFE2
+   554                           fsr1l	equ	0xFE1
+   555                           bsr	equ	0xFE0
+   556                           fsr2h	equ	0xFDA
+   557                           fsr2l	equ	0xFD9
+   558                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95     32      32
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _main->_Delay1KTCYx
+
+Critical Paths under _XC8_HighISR_Handler in COMRAM
+
+    None.
+
+Critical Paths under _XC8_LowISR_Handler in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _XC8_HighISR_Handler in BANK0
+
+    None.
+
+Critical Paths under _XC8_LowISR_Handler in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _XC8_HighISR_Handler in BANK1
+
+    None.
+
+Critical Paths under _XC8_LowISR_Handler in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _XC8_HighISR_Handler in BANK2
+
+    None.
+
+Critical Paths under _XC8_LowISR_Handler in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _XC8_HighISR_Handler in BANK3
+
+    None.
+
+Critical Paths under _XC8_LowISR_Handler in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _XC8_HighISR_Handler in BANK4
+
+    None.
+
+Critical Paths under _XC8_LowISR_Handler in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _XC8_HighISR_Handler in BANK5
+
+    None.
+
+Critical Paths under _XC8_LowISR_Handler in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0      15
+                        _Delay1KTCYx
+ ---------------------------------------------------------------------------------
+ (1) _Delay1KTCYx                                          1     1      0      15
+                                             31 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (2) _XC8_LowISR_Handler                                  17    17      0       0
+                                              0 COMRAM    17    17      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (3) _XC8_HighISR_Handler                                 14    14      0       0
+                                             17 COMRAM    14    14      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _Delay1KTCYx
+
+ _XC8_LowISR_Handler (ROOT)
+
+ _XC8_HighISR_Handler (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F     20      20       1       33.7%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BANK5              100      0       0      14        0.0%
+ABS                  0      0       0      15        0.0%
+BITBANK5           100      0       0      16        0.0%
+BIGRAM             5FF      0       0      17        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
+Symbol Table                                                                                   Sat Apr 18 08:21:44 2015
+
+                          u37 0160                            bsr 000FE0                  __CFG_CP0$OFF 000000  
+                __CFG_CP1$OFF 000000                  __CFG_CP2$OFF 000000                  __CFG_CP3$OFF 000000  
+                         l625 015E                           l645 014E                  __CFG_CPB$OFF 000000  
+                __CFG_CPD$OFF 000000                  __CFG_BORV$30 000000                           wreg 000FE8  
+                __CFG_LVP$OFF 000000                          _LATD 000F8C                          i1l36 006E  
+                        i2l32 00EC                          _main 0126                          fsr0h 000FEA  
+                        fsr1h 000FE2                          fsr0l 000FE9                          fsr2h 000FDA  
+                        fsr1l 000FE1                          fsr2l 000FD9                          pclat 000FFA  
+                        prodh 000FF4                          prodl 000FF3                          start 00B4  
+               __CFG_IESO$OFF 000000                  ___param_bank 000010                   _Delay1KTCYx 015C  
+                       ?_main 0001                         _T0CON 000FD5                         _TMR0H 000FD7  
+                       _TMR0L 000FD6                         _TRISD 000F95                 __CFG_PWRT$OFF 000000  
+               __CFG_WRT0$OFF 000000                 __CFG_WRT1$OFF 000000                 __CFG_WRT2$OFF 000000  
+               __CFG_WRT3$OFF 000000                __CFG_EBTR0$OFF 000000                __CFG_FCMEN$OFF 000000  
+              __CFG_EBTR1$OFF 000000                __CFG_EBTR2$OFF 000000                __CFG_EBTR3$OFF 000000  
+               __CFG_WRTB$OFF 000000                 __CFG_WRTC$OFF 000000                 __CFG_WRTD$OFF 000000  
+              __CFG_EBTRB$OFF 000000                         tablat 000FF5                         status 000FD8  
+              __CFG_PBADEN$ON 000000                __CFG_MCLRE$OFF 000000               __initialization 016E  
+                __end_of_main 015C                        ??_main 0021                 __activetblptr 000000  
+              __CFG_WDTEN$OFF 000000                __CFG_XINST$OFF 000000                __CFG_STVREN$ON 000000  
+  __end_of_XC8_LowISR_Handler 00B4                        tblptrh 000FF7                        tblptrl 000FF6  
+                      tblptru 000FF8                    __accesstop 0060       __end_of__initialization 016E  
+               ___rparam_used 000001                __pcstackCOMRAM 0001   __end_of_XC8_HighISR_Handler 0126  
+             __CFG_LPT1OSC$ON 000000                  ?_Delay1KTCYx 0001                       __Hparam 0000  
+                     __Lparam 0000                       __pcinit 016E                       __ramtop 0600  
+                     __ptext0 0126                       __ptext1 015C                     _T0CONbits 000FD5  
+              __pintcode_body 00B8          end_of_initialization 016E                       int_func 00B8  
+          _XC8_LowISR_Handler 0018           ?_XC8_LowISR_Handler 0001          ??_XC8_LowISR_Handler 0001  
+        __size_of_Delay1KTCYx 0012           start_initialization 016E               Delay1KTCYx@unit 0020  
+__size_of_XC8_HighISR_Handler 011E             __CFG_CCP2MX$PORTC 000000                     __pintcode 0008  
+                 __pintcodelo 0018                      _LATDbits 000F8C                      _RCONbits 000FD0  
+            __CFG_WDTPS$32768 000000                   _INTCON2bits 000FF1                      __Hrparam 0000  
+                    __Lrparam 0000            __CFG_BOREN$SBORDIS 000000                 __size_of_main 0036  
+               ??_Delay1KTCYx 0020           _XC8_HighISR_Handler 0008   __size_of_XC8_LowISR_Handler 009C  
+                  _INTCONbits 000FF2                      intlevel1 0000                      intlevel2 0000  
+        ?_XC8_HighISR_Handler 0001           __end_of_Delay1KTCYx 016E         ??_XC8_HighISR_Handler 0012  
+           __CFG_FOSC$INTIO67 000000  
