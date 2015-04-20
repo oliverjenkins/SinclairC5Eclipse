@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.34\dat\en_msgs.txt -cs \
   -h+dist/default/production\LCDExample.X.production.sym \
   --cmf=dist/default/production\LCDExample.X.production.cmf -z -Q18F45K20 \
-  -oC:\Users\ADMINI~1\AppData\Local\Temp\s42o.6 \
+  -oC:\Users\ADMINI~1\AppData\Local\Temp\s364.6 \
   -Mdist/default/production/LCDExample.X.production.map -E1 -ver=XC8 \
   -ASTACK=060h-05ffh -pstack=STACK -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=0600h-06FFhx122 -AMEDIUMCONST=0600h-07FFFh -ACOMRAM=01h-05Fh \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj \
+  C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj \
   dist/default/production\LCDExample.X.production.obj 
 
 Object code version is 3.11
@@ -34,7 +34,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj
+C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj
                 end_init                              0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
@@ -489,7 +489,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 39 in file "main.c"
+		line 118 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -525,7 +525,7 @@ Total ram usage:        0 bytes
 
  *************** function _putIntLCD *****************
  Defined at:
-		line 188 in file "xlcd.c"
+		line 381 in file "main.c"
  Parameters:    Size  Location     Type
   n               2   16[COMRAM] short 
  Auto vars:     Size  Location     Type
@@ -652,7 +652,7 @@ Total ram usage:        7 bytes
 
  *************** function _putLCD *****************
  Defined at:
-		line 226 in file "xlcd.c"
+		line 419 in file "main.c"
  Parameters:    Size  Location     Type
   buffer          2    2[COMRAM] PTR unsigned char 
 		 -> putIntLCD@result(4), STR_2(12), STR_1(9), 
@@ -685,7 +685,7 @@ Total ram usage:        2 bytes
 
  *************** function _WriteDataLCD *****************
  Defined at:
-		line 237 in file "xlcd.c"
+		line 430 in file "main.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -716,7 +716,7 @@ Total ram usage:        1 bytes
 
  *************** function _SetLCDCGRamAddr *****************
  Defined at:
-		line 159 in file "xlcd.c"
+		line 352 in file "main.c"
  Parameters:    Size  Location     Type
   CGaddr          1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -746,7 +746,7 @@ Total ram usage:        4 bytes
 
  *************** function _InitLCD *****************
  Defined at:
-		line 6 in file "xlcd.c"
+		line 199 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -778,7 +778,7 @@ Total ram usage:        0 bytes
 
  *************** function _OpenLCD *****************
  Defined at:
-		line 19 in file "xlcd.c"
+		line 212 in file "main.c"
  Parameters:    Size  Location     Type
   lcdtype         1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -812,7 +812,7 @@ Total ram usage:        1 bytes
 
  *************** function _WriteCmdLCD *****************
  Defined at:
-		line 74 in file "xlcd.c"
+		line 267 in file "main.c"
  Parameters:    Size  Location     Type
   cmd             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -844,7 +844,7 @@ Total ram usage:        1 bytes
 
  *************** function _SetLCDDDRamAddr *****************
  Defined at:
-		line 132 in file "xlcd.c"
+		line 325 in file "main.c"
  Parameters:    Size  Location     Type
   DDaddr          1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -933,7 +933,7 @@ Total ram usage:        1 bytes
 
  *************** function _BusyLCD *****************
  Defined at:
-		line 101 in file "xlcd.c"
+		line 294 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -965,7 +965,7 @@ Total ram usage:        0 bytes
 
  *************** function _DelayFor18TCY *****************
  Defined at:
-		line 13 in file "xlcd.c"
+		line 206 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1059,20 +1059,6 @@ Total ram usage:        1 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-xlcd.c
-		_OpenLCD       		CODE           	0742	0000	177
-		_putIntLCD     		CODE           	0B0E	0000	43
-		_putLCD        		CODE           	089C	0000	97
-		_SetLCDCGRamAdd		CODE           	0958	0000	91
-		_DelayFor18TCY 		CODE           	0BAC	0000	9
-		_WriteCmdLCD   		CODE           	0A92	0000	65
-		_WriteDataLCD  		CODE           	0A52	0000	65
-		_BusyLCD       		CODE           	0AD2	0000	61
-		_InitLCD       		CODE           	0B38	0000	33
-		_SetLCDDDRamAdd		CODE           	09B2	0000	85
-
-xlcd.c estimated size: 726
-
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
 		_Delay10KTCYx  		CODE           	0B58	0000	25
 
@@ -1114,7 +1100,17 @@ C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c estimated size: 19
 
 main.c
+		_OpenLCD       		CODE           	0742	0000	177
+		_putIntLCD     		CODE           	0B0E	0000	43
+		_putLCD        		CODE           	089C	0000	97
+		_SetLCDCGRamAdd		CODE           	0958	0000	91
 		_main          		CODE           	0618	0000	299
+		_DelayFor18TCY 		CODE           	0BAC	0000	9
+		_WriteCmdLCD   		CODE           	0A92	0000	65
+		_WriteDataLCD  		CODE           	0A52	0000	65
+		_BusyLCD       		CODE           	0AD2	0000	61
+		_InitLCD       		CODE           	0B38	0000	33
+		_SetLCDDDRamAdd		CODE           	09B2	0000	85
 
-main.c estimated size: 299
+main.c estimated size: 1025
 

@@ -11,6 +11,10 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
+$C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj
+idloc IDLOC 0 200000 200000 8 1
+end_init CODE 0 0 0 4 1
+config CONFIG 0 300000 300000 E 1
 $dist/default/production\LCDExample.X.production.obj
 cinit CODE 0 B94 B94 C 1
 text0 CODE 0 618 618 12A 1
@@ -34,10 +38,6 @@ text17 CODE 0 B82 B82 12 1
 cstackCOMRAM COMRAM 1 1 1 16 1
 smallconst SMALLCONST 0 600 600 18 1
 bssCOMRAM COMRAM 1 17 17 1 1
-$C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj
-idloc IDLOC 0 200000 200000 8 1
-end_init CODE 0 0 0 4 1
-config CONFIG 0 300000 300000 E 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -76,88 +76,88 @@ MEDIUMCONST BB4-7FFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\LCDExample.X.production.obj
-618 text0 CODE >39:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-618 text0 CODE >42:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-61C text0 CODE >43:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-620 text0 CODE >45:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-624 text0 CODE >47:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-62A text0 CODE >48:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-630 text0 CODE >49:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-636 text0 CODE >50:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-63C text0 CODE >51:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-642 text0 CODE >52:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-648 text0 CODE >53:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-64E text0 CODE >54:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-654 text0 CODE >55:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-65A text0 CODE >58:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-660 text0 CODE >59:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-666 text0 CODE >60:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-66C text0 CODE >61:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-672 text0 CODE >62:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-678 text0 CODE >63:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-67E text0 CODE >64:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-684 text0 CODE >65:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-68A text0 CODE >66:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-690 text0 CODE >68:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-696 text0 CODE >69:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6A2 text0 CODE >71:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6AE text0 CODE >73:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6B4 text0 CODE >74:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6C0 text0 CODE >75:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6C6 text0 CODE >76:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6CC text0 CODE >77:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6D2 text0 CODE >78:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6D8 text0 CODE >81:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6DE text0 CODE >85:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6E0 text0 CODE >86:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6E6 text0 CODE >88:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6E8 text0 CODE >89:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6EE text0 CODE >91:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6F0 text0 CODE >92:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6F6 text0 CODE >94:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6F8 text0 CODE >95:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-6FE text0 CODE >97:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-700 text0 CODE >98:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-706 text0 CODE >100:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-708 text0 CODE >101:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-70E text0 CODE >103:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-710 text0 CODE >104:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-716 text0 CODE >106:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-718 text0 CODE >107:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-71E text0 CODE >109:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-722 text0 CODE >110:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-728 text0 CODE >113:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-72C text0 CODE >114:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-732 text0 CODE >115:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-73C text0 CODE >83:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-73E text0 CODE >117:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
-742 text9 CODE >19:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-744 text9 CODE >23:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-746 text9 CODE >24:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-748 text9 CODE >25:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-74A text9 CODE >26:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-74C text9 CODE >27:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-74E text9 CODE >28:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-750 text9 CODE >35:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-756 text9 CODE >38:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-75C text9 CODE >39:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-762 text9 CODE >41:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-768 text9 CODE >42:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-76E text9 CODE >44:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-774 text9 CODE >45:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-782 text9 CODE >50:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-78E text9 CODE >51:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-794 text9 CODE >54:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-7A0 text9 CODE >55:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-7A6 text9 CODE >56:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-7B2 text9 CODE >57:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-7B8 text9 CODE >60:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-7C4 text9 CODE >61:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-7CA text9 CODE >64:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-7D6 text9 CODE >65:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-7DC text9 CODE >68:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-7E8 text9 CODE >69:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-7F0 text9 CODE >72:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
+618 text0 CODE >118:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+618 text0 CODE >121:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+61C text0 CODE >122:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+620 text0 CODE >124:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+624 text0 CODE >126:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+62A text0 CODE >127:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+630 text0 CODE >128:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+636 text0 CODE >129:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+63C text0 CODE >130:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+642 text0 CODE >131:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+648 text0 CODE >132:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+64E text0 CODE >133:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+654 text0 CODE >134:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+65A text0 CODE >137:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+660 text0 CODE >138:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+666 text0 CODE >139:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+66C text0 CODE >140:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+672 text0 CODE >141:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+678 text0 CODE >142:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+67E text0 CODE >143:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+684 text0 CODE >144:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+68A text0 CODE >145:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+690 text0 CODE >147:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+696 text0 CODE >148:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6A2 text0 CODE >150:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6AE text0 CODE >152:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6B4 text0 CODE >153:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6C0 text0 CODE >154:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6C6 text0 CODE >155:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6CC text0 CODE >156:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6D2 text0 CODE >157:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6D8 text0 CODE >160:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6DE text0 CODE >164:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6E0 text0 CODE >165:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6E6 text0 CODE >167:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6E8 text0 CODE >168:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6EE text0 CODE >170:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6F0 text0 CODE >171:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6F6 text0 CODE >173:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6F8 text0 CODE >174:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+6FE text0 CODE >176:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+700 text0 CODE >177:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+706 text0 CODE >179:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+708 text0 CODE >180:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+70E text0 CODE >182:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+710 text0 CODE >183:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+716 text0 CODE >185:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+718 text0 CODE >186:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+71E text0 CODE >188:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+722 text0 CODE >189:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+728 text0 CODE >192:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+72C text0 CODE >193:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+732 text0 CODE >194:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+73C text0 CODE >162:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+73E text0 CODE >196:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+742 text9 CODE >212:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+744 text9 CODE >216:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+746 text9 CODE >217:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+748 text9 CODE >218:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+74A text9 CODE >219:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+74C text9 CODE >220:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+74E text9 CODE >221:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+750 text9 CODE >228:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+756 text9 CODE >231:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+75C text9 CODE >232:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+762 text9 CODE >234:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+768 text9 CODE >235:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+76E text9 CODE >237:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+774 text9 CODE >238:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+782 text9 CODE >243:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+78E text9 CODE >244:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+794 text9 CODE >247:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+7A0 text9 CODE >248:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+7A6 text9 CODE >249:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+7B2 text9 CODE >250:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+7B8 text9 CODE >253:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+7C4 text9 CODE >254:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+7CA text9 CODE >257:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+7D6 text9 CODE >258:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+7DC text9 CODE >261:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+7E8 text9 CODE >262:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+7F0 text9 CODE >265:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
 7F2 text2 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
 7F2 text2 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
 7FC text2 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
@@ -173,13 +173,13 @@ $dist/default/production\LCDExample.X.production.obj
 88C text2 CODE >35:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
 894 text2 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
 89A text2 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
-89C text5 CODE >226:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-89C text5 CODE >228:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-89E text5 CODE >230:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-8AA text5 CODE >231:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-8CE text5 CODE >232:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-8D4 text5 CODE >228:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-8FA text5 CODE >235:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
+89C text5 CODE >419:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+89C text5 CODE >421:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+89E text5 CODE >423:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+8AA text5 CODE >424:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+8CE text5 CODE >425:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+8D4 text5 CODE >421:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+8FA text5 CODE >428:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
 8FC text4 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
 8FC text4 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
 904 text4 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
@@ -197,42 +197,42 @@ $dist/default/production\LCDExample.X.production.obj
 94E text4 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
 94E text4 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
 956 text4 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
-958 text7 CODE >159:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-95A text7 CODE >163:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-95E text7 CODE >164:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-962 text7 CODE >165:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-984 text7 CODE >167:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-986 text7 CODE >168:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-988 text7 CODE >169:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-98C text7 CODE >170:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-98E text7 CODE >171:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-992 text7 CODE >172:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-994 text7 CODE >174:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-998 text7 CODE >175:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-99E text7 CODE >177:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9A2 text7 CODE >178:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9A4 text7 CODE >179:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9A8 text7 CODE >180:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9AA text7 CODE >182:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9B0 text7 CODE >184:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9B2 text11 CODE >132:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9B4 text11 CODE >135:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9B8 text11 CODE >136:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9BC text11 CODE >137:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9D8 text11 CODE >139:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9DA text11 CODE >140:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9DC text11 CODE >141:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9E0 text11 CODE >142:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9E2 text11 CODE >143:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9E6 text11 CODE >144:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9E8 text11 CODE >146:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9EC text11 CODE >147:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9F2 text11 CODE >149:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9F6 text11 CODE >150:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9F8 text11 CODE >151:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9FC text11 CODE >152:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-9FE text11 CODE >154:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A04 text11 CODE >157:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
+958 text7 CODE >352:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+95A text7 CODE >356:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+95E text7 CODE >357:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+962 text7 CODE >358:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+984 text7 CODE >360:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+986 text7 CODE >361:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+988 text7 CODE >362:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+98C text7 CODE >363:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+98E text7 CODE >364:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+992 text7 CODE >365:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+994 text7 CODE >367:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+998 text7 CODE >368:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+99E text7 CODE >370:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9A2 text7 CODE >371:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9A4 text7 CODE >372:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9A8 text7 CODE >373:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9AA text7 CODE >375:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9B0 text7 CODE >377:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9B2 text11 CODE >325:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9B4 text11 CODE >328:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9B8 text11 CODE >329:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9BC text11 CODE >330:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9D8 text11 CODE >332:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9DA text11 CODE >333:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9DC text11 CODE >334:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9E0 text11 CODE >335:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9E2 text11 CODE >336:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9E6 text11 CODE >337:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9E8 text11 CODE >339:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9EC text11 CODE >340:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9F2 text11 CODE >342:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9F6 text11 CODE >343:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9F8 text11 CODE >344:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9FC text11 CODE >345:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+9FE text11 CODE >347:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A04 text11 CODE >350:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
 A06 text3 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
 A06 text3 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
 A0E text3 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
@@ -247,76 +247,76 @@ A42 text3 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwm
 A48 text3 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
 A48 text3 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
 A50 text3 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
-A52 text6 CODE >237:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A54 text6 CODE >240:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A58 text6 CODE >241:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A5C text6 CODE >242:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A64 text6 CODE >244:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A66 text6 CODE >245:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A68 text6 CODE >246:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A6C text6 CODE >247:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A6E text6 CODE >248:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A72 text6 CODE >249:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A74 text6 CODE >251:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A78 text6 CODE >252:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A7E text6 CODE >254:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A82 text6 CODE >255:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A84 text6 CODE >256:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A88 text6 CODE >257:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A8A text6 CODE >259:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A90 text6 CODE >262:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A92 text10 CODE >74:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A94 text10 CODE >77:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A98 text10 CODE >78:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-A9C text10 CODE >79:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AA4 text10 CODE >81:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AA6 text10 CODE >82:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AA8 text10 CODE >83:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AAC text10 CODE >84:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AAE text10 CODE >85:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AB2 text10 CODE >86:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AB4 text10 CODE >88:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AB8 text10 CODE >89:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-ABE text10 CODE >91:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AC2 text10 CODE >92:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AC4 text10 CODE >93:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AC8 text10 CODE >94:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-ACA text10 CODE >96:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AD0 text10 CODE >99:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AD2 text14 CODE >101:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AD2 text14 CODE >103:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AD4 text14 CODE >104:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AD6 text14 CODE >105:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-ADA text14 CODE >106:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-ADC text14 CODE >107:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AE0 text14 CODE >109:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AE4 text14 CODE >111:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AE6 text14 CODE >112:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AEA text14 CODE >113:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AEC text14 CODE >114:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AF0 text14 CODE >115:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AF2 text14 CODE >116:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AF4 text14 CODE >117:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AF6 text14 CODE >118:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AF8 text14 CODE >119:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AF8 text14 CODE >121:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AFA text14 CODE >122:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-AFE text14 CODE >123:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-B00 text14 CODE >124:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-B04 text14 CODE >125:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-B06 text14 CODE >126:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-B08 text14 CODE >127:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-B0C text14 CODE >129:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-B0E text1 CODE >188:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-B0E text1 CODE >190:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-B2A text1 CODE >191:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-B36 text1 CODE >224:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-B38 text8 CODE >6:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-B38 text8 CODE >7:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-B3E text8 CODE >8:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-B4A text8 CODE >9:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-B50 text8 CODE >10:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-B56 text8 CODE >11:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
+A52 text6 CODE >430:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A54 text6 CODE >433:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A58 text6 CODE >434:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A5C text6 CODE >435:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A64 text6 CODE >437:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A66 text6 CODE >438:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A68 text6 CODE >439:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A6C text6 CODE >440:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A6E text6 CODE >441:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A72 text6 CODE >442:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A74 text6 CODE >444:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A78 text6 CODE >445:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A7E text6 CODE >447:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A82 text6 CODE >448:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A84 text6 CODE >449:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A88 text6 CODE >450:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A8A text6 CODE >452:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A90 text6 CODE >455:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A92 text10 CODE >267:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A94 text10 CODE >270:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A98 text10 CODE >271:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+A9C text10 CODE >272:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AA4 text10 CODE >274:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AA6 text10 CODE >275:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AA8 text10 CODE >276:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AAC text10 CODE >277:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AAE text10 CODE >278:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AB2 text10 CODE >279:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AB4 text10 CODE >281:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AB8 text10 CODE >282:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+ABE text10 CODE >284:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AC2 text10 CODE >285:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AC4 text10 CODE >286:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AC8 text10 CODE >287:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+ACA text10 CODE >289:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AD0 text10 CODE >292:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AD2 text14 CODE >294:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AD2 text14 CODE >296:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AD4 text14 CODE >297:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AD6 text14 CODE >298:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+ADA text14 CODE >299:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+ADC text14 CODE >300:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AE0 text14 CODE >302:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AE4 text14 CODE >304:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AE6 text14 CODE >305:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AEA text14 CODE >306:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AEC text14 CODE >307:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AF0 text14 CODE >308:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AF2 text14 CODE >309:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AF4 text14 CODE >310:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AF6 text14 CODE >311:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AF8 text14 CODE >312:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AF8 text14 CODE >314:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AFA text14 CODE >315:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+AFE text14 CODE >316:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+B00 text14 CODE >317:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+B04 text14 CODE >318:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+B06 text14 CODE >319:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+B08 text14 CODE >320:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+B0C text14 CODE >322:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+B0E text1 CODE >381:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+B0E text1 CODE >383:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+B2A text1 CODE >384:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+B36 text1 CODE >417:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+B38 text8 CODE >199:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+B38 text8 CODE >200:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+B3E text8 CODE >201:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+B4A text8 CODE >202:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+B50 text8 CODE >203:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+B56 text8 CODE >204:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
 B58 text12 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
 B5A text12 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
 B68 text12 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
@@ -329,23 +329,23 @@ B82 text17 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1kt
 B84 text17 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
 B8C text17 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
 B92 text17 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
-B94 cinit CODE >875:C:\Users\ADMINI~1\AppData\Local\Temp\s42o.
-B94 cinit CODE >877:C:\Users\ADMINI~1\AppData\Local\Temp\s42o.
-B94 cinit CODE >880:C:\Users\ADMINI~1\AppData\Local\Temp\s42o.
-B94 cinit CODE >891:C:\Users\ADMINI~1\AppData\Local\Temp\s42o.
-B96 cinit CODE >897:C:\Users\ADMINI~1\AppData\Local\Temp\s42o.
-B96 cinit CODE >899:C:\Users\ADMINI~1\AppData\Local\Temp\s42o.
-B98 cinit CODE >900:C:\Users\ADMINI~1\AppData\Local\Temp\s42o.
-B9A cinit CODE >901:C:\Users\ADMINI~1\AppData\Local\Temp\s42o.
-B9C cinit CODE >902:C:\Users\ADMINI~1\AppData\Local\Temp\s42o.
+B94 cinit CODE >583:C:\Users\ADMINI~1\AppData\Local\Temp\s364.
+B94 cinit CODE >585:C:\Users\ADMINI~1\AppData\Local\Temp\s364.
+B94 cinit CODE >588:C:\Users\ADMINI~1\AppData\Local\Temp\s364.
+B94 cinit CODE >599:C:\Users\ADMINI~1\AppData\Local\Temp\s364.
+B96 cinit CODE >605:C:\Users\ADMINI~1\AppData\Local\Temp\s364.
+B96 cinit CODE >607:C:\Users\ADMINI~1\AppData\Local\Temp\s364.
+B98 cinit CODE >608:C:\Users\ADMINI~1\AppData\Local\Temp\s364.
+B9A cinit CODE >609:C:\Users\ADMINI~1\AppData\Local\Temp\s364.
+B9C cinit CODE >610:C:\Users\ADMINI~1\AppData\Local\Temp\s364.
 BA0 text16 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
 BA2 text16 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
 BA2 text16 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
 BA4 text16 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
 BAA text16 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
-BAC text15 CODE >13:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-BAC text15 CODE >15:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
-BB2 text15 CODE >16:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\xlcd.c
+BAC text15 CODE >206:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+BAC text15 CODE >208:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
+BB2 text15 CODE >209:F:\Projects\SinclairC5Eclipse\Controller\LCDExample.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -366,15 +366,15 @@ __Hspace_2 0 0 ABS 0 - dist/default/production\LCDExample.X.production.obj
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\LCDExample.X.production.obj
 __size_of_WriteDataLCD 0 0 ABS 0 - dist/default/production\LCDExample.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\LCDExample.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\LCDExample.X.production.obj
 _Delay1KTCYx B82 0 CODE 0 text17 dist/default/production\LCDExample.X.production.obj
 __Lsmallconst 600 0 SMALLCONST 0 smallconst dist/default/production\LCDExample.X.production.obj
 _LATD F8C 0 ABS 0 - dist/default/production\LCDExample.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj
+___sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj
 _main 618 0 CODE 0 text0 dist/default/production\LCDExample.X.production.obj
 _utoa 7F2 0 CODE 0 text2 dist/default/production\LCDExample.X.production.obj
-start 0 0 CODE 0 init C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj
+start 0 0 CODE 0 init C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\LCDExample.X.production.obj
 __size_of_utoa 0 0 ABS 0 - dist/default/production\LCDExample.X.production.obj
 __size_of___lwdiv 0 0 ABS 0 - dist/default/production\LCDExample.X.production.obj
@@ -387,11 +387,11 @@ __Hpowerup 0 0 CODE 0 powerup dist/default/production\LCDExample.X.production.ob
 Delay1TCYx@unit 1 0 COMRAM 1 cstackCOMRAM dist/default/production\LCDExample.X.production.obj
 utoa@c 10 0 COMRAM 1 cstackCOMRAM dist/default/production\LCDExample.X.production.obj
 utoa@v E 0 COMRAM 1 cstackCOMRAM dist/default/production\LCDExample.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj
-intlevel0 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj
-intlevel1 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj
-intlevel2 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj
-intlevel3 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj
+__accesstop 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj
+intlevel0 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj
+intlevel1 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj
+intlevel2 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj
+intlevel3 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\LCDExample.X.production.obj
 _InitLCD B38 0 CODE 0 text8 dist/default/production\LCDExample.X.production.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\LCDExample.X.production.obj
@@ -410,8 +410,8 @@ _Delay100TCYx B70 0 CODE 0 text13 dist/default/production\LCDExample.X.productio
 SetLCDCGRamAddr@CGaddr 5 0 COMRAM 1 cstackCOMRAM dist/default/production\LCDExample.X.production.obj
 Delay100TCYx@unit 1 0 COMRAM 1 cstackCOMRAM dist/default/production\LCDExample.X.production.obj
 _Delay10KTCYx B58 0 CODE 0 text12 dist/default/production\LCDExample.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj
 __end_of_SetLCDDDRamAddr A06 0 CODE 0 text11 dist/default/production\LCDExample.X.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\LCDExample.X.production.obj
 _putIntLCD B0E 0 CODE 0 text1 dist/default/production\LCDExample.X.production.obj
@@ -477,7 +477,7 @@ ___lwdiv@counter 7 0 COMRAM 1 cstackCOMRAM dist/default/production\LCDExample.X.
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\LCDExample.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\LCDExample.X.production.obj
 putIntLCD@n 11 0 COMRAM 1 cstackCOMRAM dist/default/production\LCDExample.X.production.obj
-__smallconst 600 0 SMALLCONST 0 smallconst C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj
+__smallconst 600 0 SMALLCONST 0 smallconst C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\LCDExample.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\LCDExample.X.production.obj
 __end_of_Delay1KTCYx B94 0 CODE 0 text17 dist/default/production\LCDExample.X.production.obj
@@ -578,8 +578,8 @@ _SetLCDCGRamAddr 958 0 CODE 0 text7 dist/default/production\LCDExample.X.product
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\LCDExample.X.production.obj
 ___lwdiv@divisor 3 0 COMRAM 1 cstackCOMRAM dist/default/production\LCDExample.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\LCDExample.X.production.obj
-stackhi 5FF 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj
-stacklo 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj
+stackhi 5FF 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj
+stacklo 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj
 __Lintcode 0 0 CODE 0 intcode dist/default/production\LCDExample.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\LCDExample.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production\LCDExample.X.production.obj
@@ -625,7 +625,7 @@ __Ltext14 0 0 ABS 0 text14 dist/default/production\LCDExample.X.production.obj
 __Ltext15 0 0 ABS 0 text15 dist/default/production\LCDExample.X.production.obj
 __Ltext16 0 0 ABS 0 text16 dist/default/production\LCDExample.X.production.obj
 __Ltext17 0 0 ABS 0 text17 dist/default/production\LCDExample.X.production.obj
-__ramtop 600 0 RAM 0 ramtop C:\Users\ADMINI~1\AppData\Local\Temp\s42o.obj
+__ramtop 600 0 RAM 0 ramtop C:\Users\ADMINI~1\AppData\Local\Temp\s364.obj
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\LCDExample.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\LCDExample.X.production.obj
 __psmallconst 600 0 SMALLCONST 0 smallconst dist/default/production\LCDExample.X.production.obj

@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.34 build -361300703 
-                                                                                               Tue Apr 14 12:48:36 2015
+                                                                                               Mon Apr 20 20:03:09 2015
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
      1                           	processor	18F45K20
@@ -204,7 +204,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    198 ;;
    199 ;; *************** function _main *****************
    200 ;; Defined at:
-   201 ;;		line 39 in file "main.c"
+   201 ;;		line 118 in file "main.c"
    202 ;; Parameters:    Size  Location     Type
    203 ;;		None
    204 ;; Auto vars:     Size  Location     Type
@@ -244,220 +244,220 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    238  000618                     _main:
    239                           	opt stack 26
    240                           
-   241                           ;main.c: 42: TRISD = 0b00000000;
+   241                           ;main.c: 121: TRISD = 0b00000000;
    242                           
    243                           ;incstack = 0
    244  000618  0E00               	movlw	0
    245  00061A  6E95               	movwf	3989,c	;volatile
    246                           
-   247                           ;main.c: 43: LATD = 0;
+   247                           ;main.c: 122: LATD = 0;
    248  00061C  0E00               	movlw	0
    249  00061E  6E8C               	movwf	3980,c	;volatile
    250                           
-   251                           ;main.c: 45: InitLCD();
+   251                           ;main.c: 124: InitLCD();
    252  000620  EC9C  F005         	call	_InitLCD	;wreg free
    253                           
-   254                           ;main.c: 47: SetLCDCGRamAddr(0x00);
+   254                           ;main.c: 126: SetLCDCGRamAddr(0x00);
    255  000624  0E00               	movlw	0
    256  000626  ECAC  F004         	call	_SetLCDCGRamAddr
    257                           
-   258                           ;main.c: 48: WriteDataLCD(0b00000);
+   258                           ;main.c: 127: WriteDataLCD(0b00000);
    259  00062A  0E00               	movlw	0
    260  00062C  EC29  F005         	call	_WriteDataLCD
    261                           
-   262                           ;main.c: 49: WriteDataLCD(0b01111);
+   262                           ;main.c: 128: WriteDataLCD(0b01111);
    263  000630  0E0F               	movlw	15
    264  000632  EC29  F005         	call	_WriteDataLCD
    265                           
-   266                           ;main.c: 50: WriteDataLCD(0b10001);
+   266                           ;main.c: 129: WriteDataLCD(0b10001);
    267  000636  0E11               	movlw	17
    268  000638  EC29  F005         	call	_WriteDataLCD
    269                           
-   270                           ;main.c: 51: WriteDataLCD(0b10001);
+   270                           ;main.c: 130: WriteDataLCD(0b10001);
    271  00063C  0E11               	movlw	17
    272  00063E  EC29  F005         	call	_WriteDataLCD
    273                           
-   274                           ;main.c: 52: WriteDataLCD(0b10001);
+   274                           ;main.c: 131: WriteDataLCD(0b10001);
    275  000642  0E11               	movlw	17
    276  000644  EC29  F005         	call	_WriteDataLCD
    277                           
-   278                           ;main.c: 53: WriteDataLCD(0b01111);
+   278                           ;main.c: 132: WriteDataLCD(0b01111);
    279  000648  0E0F               	movlw	15
    280  00064A  EC29  F005         	call	_WriteDataLCD
    281                           
-   282                           ;main.c: 54: WriteDataLCD(0b00111);
+   282                           ;main.c: 133: WriteDataLCD(0b00111);
    283  00064E  0E07               	movlw	7
    284  000650  EC29  F005         	call	_WriteDataLCD
    285                           
-   286                           ;main.c: 55: WriteDataLCD(0b00111);
+   286                           ;main.c: 134: WriteDataLCD(0b00111);
    287  000654  0E07               	movlw	7
    288  000656  EC29  F005         	call	_WriteDataLCD
    289                           
-   290                           ;main.c: 58: SetLCDCGRamAddr(0x08);
+   290                           ;main.c: 137: SetLCDCGRamAddr(0x08);
    291  00065A  0E08               	movlw	8
    292  00065C  ECAC  F004         	call	_SetLCDCGRamAddr
    293                           
-   294                           ;main.c: 59: WriteDataLCD(0b11111);
+   294                           ;main.c: 138: WriteDataLCD(0b11111);
    295  000660  0E1F               	movlw	31
    296  000662  EC29  F005         	call	_WriteDataLCD
    297                           
-   298                           ;main.c: 60: WriteDataLCD(0b10001);
+   298                           ;main.c: 139: WriteDataLCD(0b10001);
    299  000666  0E11               	movlw	17
    300  000668  EC29  F005         	call	_WriteDataLCD
    301                           
-   302                           ;main.c: 61: WriteDataLCD(0b10001);
+   302                           ;main.c: 140: WriteDataLCD(0b10001);
    303  00066C  0E11               	movlw	17
    304  00066E  EC29  F005         	call	_WriteDataLCD
    305                           
-   306                           ;main.c: 62: WriteDataLCD(0b10101);
+   306                           ;main.c: 141: WriteDataLCD(0b10101);
    307  000672  0E15               	movlw	21
    308  000674  EC29  F005         	call	_WriteDataLCD
    309                           
-   310                           ;main.c: 63: WriteDataLCD(0b10001);
+   310                           ;main.c: 142: WriteDataLCD(0b10001);
    311  000678  0E11               	movlw	17
    312  00067A  EC29  F005         	call	_WriteDataLCD
    313                           
-   314                           ;main.c: 64: WriteDataLCD(0b10001);
+   314                           ;main.c: 143: WriteDataLCD(0b10001);
    315  00067E  0E11               	movlw	17
    316  000680  EC29  F005         	call	_WriteDataLCD
    317                           
-   318                           ;main.c: 65: WriteDataLCD(0b10001);
+   318                           ;main.c: 144: WriteDataLCD(0b10001);
    319  000684  0E11               	movlw	17
    320  000686  EC29  F005         	call	_WriteDataLCD
    321                           
-   322                           ;main.c: 66: WriteDataLCD(0b11111);
+   322                           ;main.c: 145: WriteDataLCD(0b11111);
    323  00068A  0E1F               	movlw	31
    324  00068C  EC29  F005         	call	_WriteDataLCD
    325                           
-   326                           ;main.c: 68: WriteCmdLCD(0b00000010);
+   326                           ;main.c: 147: WriteCmdLCD(0b00000010);
    327  000690  0E02               	movlw	2
    328  000692  EC49  F005         	call	_WriteCmdLCD
    329                           
-   330                           ;main.c: 69: putLCD("Testing ");
+   330                           ;main.c: 148: putLCD("Testing ");
    331  000696  0E0D               	movlw	low STR_1
    332  000698  6E03               	movwf	putLCD@buffer,c
    333  00069A  0E06               	movlw	high STR_1
    334  00069C  6E04               	movwf	putLCD@buffer+1,c
    335  00069E  EC4E  F004         	call	_putLCD	;wreg free
    336                           
-   337                           ;main.c: 71: putIntLCD(3455);
+   337                           ;main.c: 150: putIntLCD(3455);
    338  0006A2  0E0D               	movlw	13
    339  0006A4  6E12               	movwf	putIntLCD@n+1,c
    340  0006A6  0E7F               	movlw	127
    341  0006A8  6E11               	movwf	putIntLCD@n,c
    342  0006AA  EC87  F005         	call	_putIntLCD	;wreg free
    343                           
-   344                           ;main.c: 73: SetLCDDDRamAddr(0x040);
+   344                           ;main.c: 152: SetLCDDDRamAddr(0x040);
    345  0006AE  0E40               	movlw	64
    346  0006B0  ECD9  F004         	call	_SetLCDDDRamAddr
    347                           
-   348                           ;main.c: 74: putLCD("LCD Line 2 ");
+   348                           ;main.c: 153: putLCD("LCD Line 2 ");
    349  0006B4  0E01               	movlw	low STR_2
    350  0006B6  6E03               	movwf	putLCD@buffer,c
    351  0006B8  0E06               	movlw	high STR_2
    352  0006BA  6E04               	movwf	putLCD@buffer+1,c
    353  0006BC  EC4E  F004         	call	_putLCD	;wreg free
    354                           
-   355                           ;main.c: 75: WriteDataLCD(0);
+   355                           ;main.c: 154: WriteDataLCD(0);
    356  0006C0  0E00               	movlw	0
    357  0006C2  EC29  F005         	call	_WriteDataLCD
    358                           
-   359                           ;main.c: 76: WriteDataLCD(1);
+   359                           ;main.c: 155: WriteDataLCD(1);
    360  0006C6  0E01               	movlw	1
    361  0006C8  EC29  F005         	call	_WriteDataLCD
    362                           
-   363                           ;main.c: 77: WriteDataLCD(2);
+   363                           ;main.c: 156: WriteDataLCD(2);
    364  0006CC  0E02               	movlw	2
    365  0006CE  EC29  F005         	call	_WriteDataLCD
    366                           
-   367                           ;main.c: 78: WriteDataLCD(3);
+   367                           ;main.c: 157: WriteDataLCD(3);
    368  0006D2  0E03               	movlw	3
    369  0006D4  EC29  F005         	call	_WriteDataLCD
    370                           
-   371                           ;main.c: 81: counter = 100;
+   371                           ;main.c: 160: counter = 100;
    372  0006D8  0E64               	movlw	100
    373  0006DA  6E17               	movwf	_counter,c
-   374  0006DC  D000               	goto	l1272
-   375  0006DE                     l1272:
+   374  0006DC  D000               	goto	l1264
+   375  0006DE                     l1264:
    376                           
-   377                           ;main.c: 84: {
-   378                           ;main.c: 85: LATDbits.LD0 = 1;
+   377                           ;main.c: 163: {
+   378                           ;main.c: 164: LATDbits.LD0 = 1;
    379  0006DE  808C               	bsf	3980,0,c	;volatile
    380                           
-   381                           ;main.c: 86: Delay1KTCYx(10);
+   381                           ;main.c: 165: Delay1KTCYx(10);
    382  0006E0  0E0A               	movlw	10
    383  0006E2  ECC1  F005         	call	_Delay1KTCYx
    384                           
-   385                           ;main.c: 88: LATDbits.LD1 = 1;
+   385                           ;main.c: 167: LATDbits.LD1 = 1;
    386  0006E6  828C               	bsf	3980,1,c	;volatile
    387                           
-   388                           ;main.c: 89: Delay1KTCYx(10);
+   388                           ;main.c: 168: Delay1KTCYx(10);
    389  0006E8  0E0A               	movlw	10
    390  0006EA  ECC1  F005         	call	_Delay1KTCYx
    391                           
-   392                           ;main.c: 91: LATDbits.LD2 = 1;
+   392                           ;main.c: 170: LATDbits.LD2 = 1;
    393  0006EE  848C               	bsf	3980,2,c	;volatile
    394                           
-   395                           ;main.c: 92: Delay1KTCYx(10);
+   395                           ;main.c: 171: Delay1KTCYx(10);
    396  0006F0  0E0A               	movlw	10
    397  0006F2  ECC1  F005         	call	_Delay1KTCYx
    398                           
-   399                           ;main.c: 94: LATDbits.LD3 = 1;
+   399                           ;main.c: 173: LATDbits.LD3 = 1;
    400  0006F6  868C               	bsf	3980,3,c	;volatile
    401                           
-   402                           ;main.c: 95: Delay1KTCYx(10);
+   402                           ;main.c: 174: Delay1KTCYx(10);
    403  0006F8  0E0A               	movlw	10
    404  0006FA  ECC1  F005         	call	_Delay1KTCYx
    405                           
-   406                           ;main.c: 97: LATDbits.LD4 = 1;
+   406                           ;main.c: 176: LATDbits.LD4 = 1;
    407  0006FE  888C               	bsf	3980,4,c	;volatile
    408                           
-   409                           ;main.c: 98: Delay1KTCYx(10);
+   409                           ;main.c: 177: Delay1KTCYx(10);
    410  000700  0E0A               	movlw	10
    411  000702  ECC1  F005         	call	_Delay1KTCYx
    412                           
-   413                           ;main.c: 100: LATDbits.LD5 = 1;
+   413                           ;main.c: 179: LATDbits.LD5 = 1;
    414  000706  8A8C               	bsf	3980,5,c	;volatile
    415                           
-   416                           ;main.c: 101: Delay1KTCYx(10);
+   416                           ;main.c: 180: Delay1KTCYx(10);
    417  000708  0E0A               	movlw	10
    418  00070A  ECC1  F005         	call	_Delay1KTCYx
    419                           
-   420                           ;main.c: 103: LATDbits.LD6 = 1;
+   420                           ;main.c: 182: LATDbits.LD6 = 1;
    421  00070E  8C8C               	bsf	3980,6,c	;volatile
    422                           
-   423                           ;main.c: 104: Delay1KTCYx(10);
+   423                           ;main.c: 183: Delay1KTCYx(10);
    424  000710  0E0A               	movlw	10
    425  000712  ECC1  F005         	call	_Delay1KTCYx
    426                           
-   427                           ;main.c: 106: LATDbits.LD7 = 1;
+   427                           ;main.c: 185: LATDbits.LD7 = 1;
    428  000716  8E8C               	bsf	3980,7,c	;volatile
    429                           
-   430                           ;main.c: 107: Delay1KTCYx(10);
+   430                           ;main.c: 186: Delay1KTCYx(10);
    431  000718  0E0A               	movlw	10
    432  00071A  ECC1  F005         	call	_Delay1KTCYx
    433                           
-   434                           ;main.c: 109: LATD = 0;
+   434                           ;main.c: 188: LATD = 0;
    435  00071E  0E00               	movlw	0
    436  000720  6E8C               	movwf	3980,c	;volatile
    437                           
-   438                           ;main.c: 110: Delay1KTCYx(10);
+   438                           ;main.c: 189: Delay1KTCYx(10);
    439  000722  0E0A               	movlw	10
    440  000724  ECC1  F005         	call	_Delay1KTCYx
    441                           
-   442                           ;main.c: 113: counter = counter + 1;
+   442                           ;main.c: 192: counter = counter + 1;
    443  000728  2817               	incf	_counter,w,c
    444  00072A  6E17               	movwf	_counter,c
    445                           
-   446                           ;main.c: 114: SetLCDDDRamAddr(0x044);
+   446                           ;main.c: 193: SetLCDDDRamAddr(0x044);
    447  00072C  0E44               	movlw	68
    448  00072E  ECD9  F004         	call	_SetLCDDDRamAddr
    449                           
-   450                           ;main.c: 115: putIntLCD(counter);
+   450                           ;main.c: 194: putIntLCD(counter);
    451  000732  C017  F011         	movff	_counter,putIntLCD@n
    452  000736  6A12               	clrf	putIntLCD@n+1,c
    453  000738  EC87  F005         	call	_putIntLCD	;wreg free
-   454  00073C  D7D0               	goto	l1272
+   454  00073C  D7D0               	goto	l1264
    455  00073E  EF00  F000         	goto	start
    456  000742                     __end_of_main:
    457                           	opt stack 0
@@ -465,7 +465,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    459                           
    460 ;; *************** function _putIntLCD *****************
    461 ;; Defined at:
-   462 ;;		line 188 in file "xlcd.c"
+   462 ;;		line 381 in file "main.c"
    463 ;; Parameters:    Size  Location     Type
    464 ;;  n               2   16[COMRAM] short 
    465 ;; Auto vars:     Size  Location     Type
@@ -500,8 +500,8 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    494  000B0E                     _putIntLCD:
    495                           	opt stack 26
    496                           
-   497                           ;xlcd.c: 189: unsigned char result[4];
-   498                           ;xlcd.c: 190: utoa((char*)result, n, 10);
+   497                           ;main.c: 382: unsigned char result[4];
+   498                           ;main.c: 383: utoa((char*)result, n, 10);
    499                           
    500                           ;incstack = 0
    501  000B0E  0E13               	movlw	low putIntLCD@result
@@ -516,7 +516,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    510  000B24  6E0C               	movwf	utoa@base,c
    511  000B26  ECF9  F003         	call	_utoa	;wreg free
    512                           
-   513                           ;xlcd.c: 191: putLCD(result);
+   513                           ;main.c: 384: putLCD(result);
    514  000B2A  0E13               	movlw	low putIntLCD@result
    515  000B2C  6E03               	movwf	putLCD@buffer,c
    516  000B2E  0E00               	movlw	high putIntLCD@result
@@ -571,8 +571,8 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    565                           ;incstack = 0
    566  0007F2  C00A  F00E         	movff	utoa@val,utoa@v
    567  0007F6  C00B  F00F         	movff	utoa@val+1,utoa@v+1
-   568  0007FA  D000               	goto	l1180
-   569  0007FC                     l1180:
+   568  0007FA  D000               	goto	l1172
+   569  0007FC                     l1172:
    570  0007FC  C00E  F001         	movff	utoa@v,___lwdiv@dividend
    571  000800  C00F  F002         	movff	utoa@v+1,___lwdiv@dividend+1
    572  000804  C00C  F003         	movff	utoa@base,___lwdiv@divisor
@@ -585,7 +585,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    579  00081C  500E               	movf	utoa@v,w,c
    580  00081E  100F               	iorwf	utoa@v+1,w,c
    581  000820  A4D8               	btfss	status,2,c
-   582  000822  D7EC               	goto	l1180
+   582  000822  D7EC               	goto	l1172
    583  000824  C008  FFD9         	movff	utoa@buf,fsr2l
    584  000828  C009  FFDA         	movff	utoa@buf+1,fsr2h
    585  00082C  0E00               	movlw	0
@@ -593,8 +593,8 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    587  000830  0608               	decf	utoa@buf,f,c
    588  000832  A0D8               	btfss	status,0,c
    589  000834  0609               	decf	utoa@buf+1,f,c
-   590  000836  D000               	goto	l1190
-   591  000838                     l1190:
+   590  000836  D000               	goto	l1182
+   591  000838                     l1182:
    592  000838  C00A  F001         	movff	utoa@val,___lwmod@dividend
    593  00083C  C00B  F002         	movff	utoa@val+1,___lwmod@dividend+1
    594  000840  C00C  F003         	movff	utoa@base,___lwmod@divisor
@@ -611,10 +611,10 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    605  000868  C002  F00B         	movff	?___lwdiv+1,utoa@val+1
    606  00086C  0E09               	movlw	9
    607  00086E  6410               	cpfsgt	utoa@c,c
-   608  000870  D002               	goto	l589
+   608  000870  D002               	goto	l581
    609  000872  0E07               	movlw	7
    610  000874  2610               	addwf	utoa@c,f,c
-   611  000876                     l589:
+   611  000876                     l581:
    612  000876  0E30               	movlw	48
    613  000878  2610               	addwf	utoa@c,f,c
    614  00087A  C008  FFD9         	movff	utoa@buf,fsr2l
@@ -626,7 +626,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    620  00088C  500A               	movf	utoa@val,w,c
    621  00088E  100B               	iorwf	utoa@val+1,w,c
    622  000890  A4D8               	btfss	status,2,c
-   623  000892  D7D2               	goto	l1190
+   623  000892  D7D2               	goto	l1182
    624                           
    625                           ;	Return value of _utoa is never used
    626  000894  4A08               	infsnz	utoa@buf,f,c
@@ -681,41 +681,41 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    675  000A06  5003               	movf	___lwmod@divisor,w,c
    676  000A08  1004               	iorwf	___lwmod@divisor+1,w,c
    677  000A0A  B4D8               	btfsc	status,2,c
-   678  000A0C  D01D               	goto	l693
+   678  000A0C  D01D               	goto	l685
    679  000A0E  0E01               	movlw	1
    680  000A10  6E05               	movwf	___lwmod@counter,c
-   681  000A12  D005               	goto	l1158
-   682  000A14                     l1156:
+   681  000A12  D005               	goto	l1150
+   682  000A14                     l1148:
    683  000A14  90D8               	bcf	status,0,c
    684  000A16  3603               	rlcf	___lwmod@divisor,f,c
    685  000A18  3604               	rlcf	___lwmod@divisor+1,f,c
    686  000A1A  2A05               	incf	___lwmod@counter,f,c
-   687  000A1C  D000               	goto	l1158
-   688  000A1E                     l1158:
+   687  000A1C  D000               	goto	l1150
+   688  000A1E                     l1150:
    689  000A1E  BE04               	btfsc	___lwmod@divisor+1,7,c
-   690  000A20  D002               	goto	l1160
-   691  000A22  D7F8               	goto	l1156
-   692  000A24  D000               	goto	l1160
-   693  000A26                     l1160:
+   690  000A20  D002               	goto	l1152
+   691  000A22  D7F8               	goto	l1148
+   692  000A24  D000               	goto	l1152
+   693  000A26                     l1152:
    694  000A26  5003               	movf	___lwmod@divisor,w,c
    695  000A28  5C01               	subwf	___lwmod@dividend,w,c
    696  000A2A  5004               	movf	___lwmod@divisor+1,w,c
    697  000A2C  5802               	subwfb	___lwmod@dividend+1,w,c
    698  000A2E  A0D8               	btfss	status,0,c
-   699  000A30  D005               	goto	l1164
+   699  000A30  D005               	goto	l1156
    700  000A32  5003               	movf	___lwmod@divisor,w,c
    701  000A34  5E01               	subwf	___lwmod@dividend,f,c
    702  000A36  5004               	movf	___lwmod@divisor+1,w,c
    703  000A38  5A02               	subwfb	___lwmod@dividend+1,f,c
-   704  000A3A  D000               	goto	l1164
-   705  000A3C                     l1164:
+   704  000A3A  D000               	goto	l1156
+   705  000A3C                     l1156:
    706  000A3C  90D8               	bcf	status,0,c
    707  000A3E  3204               	rrcf	___lwmod@divisor+1,f,c
    708  000A40  3203               	rrcf	___lwmod@divisor,f,c
    709  000A42  2E05               	decfsz	___lwmod@counter,f,c
-   710  000A44  D7F0               	goto	l1160
-   711  000A46  D000               	goto	l693
-   712  000A48                     l693:
+   710  000A44  D7F0               	goto	l1152
+   711  000A46  D000               	goto	l685
+   712  000A48                     l685:
    713  000A48  C001  F001         	movff	___lwmod@dividend,?___lwmod
    714  000A4C  C002  F002         	movff	___lwmod@dividend+1,?___lwmod+1
    715  000A50  0012               	return		;funcret
@@ -772,22 +772,22 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    766  000904  5003               	movf	___lwdiv@divisor,w,c
    767  000906  1004               	iorwf	___lwdiv@divisor+1,w,c
    768  000908  B4D8               	btfsc	status,2,c
-   769  00090A  D021               	goto	l683
+   769  00090A  D021               	goto	l675
    770  00090C  0E01               	movlw	1
    771  00090E  6E07               	movwf	___lwdiv@counter,c
-   772  000910  D005               	goto	l1138
-   773  000912                     l1136:
+   772  000910  D005               	goto	l1130
+   773  000912                     l1128:
    774  000912  90D8               	bcf	status,0,c
    775  000914  3603               	rlcf	___lwdiv@divisor,f,c
    776  000916  3604               	rlcf	___lwdiv@divisor+1,f,c
    777  000918  2A07               	incf	___lwdiv@counter,f,c
-   778  00091A  D000               	goto	l1138
-   779  00091C                     l1138:
+   778  00091A  D000               	goto	l1130
+   779  00091C                     l1130:
    780  00091C  BE04               	btfsc	___lwdiv@divisor+1,7,c
-   781  00091E  D002               	goto	l1140
-   782  000920  D7F8               	goto	l1136
-   783  000922  D000               	goto	l1140
-   784  000924                     l1140:
+   781  00091E  D002               	goto	l1132
+   782  000920  D7F8               	goto	l1128
+   783  000922  D000               	goto	l1132
+   784  000924                     l1132:
    785  000924  90D8               	bcf	status,0,c
    786  000926  3605               	rlcf	___lwdiv@quotient,f,c
    787  000928  3606               	rlcf	___lwdiv@quotient+1,f,c
@@ -796,21 +796,21 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    790  00092E  5004               	movf	___lwdiv@divisor+1,w,c
    791  000930  5802               	subwfb	___lwdiv@dividend+1,w,c
    792  000932  A0D8               	btfss	status,0,c
-   793  000934  D006               	goto	l1148
+   793  000934  D006               	goto	l1140
    794  000936  5003               	movf	___lwdiv@divisor,w,c
    795  000938  5E01               	subwf	___lwdiv@dividend,f,c
    796  00093A  5004               	movf	___lwdiv@divisor+1,w,c
    797  00093C  5A02               	subwfb	___lwdiv@dividend+1,f,c
    798  00093E  8005               	bsf	___lwdiv@quotient,0,c
-   799  000940  D000               	goto	l1148
-   800  000942                     l1148:
+   799  000940  D000               	goto	l1140
+   800  000942                     l1140:
    801  000942  90D8               	bcf	status,0,c
    802  000944  3204               	rrcf	___lwdiv@divisor+1,f,c
    803  000946  3203               	rrcf	___lwdiv@divisor,f,c
    804  000948  2E07               	decfsz	___lwdiv@counter,f,c
-   805  00094A  D7EC               	goto	l1140
-   806  00094C  D000               	goto	l683
-   807  00094E                     l683:
+   805  00094A  D7EC               	goto	l1132
+   806  00094C  D000               	goto	l675
+   807  00094E                     l675:
    808  00094E  C005  F001         	movff	___lwdiv@quotient,?___lwdiv
    809  000952  C006  F002         	movff	___lwdiv@quotient+1,?___lwdiv+1
    810  000956  0012               	return		;funcret
@@ -824,7 +824,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    818                           
    819 ;; *************** function _putLCD *****************
    820 ;; Defined at:
-   821 ;;		line 226 in file "xlcd.c"
+   821 ;;		line 419 in file "main.c"
    822 ;; Parameters:    Size  Location     Type
    823 ;;  buffer          2    2[COMRAM] PTR unsigned char 
    824 ;;		 -> putIntLCD@result(4), STR_2(12), STR_1(9), 
@@ -861,21 +861,21 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    855  00089C                     _putLCD:
    856                           	opt stack 27
    857                           
-   858                           ;xlcd.c: 228: while(*buffer)
+   858                           ;main.c: 421: while(*buffer)
    859                           
    860                           ;incstack = 0
-   861  00089C  D01B               	goto	l1176
+   861  00089C  D01B               	goto	l1168
    862                           
-   863                           ;xlcd.c: 229: {
-   864                           ;xlcd.c: 230: while(BusyLCD());
-   865  00089E  D000               	goto	l1170
-   866  0008A0                     l1170:
+   863                           ;main.c: 422: {
+   864                           ;main.c: 423: while(BusyLCD());
+   865  00089E  D000               	goto	l1162
+   866  0008A0                     l1162:
    867  0008A0  EC69  F005         	call	_BusyLCD	;wreg free
    868  0008A4  0900               	iorlw	0
    869  0008A6  A4D8               	btfss	status,2,c
-   870  0008A8  D7FB               	goto	l1170
+   870  0008A8  D7FB               	goto	l1162
    871                           
-   872                           ;xlcd.c: 231: WriteDataLCD(*buffer);
+   872                           ;main.c: 424: WriteDataLCD(*buffer);
    873  0008AA  C003  FFF6         	movff	putLCD@buffer,tblptrl
    874  0008AE  C004  FFF7         	movff	putLCD@buffer+1,tblptrh
    875  0008B2  6AF8               	clrf	tblptru,c
@@ -892,11 +892,11 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    886  0008CA                     u320:
    887  0008CA  EC29  F005         	call	_WriteDataLCD
    888                           
-   889                           ;xlcd.c: 232: buffer++;
+   889                           ;main.c: 425: buffer++;
    890  0008CE  4A03               	infsnz	putLCD@buffer,f,c
    891  0008D0  2A04               	incf	putLCD@buffer+1,f,c
-   892  0008D2  D000               	goto	l1176
-   893  0008D4                     l1176:
+   892  0008D2  D000               	goto	l1168
+   893  0008D4                     l1168:
    894  0008D4  C003  FFF6         	movff	putLCD@buffer,tblptrl
    895  0008D8  C004  FFF7         	movff	putLCD@buffer+1,tblptrh
    896  0008DC  6AF8               	clrf	tblptru,c
@@ -913,10 +913,10 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    907  0008F4                     u330:
    908  0008F4  0900               	iorlw	0
    909  0008F6  A4D8               	btfss	status,2,c
-   910  0008F8  D7D3               	goto	l1170
+   910  0008F8  D7D3               	goto	l1162
    911                           
-   912                           ;xlcd.c: 233: }
-   913                           ;xlcd.c: 234: return;
+   912                           ;main.c: 426: }
+   913                           ;main.c: 427: return;
    914  0008FA  0012               	return		;funcret
    915  0008FC                     __end_of_putLCD:
    916                           	opt stack 0
@@ -934,7 +934,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    928                           
    929 ;; *************** function _WriteDataLCD *****************
    930 ;; Defined at:
-   931 ;;		line 237 in file "xlcd.c"
+   931 ;;		line 430 in file "main.c"
    932 ;; Parameters:    Size  Location     Type
    933 ;;  data            1    wreg     unsigned char 
    934 ;; Auto vars:     Size  Location     Type
@@ -973,65 +973,65 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    967                           ;WriteDataLCD@data stored from wreg
    968  000A52  6E02               	movwf	WriteDataLCD@data,c
    969                           
-   970                           ;xlcd.c: 240: TRISC &= 0xf0;
+   970                           ;main.c: 433: TRISC &= 0xf0;
    971  000A54  0EF0               	movlw	240
    972  000A56  1694               	andwf	3988,f,c	;volatile
    973                           
-   974                           ;xlcd.c: 241: PORTC &= 0xf0;
+   974                           ;main.c: 434: PORTC &= 0xf0;
    975  000A58  0EF0               	movlw	240
    976  000A5A  1682               	andwf	3970,f,c	;volatile
    977                           
-   978                           ;xlcd.c: 242: PORTC |= ((data>>4)&0x0f);
+   978                           ;main.c: 435: PORTC |= ((data>>4)&0x0f);
    979  000A5C  3802               	swapf	WriteDataLCD@data,w,c
    980  000A5E  0B0F               	andlw	15
    981  000A60  0B0F               	andlw	15
    982  000A62  1282               	iorwf	3970,f,c	;volatile
    983                           
-   984                           ;xlcd.c: 244: LATCbits.LATC4 = 1;
+   984                           ;main.c: 437: LATCbits.LATC4 = 1;
    985  000A64  888B               	bsf	3979,4,c	;volatile
    986                           
-   987                           ;xlcd.c: 245: LATCbits.LATC5 = 0;
+   987                           ;main.c: 438: LATCbits.LATC5 = 0;
    988  000A66  9A8B               	bcf	3979,5,c	;volatile
    989                           
-   990                           ;xlcd.c: 246: DelayFor18TCY();
+   990                           ;main.c: 439: DelayFor18TCY();
    991  000A68  ECD6  F005         	call	_DelayFor18TCY	;wreg free
    992                           
-   993                           ;xlcd.c: 247: LATCbits.LATC6 = 1;
+   993                           ;main.c: 440: LATCbits.LATC6 = 1;
    994  000A6C  8C8B               	bsf	3979,6,c	;volatile
    995                           
-   996                           ;xlcd.c: 248: DelayFor18TCY();
+   996                           ;main.c: 441: DelayFor18TCY();
    997  000A6E  ECD6  F005         	call	_DelayFor18TCY	;wreg free
    998                           
-   999                           ;xlcd.c: 249: LATCbits.LATC6 = 0;
+   999                           ;main.c: 442: LATCbits.LATC6 = 0;
   1000  000A72  9C8B               	bcf	3979,6,c	;volatile
   1001                           
-  1002                           ;xlcd.c: 251: PORTC &= 0xf0;
+  1002                           ;main.c: 444: PORTC &= 0xf0;
   1003  000A74  0EF0               	movlw	240
   1004  000A76  1682               	andwf	3970,f,c	;volatile
   1005                           
-  1006                           ;xlcd.c: 252: PORTC |= (data&0x0f);
+  1006                           ;main.c: 445: PORTC |= (data&0x0f);
   1007  000A78  5002               	movf	WriteDataLCD@data,w,c
   1008  000A7A  0B0F               	andlw	15
   1009  000A7C  1282               	iorwf	3970,f,c	;volatile
   1010                           
-  1011                           ;xlcd.c: 254: DelayFor18TCY();
+  1011                           ;main.c: 447: DelayFor18TCY();
   1012  000A7E  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1013                           
-  1014                           ;xlcd.c: 255: LATCbits.LATC6 = 1;
+  1014                           ;main.c: 448: LATCbits.LATC6 = 1;
   1015  000A82  8C8B               	bsf	3979,6,c	;volatile
   1016                           
-  1017                           ;xlcd.c: 256: DelayFor18TCY();
+  1017                           ;main.c: 449: DelayFor18TCY();
   1018  000A84  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1019                           
-  1020                           ;xlcd.c: 257: LATCbits.LATC6 = 0;
+  1020                           ;main.c: 450: LATCbits.LATC6 = 0;
   1021  000A88  9C8B               	bcf	3979,6,c	;volatile
   1022                           
-  1023                           ;xlcd.c: 259: TRISC |= 0x0f;
+  1023                           ;main.c: 452: TRISC |= 0x0f;
   1024  000A8A  0E0F               	movlw	15
   1025  000A8C  1294               	iorwf	3988,f,c	;volatile
   1026  000A8E  0012               	return	
   1027                           
-  1028                           ;xlcd.c: 261: return;
+  1028                           ;main.c: 454: return;
   1029  000A90  0012               	return		;funcret
   1030  000A92                     __end_of_WriteDataLCD:
   1031                           	opt stack 0
@@ -1049,7 +1049,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1043                           
   1044 ;; *************** function _SetLCDCGRamAddr *****************
   1045 ;; Defined at:
-  1046 ;;		line 159 in file "xlcd.c"
+  1046 ;;		line 352 in file "main.c"
   1047 ;; Parameters:    Size  Location     Type
   1048 ;;  CGaddr          1    wreg     unsigned char 
   1049 ;; Auto vars:     Size  Location     Type
@@ -1087,15 +1087,15 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1081                           ;SetLCDCGRamAddr@CGaddr stored from wreg
   1082  000958  6E05               	movwf	SetLCDCGRamAddr@CGaddr,c
   1083                           
-  1084                           ;xlcd.c: 163: TRISC &= 0xf0;
+  1084                           ;main.c: 356: TRISC &= 0xf0;
   1085  00095A  0EF0               	movlw	240
   1086  00095C  1694               	andwf	3988,f,c	;volatile
   1087                           
-  1088                           ;xlcd.c: 164: PORTC &= 0xf0;
+  1088                           ;main.c: 357: PORTC &= 0xf0;
   1089  00095E  0EF0               	movlw	240
   1090  000960  1682               	andwf	3970,f,c	;volatile
   1091                           
-  1092                           ;xlcd.c: 165: PORTC |= (((CGaddr |0b01000000)>>4) & 0x0f);
+  1092                           ;main.c: 358: PORTC |= (((CGaddr |0b01000000)>>4) & 0x0f);
   1093  000962  5005               	movf	SetLCDCGRamAddr@CGaddr,w,c
   1094  000964  6E02               	movwf	??_SetLCDCGRamAddr& (0+255),c
   1095  000966  6A03               	clrf	(??_SetLCDCGRamAddr+1)& (0+255),c
@@ -1115,51 +1115,51 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1109  000980  0B0F               	andlw	15
   1110  000982  1282               	iorwf	3970,f,c	;volatile
   1111                           
-  1112                           ;xlcd.c: 167: LATCbits.LATC5 = 0;
+  1112                           ;main.c: 360: LATCbits.LATC5 = 0;
   1113  000984  9A8B               	bcf	3979,5,c	;volatile
   1114                           
-  1115                           ;xlcd.c: 168: LATCbits.LATC4 = 0;
+  1115                           ;main.c: 361: LATCbits.LATC4 = 0;
   1116  000986  988B               	bcf	3979,4,c	;volatile
   1117                           
-  1118                           ;xlcd.c: 169: DelayFor18TCY();
+  1118                           ;main.c: 362: DelayFor18TCY();
   1119  000988  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1120                           
-  1121                           ;xlcd.c: 170: LATCbits.LATC6 = 1;
+  1121                           ;main.c: 363: LATCbits.LATC6 = 1;
   1122  00098C  8C8B               	bsf	3979,6,c	;volatile
   1123                           
-  1124                           ;xlcd.c: 171: DelayFor18TCY();
+  1124                           ;main.c: 364: DelayFor18TCY();
   1125  00098E  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1126                           
-  1127                           ;xlcd.c: 172: LATCbits.LATC6 = 0;
+  1127                           ;main.c: 365: LATCbits.LATC6 = 0;
   1128  000992  9C8B               	bcf	3979,6,c	;volatile
   1129                           
-  1130                           ;xlcd.c: 174: PORTC &= 0xf0;
+  1130                           ;main.c: 367: PORTC &= 0xf0;
   1131  000994  0EF0               	movlw	240
   1132  000996  1682               	andwf	3970,f,c	;volatile
   1133                           
-  1134                           ;xlcd.c: 175: PORTC |= (CGaddr&0x0f);
+  1134                           ;main.c: 368: PORTC |= (CGaddr&0x0f);
   1135  000998  5005               	movf	SetLCDCGRamAddr@CGaddr,w,c
   1136  00099A  0B0F               	andlw	15
   1137  00099C  1282               	iorwf	3970,f,c	;volatile
   1138                           
-  1139                           ;xlcd.c: 177: DelayFor18TCY();
+  1139                           ;main.c: 370: DelayFor18TCY();
   1140  00099E  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1141                           
-  1142                           ;xlcd.c: 178: LATCbits.LATC6 = 1;
+  1142                           ;main.c: 371: LATCbits.LATC6 = 1;
   1143  0009A2  8C8B               	bsf	3979,6,c	;volatile
   1144                           
-  1145                           ;xlcd.c: 179: DelayFor18TCY();
+  1145                           ;main.c: 372: DelayFor18TCY();
   1146  0009A4  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1147                           
-  1148                           ;xlcd.c: 180: LATCbits.LATC6 = 0;
+  1148                           ;main.c: 373: LATCbits.LATC6 = 0;
   1149  0009A8  9C8B               	bcf	3979,6,c	;volatile
   1150                           
-  1151                           ;xlcd.c: 182: TRISC |= 0x0f;
+  1151                           ;main.c: 375: TRISC |= 0x0f;
   1152  0009AA  0E0F               	movlw	15
   1153  0009AC  1294               	iorwf	3988,f,c	;volatile
   1154  0009AE  0012               	return	
   1155                           
-  1156                           ;xlcd.c: 183: return;
+  1156                           ;main.c: 376: return;
   1157  0009B0  0012               	return		;funcret
   1158  0009B2                     __end_of_SetLCDCGRamAddr:
   1159                           	opt stack 0
@@ -1177,7 +1177,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1171                           
   1172 ;; *************** function _InitLCD *****************
   1173 ;; Defined at:
-  1174 ;;		line 6 in file "xlcd.c"
+  1174 ;;		line 199 in file "main.c"
   1175 ;; Parameters:    Size  Location     Type
   1176 ;;		None
   1177 ;; Auto vars:     Size  Location     Type
@@ -1213,25 +1213,25 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1207  000B38                     _InitLCD:
   1208                           	opt stack 26
   1209                           
-  1210                           ;xlcd.c: 7: OpenLCD(0b00101100 & 0b00111000);
+  1210                           ;main.c: 200: OpenLCD(0b00101100 & 0b00111000);
   1211                           
   1212                           ;incstack = 0
   1213  000B38  0E28               	movlw	40
   1214  000B3A  ECA1  F003         	call	_OpenLCD
   1215                           
-  1216                           ;xlcd.c: 8: while(BusyLCD());
-  1217  000B3E  D000               	goto	l992
-  1218  000B40                     l992:
+  1216                           ;main.c: 201: while(BusyLCD());
+  1217  000B3E  D000               	goto	l984
+  1218  000B40                     l984:
   1219  000B40  EC69  F005         	call	_BusyLCD	;wreg free
   1220  000B44  0900               	iorlw	0
   1221  000B46  A4D8               	btfss	status,2,c
-  1222  000B48  D7FB               	goto	l992
+  1222  000B48  D7FB               	goto	l984
   1223                           
-  1224                           ;xlcd.c: 9: WriteCmdLCD(0x06);
+  1224                           ;main.c: 202: WriteCmdLCD(0x06);
   1225  000B4A  0E06               	movlw	6
   1226  000B4C  EC49  F005         	call	_WriteCmdLCD
   1227                           
-  1228                           ;xlcd.c: 10: WriteCmdLCD(0x0C);
+  1228                           ;main.c: 203: WriteCmdLCD(0x0C);
   1229  000B50  0E0C               	movlw	12
   1230  000B52  EC49  F005         	call	_WriteCmdLCD
   1231  000B56  0012               	return		;funcret
@@ -1251,7 +1251,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1245                           
   1246 ;; *************** function _OpenLCD *****************
   1247 ;; Defined at:
-  1248 ;;		line 19 in file "xlcd.c"
+  1248 ;;		line 212 in file "main.c"
   1249 ;; Parameters:    Size  Location     Type
   1250 ;;  lcdtype         1    wreg     unsigned char 
   1251 ;; Auto vars:     Size  Location     Type
@@ -1293,131 +1293,131 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1287                           ;OpenLCD@lcdtype stored from wreg
   1288  000742  6E06               	movwf	OpenLCD@lcdtype,c
   1289                           
-  1290                           ;xlcd.c: 23: TRISCbits.TRISC5 = 0;
+  1290                           ;main.c: 216: TRISCbits.TRISC5 = 0;
   1291  000744  9A94               	bcf	3988,5,c	;volatile
   1292                           
-  1293                           ;xlcd.c: 24: TRISCbits.TRISC4 = 0;
+  1293                           ;main.c: 217: TRISCbits.TRISC4 = 0;
   1294  000746  9894               	bcf	3988,4,c	;volatile
   1295                           
-  1296                           ;xlcd.c: 25: TRISCbits.TRISC6 = 0;
+  1296                           ;main.c: 218: TRISCbits.TRISC6 = 0;
   1297  000748  9C94               	bcf	3988,6,c	;volatile
   1298                           
-  1299                           ;xlcd.c: 26: LATCbits.LATC5 = 0;
+  1299                           ;main.c: 219: LATCbits.LATC5 = 0;
   1300  00074A  9A8B               	bcf	3979,5,c	;volatile
   1301                           
-  1302                           ;xlcd.c: 27: LATCbits.LATC4 = 0;
+  1302                           ;main.c: 220: LATCbits.LATC4 = 0;
   1303  00074C  988B               	bcf	3979,4,c	;volatile
   1304                           
-  1305                           ;xlcd.c: 28: LATCbits.LATC6 = 0;
+  1305                           ;main.c: 221: LATCbits.LATC6 = 0;
   1306  00074E  9C8B               	bcf	3979,6,c	;volatile
   1307                           
-  1308                           ;xlcd.c: 35: Delay100TCYx(38);
+  1308                           ;main.c: 228: Delay100TCYx(38);
   1309  000750  0E26               	movlw	38
   1310  000752  ECB8  F005         	call	_Delay100TCYx
   1311                           
-  1312                           ;xlcd.c: 38: WriteCmdLCD(0x30);
+  1312                           ;main.c: 231: WriteCmdLCD(0x30);
   1313  000756  0E30               	movlw	48
   1314  000758  EC49  F005         	call	_WriteCmdLCD
   1315                           
-  1316                           ;xlcd.c: 39: Delay10KTCYx(0x05);
+  1316                           ;main.c: 232: Delay10KTCYx(0x05);
   1317  00075C  0E05               	movlw	5
   1318  00075E  ECAC  F005         	call	_Delay10KTCYx
   1319                           
-  1320                           ;xlcd.c: 41: WriteCmdLCD(0x30);
+  1320                           ;main.c: 234: WriteCmdLCD(0x30);
   1321  000762  0E30               	movlw	48
   1322  000764  EC49  F005         	call	_WriteCmdLCD
   1323                           
-  1324                           ;xlcd.c: 42: Delay10KTCYx(0x01);
+  1324                           ;main.c: 235: Delay10KTCYx(0x01);
   1325  000768  0E01               	movlw	1
   1326  00076A  ECAC  F005         	call	_Delay10KTCYx
   1327                           
-  1328                           ;xlcd.c: 44: WriteCmdLCD(0x32);
+  1328                           ;main.c: 237: WriteCmdLCD(0x32);
   1329  00076E  0E32               	movlw	50
   1330  000770  EC49  F005         	call	_WriteCmdLCD
   1331                           
-  1332                           ;xlcd.c: 45: while( BusyLCD() );
-  1333  000774  D000               	goto	l932
-  1334  000776                     l932:
+  1332                           ;main.c: 238: while( BusyLCD() );
+  1333  000774  D000               	goto	l924
+  1334  000776                     l924:
   1335  000776  EC69  F005         	call	_BusyLCD	;wreg free
   1336  00077A  0900               	iorlw	0
   1337  00077C  B4D8               	btfsc	status,2,c
-  1338  00077E  D002               	goto	l934
-  1339  000780  D7FA               	goto	l932
+  1338  00077E  D002               	goto	l926
+  1339  000780  D7FA               	goto	l924
   1340                           
-  1341                           ;xlcd.c: 50: while(BusyLCD());
-  1342  000782  D000               	goto	l934
-  1343  000784                     l934:
+  1341                           ;main.c: 243: while(BusyLCD());
+  1342  000782  D000               	goto	l926
+  1343  000784                     l926:
   1344  000784  EC69  F005         	call	_BusyLCD	;wreg free
   1345  000788  0900               	iorlw	0
   1346  00078A  A4D8               	btfss	status,2,c
-  1347  00078C  D7FB               	goto	l934
+  1347  00078C  D7FB               	goto	l926
   1348                           
-  1349                           ;xlcd.c: 51: WriteCmdLCD(lcdtype);
+  1349                           ;main.c: 244: WriteCmdLCD(lcdtype);
   1350  00078E  5006               	movf	OpenLCD@lcdtype,w,c
   1351  000790  EC49  F005         	call	_WriteCmdLCD
   1352                           
-  1353                           ;xlcd.c: 54: while(BusyLCD());
-  1354  000794  D000               	goto	l938
-  1355  000796                     l938:
+  1353                           ;main.c: 247: while(BusyLCD());
+  1354  000794  D000               	goto	l930
+  1355  000796                     l930:
   1356  000796  EC69  F005         	call	_BusyLCD	;wreg free
   1357  00079A  0900               	iorlw	0
   1358  00079C  A4D8               	btfss	status,2,c
-  1359  00079E  D7FB               	goto	l938
+  1359  00079E  D7FB               	goto	l930
   1360                           
-  1361                           ;xlcd.c: 55: WriteCmdLCD(0b00001011&0b00001101&0b00001110);
+  1361                           ;main.c: 248: WriteCmdLCD(0b00001011&0b00001101&0b00001110);
   1362  0007A0  0E08               	movlw	8
   1363  0007A2  EC49  F005         	call	_WriteCmdLCD
   1364                           
-  1365                           ;xlcd.c: 56: while(BusyLCD());
-  1366  0007A6  D000               	goto	l942
-  1367  0007A8                     l942:
+  1365                           ;main.c: 249: while(BusyLCD());
+  1366  0007A6  D000               	goto	l934
+  1367  0007A8                     l934:
   1368  0007A8  EC69  F005         	call	_BusyLCD	;wreg free
   1369  0007AC  0900               	iorlw	0
   1370  0007AE  A4D8               	btfss	status,2,c
-  1371  0007B0  D7FB               	goto	l942
+  1371  0007B0  D7FB               	goto	l934
   1372                           
-  1373                           ;xlcd.c: 57: WriteCmdLCD(0b00001111&0b00001111&0b00001111);
+  1373                           ;main.c: 250: WriteCmdLCD(0b00001111&0b00001111&0b00001111);
   1374  0007B2  0E0F               	movlw	15
   1375  0007B4  EC49  F005         	call	_WriteCmdLCD
   1376                           
-  1377                           ;xlcd.c: 60: while(BusyLCD());
-  1378  0007B8  D000               	goto	l946
-  1379  0007BA                     l946:
+  1377                           ;main.c: 253: while(BusyLCD());
+  1378  0007B8  D000               	goto	l938
+  1379  0007BA                     l938:
   1380  0007BA  EC69  F005         	call	_BusyLCD	;wreg free
   1381  0007BE  0900               	iorlw	0
   1382  0007C0  A4D8               	btfss	status,2,c
-  1383  0007C2  D7FB               	goto	l946
+  1383  0007C2  D7FB               	goto	l938
   1384                           
-  1385                           ;xlcd.c: 61: WriteCmdLCD(0x01);
+  1385                           ;main.c: 254: WriteCmdLCD(0x01);
   1386  0007C4  0E01               	movlw	1
   1387  0007C6  EC49  F005         	call	_WriteCmdLCD
   1388                           
-  1389                           ;xlcd.c: 64: while(BusyLCD());
-  1390  0007CA  D000               	goto	l950
-  1391  0007CC                     l950:
+  1389                           ;main.c: 257: while(BusyLCD());
+  1390  0007CA  D000               	goto	l942
+  1391  0007CC                     l942:
   1392  0007CC  EC69  F005         	call	_BusyLCD	;wreg free
   1393  0007D0  0900               	iorlw	0
   1394  0007D2  A4D8               	btfss	status,2,c
-  1395  0007D4  D7FB               	goto	l950
+  1395  0007D4  D7FB               	goto	l942
   1396                           
-  1397                           ;xlcd.c: 65: WriteCmdLCD(0b00000100);
+  1397                           ;main.c: 258: WriteCmdLCD(0b00000100);
   1398  0007D6  0E04               	movlw	4
   1399  0007D8  EC49  F005         	call	_WriteCmdLCD
   1400                           
-  1401                           ;xlcd.c: 68: while(BusyLCD());
-  1402  0007DC  D000               	goto	l954
-  1403  0007DE                     l954:
+  1401                           ;main.c: 261: while(BusyLCD());
+  1402  0007DC  D000               	goto	l946
+  1403  0007DE                     l946:
   1404  0007DE  EC69  F005         	call	_BusyLCD	;wreg free
   1405  0007E2  0900               	iorlw	0
   1406  0007E4  A4D8               	btfss	status,2,c
-  1407  0007E6  D7FB               	goto	l954
+  1407  0007E6  D7FB               	goto	l946
   1408                           
-  1409                           ;xlcd.c: 69: SetLCDDDRamAddr(0x80);
+  1409                           ;main.c: 262: SetLCDDDRamAddr(0x80);
   1410  0007E8  0E80               	movlw	128
   1411  0007EA  ECD9  F004         	call	_SetLCDDDRamAddr
   1412  0007EE  0012               	return	
   1413                           
-  1414                           ;xlcd.c: 71: return;
+  1414                           ;main.c: 264: return;
   1415  0007F0  0012               	return		;funcret
   1416  0007F2                     __end_of_OpenLCD:
   1417                           	opt stack 0
@@ -1435,7 +1435,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1429                           
   1430 ;; *************** function _WriteCmdLCD *****************
   1431 ;; Defined at:
-  1432 ;;		line 74 in file "xlcd.c"
+  1432 ;;		line 267 in file "main.c"
   1433 ;; Parameters:    Size  Location     Type
   1434 ;;  cmd             1    wreg     unsigned char 
   1435 ;; Auto vars:     Size  Location     Type
@@ -1475,65 +1475,65 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1469                           ;WriteCmdLCD@cmd stored from wreg
   1470  000A92  6E02               	movwf	WriteCmdLCD@cmd,c
   1471                           
-  1472                           ;xlcd.c: 77: TRISC &= 0xf0;
+  1472                           ;main.c: 270: TRISC &= 0xf0;
   1473  000A94  0EF0               	movlw	240
   1474  000A96  1694               	andwf	3988,f,c	;volatile
   1475                           
-  1476                           ;xlcd.c: 78: PORTC &= 0xf0;
+  1476                           ;main.c: 271: PORTC &= 0xf0;
   1477  000A98  0EF0               	movlw	240
   1478  000A9A  1682               	andwf	3970,f,c	;volatile
   1479                           
-  1480                           ;xlcd.c: 79: PORTC |= (cmd>>4)&0x0f;
+  1480                           ;main.c: 272: PORTC |= (cmd>>4)&0x0f;
   1481  000A9C  3802               	swapf	WriteCmdLCD@cmd,w,c
   1482  000A9E  0B0F               	andlw	15
   1483  000AA0  0B0F               	andlw	15
   1484  000AA2  1282               	iorwf	3970,f,c	;volatile
   1485                           
-  1486                           ;xlcd.c: 81: LATCbits.LATC5 = 0;
+  1486                           ;main.c: 274: LATCbits.LATC5 = 0;
   1487  000AA4  9A8B               	bcf	3979,5,c	;volatile
   1488                           
-  1489                           ;xlcd.c: 82: LATCbits.LATC4 = 0;
+  1489                           ;main.c: 275: LATCbits.LATC4 = 0;
   1490  000AA6  988B               	bcf	3979,4,c	;volatile
   1491                           
-  1492                           ;xlcd.c: 83: DelayFor18TCY();
+  1492                           ;main.c: 276: DelayFor18TCY();
   1493  000AA8  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1494                           
-  1495                           ;xlcd.c: 84: LATCbits.LATC6 = 1;
+  1495                           ;main.c: 277: LATCbits.LATC6 = 1;
   1496  000AAC  8C8B               	bsf	3979,6,c	;volatile
   1497                           
-  1498                           ;xlcd.c: 85: DelayFor18TCY();
+  1498                           ;main.c: 278: DelayFor18TCY();
   1499  000AAE  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1500                           
-  1501                           ;xlcd.c: 86: LATCbits.LATC6 = 0;
+  1501                           ;main.c: 279: LATCbits.LATC6 = 0;
   1502  000AB2  9C8B               	bcf	3979,6,c	;volatile
   1503                           
-  1504                           ;xlcd.c: 88: PORTC &= 0xf0;
+  1504                           ;main.c: 281: PORTC &= 0xf0;
   1505  000AB4  0EF0               	movlw	240
   1506  000AB6  1682               	andwf	3970,f,c	;volatile
   1507                           
-  1508                           ;xlcd.c: 89: PORTC |= cmd&0x0f;
+  1508                           ;main.c: 282: PORTC |= cmd&0x0f;
   1509  000AB8  5002               	movf	WriteCmdLCD@cmd,w,c
   1510  000ABA  0B0F               	andlw	15
   1511  000ABC  1282               	iorwf	3970,f,c	;volatile
   1512                           
-  1513                           ;xlcd.c: 91: DelayFor18TCY();
+  1513                           ;main.c: 284: DelayFor18TCY();
   1514  000ABE  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1515                           
-  1516                           ;xlcd.c: 92: LATCbits.LATC6 = 1;
+  1516                           ;main.c: 285: LATCbits.LATC6 = 1;
   1517  000AC2  8C8B               	bsf	3979,6,c	;volatile
   1518                           
-  1519                           ;xlcd.c: 93: DelayFor18TCY();
+  1519                           ;main.c: 286: DelayFor18TCY();
   1520  000AC4  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1521                           
-  1522                           ;xlcd.c: 94: LATCbits.LATC6 = 0;
+  1522                           ;main.c: 287: LATCbits.LATC6 = 0;
   1523  000AC8  9C8B               	bcf	3979,6,c	;volatile
   1524                           
-  1525                           ;xlcd.c: 96: TRISC |= 0x0f;
+  1525                           ;main.c: 289: TRISC |= 0x0f;
   1526  000ACA  0E0F               	movlw	15
   1527  000ACC  1294               	iorwf	3988,f,c	;volatile
   1528  000ACE  0012               	return	
   1529                           
-  1530                           ;xlcd.c: 98: return;
+  1530                           ;main.c: 291: return;
   1531  000AD0  0012               	return		;funcret
   1532  000AD2                     __end_of_WriteCmdLCD:
   1533                           	opt stack 0
@@ -1551,7 +1551,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1545                           
   1546 ;; *************** function _SetLCDDDRamAddr *****************
   1547 ;; Defined at:
-  1548 ;;		line 132 in file "xlcd.c"
+  1548 ;;		line 325 in file "main.c"
   1549 ;; Parameters:    Size  Location     Type
   1550 ;;  DDaddr          1    wreg     unsigned char 
   1551 ;; Auto vars:     Size  Location     Type
@@ -1590,15 +1590,15 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1584                           ;SetLCDDDRamAddr@DDaddr stored from wreg
   1585  0009B2  6E05               	movwf	SetLCDDDRamAddr@DDaddr,c
   1586                           
-  1587                           ;xlcd.c: 135: TRISC &= 0xf0;
+  1587                           ;main.c: 328: TRISC &= 0xf0;
   1588  0009B4  0EF0               	movlw	240
   1589  0009B6  1694               	andwf	3988,f,c	;volatile
   1590                           
-  1591                           ;xlcd.c: 136: PORTC &= 0xf0;
+  1591                           ;main.c: 329: PORTC &= 0xf0;
   1592  0009B8  0EF0               	movlw	240
   1593  0009BA  1682               	andwf	3970,f,c	;volatile
   1594                           
-  1595                           ;xlcd.c: 137: PORTC |= (((DDaddr | 0b10000000)>>4) & 0x0f);
+  1595                           ;main.c: 330: PORTC |= (((DDaddr | 0b10000000)>>4) & 0x0f);
   1596  0009BC  5005               	movf	SetLCDDDRamAddr@DDaddr,w,c
   1597  0009BE  6E02               	movwf	??_SetLCDDDRamAddr& (0+255),c
   1598  0009C0  6A03               	clrf	(??_SetLCDDDRamAddr+1)& (0+255),c
@@ -1615,51 +1615,51 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1609  0009D4  0B0F               	andlw	15
   1610  0009D6  1282               	iorwf	3970,f,c	;volatile
   1611                           
-  1612                           ;xlcd.c: 139: LATCbits.LATC5 = 0;
+  1612                           ;main.c: 332: LATCbits.LATC5 = 0;
   1613  0009D8  9A8B               	bcf	3979,5,c	;volatile
   1614                           
-  1615                           ;xlcd.c: 140: LATCbits.LATC4 = 0;
+  1615                           ;main.c: 333: LATCbits.LATC4 = 0;
   1616  0009DA  988B               	bcf	3979,4,c	;volatile
   1617                           
-  1618                           ;xlcd.c: 141: DelayFor18TCY();
+  1618                           ;main.c: 334: DelayFor18TCY();
   1619  0009DC  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1620                           
-  1621                           ;xlcd.c: 142: LATCbits.LATC6 = 1;
+  1621                           ;main.c: 335: LATCbits.LATC6 = 1;
   1622  0009E0  8C8B               	bsf	3979,6,c	;volatile
   1623                           
-  1624                           ;xlcd.c: 143: DelayFor18TCY();
+  1624                           ;main.c: 336: DelayFor18TCY();
   1625  0009E2  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1626                           
-  1627                           ;xlcd.c: 144: LATCbits.LATC6 = 0;
+  1627                           ;main.c: 337: LATCbits.LATC6 = 0;
   1628  0009E6  9C8B               	bcf	3979,6,c	;volatile
   1629                           
-  1630                           ;xlcd.c: 146: PORTC &= 0xf0;
+  1630                           ;main.c: 339: PORTC &= 0xf0;
   1631  0009E8  0EF0               	movlw	240
   1632  0009EA  1682               	andwf	3970,f,c	;volatile
   1633                           
-  1634                           ;xlcd.c: 147: PORTC |= (DDaddr&0x0f);
+  1634                           ;main.c: 340: PORTC |= (DDaddr&0x0f);
   1635  0009EC  5005               	movf	SetLCDDDRamAddr@DDaddr,w,c
   1636  0009EE  0B0F               	andlw	15
   1637  0009F0  1282               	iorwf	3970,f,c	;volatile
   1638                           
-  1639                           ;xlcd.c: 149: DelayFor18TCY();
+  1639                           ;main.c: 342: DelayFor18TCY();
   1640  0009F2  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1641                           
-  1642                           ;xlcd.c: 150: LATCbits.LATC6 = 1;
+  1642                           ;main.c: 343: LATCbits.LATC6 = 1;
   1643  0009F6  8C8B               	bsf	3979,6,c	;volatile
   1644                           
-  1645                           ;xlcd.c: 151: DelayFor18TCY();
+  1645                           ;main.c: 344: DelayFor18TCY();
   1646  0009F8  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1647                           
-  1648                           ;xlcd.c: 152: LATCbits.LATC6 = 0;
+  1648                           ;main.c: 345: LATCbits.LATC6 = 0;
   1649  0009FC  9C8B               	bcf	3979,6,c	;volatile
   1650                           
-  1651                           ;xlcd.c: 154: TRISC |= 0x0f;
+  1651                           ;main.c: 347: TRISC |= 0x0f;
   1652  0009FE  0E0F               	movlw	15
   1653  000A00  1294               	iorwf	3988,f,c	;volatile
   1654  000A02  0012               	return	
   1655                           
-  1656                           ;xlcd.c: 156: return;
+  1656                           ;main.c: 349: return;
   1657  000A04  0012               	return		;funcret
   1658  000A06                     __end_of_SetLCDDDRamAddr:
   1659                           	opt stack 0
@@ -1722,7 +1722,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1716  000B64  2E01               	decfsz	??_Delay10KTCYx& (0+255),f,c
   1717  000B66  D7FC               	goto	u387
   1718  000B68  2E02               	decfsz	Delay10KTCYx@unit,f,c
-  1719  000B6A  D7F7               	goto	l868
+  1719  000B6A  D7F7               	goto	l860
   1720  000B6C  0012               	return	
   1721  000B6E  0012               	return		;funcret
   1722  000B70                     __end_of_Delay10KTCYx:
@@ -1784,7 +1784,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1778  000B76  D7FE               	goto	u397
   1779  000B78  F000               	nop	
   1780  000B7A  2E01               	decfsz	Delay100TCYx@unit,f,c
-  1781  000B7C  D7FA               	goto	l864
+  1781  000B7C  D7FA               	goto	l856
   1782  000B7E  0012               	return	
   1783  000B80  0012               	return		;funcret
   1784  000B82                     __end_of_Delay100TCYx:
@@ -1804,7 +1804,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1798                           
   1799 ;; *************** function _BusyLCD *****************
   1800 ;; Defined at:
-  1801 ;;		line 101 in file "xlcd.c"
+  1801 ;;		line 294 in file "main.c"
   1802 ;; Parameters:    Size  Location     Type
   1803 ;;		None
   1804 ;; Auto vars:     Size  Location     Type
@@ -1840,74 +1840,74 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1834  000AD2                     _BusyLCD:
   1835                           	opt stack 27
   1836                           
-  1837                           ;xlcd.c: 103: LATCbits.LATC5 = 1;
+  1837                           ;main.c: 296: LATCbits.LATC5 = 1;
   1838                           
   1839                           ;incstack = 0
   1840  000AD2  8A8B               	bsf	3979,5,c	;volatile
   1841                           
-  1842                           ;xlcd.c: 104: LATCbits.LATC4 = 0;
+  1842                           ;main.c: 297: LATCbits.LATC4 = 0;
   1843  000AD4  988B               	bcf	3979,4,c	;volatile
   1844                           
-  1845                           ;xlcd.c: 105: DelayFor18TCY();
+  1845                           ;main.c: 298: DelayFor18TCY();
   1846  000AD6  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1847                           
-  1848                           ;xlcd.c: 106: LATCbits.LATC6 = 1;
+  1848                           ;main.c: 299: LATCbits.LATC6 = 1;
   1849  000ADA  8C8B               	bsf	3979,6,c	;volatile
   1850                           
-  1851                           ;xlcd.c: 107: DelayFor18TCY();
+  1851                           ;main.c: 300: DelayFor18TCY();
   1852  000ADC  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1853                           
-  1854                           ;xlcd.c: 109: if(PORTC&0x08)
+  1854                           ;main.c: 302: if(PORTC&0x08)
   1855  000AE0  A682               	btfss	3970,3,c	;volatile
-  1856  000AE2  D00A               	goto	l97
+  1856  000AE2  D00A               	goto	l89
   1857                           
-  1858                           ;xlcd.c: 110: {
-  1859                           ;xlcd.c: 111: LATCbits.LATC6 = 0;
+  1858                           ;main.c: 303: {
+  1859                           ;main.c: 304: LATCbits.LATC6 = 0;
   1860  000AE4  9C8B               	bcf	3979,6,c	;volatile
   1861                           
-  1862                           ;xlcd.c: 112: DelayFor18TCY();
+  1862                           ;main.c: 305: DelayFor18TCY();
   1863  000AE6  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1864                           
-  1865                           ;xlcd.c: 113: LATCbits.LATC6 = 1;
+  1865                           ;main.c: 306: LATCbits.LATC6 = 1;
   1866  000AEA  8C8B               	bsf	3979,6,c	;volatile
   1867                           
-  1868                           ;xlcd.c: 114: DelayFor18TCY();
+  1868                           ;main.c: 307: DelayFor18TCY();
   1869  000AEC  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1870                           
-  1871                           ;xlcd.c: 115: LATCbits.LATC6 = 0;
+  1871                           ;main.c: 308: LATCbits.LATC6 = 0;
   1872  000AF0  9C8B               	bcf	3979,6,c	;volatile
   1873                           
-  1874                           ;xlcd.c: 116: LATCbits.LATC5 = 0;
+  1874                           ;main.c: 309: LATCbits.LATC5 = 0;
   1875  000AF2  9A8B               	bcf	3979,5,c	;volatile
   1876                           
-  1877                           ;xlcd.c: 117: return 1;
+  1877                           ;main.c: 310: return 1;
   1878  000AF4  0E01               	movlw	1
   1879                           
-  1880                           ;xlcd.c: 118: }
+  1880                           ;main.c: 311: }
   1881  000AF6  0012               	return	
-  1882  000AF8                     l97:
+  1882  000AF8                     l89:
   1883                           
-  1884                           ;xlcd.c: 119: else
-  1885                           ;xlcd.c: 120: {
-  1886                           ;xlcd.c: 121: LATCbits.LATC6 = 0;
+  1884                           ;main.c: 312: else
+  1885                           ;main.c: 313: {
+  1886                           ;main.c: 314: LATCbits.LATC6 = 0;
   1887  000AF8  9C8B               	bcf	3979,6,c	;volatile
   1888                           
-  1889                           ;xlcd.c: 122: DelayFor18TCY();
+  1889                           ;main.c: 315: DelayFor18TCY();
   1890  000AFA  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1891                           
-  1892                           ;xlcd.c: 123: LATCbits.LATC6 = 1;
+  1892                           ;main.c: 316: LATCbits.LATC6 = 1;
   1893  000AFE  8C8B               	bsf	3979,6,c	;volatile
   1894                           
-  1895                           ;xlcd.c: 124: DelayFor18TCY();
+  1895                           ;main.c: 317: DelayFor18TCY();
   1896  000B00  ECD6  F005         	call	_DelayFor18TCY	;wreg free
   1897                           
-  1898                           ;xlcd.c: 125: LATCbits.LATC6 = 0;
+  1898                           ;main.c: 318: LATCbits.LATC6 = 0;
   1899  000B04  9C8B               	bcf	3979,6,c	;volatile
   1900                           
-  1901                           ;xlcd.c: 126: LATCbits.LATC5 = 0;
+  1901                           ;main.c: 319: LATCbits.LATC5 = 0;
   1902  000B06  9A8B               	bcf	3979,5,c	;volatile
   1903                           
-  1904                           ;xlcd.c: 127: return 0;
+  1904                           ;main.c: 320: return 0;
   1905  000B08  0E00               	movlw	0
   1906  000B0A  0012               	return	
   1907  000B0C  0012               	return		;funcret
@@ -1928,7 +1928,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1922                           
   1923 ;; *************** function _DelayFor18TCY *****************
   1924 ;; Defined at:
-  1925 ;;		line 13 in file "xlcd.c"
+  1925 ;;		line 206 in file "main.c"
   1926 ;; Parameters:    Size  Location     Type
   1927 ;;		None
   1928 ;; Auto vars:     Size  Location     Type
@@ -1966,7 +1966,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1960  000BAC                     _DelayFor18TCY:
   1961                           	opt stack 27
   1962                           
-  1963                           ;xlcd.c: 15: Delay1TCYx(18);
+  1963                           ;main.c: 208: Delay1TCYx(18);
   1964                           
   1965                           ;incstack = 0
   1966  000BAC  0E12               	movlw	18
@@ -2025,10 +2025,10 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   2019                           ;incstack = 0
   2020                           ;Delay1TCYx@unit stored from wreg
   2021  000BA0  6E01               	movwf	Delay1TCYx@unit,c
-  2022  000BA2                     l367:
+  2022  000BA2                     l359:
   2023  000BA2  F000               	nop	
   2024  000BA4  2E01               	decfsz	Delay1TCYx@unit,f,c
-  2025  000BA6  D7FD               	goto	l367
+  2025  000BA6  D7FD               	goto	l359
   2026  000BA8  0012               	return	
   2027  000BAA  0012               	return		;funcret
   2028  000BAC                     __end_of_Delay1TCYx:
@@ -2090,7 +2090,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   2084  000B88  2EE8               	decfsz	wreg,f,c
   2085  000B8A  D7FD               	goto	u407
   2086  000B8C  2E01               	decfsz	Delay1KTCYx@unit,f,c
-  2087  000B8E  D7FA               	goto	l1024
+  2087  000B8E  D7FA               	goto	l1016
   2088  000B90  0012               	return	
   2089  000B92  0012               	return		;funcret
   2090  000B94                     __end_of_Delay1KTCYx:
@@ -2369,25 +2369,25 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
-Symbol Table                                                                                   Tue Apr 14 12:48:36 2015
+Symbol Table                                                                                   Mon Apr 20 20:03:09 2015
 
-                      l97 0AF8                        u15 09C8      __size_of_WriteCmdLCD 0040  
+                      l89 0AF8                        u15 09C8      __size_of_WriteCmdLCD 0040  
             __CFG_CP0$OFF 000000              __CFG_CP1$OFF 000000              __CFG_CP2$OFF 000000  
-            __CFG_CP3$OFF 000000                       l367 0BA2                       l683 094E  
-                     l932 0776                       l693 0A48                       l589 0876  
-                     l950 07CC                       l942 07A8                       l934 0784  
-                     l864 0B72                       l954 07DE                       l946 07BA  
-                     l938 0796                       l868 0B5A                       l992 0B40  
+            __CFG_CP3$OFF 000000                       l359 0BA2                       l581 0876  
+                     l930 0796                       l675 094E                       l860 0B5A  
+                     l924 0776                       l685 0A48                       l942 07CC  
+                     l934 07A8                       l926 0784                       l856 0B72  
+                     l946 07DE                       l938 07BA                       l984 0B40  
             __CFG_CPB$OFF 000000                       u320 08CA                       u330 08F4  
                      u245 0974                       u407 0B86                       u327 08C0  
                      u337 08EA              __CFG_CPD$OFF 000000                       u387 0B60  
                      u397 0B74              __CFG_BORV$30 000000     __size_of_WriteDataLCD 0040  
                      wreg 000FE8              __CFG_LVP$OFF 000000                _Delay1TCYx 0BA0  
-                    l1024 0B84                      l1140 0924                      l1136 0912  
-                    l1160 0A26                      l1170 08A0                      l1138 091C  
-                    l1148 0942                      l1164 0A3C                      l1156 0A14  
-                    l1180 07FC                      l1158 0A1E                      l1190 0838  
-                    l1176 08D4                      l1272 06DE                      STR_1 060D  
+                    l1016 0B84                      l1130 091C                      l1140 0942  
+                    l1132 0924                      l1150 0A1E                      l1128 0912  
+                    l1152 0A26                      l1162 08A0                      l1156 0A3C  
+                    l1148 0A14                      l1172 07FC                      l1182 0838  
+                    l1168 08D4                      l1264 06DE                      STR_1 060D  
                     STR_2 0601                      _LATD 000F8C                      _main 0618  
    SetLCDDDRamAddr@DDaddr 0005                      fsr0h 000FEA                      indf0 000FEF  
                     fsr0l 000FE9                      fsr2h 000FDA                      indf2 000FDF  
