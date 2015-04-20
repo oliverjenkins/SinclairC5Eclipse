@@ -45,35 +45,36 @@
  * 1    GND
  * 2    VDD
  * 3    Contrast adjustment 10k pot, output reads 2.7v from 4.2v supply
- * 4    RS - Read Select    PortC.RC4		LCD_RS_PIN
- * 5    RW - Read/Write     PortC.RC5		LCD_RW_PIN
- * 6    E -  Enable         PortC.RC6		LCD_E_PIN
+ * 4    RS - Read Select    PortE.RD4		LCD_RS_PIN
+ * 5    RW - Read/Write     PortE.RD5		LCD_RW_PIN
+ * 6    E -  Enable         PortE.RD6		LCD_E_PIN
  * 7    GND
  * 8    GND
  * 9    GND
  * 10   GND
- * 11   Data                PortC.RC0
- * 12   Data                PortC.RC1
- * 13   Data                PortC.RC2
- * 14   Data                PortC.RC3
+ * 11   Data                PortD.RD0
+ * 12   Data                PortD.RD1
+ * 13   Data                PortD.RD2
+ * 14   Data                PortD.RD3
  * Created on 14 April 2015, 11:41
  */
 
 
- #define LCD_DATA_PORT      		PORTC
- #define LCD_TRIS_DATA_PORT 		TRISC
+ #define LCD_DATA_PORT      		PORTD
+ #define LCD_TRIS_DATA_PORT 		TRISD
 
 /* CTRL_PORT defines the port where the control lines are connected.
  * These are just samples, change to match your application.
  */
- #define LCD_RW_PIN   LATCbits.LATC5   		/* PORT for RW */
- #define LCD_TRIS_RW  TRISCbits.TRISC5    	/* TRIS for RW */
 
- #define LCD_RS_PIN   LATCbits.LATC4   		/* PORT for RS */
- #define LCD_TRIS_RS  TRISCbits.TRISC4    	/* TRIS for RS */
+ #define LCD_RS_PIN   LATDbits.LATD4   		/* PORT for RS */
+ #define LCD_TRIS_RS  TRISDbits.TRISD4    	/* TRIS for RS */
 
- #define LCD_E_PIN    LATCbits.LATC6  		/* PORT for D  */
- #define LCD_TRIS_E   TRISCbits.TRISC6    	/* TRIS for E  */
+ #define LCD_RW_PIN   LATDbits.LATD5   		/* PORT for RW */
+ #define LCD_TRIS_RW  TRISDbits.TRISD5    	/* TRIS for RW */
+
+ #define LCD_E_PIN    LATDbits.LATD6  		/* PORT for D  */
+ #define LCD_TRIS_E   TRISDbits.TRISD6    	/* TRIS for E  */
 
 /* Display ON/OFF Control defines */
 #define DON         0b00001111  /* Display on      */
@@ -117,10 +118,6 @@ unsigned char counter;  // 8-bit variable
 /** M A I N   F U N C T I O N ***************************************/
 void main (void)
 {
-
-    TRISD = 0b00000000;
-    LATD = 0;
-
     InitLCD();
     // Create first custom char
     SetLCDCGRamAddr(0x00);
@@ -150,7 +147,7 @@ void main (void)
     putIntLCD(3455);
 
     SetLCDDDRamAddr(0x040);         // Cursor to second line
-    putLCD("Line 2   ");
+    putLCD("Line 000 ");
 
     WriteDataLCD(0);              // Write First Custom Char
     WriteDataLCD(1);              // Write Second Custom Char
@@ -162,32 +159,7 @@ void main (void)
 
     while (1)
     {
-        LATDbits.LD0 = 1;
-        Delay1KTCYx(10);
-
-        LATDbits.LD1 = 1;
-        Delay1KTCYx(10);
-
-        LATDbits.LD2 = 1;
-        Delay1KTCYx(10);
-
-        LATDbits.LD3 = 1;
-        Delay1KTCYx(10);
-
-        LATDbits.LD4 = 1;
-        Delay1KTCYx(10);
-
-        LATDbits.LD5 = 1;
-        Delay1KTCYx(10);
-
-        LATDbits.LD6 = 1;
-        Delay1KTCYx(10);
-
-        LATDbits.LD7 = 1;
-        Delay1KTCYx(10);
-
-        LATD = 0;
-        Delay1KTCYx(10);
+        Delay1KTCYx(100);
 
         // Move the cursor to a specific location and display a counter
         counter = counter + 1;

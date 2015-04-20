@@ -5336,10 +5336,6 @@ unsigned char counter;
 
 void main (void)
 {
-
-TRISD = 0b00000000;
-LATD = 0;
-
 InitLCD();
 
 SetLCDCGRamAddr(0x00);
@@ -5369,7 +5365,7 @@ putLCD("Testing 2");
 putIntLCD(3455);
 
 SetLCDDDRamAddr(0x040);
-putLCD("Line 2   ");
+putLCD("Line 000 ");
 
 WriteDataLCD(0);
 WriteDataLCD(1);
@@ -5381,32 +5377,7 @@ counter = 100;
 
 while (1)
 {
-LATDbits.LD0 = 1;
-Delay1KTCYx(10);
-
-LATDbits.LD1 = 1;
-Delay1KTCYx(10);
-
-LATDbits.LD2 = 1;
-Delay1KTCYx(10);
-
-LATDbits.LD3 = 1;
-Delay1KTCYx(10);
-
-LATDbits.LD4 = 1;
-Delay1KTCYx(10);
-
-LATDbits.LD5 = 1;
-Delay1KTCYx(10);
-
-LATDbits.LD6 = 1;
-Delay1KTCYx(10);
-
-LATDbits.LD7 = 1;
-Delay1KTCYx(10);
-
-LATD = 0;
-Delay1KTCYx(10);
+Delay1KTCYx(100);
 
 
 counter = counter + 1;
@@ -5433,14 +5404,14 @@ void OpenLCD(unsigned char lcdtype)
 {
 
 
-TRISCbits.TRISC5 = 0;
-TRISCbits.TRISC4 = 0;
-TRISCbits.TRISC6 = 0;
-LATCbits.LATC5 = 0;
-LATCbits.LATC4 = 0;
-LATCbits.LATC6 = 0;
+TRISDbits.TRISD5 = 0;
+TRISDbits.TRISD4 = 0;
+TRISDbits.TRISD6 = 0;
+LATDbits.LATD5 = 0;
+LATDbits.LATD4 = 0;
+LATDbits.LATD6 = 0;
 
-# 229
+# 200
 Delay100TCYx(38);
 
 
@@ -5483,56 +5454,56 @@ return;
 void WriteCmdLCD(unsigned char cmd)
 {
 
-TRISC &= 0xf0;
-PORTC &= 0xf0;
-PORTC |= (cmd>>4)&0x0f;
+TRISD &= 0xf0;
+PORTD &= 0xf0;
+PORTD |= (cmd>>4)&0x0f;
 
-LATCbits.LATC5 = 0;
-LATCbits.LATC4 = 0;
+LATDbits.LATD5 = 0;
+LATDbits.LATD4 = 0;
 DelayFor18TCY();
-LATCbits.LATC6 = 1;
+LATDbits.LATD6 = 1;
 DelayFor18TCY();
-LATCbits.LATC6 = 0;
+LATDbits.LATD6 = 0;
 
-PORTC &= 0xf0;
-PORTC |= cmd&0x0f;
+PORTD &= 0xf0;
+PORTD |= cmd&0x0f;
 
 DelayFor18TCY();
-LATCbits.LATC6 = 1;
+LATDbits.LATD6 = 1;
 DelayFor18TCY();
-LATCbits.LATC6 = 0;
+LATDbits.LATD6 = 0;
 
-TRISC |= 0x0f;
+TRISD |= 0x0f;
 
 return;
 }
 
 unsigned char BusyLCD(void)
 {
-LATCbits.LATC5 = 1;
-LATCbits.LATC4 = 0;
+LATDbits.LATD5 = 1;
+LATDbits.LATD4 = 0;
 DelayFor18TCY();
-LATCbits.LATC6 = 1;
+LATDbits.LATD6 = 1;
 DelayFor18TCY();
 
-if(PORTC&0x08)
+if(PORTD&0x08)
 {
-LATCbits.LATC6 = 0;
+LATDbits.LATD6 = 0;
 DelayFor18TCY();
-LATCbits.LATC6 = 1;
+LATDbits.LATD6 = 1;
 DelayFor18TCY();
-LATCbits.LATC6 = 0;
-LATCbits.LATC5 = 0;
+LATDbits.LATD6 = 0;
+LATDbits.LATD5 = 0;
 return 1;
 }
 else
 {
-LATCbits.LATC6 = 0;
+LATDbits.LATD6 = 0;
 DelayFor18TCY();
-LATCbits.LATC6 = 1;
+LATDbits.LATD6 = 1;
 DelayFor18TCY();
-LATCbits.LATC6 = 0;
-LATCbits.LATC5 = 0;
+LATDbits.LATD6 = 0;
+LATDbits.LATD5 = 0;
 return 0;
 }
 }
@@ -5541,26 +5512,26 @@ return 0;
 void SetLCDDDRamAddr(unsigned char DDaddr)
 {
 
-TRISC &= 0xf0;
-PORTC &= 0xf0;
-PORTC |= (((DDaddr | 0b10000000)>>4) & 0x0f);
+TRISD &= 0xf0;
+PORTD &= 0xf0;
+PORTD |= (((DDaddr | 0b10000000)>>4) & 0x0f);
 
-LATCbits.LATC5 = 0;
-LATCbits.LATC4 = 0;
+LATDbits.LATD5 = 0;
+LATDbits.LATD4 = 0;
 DelayFor18TCY();
-LATCbits.LATC6 = 1;
+LATDbits.LATD6 = 1;
 DelayFor18TCY();
-LATCbits.LATC6 = 0;
+LATDbits.LATD6 = 0;
 
-PORTC &= 0xf0;
-PORTC |= (DDaddr&0x0f);
+PORTD &= 0xf0;
+PORTD |= (DDaddr&0x0f);
 
 DelayFor18TCY();
-LATCbits.LATC6 = 1;
+LATDbits.LATD6 = 1;
 DelayFor18TCY();
-LATCbits.LATC6 = 0;
+LATDbits.LATD6 = 0;
 
-TRISC |= 0x0f;
+TRISD |= 0x0f;
 
 return;
 }
@@ -5569,26 +5540,26 @@ void SetLCDCGRamAddr(unsigned char CGaddr)
 {
 
 
-TRISC &= 0xf0;
-PORTC &= 0xf0;
-PORTC |= (((CGaddr |0b01000000)>>4) & 0x0f);
+TRISD &= 0xf0;
+PORTD &= 0xf0;
+PORTD |= (((CGaddr |0b01000000)>>4) & 0x0f);
 
-LATCbits.LATC5 = 0;
-LATCbits.LATC4 = 0;
+LATDbits.LATD5 = 0;
+LATDbits.LATD4 = 0;
 DelayFor18TCY();
-LATCbits.LATC6 = 1;
+LATDbits.LATD6 = 1;
 DelayFor18TCY();
-LATCbits.LATC6 = 0;
+LATDbits.LATD6 = 0;
 
-PORTC &= 0xf0;
-PORTC |= (CGaddr&0x0f);
+PORTD &= 0xf0;
+PORTD |= (CGaddr&0x0f);
 
 DelayFor18TCY();
-LATCbits.LATC6 = 1;
+LATDbits.LATD6 = 1;
 DelayFor18TCY();
-LATCbits.LATC6 = 0;
+LATDbits.LATD6 = 0;
 
-TRISC |= 0x0f;
+TRISD |= 0x0f;
 return;
 }
 
@@ -5599,7 +5570,7 @@ unsigned char result[4];
 utoa((char*)result, n, 10);
 putLCD(result);
 
-# 418
+# 389
 }
 
 void putLCD(char *buffer)
@@ -5616,26 +5587,26 @@ return;
 void WriteDataLCD(char data)
 {
 
-TRISC &= 0xf0;
-PORTC &= 0xf0;
-PORTC |= ((data>>4)&0x0f);
+TRISD &= 0xf0;
+PORTD &= 0xf0;
+PORTD |= ((data>>4)&0x0f);
 
-LATCbits.LATC4 = 1;
-LATCbits.LATC5 = 0;
+LATDbits.LATD4 = 1;
+LATDbits.LATD5 = 0;
 DelayFor18TCY();
-LATCbits.LATC6 = 1;
+LATDbits.LATD6 = 1;
 DelayFor18TCY();
-LATCbits.LATC6 = 0;
+LATDbits.LATD6 = 0;
 
-PORTC &= 0xf0;
-PORTC |= (data&0x0f);
+PORTD &= 0xf0;
+PORTD |= (data&0x0f);
 
 DelayFor18TCY();
-LATCbits.LATC6 = 1;
+LATDbits.LATD6 = 1;
 DelayFor18TCY();
-LATCbits.LATC6 = 0;
+LATDbits.LATD6 = 0;
 
-TRISC |= 0x0f;
+TRISD |= 0x0f;
 
 return;
 }

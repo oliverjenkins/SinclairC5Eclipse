@@ -71,9 +71,9 @@ Operation Mode          1 Digital input
  * 3    RD5/PSP5/P1B                RD5     D       5   PWM - Motor driver Half Bridge
  * 4    RD6/PSP6/P1C                RD6     D       6   
  * 5    RD7/PSP7/P1D                RD7     D       7   
- * 25   RE0/RD/AN5                  RE0     E       0   LCD - Enable
- * 26   RE1/WR/AN6                  RE1     E       1   LCD - RW
- * 27   RE2/CS/AN7                  RE2     E       2   LCD - Reg/Select
+ * 25   RE0/RD/AN5                  RE0     E       0   LCD - Read Select
+ * 26   RE1/WR/AN6                  RE1     E       1   LCD - Read/Write
+ * 27   RE2/CS/AN7                  RE2     E       2   LCD - Enable
 
 [1] By using a matrix selection circuit RA3 - RA6 can be used as a matrix to select which battery voltage to check
     This arrangement allows up to 15 batteries to be checked. With RA7 we get 31 batteries.
