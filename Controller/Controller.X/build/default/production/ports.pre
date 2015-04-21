@@ -5240,7 +5240,11 @@ WPUBbits.WPUB0 = 1;
 
 TRISB = 0b00110111;
 
-# 73
+
+
+TRISCbits.RC2 = 0;
+
+# 79
 TRISD = 0b00010000;
 }
 
@@ -5255,4 +5259,18 @@ INTCONbits.INT0IE = 1;
 RCONbits.IPEN = 1;
 INTCONbits.GIEL = 1;
 INTCONbits.GIEH = 1;
+}
+
+void InitMotorPWM(void) {
+
+CCP1CON = 0b00001100;
+
+
+PR2 = 255;
+
+
+T2CON = 0b00001100;
+
+
+CCPR1L = 0;
 }

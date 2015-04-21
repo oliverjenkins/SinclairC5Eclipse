@@ -82,3 +82,6 @@ unsigned char BusyLCD(void);
 void putLCD(char *buffer);
 void putIntLCD(short int n);
 void WriteDataLCD(char data);
+
+// Utiltity Methods
+void LCDInitialDisplay(void);

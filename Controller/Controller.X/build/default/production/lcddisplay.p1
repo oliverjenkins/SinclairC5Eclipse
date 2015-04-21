@@ -1,10 +1,20 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"77 lcddisplay.h
+"79 lcddisplay.h
+[v _SetLCDCGRamAddr `(v ~T0 @X0 0 ef1`uc ]
+"84
+[v _WriteDataLCD `(v ~T0 @X0 0 ef1`uc ]
+"78
+[v _WriteCmdLCD `(v ~T0 @X0 0 ef1`uc ]
+"82
+[v _putLCD `(v ~T0 @X0 0 ef1`*uc ]
+"83
+[v _putIntLCD `(v ~T0 @X0 0 ef1`s ]
+"80
+[v _SetLCDDDRamAddr `(v ~T0 @X0 0 ef1`uc ]
+"77
 [v _OpenLCD `(v ~T0 @X0 0 ef1`uc ]
 "81
 [v _BusyLCD `(uc ~T0 @X0 0 ef ]
-"78
-[v _WriteCmdLCD `(v ~T0 @X0 0 ef1`uc ]
 "13 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h
 [v _Delay1TCYx `(v ~T0 @X0 0 ef1`uc ]
 "25
@@ -60,14 +70,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Delay10KTCYx `(v ~T0 @X0 0 ef1`uc ]
 "104 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\xlcd.h
 [v _BusyXLCD `(uc ~T0 @X0 0 ef ]
-"80 lcddisplay.h
-[v _SetLCDDDRamAddr `(v ~T0 @X0 0 ef1`uc ]
 "109 C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h
 [v _utoa `(*uc ~T0 @X0 0 ef3`*uc`ui`i ]
-"82 lcddisplay.h
-[v _putLCD `(v ~T0 @X0 0 ef1`*uc ]
-"84
-[v _WriteDataLCD `(v ~T0 @X0 0 ef1`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f45k20.h: 49: extern volatile unsigned char SSPMSK @ 0xF77;
@@ -4028,619 +4032,707 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcddisplay.h: 82: void putLCD(char *buffer);
 [; ;lcddisplay.h: 83: void putIntLCD(short int n);
 [; ;lcddisplay.h: 84: void WriteDataLCD(char data);
-"6 lcddisplay.c
-[v _InitLCD `(v ~T0 @X0 1 ef ]
+[; ;lcddisplay.h: 87: void LCDInitialDisplay(void);
+"7 lcddisplay.c
+[v _LCDInitialDisplay `(v ~T0 @X0 1 ef ]
 {
-[; ;lcddisplay.c: 6: void InitLCD(void) {
-[e :U _InitLCD ]
+[; ;lcddisplay.c: 7: void LCDInitialDisplay(void) {
+[e :U _LCDInitialDisplay ]
 [f ]
-[; ;lcddisplay.c: 7: OpenLCD(0b00101100 & 0b00111000);
-"7
-[e ( _OpenLCD (1 -> & -> 44 `i -> 56 `i `uc ]
-[; ;lcddisplay.c: 8: while(BusyLCD());
-"8
-[e $U 418  ]
-[e :U 419 ]
-[e :U 418 ]
-[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 419  ]
-[e :U 420 ]
-[; ;lcddisplay.c: 9: WriteCmdLCD(0x06);
-"9
-[e ( _WriteCmdLCD (1 -> -> 6 `i `uc ]
-[; ;lcddisplay.c: 10: while(BusyLCD());
-"10
-[e $U 421  ]
-[e :U 422 ]
-[e :U 421 ]
-[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 422  ]
-[e :U 423 ]
-[; ;lcddisplay.c: 11: WriteCmdLCD(0x0C);
-"11
-[e ( _WriteCmdLCD (1 -> -> 12 `i `uc ]
-[; ;lcddisplay.c: 12: while(BusyLCD());
+[; ;lcddisplay.c: 12: SetLCDCGRamAddr(0x00);
 "12
-[e $U 424  ]
-[e :U 425 ]
-[e :U 424 ]
-[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 425  ]
-[e :U 426 ]
-[; ;lcddisplay.c: 13: WriteCmdLCD(0x01);
+[e ( _SetLCDCGRamAddr (1 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 13: WriteDataLCD(0b00000);
 "13
-[e ( _WriteCmdLCD (1 -> -> 1 `i `uc ]
-[; ;lcddisplay.c: 14: while(BusyLCD());
+[e ( _WriteDataLCD (1 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 14: WriteDataLCD(0b01111);
 "14
-[e $U 427  ]
-[e :U 428 ]
-[e :U 427 ]
-[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 428  ]
-[e :U 429 ]
-[; ;lcddisplay.c: 15: WriteCmdLCD(66);
+[e ( _WriteDataLCD (1 -> -> 15 `i `uc ]
+[; ;lcddisplay.c: 15: WriteDataLCD(0b10001);
 "15
-[e ( _WriteCmdLCD (1 -> -> 66 `i `uc ]
-[; ;lcddisplay.c: 16: }
+[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
+[; ;lcddisplay.c: 16: WriteDataLCD(0b10001);
 "16
+[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
+[; ;lcddisplay.c: 17: WriteDataLCD(0b10001);
+"17
+[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
+[; ;lcddisplay.c: 18: WriteDataLCD(0b01111);
+"18
+[e ( _WriteDataLCD (1 -> -> 15 `i `uc ]
+[; ;lcddisplay.c: 19: WriteDataLCD(0b00111);
+"19
+[e ( _WriteDataLCD (1 -> -> 7 `i `uc ]
+[; ;lcddisplay.c: 20: WriteDataLCD(0b00111);
+"20
+[e ( _WriteDataLCD (1 -> -> 7 `i `uc ]
+[; ;lcddisplay.c: 23: SetLCDCGRamAddr(0x08);
+"23
+[e ( _SetLCDCGRamAddr (1 -> -> 8 `i `uc ]
+[; ;lcddisplay.c: 24: WriteDataLCD(0b11111);
+"24
+[e ( _WriteDataLCD (1 -> -> 31 `i `uc ]
+[; ;lcddisplay.c: 25: WriteDataLCD(0b10001);
+"25
+[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
+[; ;lcddisplay.c: 26: WriteDataLCD(0b10001);
+"26
+[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
+[; ;lcddisplay.c: 27: WriteDataLCD(0b10101);
+"27
+[e ( _WriteDataLCD (1 -> -> 21 `i `uc ]
+[; ;lcddisplay.c: 28: WriteDataLCD(0b10001);
+"28
+[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
+[; ;lcddisplay.c: 29: WriteDataLCD(0b10001);
+"29
+[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
+[; ;lcddisplay.c: 30: WriteDataLCD(0b10001);
+"30
+[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
+[; ;lcddisplay.c: 31: WriteDataLCD(0b11111);
+"31
+[e ( _WriteDataLCD (1 -> -> 31 `i `uc ]
+[; ;lcddisplay.c: 33: WriteCmdLCD(0b00000010);
+"33
+[e ( _WriteCmdLCD (1 -> -> 2 `i `uc ]
+[; ;lcddisplay.c: 34: putLCD( (unsigned char *)"Testing ");
+"34
+[e ( _putLCD (1 -> :s 1C `*uc ]
+[; ;lcddisplay.c: 36: putIntLCD(3455);
+"36
+[e ( _putIntLCD (1 -> -> 3455 `i `s ]
+[; ;lcddisplay.c: 38: SetLCDDDRamAddr(0x040);
+"38
+[e ( _SetLCDDDRamAddr (1 -> -> 64 `i `uc ]
+[; ;lcddisplay.c: 39: putLCD( (unsigned char *)"Line 000 ");
+"39
+[e ( _putLCD (1 -> :s 2C `*uc ]
+[; ;lcddisplay.c: 41: WriteDataLCD(0);
+"41
+[e ( _WriteDataLCD (1 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 42: WriteDataLCD(1);
+"42
+[e ( _WriteDataLCD (1 -> -> 1 `i `uc ]
+[; ;lcddisplay.c: 44: }
+"44
 [e :UE 417 ]
 }
-"18
+"47
+[v _InitLCD `(v ~T0 @X0 1 ef ]
+{
+[; ;lcddisplay.c: 47: void InitLCD(void) {
+[e :U _InitLCD ]
+[f ]
+[; ;lcddisplay.c: 48: OpenLCD(0b00101100 & 0b00111000);
+"48
+[e ( _OpenLCD (1 -> & -> 44 `i -> 56 `i `uc ]
+[; ;lcddisplay.c: 49: while(BusyLCD());
+"49
+[e $U 419  ]
+[e :U 420 ]
+[e :U 419 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 420  ]
+[e :U 421 ]
+[; ;lcddisplay.c: 50: WriteCmdLCD(0x06);
+"50
+[e ( _WriteCmdLCD (1 -> -> 6 `i `uc ]
+[; ;lcddisplay.c: 51: while(BusyLCD());
+"51
+[e $U 422  ]
+[e :U 423 ]
+[e :U 422 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 423  ]
+[e :U 424 ]
+[; ;lcddisplay.c: 52: WriteCmdLCD(0x0C);
+"52
+[e ( _WriteCmdLCD (1 -> -> 12 `i `uc ]
+[; ;lcddisplay.c: 53: while(BusyLCD());
+"53
+[e $U 425  ]
+[e :U 426 ]
+[e :U 425 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 426  ]
+[e :U 427 ]
+[; ;lcddisplay.c: 54: WriteCmdLCD(0x01);
+"54
+[e ( _WriteCmdLCD (1 -> -> 1 `i `uc ]
+[; ;lcddisplay.c: 55: while(BusyLCD());
+"55
+[e $U 428  ]
+[e :U 429 ]
+[e :U 428 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 429  ]
+[e :U 430 ]
+[; ;lcddisplay.c: 56: WriteCmdLCD(66);
+"56
+[e ( _WriteCmdLCD (1 -> -> 66 `i `uc ]
+[; ;lcddisplay.c: 57: }
+"57
+[e :UE 418 ]
+}
+"59
 [v _DelayFor18TCY `(v ~T0 @X0 1 ef ]
 {
-[; ;lcddisplay.c: 18: void DelayFor18TCY(void) {
+[; ;lcddisplay.c: 59: void DelayFor18TCY(void) {
 [e :U _DelayFor18TCY ]
 [f ]
-[; ;lcddisplay.c: 20: Delay1TCYx(18);
-"20
-[e ( _Delay1TCYx (1 -> -> 18 `i `uc ]
-[; ;lcddisplay.c: 21: }
-"21
-[e :UE 430 ]
-}
-"24
-[v _OpenLCD `(v ~T0 @X0 1 ef1`uc ]
-"25
-{
-[; ;lcddisplay.c: 24: void OpenLCD(unsigned char lcdtype)
-[; ;lcddisplay.c: 25: {
-[e :U _OpenLCD ]
-"24
-[v _lcdtype `uc ~T0 @X0 1 r1 ]
-"25
-[f ]
-[; ;lcddisplay.c: 27: Delay100TCYx(38);
-"27
-[e ( _Delay100TCYx (1 -> -> 38 `i `uc ]
-[; ;lcddisplay.c: 38: PORTD &= 0xf0;
-"38
-[e =& _PORTD -> -> 240 `i `uc ]
-[; ;lcddisplay.c: 39: TRISD &= 0xF0;
-"39
-[e =& _TRISD -> -> 240 `i `uc ]
-[; ;lcddisplay.c: 42: TRISEbits.TRISE1 = 0;
-"42
-[e = . . _TRISEbits 0 1 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 43: TRISEbits.TRISE0 = 0;
-"43
-[e = . . _TRISEbits 0 0 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 44: TRISEbits.TRISE2 = 0;
-"44
-[e = . . _TRISEbits 0 2 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 45: LATEbits.LATE1 = 0;
-"45
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 46: LATEbits.LATE0 = 0;
-"46
-[e = . . _LATEbits 0 0 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 47: LATEbits.LATE2 = 0;
-"47
-[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 50: Delay100TCYx(38);
-"50
-[e ( _Delay100TCYx (1 -> -> 38 `i `uc ]
-[; ;lcddisplay.c: 53: WriteCmdLCD(0x30);
-"53
-[e ( _WriteCmdLCD (1 -> -> 48 `i `uc ]
-[; ;lcddisplay.c: 54: Delay10KTCYx(0x05);
-"54
-[e ( _Delay10KTCYx (1 -> -> 5 `i `uc ]
-[; ;lcddisplay.c: 56: WriteCmdLCD(0x30);
-"56
-[e ( _WriteCmdLCD (1 -> -> 48 `i `uc ]
-[; ;lcddisplay.c: 57: Delay10KTCYx(0x01);
-"57
-[e ( _Delay10KTCYx (1 -> -> 1 `i `uc ]
-[; ;lcddisplay.c: 60: WriteCmdLCD(0x32);
-"60
-[e ( _WriteCmdLCD (1 -> -> 50 `i `uc ]
-[; ;lcddisplay.c: 61: while( BusyXLCD() );
+[; ;lcddisplay.c: 61: Delay1TCYx(18);
 "61
-[e $U 432  ]
-[e :U 433 ]
-[e :U 432 ]
-[e $ != -> ( _BusyXLCD ..  `i -> -> -> 0 `i `uc `i 433  ]
-[e :U 434 ]
-[; ;lcddisplay.c: 66: while(BusyLCD());
-"66
-[e $U 435  ]
-[e :U 436 ]
-[e :U 435 ]
-[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 436  ]
-[e :U 437 ]
-[; ;lcddisplay.c: 67: WriteCmdLCD(lcdtype);
-"67
-[e ( _WriteCmdLCD (1 _lcdtype ]
-[; ;lcddisplay.c: 70: while(BusyLCD());
-"70
-[e $U 438  ]
-[e :U 439 ]
-[e :U 438 ]
-[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 439  ]
-[e :U 440 ]
-[; ;lcddisplay.c: 71: WriteCmdLCD(0b00001011&0b00001101&0b00001110);
-"71
-[e ( _WriteCmdLCD (1 -> & & -> 11 `i -> 13 `i -> 14 `i `uc ]
-[; ;lcddisplay.c: 72: while(BusyLCD());
-"72
-[e $U 441  ]
-[e :U 442 ]
-[e :U 441 ]
-[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 442  ]
-[e :U 443 ]
-[; ;lcddisplay.c: 73: WriteCmdLCD(0b00001111&0b00001111&0b00001111);
-"73
-[e ( _WriteCmdLCD (1 -> & & -> 15 `i -> 15 `i -> 15 `i `uc ]
-[; ;lcddisplay.c: 76: while(BusyLCD());
-"76
-[e $U 444  ]
-[e :U 445 ]
-[e :U 444 ]
-[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 445  ]
-[e :U 446 ]
-[; ;lcddisplay.c: 77: WriteCmdLCD(0x01);
-"77
-[e ( _WriteCmdLCD (1 -> -> 1 `i `uc ]
-[; ;lcddisplay.c: 80: while(BusyLCD());
-"80
-[e $U 447  ]
-[e :U 448 ]
-[e :U 447 ]
-[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 448  ]
-[e :U 449 ]
-[; ;lcddisplay.c: 81: WriteCmdLCD(0b00000100);
-"81
-[e ( _WriteCmdLCD (1 -> -> 4 `i `uc ]
-[; ;lcddisplay.c: 84: while(BusyLCD());
-"84
-[e $U 450  ]
-[e :U 451 ]
-[e :U 450 ]
-[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 451  ]
-[e :U 452 ]
-[; ;lcddisplay.c: 85: SetLCDDDRamAddr(0x80);
-"85
-[e ( _SetLCDDDRamAddr (1 -> -> 128 `i `uc ]
-[; ;lcddisplay.c: 87: return;
-"87
-[e $UE 431  ]
-[; ;lcddisplay.c: 88: }
-"88
+[e ( _Delay1TCYx (1 -> -> 18 `i `uc ]
+[; ;lcddisplay.c: 62: }
+"62
 [e :UE 431 ]
 }
-"90
-[v _WriteCmdLCD `(v ~T0 @X0 1 ef1`uc ]
-"91
+"65
+[v _OpenLCD `(v ~T0 @X0 1 ef1`uc ]
+"66
 {
-[; ;lcddisplay.c: 90: void WriteCmdLCD(unsigned char cmd)
-[; ;lcddisplay.c: 91: {
-[e :U _WriteCmdLCD ]
-"90
-[v _cmd `uc ~T0 @X0 1 r1 ]
-"91
+[; ;lcddisplay.c: 65: void OpenLCD(unsigned char lcdtype)
+[; ;lcddisplay.c: 66: {
+[e :U _OpenLCD ]
+"65
+[v _lcdtype `uc ~T0 @X0 1 r1 ]
+"66
 [f ]
-[; ;lcddisplay.c: 155: TRISD &= 0xf0;
-"155
+[; ;lcddisplay.c: 68: Delay100TCYx(38);
+"68
+[e ( _Delay100TCYx (1 -> -> 38 `i `uc ]
+[; ;lcddisplay.c: 79: PORTD &= 0xf0;
+"79
+[e =& _PORTD -> -> 240 `i `uc ]
+[; ;lcddisplay.c: 80: TRISD &= 0xF0;
+"80
 [e =& _TRISD -> -> 240 `i `uc ]
-[; ;lcddisplay.c: 156: PORTD &= 0xf0;
-"156
-[e =& _PORTD -> -> 240 `i `uc ]
-[; ;lcddisplay.c: 157: PORTD |= (cmd>>4)&0x0f;
-"157
-[e =| _PORTD -> & >> -> _cmd `i -> 4 `i -> 15 `i `uc ]
-[; ;lcddisplay.c: 159: LATEbits.LATE1 = 0;
-"159
+[; ;lcddisplay.c: 83: TRISEbits.TRISE1 = 0;
+"83
+[e = . . _TRISEbits 0 1 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 84: TRISEbits.TRISE0 = 0;
+"84
+[e = . . _TRISEbits 0 0 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 85: TRISEbits.TRISE2 = 0;
+"85
+[e = . . _TRISEbits 0 2 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 86: LATEbits.LATE1 = 0;
+"86
 [e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 160: LATEbits.LATE0 = 0;
-"160
+[; ;lcddisplay.c: 87: LATEbits.LATE0 = 0;
+"87
 [e = . . _LATEbits 0 0 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 161: DelayFor18TCY();
-"161
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 162: LATEbits.LATE2 = 1;
-"162
-[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
-[; ;lcddisplay.c: 163: DelayFor18TCY();
-"163
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 164: LATEbits.LATE2 = 0;
-"164
+[; ;lcddisplay.c: 88: LATEbits.LATE2 = 0;
+"88
 [e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 169: PORTD &= 0xf0;
-"169
-[e =& _PORTD -> -> 240 `i `uc ]
-[; ;lcddisplay.c: 170: PORTD |= cmd&0x0f;
-"170
-[e =| _PORTD -> & -> _cmd `i -> 15 `i `uc ]
-[; ;lcddisplay.c: 172: DelayFor18TCY();
-"172
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 173: LATEbits.LATE2 = 1;
-"173
-[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
-[; ;lcddisplay.c: 174: DelayFor18TCY();
-"174
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 175: LATEbits.LATE2 = 0;
-"175
-[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 179: TRISD |= 0x0f;
-"179
-[e =| _TRISD -> -> 15 `i `uc ]
-[; ;lcddisplay.c: 183: return;
-"183
-[e $UE 453  ]
-[; ;lcddisplay.c: 184: }
-"184
-[e :UE 453 ]
+[; ;lcddisplay.c: 91: Delay100TCYx(38);
+"91
+[e ( _Delay100TCYx (1 -> -> 38 `i `uc ]
+[; ;lcddisplay.c: 94: WriteCmdLCD(0x30);
+"94
+[e ( _WriteCmdLCD (1 -> -> 48 `i `uc ]
+[; ;lcddisplay.c: 95: Delay10KTCYx(0x05);
+"95
+[e ( _Delay10KTCYx (1 -> -> 5 `i `uc ]
+[; ;lcddisplay.c: 97: WriteCmdLCD(0x30);
+"97
+[e ( _WriteCmdLCD (1 -> -> 48 `i `uc ]
+[; ;lcddisplay.c: 98: Delay10KTCYx(0x01);
+"98
+[e ( _Delay10KTCYx (1 -> -> 1 `i `uc ]
+[; ;lcddisplay.c: 101: WriteCmdLCD(0x32);
+"101
+[e ( _WriteCmdLCD (1 -> -> 50 `i `uc ]
+[; ;lcddisplay.c: 102: while( BusyXLCD() );
+"102
+[e $U 433  ]
+[e :U 434 ]
+[e :U 433 ]
+[e $ != -> ( _BusyXLCD ..  `i -> -> -> 0 `i `uc `i 434  ]
+[e :U 435 ]
+[; ;lcddisplay.c: 107: while(BusyLCD());
+"107
+[e $U 436  ]
+[e :U 437 ]
+[e :U 436 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 437  ]
+[e :U 438 ]
+[; ;lcddisplay.c: 108: WriteCmdLCD(lcdtype);
+"108
+[e ( _WriteCmdLCD (1 _lcdtype ]
+[; ;lcddisplay.c: 111: while(BusyLCD());
+"111
+[e $U 439  ]
+[e :U 440 ]
+[e :U 439 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 440  ]
+[e :U 441 ]
+[; ;lcddisplay.c: 112: WriteCmdLCD(0b00001011&0b00001101&0b00001110);
+"112
+[e ( _WriteCmdLCD (1 -> & & -> 11 `i -> 13 `i -> 14 `i `uc ]
+[; ;lcddisplay.c: 113: while(BusyLCD());
+"113
+[e $U 442  ]
+[e :U 443 ]
+[e :U 442 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 443  ]
+[e :U 444 ]
+[; ;lcddisplay.c: 114: WriteCmdLCD(0b00001111&0b00001111&0b00001111);
+"114
+[e ( _WriteCmdLCD (1 -> & & -> 15 `i -> 15 `i -> 15 `i `uc ]
+[; ;lcddisplay.c: 117: while(BusyLCD());
+"117
+[e $U 445  ]
+[e :U 446 ]
+[e :U 445 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 446  ]
+[e :U 447 ]
+[; ;lcddisplay.c: 118: WriteCmdLCD(0x01);
+"118
+[e ( _WriteCmdLCD (1 -> -> 1 `i `uc ]
+[; ;lcddisplay.c: 121: while(BusyLCD());
+"121
+[e $U 448  ]
+[e :U 449 ]
+[e :U 448 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 449  ]
+[e :U 450 ]
+[; ;lcddisplay.c: 122: WriteCmdLCD(0b00000100);
+"122
+[e ( _WriteCmdLCD (1 -> -> 4 `i `uc ]
+[; ;lcddisplay.c: 125: while(BusyLCD());
+"125
+[e $U 451  ]
+[e :U 452 ]
+[e :U 451 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 452  ]
+[e :U 453 ]
+[; ;lcddisplay.c: 126: SetLCDDDRamAddr(0x80);
+"126
+[e ( _SetLCDDDRamAddr (1 -> -> 128 `i `uc ]
+[; ;lcddisplay.c: 128: return;
+"128
+[e $UE 432  ]
+[; ;lcddisplay.c: 129: }
+"129
+[e :UE 432 ]
 }
-"186
-[v _BusyLCD `(uc ~T0 @X0 1 ef ]
-"187
+"131
+[v _WriteCmdLCD `(v ~T0 @X0 1 ef1`uc ]
+"132
 {
-[; ;lcddisplay.c: 186: unsigned char BusyLCD(void)
-[; ;lcddisplay.c: 187: {
-[e :U _BusyLCD ]
+[; ;lcddisplay.c: 131: void WriteCmdLCD(unsigned char cmd)
+[; ;lcddisplay.c: 132: {
+[e :U _WriteCmdLCD ]
+"131
+[v _cmd `uc ~T0 @X0 1 r1 ]
+"132
 [f ]
-[; ;lcddisplay.c: 188: LATEbits.LATE1 = 1;
-"188
-[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-[; ;lcddisplay.c: 189: LATEbits.LATE0 = 0;
-"189
+[; ;lcddisplay.c: 196: TRISD &= 0xf0;
+"196
+[e =& _TRISD -> -> 240 `i `uc ]
+[; ;lcddisplay.c: 197: PORTD &= 0xf0;
+"197
+[e =& _PORTD -> -> 240 `i `uc ]
+[; ;lcddisplay.c: 198: PORTD |= (cmd>>4)&0x0f;
+"198
+[e =| _PORTD -> & >> -> _cmd `i -> 4 `i -> 15 `i `uc ]
+[; ;lcddisplay.c: 200: LATEbits.LATE1 = 0;
+"200
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 201: LATEbits.LATE0 = 0;
+"201
 [e = . . _LATEbits 0 0 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 190: DelayFor18TCY();
-"190
+[; ;lcddisplay.c: 202: DelayFor18TCY();
+"202
 [e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 191: LATEbits.LATE2 = 1;
-"191
+[; ;lcddisplay.c: 203: LATEbits.LATE2 = 1;
+"203
 [e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
-[; ;lcddisplay.c: 192: DelayFor18TCY();
-"192
+[; ;lcddisplay.c: 204: DelayFor18TCY();
+"204
 [e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 210: if(PORTD&0x08)
+[; ;lcddisplay.c: 205: LATEbits.LATE2 = 0;
+"205
+[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 210: PORTD &= 0xf0;
 "210
-[e $ ! != & -> _PORTD `i -> 8 `i -> 0 `i 455  ]
-[; ;lcddisplay.c: 212: {
-"212
-{
-[; ;lcddisplay.c: 213: LATEbits.LATE2 = 0;
+[e =& _PORTD -> -> 240 `i `uc ]
+[; ;lcddisplay.c: 211: PORTD |= cmd&0x0f;
+"211
+[e =| _PORTD -> & -> _cmd `i -> 15 `i `uc ]
+[; ;lcddisplay.c: 213: DelayFor18TCY();
 "213
-[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 214: DelayFor18TCY();
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 214: LATEbits.LATE2 = 1;
 "214
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 215: LATEbits.LATE2 = 1;
+[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
+[; ;lcddisplay.c: 215: DelayFor18TCY();
 "215
-[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
-[; ;lcddisplay.c: 216: DelayFor18TCY();
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 216: LATEbits.LATE2 = 0;
 "216
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 217: LATEbits.LATE2 = 0;
-"217
 [e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 218: LATEbits.LATE1 = 0;
-"218
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 219: return 1;
-"219
-[e ) -> -> 1 `i `uc ]
-[e $UE 454  ]
+[; ;lcddisplay.c: 220: TRISD |= 0x0f;
 "220
-}
-[; ;lcddisplay.c: 220: }
-[e $U 456  ]
-"221
-[e :U 455 ]
-[; ;lcddisplay.c: 221: else
-[; ;lcddisplay.c: 222: {
-"222
-{
-[; ;lcddisplay.c: 223: LATEbits.LATE2 = 0;
-"223
-[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 224: DelayFor18TCY();
+[e =| _TRISD -> -> 15 `i `uc ]
+[; ;lcddisplay.c: 224: return;
 "224
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 225: LATEbits.LATE2 = 1;
-"225
-[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
-[; ;lcddisplay.c: 226: DelayFor18TCY();
-"226
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 227: LATEbits.LATE2 = 0;
-"227
-[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 228: LATEbits.LATE1 = 0;
-"228
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 229: return 0;
-"229
-[e ) -> -> 0 `i `uc ]
 [e $UE 454  ]
-"230
-}
-[e :U 456 ]
-[; ;lcddisplay.c: 230: }
-[; ;lcddisplay.c: 232: }
-"232
+[; ;lcddisplay.c: 225: }
+"225
 [e :UE 454 ]
 }
-"235
-[v _SetLCDDDRamAddr `(v ~T0 @X0 1 ef1`uc ]
-"236
+"227
+[v _BusyLCD `(uc ~T0 @X0 1 ef ]
+"228
 {
-[; ;lcddisplay.c: 235: void SetLCDDDRamAddr(unsigned char DDaddr)
-[; ;lcddisplay.c: 236: {
-[e :U _SetLCDDDRamAddr ]
-"235
-[v _DDaddr `uc ~T0 @X0 1 r1 ]
-"236
+[; ;lcddisplay.c: 227: unsigned char BusyLCD(void)
+[; ;lcddisplay.c: 228: {
+[e :U _BusyLCD ]
 [f ]
-[; ;lcddisplay.c: 254: TRISD &= 0xf0;
+[; ;lcddisplay.c: 229: LATEbits.LATE1 = 1;
+"229
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+[; ;lcddisplay.c: 230: LATEbits.LATE0 = 0;
+"230
+[e = . . _LATEbits 0 0 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 231: DelayFor18TCY();
+"231
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 232: LATEbits.LATE2 = 1;
+"232
+[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
+[; ;lcddisplay.c: 233: DelayFor18TCY();
+"233
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 251: if(PORTD&0x08)
+"251
+[e $ ! != & -> _PORTD `i -> 8 `i -> 0 `i 456  ]
+[; ;lcddisplay.c: 253: {
+"253
+{
+[; ;lcddisplay.c: 254: LATEbits.LATE2 = 0;
 "254
-[e =& _TRISD -> -> 240 `i `uc ]
-[; ;lcddisplay.c: 255: PORTD &= 0xf0;
+[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 255: DelayFor18TCY();
 "255
-[e =& _PORTD -> -> 240 `i `uc ]
-[; ;lcddisplay.c: 256: PORTD |= (((DDaddr | 0b10000000)>>4) & 0x0f);
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 256: LATEbits.LATE2 = 1;
 "256
-[e =| _PORTD -> & >> | -> _DDaddr `i -> 128 `i -> 4 `i -> 15 `i `uc ]
-[; ;lcddisplay.c: 258: LATEbits.LATE1 = 0;
+[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
+[; ;lcddisplay.c: 257: DelayFor18TCY();
+"257
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 258: LATEbits.LATE2 = 0;
 "258
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 259: LATEbits.LATE0 = 0;
+[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 259: LATEbits.LATE1 = 0;
 "259
-[e = . . _LATEbits 0 0 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 260: DelayFor18TCY();
-"260
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 261: LATEbits.LATE2 = 1;
-"261
-[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
-[; ;lcddisplay.c: 262: DelayFor18TCY();
-"262
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 263: LATEbits.LATE2 = 0;
-"263
-[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 268: PORTD &= 0xf0;
-"268
-[e =& _PORTD -> -> 240 `i `uc ]
-[; ;lcddisplay.c: 269: PORTD |= (DDaddr&0x0f);
-"269
-[e =| _PORTD -> & -> _DDaddr `i -> 15 `i `uc ]
-[; ;lcddisplay.c: 271: DelayFor18TCY();
-"271
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 272: LATEbits.LATE2 = 1;
-"272
-[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
-[; ;lcddisplay.c: 273: DelayFor18TCY();
-"273
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 274: LATEbits.LATE2 = 0;
-"274
-[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 278: TRISD |= 0x0f;
-"278
-[e =| _TRISD -> -> 15 `i `uc ]
-[; ;lcddisplay.c: 282: return;
-"282
-[e $UE 457  ]
-[; ;lcddisplay.c: 283: }
-"283
-[e :UE 457 ]
-}
-"285
-[v _SetLCDCGRamAddr `(v ~T0 @X0 1 ef1`uc ]
-"286
-{
-[; ;lcddisplay.c: 285: void SetLCDCGRamAddr(unsigned char CGaddr)
-[; ;lcddisplay.c: 286: {
-[e :U _SetLCDCGRamAddr ]
-"285
-[v _CGaddr `uc ~T0 @X0 1 r1 ]
-"286
-[f ]
-[; ;lcddisplay.c: 304: TRISD &= 0xf0;
-"304
-[e =& _TRISD -> -> 240 `i `uc ]
-[; ;lcddisplay.c: 305: PORTD &= 0xf0;
-"305
-[e =& _PORTD -> -> 240 `i `uc ]
-[; ;lcddisplay.c: 306: PORTD |= (((CGaddr |0b01000000)>>4) & 0x0f);
-"306
-[e =| _PORTD -> & >> | -> _CGaddr `i -> 64 `i -> 4 `i -> 15 `i `uc ]
-[; ;lcddisplay.c: 308: LATEbits.LATE1 = 0;
-"308
 [e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 309: LATEbits.LATE0 = 0;
-"309
-[e = . . _LATEbits 0 0 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 310: DelayFor18TCY();
-"310
+[; ;lcddisplay.c: 260: return 1;
+"260
+[e ) -> -> 1 `i `uc ]
+[e $UE 455  ]
+"261
+}
+[; ;lcddisplay.c: 261: }
+[e $U 457  ]
+"262
+[e :U 456 ]
+[; ;lcddisplay.c: 262: else
+[; ;lcddisplay.c: 263: {
+"263
+{
+[; ;lcddisplay.c: 264: LATEbits.LATE2 = 0;
+"264
+[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 265: DelayFor18TCY();
+"265
 [e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 311: LATEbits.LATE2 = 1;
-"311
+[; ;lcddisplay.c: 266: LATEbits.LATE2 = 1;
+"266
 [e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
+[; ;lcddisplay.c: 267: DelayFor18TCY();
+"267
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 268: LATEbits.LATE2 = 0;
+"268
+[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 269: LATEbits.LATE1 = 0;
+"269
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 270: return 0;
+"270
+[e ) -> -> 0 `i `uc ]
+[e $UE 455  ]
+"271
+}
+[e :U 457 ]
+[; ;lcddisplay.c: 271: }
+[; ;lcddisplay.c: 273: }
+"273
+[e :UE 455 ]
+}
+"276
+[v _SetLCDDDRamAddr `(v ~T0 @X0 1 ef1`uc ]
+"277
+{
+[; ;lcddisplay.c: 276: void SetLCDDDRamAddr(unsigned char DDaddr)
+[; ;lcddisplay.c: 277: {
+[e :U _SetLCDDDRamAddr ]
+"276
+[v _DDaddr `uc ~T0 @X0 1 r1 ]
+"277
+[f ]
+[; ;lcddisplay.c: 295: TRISD &= 0xf0;
+"295
+[e =& _TRISD -> -> 240 `i `uc ]
+[; ;lcddisplay.c: 296: PORTD &= 0xf0;
+"296
+[e =& _PORTD -> -> 240 `i `uc ]
+[; ;lcddisplay.c: 297: PORTD |= (((DDaddr | 0b10000000)>>4) & 0x0f);
+"297
+[e =| _PORTD -> & >> | -> _DDaddr `i -> 128 `i -> 4 `i -> 15 `i `uc ]
+[; ;lcddisplay.c: 299: LATEbits.LATE1 = 0;
+"299
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 300: LATEbits.LATE0 = 0;
+"300
+[e = . . _LATEbits 0 0 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 301: DelayFor18TCY();
+"301
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 302: LATEbits.LATE2 = 1;
+"302
+[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
+[; ;lcddisplay.c: 303: DelayFor18TCY();
+"303
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 304: LATEbits.LATE2 = 0;
+"304
+[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 309: PORTD &= 0xf0;
+"309
+[e =& _PORTD -> -> 240 `i `uc ]
+[; ;lcddisplay.c: 310: PORTD |= (DDaddr&0x0f);
+"310
+[e =| _PORTD -> & -> _DDaddr `i -> 15 `i `uc ]
 [; ;lcddisplay.c: 312: DelayFor18TCY();
 "312
 [e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 313: LATEbits.LATE2 = 0;
+[; ;lcddisplay.c: 313: LATEbits.LATE2 = 1;
 "313
-[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 318: PORTD &= 0xf0;
-"318
-[e =& _PORTD -> -> 240 `i `uc ]
-[; ;lcddisplay.c: 319: PORTD |= (CGaddr&0x0f);
-"319
-[e =| _PORTD -> & -> _CGaddr `i -> 15 `i `uc ]
-[; ;lcddisplay.c: 321: DelayFor18TCY();
-"321
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 322: LATEbits.LATE2 = 1;
-"322
 [e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
-[; ;lcddisplay.c: 323: DelayFor18TCY();
-"323
+[; ;lcddisplay.c: 314: DelayFor18TCY();
+"314
 [e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 324: LATEbits.LATE2 = 0;
-"324
+[; ;lcddisplay.c: 315: LATEbits.LATE2 = 0;
+"315
 [e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 328: TRISD |= 0x0f;
-"328
+[; ;lcddisplay.c: 319: TRISD |= 0x0f;
+"319
 [e =| _TRISD -> -> 15 `i `uc ]
-[; ;lcddisplay.c: 332: return;
-"332
+[; ;lcddisplay.c: 323: return;
+"323
 [e $UE 458  ]
-[; ;lcddisplay.c: 333: }
-"333
+[; ;lcddisplay.c: 324: }
+"324
 [e :UE 458 ]
 }
-"337
+"326
+[v _SetLCDCGRamAddr `(v ~T0 @X0 1 ef1`uc ]
+"327
+{
+[; ;lcddisplay.c: 326: void SetLCDCGRamAddr(unsigned char CGaddr)
+[; ;lcddisplay.c: 327: {
+[e :U _SetLCDCGRamAddr ]
+"326
+[v _CGaddr `uc ~T0 @X0 1 r1 ]
+"327
+[f ]
+[; ;lcddisplay.c: 345: TRISD &= 0xf0;
+"345
+[e =& _TRISD -> -> 240 `i `uc ]
+[; ;lcddisplay.c: 346: PORTD &= 0xf0;
+"346
+[e =& _PORTD -> -> 240 `i `uc ]
+[; ;lcddisplay.c: 347: PORTD |= (((CGaddr |0b01000000)>>4) & 0x0f);
+"347
+[e =| _PORTD -> & >> | -> _CGaddr `i -> 64 `i -> 4 `i -> 15 `i `uc ]
+[; ;lcddisplay.c: 349: LATEbits.LATE1 = 0;
+"349
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 350: LATEbits.LATE0 = 0;
+"350
+[e = . . _LATEbits 0 0 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 351: DelayFor18TCY();
+"351
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 352: LATEbits.LATE2 = 1;
+"352
+[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
+[; ;lcddisplay.c: 353: DelayFor18TCY();
+"353
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 354: LATEbits.LATE2 = 0;
+"354
+[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 359: PORTD &= 0xf0;
+"359
+[e =& _PORTD -> -> 240 `i `uc ]
+[; ;lcddisplay.c: 360: PORTD |= (CGaddr&0x0f);
+"360
+[e =| _PORTD -> & -> _CGaddr `i -> 15 `i `uc ]
+[; ;lcddisplay.c: 362: DelayFor18TCY();
+"362
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 363: LATEbits.LATE2 = 1;
+"363
+[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
+[; ;lcddisplay.c: 364: DelayFor18TCY();
+"364
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 365: LATEbits.LATE2 = 0;
+"365
+[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 369: TRISD |= 0x0f;
+"369
+[e =| _TRISD -> -> 15 `i `uc ]
+[; ;lcddisplay.c: 373: return;
+"373
+[e $UE 459  ]
+[; ;lcddisplay.c: 374: }
+"374
+[e :UE 459 ]
+}
+"378
 [v _putIntLCD `(v ~T0 @X0 1 ef1`s ]
 {
-[; ;lcddisplay.c: 337: void putIntLCD(short int n) {
+[; ;lcddisplay.c: 378: void putIntLCD(short int n) {
 [e :U _putIntLCD ]
 [v _n `s ~T0 @X0 1 r1 ]
 [f ]
-"338
+"379
 [v _result `uc ~T0 @X0 -> 4 `i a ]
-[; ;lcddisplay.c: 338: unsigned char result[4];
-[; ;lcddisplay.c: 339: utoa((char*)result, n, 10);
-"339
+[; ;lcddisplay.c: 379: unsigned char result[4];
+[; ;lcddisplay.c: 380: utoa((char*)result, n, 10);
+"380
 [e ( _utoa (3 , , &U _result -> _n `ui -> 10 `i ]
-[; ;lcddisplay.c: 340: putLCD(result);
-"340
+[; ;lcddisplay.c: 381: putLCD(result);
+"381
 [e ( _putLCD (1 &U _result ]
-[; ;lcddisplay.c: 342: }
-"342
-[e :UE 459 ]
-}
-"344
-[v _putLCD `(v ~T0 @X0 1 ef1`*uc ]
-"345
-{
-[; ;lcddisplay.c: 344: void putLCD(char *buffer)
-[; ;lcddisplay.c: 345: {
-[e :U _putLCD ]
-"344
-[v _buffer `*uc ~T0 @X0 1 r1 ]
-"345
-[f ]
-[; ;lcddisplay.c: 346: while(*buffer)
-"346
-[e $U 461  ]
-[e :U 462 ]
-[; ;lcddisplay.c: 347: {
-"347
-{
-[; ;lcddisplay.c: 348: while(BusyLCD());
-"348
-[e $U 464  ]
-[e :U 465 ]
-[e :U 464 ]
-[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 465  ]
-[e :U 466 ]
-[; ;lcddisplay.c: 349: WriteDataLCD(*buffer);
-"349
-[e ( _WriteDataLCD (1 *U _buffer ]
-[; ;lcddisplay.c: 350: buffer++;
-"350
-[e ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x ]
-"351
-}
-[e :U 461 ]
-"346
-[e $ != -> *U _buffer `i -> -> -> 0 `i `uc `i 462  ]
-[e :U 463 ]
-[; ;lcddisplay.c: 351: }
-[; ;lcddisplay.c: 352: return;
-"352
-[e $UE 460  ]
-[; ;lcddisplay.c: 353: }
-"353
+[; ;lcddisplay.c: 383: }
+"383
 [e :UE 460 ]
 }
-"355
-[v _WriteDataLCD `(v ~T0 @X0 1 ef1`uc ]
-"356
+"385
+[v _putLCD `(v ~T0 @X0 1 ef1`*uc ]
+"386
 {
-[; ;lcddisplay.c: 355: void WriteDataLCD(char data)
-[; ;lcddisplay.c: 356: {
-[e :U _WriteDataLCD ]
-"355
-[v _data `uc ~T0 @X0 1 r1 ]
-"356
+[; ;lcddisplay.c: 385: void putLCD(char *buffer)
+[; ;lcddisplay.c: 386: {
+[e :U _putLCD ]
+"385
+[v _buffer `*uc ~T0 @X0 1 r1 ]
+"386
 [f ]
-[; ;lcddisplay.c: 374: TRISD &= 0xf0;
-"374
-[e =& _TRISD -> -> 240 `i `uc ]
-[; ;lcddisplay.c: 375: PORTD &= 0xf0;
-"375
-[e =& _PORTD -> -> 240 `i `uc ]
-[; ;lcddisplay.c: 376: PORTD |= ((data>>4)&0x0f);
-"376
-[e =| _PORTD -> & >> -> _data `i -> 4 `i -> 15 `i `uc ]
-[; ;lcddisplay.c: 378: LATEbits.LATE0 = 1;
-"378
-[e = . . _LATEbits 0 0 -> -> 1 `i `uc ]
-[; ;lcddisplay.c: 379: LATEbits.LATE1 = 0;
-"379
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 380: DelayFor18TCY();
-"380
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 381: LATEbits.LATE2 = 1;
-"381
-[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
-[; ;lcddisplay.c: 382: DelayFor18TCY();
-"382
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 383: LATEbits.LATE2 = 0;
-"383
-[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 388: PORTD &= 0xf0;
+[; ;lcddisplay.c: 387: while(*buffer)
+"387
+[e $U 462  ]
+[e :U 463 ]
+[; ;lcddisplay.c: 388: {
 "388
-[e =& _PORTD -> -> 240 `i `uc ]
-[; ;lcddisplay.c: 389: PORTD |= (data&0x0f);
+{
+[; ;lcddisplay.c: 389: while(BusyLCD());
 "389
-[e =| _PORTD -> & -> _data `i -> 15 `i `uc ]
-[; ;lcddisplay.c: 391: DelayFor18TCY();
+[e $U 465  ]
+[e :U 466 ]
+[e :U 465 ]
+[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 466  ]
+[e :U 467 ]
+[; ;lcddisplay.c: 390: WriteDataLCD(*buffer);
+"390
+[e ( _WriteDataLCD (1 *U _buffer ]
+[; ;lcddisplay.c: 391: buffer++;
 "391
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 392: LATEbits.LATE2 = 1;
+[e ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x ]
 "392
-[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
-[; ;lcddisplay.c: 393: DelayFor18TCY();
-"393
-[e ( _DelayFor18TCY ..  ]
-[; ;lcddisplay.c: 394: LATEbits.LATE2 = 0;
-"394
-[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
-[; ;lcddisplay.c: 398: TRISD |= 0x0f;
-"398
-[e =| _TRISD -> -> 15 `i `uc ]
-[; ;lcddisplay.c: 402: return;
-"402
-[e $UE 467  ]
-[; ;lcddisplay.c: 403: }
-"403
-[e :UE 467 ]
 }
+[e :U 462 ]
+"387
+[e $ != -> *U _buffer `i -> -> -> 0 `i `uc `i 463  ]
+[e :U 464 ]
+[; ;lcddisplay.c: 392: }
+[; ;lcddisplay.c: 393: return;
+"393
+[e $UE 461  ]
+[; ;lcddisplay.c: 394: }
+"394
+[e :UE 461 ]
+}
+"396
+[v _WriteDataLCD `(v ~T0 @X0 1 ef1`uc ]
+"397
+{
+[; ;lcddisplay.c: 396: void WriteDataLCD(char data)
+[; ;lcddisplay.c: 397: {
+[e :U _WriteDataLCD ]
+"396
+[v _data `uc ~T0 @X0 1 r1 ]
+"397
+[f ]
+[; ;lcddisplay.c: 415: TRISD &= 0xf0;
+"415
+[e =& _TRISD -> -> 240 `i `uc ]
+[; ;lcddisplay.c: 416: PORTD &= 0xf0;
+"416
+[e =& _PORTD -> -> 240 `i `uc ]
+[; ;lcddisplay.c: 417: PORTD |= ((data>>4)&0x0f);
+"417
+[e =| _PORTD -> & >> -> _data `i -> 4 `i -> 15 `i `uc ]
+[; ;lcddisplay.c: 419: LATEbits.LATE0 = 1;
+"419
+[e = . . _LATEbits 0 0 -> -> 1 `i `uc ]
+[; ;lcddisplay.c: 420: LATEbits.LATE1 = 0;
+"420
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 421: DelayFor18TCY();
+"421
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 422: LATEbits.LATE2 = 1;
+"422
+[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
+[; ;lcddisplay.c: 423: DelayFor18TCY();
+"423
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 424: LATEbits.LATE2 = 0;
+"424
+[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 429: PORTD &= 0xf0;
+"429
+[e =& _PORTD -> -> 240 `i `uc ]
+[; ;lcddisplay.c: 430: PORTD |= (data&0x0f);
+"430
+[e =| _PORTD -> & -> _data `i -> 15 `i `uc ]
+[; ;lcddisplay.c: 432: DelayFor18TCY();
+"432
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 433: LATEbits.LATE2 = 1;
+"433
+[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
+[; ;lcddisplay.c: 434: DelayFor18TCY();
+"434
+[e ( _DelayFor18TCY ..  ]
+[; ;lcddisplay.c: 435: LATEbits.LATE2 = 0;
+"435
+[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
+[; ;lcddisplay.c: 439: TRISD |= 0x0f;
+"439
+[e =| _TRISD -> -> 15 `i `uc ]
+[; ;lcddisplay.c: 443: return;
+"443
+[e $UE 468  ]
+[; ;lcddisplay.c: 444: }
+"444
+[e :UE 468 ]
+}
+[a 1C 84 101 115 116 105 110 103 32 0 ]
+[a 2C 76 105 110 101 32 48 48 48 32 0 ]

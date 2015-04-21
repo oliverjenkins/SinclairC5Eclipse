@@ -3,6 +3,47 @@
 #include <stdlib.h>
 #include "lcddisplay.h"
 
+
+void LCDInitialDisplay(void) {
+
+
+//
+//    // Create first custom char
+    SetLCDCGRamAddr(0x00);
+    WriteDataLCD(0b00000);
+    WriteDataLCD(0b01111);
+    WriteDataLCD(0b10001);
+    WriteDataLCD(0b10001);
+    WriteDataLCD(0b10001);
+    WriteDataLCD(0b01111);
+    WriteDataLCD(0b00111);
+    WriteDataLCD(0b00111);
+
+    // Second custom char
+    SetLCDCGRamAddr(0x08);
+    WriteDataLCD(0b11111);
+    WriteDataLCD(0b10001);
+    WriteDataLCD(0b10001);
+    WriteDataLCD(0b10101);
+    WriteDataLCD(0b10001);
+    WriteDataLCD(0b10001);
+    WriteDataLCD(0b10001);
+    WriteDataLCD(0b11111);
+
+    WriteCmdLCD(0b00000010);        // Cursor to home
+    putLCD( (unsigned char *)"Testing ");
+
+    putIntLCD(3455);
+
+    SetLCDDDRamAddr(0x040);         // Cursor to second line
+    putLCD( (unsigned char *)"Line 000 ");
+
+    WriteDataLCD(0);              // Write First Custom Char
+    WriteDataLCD(1);              // Write Second Custom Char
+
+}
+
+
 void InitLCD(void) {
     OpenLCD(FOUR_BIT & LINES_5X7);
     while(BusyLCD());

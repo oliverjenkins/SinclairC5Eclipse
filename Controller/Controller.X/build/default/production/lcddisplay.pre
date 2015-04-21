@@ -5310,7 +5310,50 @@ void putLCD(char *buffer);
 void putIntLCD(short int n);
 void WriteDataLCD(char data);
 
-# 6 "lcddisplay.c"
+
+void LCDInitialDisplay(void);
+
+# 7 "lcddisplay.c"
+void LCDInitialDisplay(void) {
+
+
+
+
+SetLCDCGRamAddr(0x00);
+WriteDataLCD(0b00000);
+WriteDataLCD(0b01111);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b01111);
+WriteDataLCD(0b00111);
+WriteDataLCD(0b00111);
+
+
+SetLCDCGRamAddr(0x08);
+WriteDataLCD(0b11111);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10101);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b11111);
+
+WriteCmdLCD(0b00000010);
+putLCD( (unsigned char *)"Testing ");
+
+putIntLCD(3455);
+
+SetLCDDDRamAddr(0x040);
+putLCD( (unsigned char *)"Line 000 ");
+
+WriteDataLCD(0);
+WriteDataLCD(1);
+
+}
+
+
 void InitLCD(void) {
 OpenLCD(0b00101100 & 0b00111000);
 while(BusyLCD());
@@ -5334,7 +5377,7 @@ void OpenLCD(unsigned char lcdtype)
 
 Delay100TCYx(38);
 
-# 38
+# 79
 PORTD &= 0xf0;
 TRISD &= 0xF0;
 
@@ -5390,7 +5433,7 @@ return;
 void WriteCmdLCD(unsigned char cmd)
 {
 
-# 155
+# 196
 TRISD &= 0xf0;
 PORTD &= 0xf0;
 PORTD |= (cmd>>4)&0x0f;
@@ -5430,7 +5473,7 @@ DelayFor18TCY();
 LATEbits.LATE2 = 1;
 DelayFor18TCY();
 
-# 210
+# 251
 if(PORTD&0x08)
 
 {
@@ -5459,7 +5502,7 @@ return 0;
 void SetLCDDDRamAddr(unsigned char DDaddr)
 {
 
-# 254
+# 295
 TRISD &= 0xf0;
 PORTD &= 0xf0;
 PORTD |= (((DDaddr | 0b10000000)>>4) & 0x0f);
@@ -5494,7 +5537,7 @@ return;
 void SetLCDCGRamAddr(unsigned char CGaddr)
 {
 
-# 304
+# 345
 TRISD &= 0xf0;
 PORTD &= 0xf0;
 PORTD |= (((CGaddr |0b01000000)>>4) & 0x0f);
@@ -5549,7 +5592,7 @@ return;
 void WriteDataLCD(char data)
 {
 
-# 374
+# 415
 TRISD &= 0xf0;
 PORTD &= 0xf0;
 PORTD |= ((data>>4)&0x0f);

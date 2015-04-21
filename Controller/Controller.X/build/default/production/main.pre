@@ -5251,6 +5251,8 @@ extern __nonreentrant void _delay3(unsigned char);
 void InitPorts(void);
 void InitInterrupts(void);
 
+void InitMotorPWM(void);
+
 # 72 "lcddisplay.h"
 void InitLCD(void);
 void DelayFor18TCY(void);
@@ -5266,6 +5268,9 @@ void putLCD(char *buffer);
 void putIntLCD(short int n);
 void WriteDataLCD(char data);
 
+
+void LCDInitialDisplay(void);
+
 # 41 "main.c"
 void interrupt XC8_HighISR_Handler(void);
 
@@ -5279,69 +5284,42 @@ void main (void)
 {
 InitPorts();
 InitInterrupts();
-
+InitMotorPWM();
 InitLCD();
+LCDInitialDisplay();
 
+CCPR1L = 16;
 
-
-SetLCDCGRamAddr(0x00);
-WriteDataLCD(0b00000);
-WriteDataLCD(0b01111);
-WriteDataLCD(0b10001);
-WriteDataLCD(0b10001);
-WriteDataLCD(0b10001);
-WriteDataLCD(0b01111);
-WriteDataLCD(0b00111);
-WriteDataLCD(0b00111);
-
-
-SetLCDCGRamAddr(0x08);
-WriteDataLCD(0b11111);
-WriteDataLCD(0b10001);
-WriteDataLCD(0b10001);
-WriteDataLCD(0b10101);
-WriteDataLCD(0b10001);
-WriteDataLCD(0b10001);
-WriteDataLCD(0b10001);
-WriteDataLCD(0b11111);
-
-WriteCmdLCD(0b00000010);
-putLCD( (unsigned char *)"Testing ");
-
-putIntLCD(3455);
-
-SetLCDDDRamAddr(0x040);
-putLCD( (unsigned char *)"Line 000 ");
-
-WriteDataLCD(0);
-WriteDataLCD(1);
 
 LATD = 0;
+LATC = 0;
 
 while (1)
 {
 
+CCPR1L = CCPR1L + 16;
 
 LATDbits.LATD7 = ~LATDbits.LATD7;
 Delay1KTCYx(250);
 }
 }
 
-# 110
+# 82
 void interrupt XC8_HighISR_Handler(void)
 {
 
-# 117
+# 89
 if (INTCONbits.INT0IF )
 {
 
 INTCONbits.INT0IF = 0;
+
 LATDbits.LATD6 = ~LATDbits.LATD6;
 }
 
 }
 
-# 141
+# 114
 void interrupt low_priority XC8_LowISR_Handler(void)
 {
 

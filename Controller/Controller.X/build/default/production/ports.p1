@@ -27,6 +27,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _WPUBbits `VS13 ~T0 @X0 0 e@3964 ]
 "2489
 [v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
+"2721
+[s S145 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S145 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"2731
+[s S146 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S146 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"2720
+[u S144 `S145 1 `S146 1 ]
+[n S144 . . . ]
+"2742
+[v _TRISCbits `VS144 ~T0 @X0 0 e@3988 ]
 "2931
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
 "7234
@@ -75,6 +86,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S328 . . . . . . . . ]
 "6281
 [v _RCONbits `VS328 ~T0 @X0 0 e@4048 ]
+"5203
+[v _CCP1CON `Vuc ~T0 @X0 0 e@4029 ]
+"6001
+[v _PR2 `Vuc ~T0 @X0 0 e@4043 ]
+"5931
+[v _T2CON `Vuc ~T0 @X0 0 e@4042 ]
+"5290
+[v _CCPR1L `Vuc ~T0 @X0 0 e@4030 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f45k20.h: 49: extern volatile unsigned char SSPMSK @ 0xF77;
@@ -3996,38 +4015,63 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ports.c: 60: TRISB = 0b00110111;
 "60
 [e = _TRISB -> -> 55 `i `uc ]
-[; ;ports.c: 73: TRISD = 0b00010000;
-"73
+[; ;ports.c: 64: TRISCbits.RC2 = 0;
+"64
+[e = . . _TRISCbits 1 2 -> -> 0 `i `uc ]
+[; ;ports.c: 79: TRISD = 0b00010000;
+"79
 [e = _TRISD -> -> 16 `i `uc ]
-[; ;ports.c: 74: }
-"74
+[; ;ports.c: 80: }
+"80
 [e :UE 413 ]
 }
-"76
+"82
 [v _InitInterrupts `(v ~T0 @X0 1 ef ]
 {
-[; ;ports.c: 76: void InitInterrupts(void) {
+[; ;ports.c: 82: void InitInterrupts(void) {
 [e :U _InitInterrupts ]
 [f ]
-[; ;ports.c: 79: INTCON2bits.INTEDG0 = 0;
-"79
-[e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
-[; ;ports.c: 80: INTCONbits.INT0IF = 0;
-"80
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;ports.c: 81: INTCONbits.INT0IE = 1;
-"81
-[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-[; ;ports.c: 84: RCONbits.IPEN = 1;
-"84
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;ports.c: 85: INTCONbits.GIEL = 1;
+[; ;ports.c: 85: INTCON2bits.INTEDG0 = 0;
 "85
-[e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
-[; ;ports.c: 86: INTCONbits.GIEH = 1;
+[e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
+[; ;ports.c: 86: INTCONbits.INT0IF = 0;
 "86
-[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
-[; ;ports.c: 87: }
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;ports.c: 87: INTCONbits.INT0IE = 1;
 "87
+[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
+[; ;ports.c: 90: RCONbits.IPEN = 1;
+"90
+[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
+[; ;ports.c: 91: INTCONbits.GIEL = 1;
+"91
+[e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
+[; ;ports.c: 92: INTCONbits.GIEH = 1;
+"92
+[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
+[; ;ports.c: 93: }
+"93
 [e :UE 414 ]
+}
+"95
+[v _InitMotorPWM `(v ~T0 @X0 1 ef ]
+{
+[; ;ports.c: 95: void InitMotorPWM(void) {
+[e :U _InitMotorPWM ]
+[f ]
+[; ;ports.c: 97: CCP1CON = 0b00001100;
+"97
+[e = _CCP1CON -> -> 12 `i `uc ]
+[; ;ports.c: 100: PR2 = 255;
+"100
+[e = _PR2 -> -> 255 `i `uc ]
+[; ;ports.c: 103: T2CON = 0b00001100;
+"103
+[e = _T2CON -> -> 12 `i `uc ]
+[; ;ports.c: 106: CCPR1L = 0;
+"106
+[e = _CCPR1L -> -> 0 `i `uc ]
+[; ;ports.c: 107: }
+"107
+[e :UE 415 ]
 }

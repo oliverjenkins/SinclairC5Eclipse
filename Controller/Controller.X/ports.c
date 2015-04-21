@@ -59,6 +59,12 @@ void InitPorts(void) {
 
     TRISB = 0b00110111; 
 
+
+    // Port C
+    TRISCbits.RC2 = 0;
+    
+
+
     // Port D
     /*
      * 38   RD0/PSP0                    RD0     D       0   LCD - Data 1
@@ -84,4 +90,18 @@ void InitInterrupts(void) {
     RCONbits.IPEN = 1;          // Enable priority levels on interrupts
     INTCONbits.GIEL = 1;        // Low priority interrupts allowed
     INTCONbits.GIEH = 1;        // Interrupting enabled.
+}
+
+void InitMotorPWM(void) {
+ // Configure the operation of CCP - PWM rather than Capture or Compare
+    CCP1CON = 0b00001100;   // Simple Mode for PW1, with PWM, we're not sending output to RD5/PSP5/P1B etc
+
+    // Set the frequency of the PWM signal
+    PR2 = 255;   // PWM period = (PR2+1) * prescaler * Tcy = 1ms
+
+    // Enable Timer2 module for PWM to run
+    T2CON = 0b00001100;     // Enable TMR2 with prescaler = 1
+
+    // Duty Cycle - how much is it 'on'
+    CCPR1L = 0; // pulse width = CCPR1L * prescaler * Tcy = 100us    
 }

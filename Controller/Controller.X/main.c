@@ -54,50 +54,22 @@ void main (void)
 {
     InitPorts();
     InitInterrupts();
-
+    InitMotorPWM();
     InitLCD();
+    LCDInitialDisplay();
 
-//
-//    // Create first custom char
-    SetLCDCGRamAddr(0x00);
-    WriteDataLCD(0b00000);
-    WriteDataLCD(0b01111);
-    WriteDataLCD(0b10001);
-    WriteDataLCD(0b10001);
-    WriteDataLCD(0b10001);
-    WriteDataLCD(0b01111);
-    WriteDataLCD(0b00111);
-    WriteDataLCD(0b00111);
+    CCPR1L = 16;
 
-    // Second custom char
-    SetLCDCGRamAddr(0x08);
-    WriteDataLCD(0b11111);
-    WriteDataLCD(0b10001);
-    WriteDataLCD(0b10001);
-    WriteDataLCD(0b10101);
-    WriteDataLCD(0b10001);
-    WriteDataLCD(0b10001);
-    WriteDataLCD(0b10001);
-    WriteDataLCD(0b11111);
-
-   WriteCmdLCD(0b00000010);        // Cursor to home
-    putLCD( (unsigned char *)"Testing ");
-
-    putIntLCD(3455);
-
-    SetLCDDDRamAddr(0x040);         // Cursor to second line
-    putLCD( (unsigned char *)"Line 000 ");
-
-    WriteDataLCD(0);              // Write First Custom Char
-    WriteDataLCD(1);              // Write Second Custom Char    
-
+    // Testing config
     LATD = 0;
-  
+    LATC = 0;
+
     while (1)
     { // we update the port pins in our "background" loop while the interrupts
       // handle the switch and timer.
-
-        LATDbits.LATD7 = ~LATDbits.LATD7; // toggle LATD;
+       CCPR1L = CCPR1L + 16;
+       
+        LATDbits.LATD7 = ~LATDbits.LATD7; // toggle LATD;         
         Delay1KTCYx(250);
     }
 }
@@ -118,6 +90,7 @@ void interrupt XC8_HighISR_Handler(void)
     {
         // clear (reset) flag
         INTCONbits.INT0IF = 0;
+       
         LATDbits.LATD6 = ~LATDbits.LATD6; // toggle LATD;
     }
 

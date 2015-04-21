@@ -11,3 +11,5 @@
 
 void InitPorts(void);
 void InitInterrupts(void);
+
+void InitMotorPWM(void);
