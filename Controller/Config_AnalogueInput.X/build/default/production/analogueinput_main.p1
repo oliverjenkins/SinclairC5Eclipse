@@ -4077,9 +4077,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;analogueinput_main.c: 128: TRISAbits.TRISA0 = 1;
 "128
 [e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
-[; ;analogueinput_main.c: 137: ANSEL = 0b10000000;
+[; ;analogueinput_main.c: 137: ANSEL = 0b00000001;
 "137
-[e = _ANSEL -> -> 128 `i `uc ]
+[e = _ANSEL -> -> 1 `i `uc ]
 [; ;analogueinput_main.c: 138: ANSELH = 0b00000000;
 "138
 [e = _ANSELH -> -> 0 `i `uc ]
@@ -4089,9 +4089,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;analogueinput_main.c: 142: ADCON2 = 0b00111000;
 "142
 [e = _ADCON2 -> -> 56 `i `uc ]
-[; ;analogueinput_main.c: 160: ADCON0 = 0b00011101;
+[; ;analogueinput_main.c: 160: ADCON0 = 0b00000001;
 "160
-[e = _ADCON0 -> -> 29 `i `uc ]
+[e = _ADCON0 -> -> 1 `i `uc ]
 [; ;analogueinput_main.c: 163: while (1)
 "163
 [e :U 415 ]

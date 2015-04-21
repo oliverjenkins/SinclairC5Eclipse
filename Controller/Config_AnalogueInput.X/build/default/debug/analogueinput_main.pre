@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "analogueinput_main.c"
 
 
 # 12
@@ -15,10 +15,28 @@
 #pragma config EBTR0 = OFF, EBTR1 = OFF, EBTR2 = OFF, EBTR3 = OFF
 #pragma config EBTRB = OFF
 
+# 31
+unsigned char ADC_Value;
 
-
-
-#pragma config MCLRE = OFF
+# 37
+const unsigned char ADC_LED_Lookup[16] @ 0x180 = {
+0b00000000,
+0b00000001,
+0b00000010,
+0b00000011,
+0b00000101,
+0b00000111,
+0b00001011,
+0b00001111,
+0b00010111,
+0b00011111,
+0b00101111,
+0b00111111,
+0b01011111,
+0b01111111,
+0b10111111,
+0b11111111,
+};
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -5247,111 +5265,44 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 12 "ports.h"
-void InitPorts(void);
-void InitInterrupts(void);
-void InitAnalogueInputs(void);
-void InitMotorPWM(void);
+# 61 "analogueinput_main.c"
 unsigned char ADC_Convert(void);
 
-# 72 "lcddisplay.h"
-void InitLCD(void);
-void DelayFor18TCY(void);
-void DelayPORLCD(void);
-
-
-void OpenLCD(unsigned char lcdtype);
-void WriteCmdLCD(unsigned char cmd);
-void SetLCDCGRamAddr(unsigned char CGaddr);
-void SetLCDDDRamAddr(unsigned char DDaddr);
-unsigned char BusyLCD(void);
-void putLCD(char *buffer);
-void putIntLCD(short int n);
-void WriteDataLCD(char data);
-
-
-void LCDInitialDisplay(void);
-
-# 41 "main.c"
-void interrupt XC8_HighISR_Handler(void);
-
-# 48
-unsigned char PortBValue;
-unsigned char ADC_Value;
-
-# 56
+# 123
 void main (void)
 {
-InitPorts();
-InitInterrupts();
-InitMotorPWM();
-InitLCD();
-InitAnalogueInputs();
-LCDInitialDisplay();
+TRISD = 0b00000000;
 
 
+TRISAbits.TRISA0 = 1;
 
-CCPR1L = 16;
+# 137
+ANSEL = 0b00000001;
+ANSELH = 0b00000000;
 
 
-LATD = 0;
-LATC = 0;
+ADCON1 = 0b00000000;
+ADCON2 = 0b00111000;
+
+# 160
+ADCON0 = 0b00011101;
+
 
 while (1)
 {
-
-CCPR1L = CCPR1L + 2;
 ADC_Value = ADC_Convert();
 ADC_Value = ADC_Value >> 4;
 
-SetLCDDDRamAddr(0x040);
-if (ADC_Value < 10) {
-WriteDataLCD('0');
-}
-putIntLCD(ADC_Value);
 
-LATDbits.LATD7 = ~LATDbits.LATD7;
+LATD = ADC_LED_Lookup[ADC_Value];
 
 }
 }
 
-# 96
-void interrupt XC8_HighISR_Handler(void)
+
+unsigned char ADC_Convert(void)
 {
-
-# 103
-if (INTCONbits.INT0IF )
-{
-
-INTCONbits.INT0IF = 0;
-
-LATDbits.LATD6 = ~LATDbits.LATD6;
+ADCON0bits.GO_DONE = 1;
+while (ADCON0bits.GO_DONE == 1);
+return ADRESH;
 }
-
-}
-
-# 128
-void interrupt low_priority XC8_LowISR_Handler(void)
-{
-
-
-if (INTCON3bits.INT1IF) {
-INTCON3bits.INT1IF = 0;
-LATDbits.LATD1 = ~LATDbits.LATD1;
-}
-
-if (INTCONbits.RBIF) {
-PortBValue = PORTB;
-INTCONbits.RBIF = 0;
-if (PortBValue & 0b00010000) {
-LATDbits.LATD4 = ~LATDbits.LATD4;
-}
-if (PortBValue & 0b00100000) {
-LATDbits.LATD5 = ~LATDbits.LATD5;
-}
-}
-
-
-
-}
-

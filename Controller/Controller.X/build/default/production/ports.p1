@@ -3,6 +3,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ANSEL `Vuc ~T0 @X0 0 e@3966 ]
 "489
 [v _ANSELH `Vuc ~T0 @X0 0 e@3967 ]
+"2268
+[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
 "7165
 [s S365 :7 `uc 1 :1 `uc 1 ]
 [n S365 . . NOT_RBPU ]
@@ -94,6 +96,54 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _T2CON `Vuc ~T0 @X0 0 e@4042 ]
 "5290
 [v _CCPR1L `Vuc ~T0 @X0 0 e@4030 ]
+"2279
+[s S133 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S133 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
+"2289
+[s S134 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S134 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"2278
+[u S132 `S133 1 `S134 1 ]
+[n S132 . . . ]
+"2300
+[v _TRISAbits `VS132 ~T0 @X0 0 e@3986 ]
+"5372
+[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
+"5302
+[v _ADCON2 `Vuc ~T0 @X0 0 e@4032 ]
+"5425
+[v _ADCON0 `Vuc ~T0 @X0 0 e@4034 ]
+"5431
+[s S278 :1 `uc 1 :1 `uc 1 ]
+[n S278 . . GO_NOT_DONE ]
+"5435
+[s S279 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S279 . ADON GO_nDONE CHS ]
+"5440
+[s S280 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S280 . . DONE CHS0 CHS1 CHS2 CHS3 ]
+"5448
+[s S281 :1 `uc 1 :1 `uc 1 ]
+[n S281 . . NOT_DONE ]
+"5452
+[s S282 :1 `uc 1 :1 `uc 1 ]
+[n S282 . . nDONE ]
+"5456
+[s S283 :1 `uc 1 :1 `uc 1 ]
+[n S283 . . GO_DONE ]
+"5460
+[s S284 :1 `uc 1 :1 `uc 1 ]
+[n S284 . . GO ]
+"5464
+[s S285 :1 `uc 1 :1 `uc 1 ]
+[n S285 . . GODONE ]
+"5430
+[u S277 `S278 1 `S279 1 `S280 1 `S281 1 `S282 1 `S283 1 `S284 1 `S285 1 ]
+[n S277 . . . . . . . . . ]
+"5469
+[v _ADCON0bits `VS277 ~T0 @X0 0 e@4034 ]
+"5555
+[v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f45k20.h: 49: extern volatile unsigned char SSPMSK @ 0xF77;
@@ -4006,72 +4056,129 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ports.c: 45: ANSELH = 0;
 "45
 [e = _ANSELH -> -> 0 `i `uc ]
-[; ;ports.c: 57: INTCON2bits.RBPU = 0;
+[; ;ports.c: 57: TRISA = 0b11100000;
 "57
-[e = . . _INTCON2bits 2 1 -> -> 0 `i `uc ]
-[; ;ports.c: 58: WPUBbits.WPUB0 = 1;
+[e = _TRISA -> -> 224 `i `uc ]
+[; ;ports.c: 58: ANSEL = 0b11100000;
 "58
+[e = _ANSEL -> -> 224 `i `uc ]
+[; ;ports.c: 70: INTCON2bits.RBPU = 0;
+"70
+[e = . . _INTCON2bits 2 1 -> -> 0 `i `uc ]
+[; ;ports.c: 71: WPUBbits.WPUB0 = 1;
+"71
 [e = . . _WPUBbits 0 0 -> -> 1 `i `uc ]
-[; ;ports.c: 60: TRISB = 0b00110111;
-"60
+[; ;ports.c: 73: TRISB = 0b00110111;
+"73
 [e = _TRISB -> -> 55 `i `uc ]
-[; ;ports.c: 64: TRISCbits.RC2 = 0;
-"64
+[; ;ports.c: 77: TRISCbits.RC2 = 0;
+"77
 [e = . . _TRISCbits 1 2 -> -> 0 `i `uc ]
-[; ;ports.c: 79: TRISD = 0b00010000;
-"79
+[; ;ports.c: 90: TRISD = 0b00010000;
+"90
 [e = _TRISD -> -> 16 `i `uc ]
-[; ;ports.c: 80: }
-"80
+[; ;ports.c: 91: }
+"91
 [e :UE 413 ]
 }
-"82
+"93
 [v _InitInterrupts `(v ~T0 @X0 1 ef ]
 {
-[; ;ports.c: 82: void InitInterrupts(void) {
+[; ;ports.c: 93: void InitInterrupts(void) {
 [e :U _InitInterrupts ]
 [f ]
-[; ;ports.c: 85: INTCON2bits.INTEDG0 = 0;
-"85
+[; ;ports.c: 96: INTCON2bits.INTEDG0 = 0;
+"96
 [e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
-[; ;ports.c: 86: INTCONbits.INT0IF = 0;
-"86
+[; ;ports.c: 97: INTCONbits.INT0IF = 0;
+"97
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;ports.c: 87: INTCONbits.INT0IE = 1;
-"87
+[; ;ports.c: 98: INTCONbits.INT0IE = 1;
+"98
 [e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-[; ;ports.c: 90: RCONbits.IPEN = 1;
-"90
+[; ;ports.c: 101: RCONbits.IPEN = 1;
+"101
 [e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;ports.c: 91: INTCONbits.GIEL = 1;
-"91
+[; ;ports.c: 102: INTCONbits.GIEL = 1;
+"102
 [e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
-[; ;ports.c: 92: INTCONbits.GIEH = 1;
-"92
+[; ;ports.c: 103: INTCONbits.GIEH = 1;
+"103
 [e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
-[; ;ports.c: 93: }
-"93
+[; ;ports.c: 104: }
+"104
 [e :UE 414 ]
 }
-"95
+"106
 [v _InitMotorPWM `(v ~T0 @X0 1 ef ]
 {
-[; ;ports.c: 95: void InitMotorPWM(void) {
+[; ;ports.c: 106: void InitMotorPWM(void) {
 [e :U _InitMotorPWM ]
 [f ]
-[; ;ports.c: 97: CCP1CON = 0b00001100;
-"97
+[; ;ports.c: 108: CCP1CON = 0b00001100;
+"108
 [e = _CCP1CON -> -> 12 `i `uc ]
-[; ;ports.c: 100: PR2 = 255;
-"100
+[; ;ports.c: 111: PR2 = 255;
+"111
 [e = _PR2 -> -> 255 `i `uc ]
-[; ;ports.c: 103: T2CON = 0b00001100;
-"103
+[; ;ports.c: 114: T2CON = 0b00001100;
+"114
 [e = _T2CON -> -> 12 `i `uc ]
-[; ;ports.c: 106: CCPR1L = 0;
-"106
+[; ;ports.c: 117: CCPR1L = 0;
+"117
 [e = _CCPR1L -> -> 0 `i `uc ]
-[; ;ports.c: 107: }
-"107
+[; ;ports.c: 118: }
+"118
 [e :UE 415 ]
+}
+"120
+[v _InitAnalogueInputs `(v ~T0 @X0 1 ef ]
+{
+[; ;ports.c: 120: void InitAnalogueInputs(void) {
+[e :U _InitAnalogueInputs ]
+[f ]
+[; ;ports.c: 123: TRISAbits.TRISA0 = 1;
+"123
+[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
+[; ;ports.c: 132: ANSEL = 0b00000001;
+"132
+[e = _ANSEL -> -> 1 `i `uc ]
+[; ;ports.c: 135: ADCON1 = 0b00000000;
+"135
+[e = _ADCON1 -> -> 0 `i `uc ]
+[; ;ports.c: 136: ADCON2 = 0b00111000;
+"136
+[e = _ADCON2 -> -> 56 `i `uc ]
+[; ;ports.c: 154: ADCON0 = 0b00000001;
+"154
+[e = _ADCON0 -> -> 1 `i `uc ]
+[; ;ports.c: 156: }
+"156
+[e :UE 416 ]
+}
+"158
+[v _ADC_Convert `(uc ~T0 @X0 1 ef ]
+"159
+{
+[; ;ports.c: 158: unsigned char ADC_Convert(void)
+[; ;ports.c: 159: {
+[e :U _ADC_Convert ]
+[f ]
+[; ;ports.c: 160: ADCON0bits.GO_DONE = 1;
+"160
+[e = . . _ADCON0bits 5 1 -> -> 1 `i `uc ]
+[; ;ports.c: 161: while (ADCON0bits.GO_DONE == 1);
+"161
+[e $U 418  ]
+[e :U 419 ]
+[e :U 418 ]
+[e $ == -> . . _ADCON0bits 5 1 `i -> 1 `i 419  ]
+[e :U 420 ]
+[; ;ports.c: 162: return ADRESH;
+"162
+[e ) _ADRESH ]
+[e $UE 417  ]
+[; ;ports.c: 163: }
+"163
+[e :UE 417 ]
 }

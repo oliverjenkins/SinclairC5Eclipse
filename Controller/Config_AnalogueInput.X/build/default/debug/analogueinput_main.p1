@@ -1,101 +1,7 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"428 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
-[v _ANSEL `Vuc ~T0 @X0 0 e@3966 ]
-"489
-[v _ANSELH `Vuc ~T0 @X0 0 e@3967 ]
-"2268
-[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
-"7165
-[s S365 :7 `uc 1 :1 `uc 1 ]
-[n S365 . . NOT_RBPU ]
-"7169
-[s S366 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S366 . RBIP . TMR0IP . INTEDG2 INTEDG1 INTEDG0 nRBPU ]
-"7179
-[s S367 :7 `uc 1 :1 `uc 1 ]
-[n S367 . . RBPU ]
-"7164
-[u S364 `S365 1 `S366 1 `S367 1 ]
-[n S364 . . . . ]
-"7184
-[v _INTCON2bits `VS364 ~T0 @X0 0 e@4081 ]
-"335
-[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S14 . WPUB0 WPUB1 WPUB2 WPUB3 WPUB4 WPUB5 WPUB6 WPUB7 ]
-"334
-[u S13 `S14 1 ]
-[n S13 . . ]
-"346
-[v _WPUBbits `VS13 ~T0 @X0 0 e@3964 ]
-"2489
-[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"2721
-[s S145 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S145 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"2731
-[s S146 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S146 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
-"2720
-[u S144 `S145 1 `S146 1 ]
-[n S144 . . . ]
-"2742
-[v _TRISCbits `VS144 ~T0 @X0 0 e@3988 ]
-"2931
+[p mainexit ]
+"2931 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
-"7234
-[s S369 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S369 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"7244
-[s S370 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S370 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE GIE ]
-"7254
-[s S371 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S371 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE GIEL GIEH ]
-"7264
-[s S372 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S372 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"7274
-[s S373 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S373 . . GIEL GIEH ]
-"7233
-[u S368 `S369 1 `S370 1 `S371 1 `S372 1 `S373 1 ]
-[n S368 . . . . . . ]
-"7280
-[v _INTCONbits `VS368 ~T0 @X0 0 e@4082 ]
-"6244
-[s S329 :1 `uc 1 ]
-[n S329 . NOT_BOR ]
-"6247
-[s S330 :1 `uc 1 :1 `uc 1 ]
-[n S330 . . NOT_POR ]
-"6251
-[s S331 :2 `uc 1 :1 `uc 1 ]
-[n S331 . . NOT_PD ]
-"6255
-[s S332 :3 `uc 1 :1 `uc 1 ]
-[n S332 . . NOT_TO ]
-"6259
-[s S333 :4 `uc 1 :1 `uc 1 ]
-[n S333 . . NOT_RI ]
-"6263
-[s S334 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S334 . nBOR nPOR nPD nTO nRI . SBOREN IPEN ]
-"6273
-[s S335 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S335 . BOR POR PD TO RI ]
-"6243
-[u S328 `S329 1 `S330 1 `S331 1 `S332 1 `S333 1 `S334 1 `S335 1 ]
-[n S328 . . . . . . . . ]
-"6281
-[v _RCONbits `VS328 ~T0 @X0 0 e@4048 ]
-"5203
-[v _CCP1CON `Vuc ~T0 @X0 0 e@4029 ]
-"6001
-[v _PR2 `Vuc ~T0 @X0 0 e@4043 ]
-"5931
-[v _T2CON `Vuc ~T0 @X0 0 e@4042 ]
-"5290
-[v _CCPR1L `Vuc ~T0 @X0 0 e@4030 ]
 "2279
 [s S133 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S133 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
@@ -107,12 +13,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S132 . . . ]
 "2300
 [v _TRISAbits `VS132 ~T0 @X0 0 e@3986 ]
+"428
+[v _ANSEL `Vuc ~T0 @X0 0 e@3966 ]
+"489
+[v _ANSELH `Vuc ~T0 @X0 0 e@3967 ]
 "5372
 [v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
 "5302
 [v _ADCON2 `Vuc ~T0 @X0 0 e@4032 ]
 "5425
 [v _ADCON0 `Vuc ~T0 @X0 0 e@4034 ]
+"61 analogueinput_main.c
+[v _ADC_Convert `(uc ~T0 @X0 0 ef ]
+"2034 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
+[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
 "5431
 [s S278 :1 `uc 1 :1 `uc 1 ]
 [n S278 . . GO_NOT_DONE ]
@@ -144,6 +58,108 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADCON0bits `VS277 ~T0 @X0 0 e@4034 ]
 "5555
 [v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
+"12 analogueinput_main.c
+[p x FOSC=INTIO67 ]
+[p x FCMEN=OFF ]
+[p x IESO=OFF ]
+"13
+[p x PWRT=OFF ]
+[p x BOREN=SBORDIS ]
+[p x BORV=30 ]
+"14
+[p x WDTEN=OFF ]
+[p x WDTPS=32768 ]
+"15
+[p x LPT1OSC=ON ]
+[p x PBADEN=ON ]
+[p x CCP2MX=PORTC ]
+"16
+[p x STVREN=ON ]
+[p x LVP=OFF ]
+[p x XINST=OFF ]
+"17
+[p x CP0=OFF ]
+[p x CP1=OFF ]
+[p x CP2=OFF ]
+[p x CP3=OFF ]
+"18
+[p x CPB=OFF ]
+[p x CPD=OFF ]
+"19
+[p x WRT0=OFF ]
+[p x WRT1=OFF ]
+[p x WRT2=OFF ]
+[p x WRT3=OFF ]
+"20
+[p x WRTB=OFF ]
+[p x WRTC=OFF ]
+[p x WRTD=OFF ]
+"21
+[p x EBTR0=OFF ]
+[p x EBTR1=OFF ]
+[p x EBTR2=OFF ]
+[p x EBTR3=OFF ]
+"22
+[p x EBTRB=OFF ]
+"31
+[v _ADC_Value `uc ~T0 @X0 1 e ]
+[; ;analogueinput_main.c: 31: unsigned char ADC_Value;
+"37
+[v _ADC_LED_Lookup `Cuc ~T0 @X0 -> 16 `i e@384 ]
+[i _ADC_LED_Lookup
+:U ..
+"38
+-> -> 0 `i `uc
+"39
+-> -> 1 `i `uc
+"40
+-> -> 2 `i `uc
+"41
+-> -> 3 `i `uc
+"42
+-> -> 5 `i `uc
+"43
+-> -> 7 `i `uc
+"44
+-> -> 11 `i `uc
+"45
+-> -> 15 `i `uc
+"46
+-> -> 23 `i `uc
+"47
+-> -> 31 `i `uc
+"48
+-> -> 47 `i `uc
+"49
+-> -> 63 `i `uc
+"50
+-> -> 95 `i `uc
+"51
+-> -> 127 `i `uc
+"52
+-> -> 191 `i `uc
+"53
+-> -> 255 `i `uc
+..
+]
+[; ;analogueinput_main.c: 37: const unsigned char ADC_LED_Lookup[16] @ 0x180 = {
+[; ;analogueinput_main.c: 38: 0b00000000,
+[; ;analogueinput_main.c: 39: 0b00000001,
+[; ;analogueinput_main.c: 40: 0b00000010,
+[; ;analogueinput_main.c: 41: 0b00000011,
+[; ;analogueinput_main.c: 42: 0b00000101,
+[; ;analogueinput_main.c: 43: 0b00000111,
+[; ;analogueinput_main.c: 44: 0b00001011,
+[; ;analogueinput_main.c: 45: 0b00001111,
+[; ;analogueinput_main.c: 46: 0b00010111,
+[; ;analogueinput_main.c: 47: 0b00011111,
+[; ;analogueinput_main.c: 48: 0b00101111,
+[; ;analogueinput_main.c: 49: 0b00111111,
+[; ;analogueinput_main.c: 50: 0b01011111,
+[; ;analogueinput_main.c: 51: 0b01111111,
+[; ;analogueinput_main.c: 52: 0b10111111,
+[; ;analogueinput_main.c: 53: 0b11111111,
+[; ;analogueinput_main.c: 54: };
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f45k20.h: 49: extern volatile unsigned char SSPMSK @ 0xF77;
@@ -4044,141 +4060,85 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
-"42 ports.c
-[v _InitPorts `(v ~T0 @X0 1 ef ]
+[; ;analogueinput_main.c: 61: unsigned char ADC_Convert(void);
+"123 analogueinput_main.c
+[v _main `(v ~T0 @X0 1 ef ]
+"124
 {
-[; ;ports.c: 42: void InitPorts(void) {
-[e :U _InitPorts ]
+[; ;analogueinput_main.c: 123: void main (void)
+[; ;analogueinput_main.c: 124: {
+[e :U _main ]
 [f ]
-[; ;ports.c: 44: ANSEL = 0;
-"44
-[e = _ANSEL -> -> 0 `i `uc ]
-[; ;ports.c: 45: ANSELH = 0;
-"45
+[; ;analogueinput_main.c: 125: TRISD = 0b00000000;
+"125
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;analogueinput_main.c: 128: TRISAbits.TRISA0 = 1;
+"128
+[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
+[; ;analogueinput_main.c: 137: ANSEL = 0b00000001;
+"137
+[e = _ANSEL -> -> 1 `i `uc ]
+[; ;analogueinput_main.c: 138: ANSELH = 0b00000000;
+"138
 [e = _ANSELH -> -> 0 `i `uc ]
-[; ;ports.c: 57: TRISA = 0b11100000;
-"57
-[e = _TRISA -> -> 224 `i `uc ]
-[; ;ports.c: 58: ANSEL = 0b11100000;
-"58
-[e = _ANSEL -> -> 224 `i `uc ]
-[; ;ports.c: 70: INTCON2bits.RBPU = 0;
-"70
-[e = . . _INTCON2bits 2 1 -> -> 0 `i `uc ]
-[; ;ports.c: 71: WPUBbits.WPUB0 = 1;
-"71
-[e = . . _WPUBbits 0 0 -> -> 1 `i `uc ]
-[; ;ports.c: 73: TRISB = 0b00110111;
-"73
-[e = _TRISB -> -> 55 `i `uc ]
-[; ;ports.c: 77: TRISCbits.RC2 = 0;
-"77
-[e = . . _TRISCbits 1 2 -> -> 0 `i `uc ]
-[; ;ports.c: 90: TRISD = 0b00010000;
-"90
-[e = _TRISD -> -> 16 `i `uc ]
-[; ;ports.c: 91: }
-"91
+[; ;analogueinput_main.c: 141: ADCON1 = 0b00000000;
+"141
+[e = _ADCON1 -> -> 0 `i `uc ]
+[; ;analogueinput_main.c: 142: ADCON2 = 0b00111000;
+"142
+[e = _ADCON2 -> -> 56 `i `uc ]
+[; ;analogueinput_main.c: 160: ADCON0 = 0b00011101;
+"160
+[e = _ADCON0 -> -> 29 `i `uc ]
+[; ;analogueinput_main.c: 163: while (1)
+"163
+[e :U 415 ]
+[; ;analogueinput_main.c: 164: {
+"164
+{
+[; ;analogueinput_main.c: 165: ADC_Value = ADC_Convert();
+"165
+[e = _ADC_Value ( _ADC_Convert ..  ]
+[; ;analogueinput_main.c: 166: ADC_Value = ADC_Value >> 4;
+"166
+[e = _ADC_Value -> >> -> _ADC_Value `i -> 4 `i `uc ]
+[; ;analogueinput_main.c: 169: LATD = ADC_LED_Lookup[ADC_Value];
+"169
+[e = _LATD *U + &U _ADC_LED_Lookup * -> _ADC_Value `ux -> -> # *U &U _ADC_LED_Lookup `ui `ux ]
+"171
+}
+[e :U 414 ]
+"163
+[e $U 415  ]
+[e :U 416 ]
+[; ;analogueinput_main.c: 171: }
+[; ;analogueinput_main.c: 172: }
+"172
 [e :UE 413 ]
 }
-"93
-[v _InitInterrupts `(v ~T0 @X0 1 ef ]
-{
-[; ;ports.c: 93: void InitInterrupts(void) {
-[e :U _InitInterrupts ]
-[f ]
-[; ;ports.c: 96: INTCON2bits.INTEDG0 = 0;
-"96
-[e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
-[; ;ports.c: 97: INTCONbits.INT0IF = 0;
-"97
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;ports.c: 98: INTCONbits.INT0IE = 1;
-"98
-[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-[; ;ports.c: 101: RCONbits.IPEN = 1;
-"101
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;ports.c: 102: INTCONbits.GIEL = 1;
-"102
-[e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
-[; ;ports.c: 103: INTCONbits.GIEH = 1;
-"103
-[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
-[; ;ports.c: 104: }
-"104
-[e :UE 414 ]
-}
-"106
-[v _InitMotorPWM `(v ~T0 @X0 1 ef ]
-{
-[; ;ports.c: 106: void InitMotorPWM(void) {
-[e :U _InitMotorPWM ]
-[f ]
-[; ;ports.c: 108: CCP1CON = 0b00001100;
-"108
-[e = _CCP1CON -> -> 12 `i `uc ]
-[; ;ports.c: 111: PR2 = 255;
-"111
-[e = _PR2 -> -> 255 `i `uc ]
-[; ;ports.c: 114: T2CON = 0b00001100;
-"114
-[e = _T2CON -> -> 12 `i `uc ]
-[; ;ports.c: 117: CCPR1L = 0;
-"117
-[e = _CCPR1L -> -> 0 `i `uc ]
-[; ;ports.c: 118: }
-"118
-[e :UE 415 ]
-}
-"120
-[v _InitAnalogueInputs `(v ~T0 @X0 1 ef ]
-{
-[; ;ports.c: 120: void InitAnalogueInputs(void) {
-[e :U _InitAnalogueInputs ]
-[f ]
-[; ;ports.c: 123: TRISAbits.TRISA0 = 1;
-"123
-[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
-[; ;ports.c: 132: ANSEL = 0b00000001;
-"132
-[e = _ANSEL -> -> 1 `i `uc ]
-[; ;ports.c: 135: ADCON1 = 0b00000000;
-"135
-[e = _ADCON1 -> -> 0 `i `uc ]
-[; ;ports.c: 136: ADCON2 = 0b00111000;
-"136
-[e = _ADCON2 -> -> 56 `i `uc ]
-[; ;ports.c: 154: ADCON0 = 0b00000001;
-"154
-[e = _ADCON0 -> -> 1 `i `uc ]
-[; ;ports.c: 156: }
-"156
-[e :UE 416 ]
-}
-"158
+"175
 [v _ADC_Convert `(uc ~T0 @X0 1 ef ]
-"159
+"176
 {
-[; ;ports.c: 158: unsigned char ADC_Convert(void)
-[; ;ports.c: 159: {
+[; ;analogueinput_main.c: 175: unsigned char ADC_Convert(void)
+[; ;analogueinput_main.c: 176: {
 [e :U _ADC_Convert ]
 [f ]
-[; ;ports.c: 160: ADCON0bits.GO_DONE = 1;
-"160
+[; ;analogueinput_main.c: 177: ADCON0bits.GO_DONE = 1;
+"177
 [e = . . _ADCON0bits 5 1 -> -> 1 `i `uc ]
-[; ;ports.c: 161: while (ADCON0bits.GO_DONE == 1);
-"161
+[; ;analogueinput_main.c: 178: while (ADCON0bits.GO_DONE == 1);
+"178
 [e $U 418  ]
 [e :U 419 ]
 [e :U 418 ]
 [e $ == -> . . _ADCON0bits 5 1 `i -> 1 `i 419  ]
 [e :U 420 ]
-[; ;ports.c: 162: return ADRESH;
-"162
+[; ;analogueinput_main.c: 179: return ADRESH;
+"179
 [e ) _ADRESH ]
 [e $UE 417  ]
-[; ;ports.c: 163: }
-"163
+[; ;analogueinput_main.c: 180: }
+"180
 [e :UE 417 ]
 }

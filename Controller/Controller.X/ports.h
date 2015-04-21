@@ -11,5 +11,6 @@
 
 void InitPorts(void);
 void InitInterrupts(void);
-
+void InitAnalogueInputs(void);
 void InitMotorPWM(void);
+unsigned char ADC_Convert(void);

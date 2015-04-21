@@ -1,0 +1,114 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F45K20 ]
+[d frameptr 4065 ]
+"123 F:\Projects\SinclairC5Eclipse\Controller\Config_AnalogueInput.X\analogueinput_main.c
+[v _main main `(v  1 e 0 0 ]
+"175
+[v _ADC_Convert ADC_Convert `(uc  1 e 1 0 ]
+"63 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\double.c
+[v ___flpack __flpack `(d  1 e 3 0 ]
+"88 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fladd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fldiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\flmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\flsub.c
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"31 F:\Projects\SinclairC5Eclipse\Controller\Config_AnalogueInput.X\analogueinput_main.c
+[v _ADC_Value ADC_Value `uc  1 e 1 0 ]
+"37
+[v _ADC_LED_Lookup ADC_LED_Lookup `C[16]uc  1 e 16 @384 ]
+"428 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
+[v _ANSEL ANSEL `VEuc  1 e 1 @3966 ]
+"489
+[v _ANSELH ANSELH `VEuc  1 e 1 @3967 ]
+"2034
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+[s S22 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"2300
+[s S31 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+[u S40 . 1 `S22 1 . 1 0 `S31 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES40  1 e 1 @3986 ]
+"2931
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"5302
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
+"5372
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"5425
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
+[s S72 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_NOT_DONE 1 0 :1:1 
+]
+"5469
+[s S75 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+]
+[s S79 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 DONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+]
+[s S86 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_DONE 1 0 :1:1 
+]
+[s S89 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S92 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[s S95 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[s S98 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GODONE 1 0 :1:1 
+]
+[u S101 . 1 `S72 1 . 1 0 `S75 1 . 1 0 `S79 1 . 1 0 `S86 1 . 1 0 `S89 1 . 1 0 `S92 1 . 1 0 `S95 1 . 1 0 `S98 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES101  1 e 1 @4034 ]
+"5555
+[v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+"123 F:\Projects\SinclairC5Eclipse\Controller\Config_AnalogueInput.X\analogueinput_main.c
+[v _main main `(v  1 e 0 0 ]
+{
+"172
+} 0
+"175
+[v _ADC_Convert ADC_Convert `(uc  1 e 1 0 ]
+{
+"180
+} 0

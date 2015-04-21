@@ -43,6 +43,19 @@ void InitPorts(void) {
     // Turn off all analogue functions, we will enable the ones needed later
     ANSEL = 0;
     ANSELH = 0;
+    // Port A
+    /*
+        * 19   RA0/AN0/C12IN0              RA0     A       0   ADC - Throttle Input
+        * 20   RA1/AN1/C12IN1-             RA1     A       1   ADC - Motor Speed (back emf)
+        * 21   RA2/AN2/VREF-/CVREF/C2IN+   RA2     A       2   ADC - Battery Voltage
+        * 22   RA3/AN3/VREF+/C1IN+         RA3     A       3   Battery Voltage Select [1]
+        * 23   RA4/T0CKI/C1OUT             RA4     A       4   Battery Voltage Select [1]
+        * 24   RA5/AN4/SS/HLVDIN/C2OUT     RA5     A       5   Battery Voltage Select [1]
+        * 31   OSC2/CLKOUT/RA6             RA6     A       6   Battery Voltage Select [1]
+        * 32   OSC1/CLKIN/RA7              RA7     A       7
+    */
+    TRISA = 0b11100000;
+    ANSEL = 0b11100000;
 
     // Port B
     /*
@@ -63,8 +76,6 @@ void InitPorts(void) {
     // Port C
     TRISCbits.RC2 = 0;
     
-
-
     // Port D
     /*
      * 38   RD0/PSP0                    RD0     D       0   LCD - Data 1
@@ -104,4 +115,49 @@ void InitMotorPWM(void) {
 
     // Duty Cycle - how much is it 'on'
     CCPR1L = 0; // pulse width = CCPR1L * prescaler * Tcy = 100us    
+}
+
+void InitAnalogueInputs(void) {
+
+// Analogue configuration
+    TRISAbits.TRISA0 = 1;       // TRISA0 input
+    //
+
+    // ANSEL and ANSELH registers set if the pin is to be an analogue or digital inputs
+    // each bit corresponding to a particular input.  Set the bit to 1 for analogue
+    // REG      bit7    bit6    bit5    bit4    bit3    bit2    bit1    bit0
+    // ANSEL    ANS7    ANS6    ANS5    ANS4    ANS3    ANS2    ANS1    ANS0
+    // ANSELH   -       -       -       ANS12   ANS11   ANS10   ANS9    ANS8
+    // All bits of the ANSELH register initialize to ?0? if the PBADEN bit of CONFIG3H is ?0?
+    ANSEL = 0b00000001;
+
+    // Sets bits VCFG1 and VCFG0 in ADCON1 so the ADC voltage reference is VSS to VDD
+    ADCON1 = 0b00000000;        // What voltage to compare against page 272
+    ADCON2 = 0b00111000;        // How long should AD conversion take - 20 TAD and FOSC/2 page 273
+
+    // Which channel (e.g. AN2) should be used (bits 5 - 2) and information (bit 1) and start the process (bit 0) - page 271
+    /* bit 5-2 CHS<3:0>: Analog Channel Select bits
+    0000 = AN0
+    0001 = AN1
+    0010 = AN2
+    0011 = AN3
+    0100 = AN4
+    0101 = AN5
+    0110 = AN6
+    0111 = AN7
+    1000 = AN8
+    1001 = AN9
+    1010 = AN10
+    1011 = AN11
+    1100 = AN12
+    */
+    ADCON0 = 0b00000001;
+
+}
+
+unsigned char ADC_Convert(void)
+{ // start an ADC conversion and return the 8 most-significant bits of the result
+    ADCON0bits.GO_DONE = 1;             // start conversion
+    while (ADCON0bits.GO_DONE == 1);    // wait for it to complete
+    return ADRESH;                      // return high byte of result
 }

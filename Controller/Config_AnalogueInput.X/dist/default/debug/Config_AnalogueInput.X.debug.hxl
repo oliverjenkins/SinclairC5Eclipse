@@ -1,0 +1,34 @@
+### HEXMate logfile and output summary ###
+### Memory Usage ###
+ Unused memory ranges:
+  6h - 17Fh
+  190h - 5FFh
+  664h - 1FFFFFh
+  200008h - 2FFFFFh
+  30000Eh - 30003Fh
+  
+ dist/default/debug\Config_AnalogueInput.X.debug.hex ranges:
+  0h - 5h
+  180h - 18Fh
+  600h - 663h
+  200000h - 200007h
+  300000h - 30000Dh
+  
+### Hex Memory Map ###
+ Legend:
+  - = Unused memory
+  F = Filled ROM
+  S = Stored serial code
+  A = Stored ASCII string
+  R = Reserved for checksum
+  C = Stored checksum result
+  T = Trailing code
+  & = Find & replace opcode
+  X = Find & delete opcode
+  1 = dist/default/debug\Config_AnalogueInput.X.debug.hex
+00000000: 111111----------------------------------------------------------
+00000180: 1111111111111111------------------------------------------------
+00000600: 1111111111111111111111111111111111111111111111111111111111111111
+00000640: 111111111111111111111111111111111111----------------------------
+00200000: 11111111--------------------------------------------------------
+00300000: 11111111111111--------------------------------------------------

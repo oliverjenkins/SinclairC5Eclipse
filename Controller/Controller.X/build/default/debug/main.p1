@@ -1,10 +1,30 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"8 ports.h
+"12 ports.h
 [v _InitPorts `(v ~T0 @X0 0 ef ]
-"2034 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
+"13
+[v _InitInterrupts `(v ~T0 @X0 0 ef ]
+"15
+[v _InitMotorPWM `(v ~T0 @X0 0 ef ]
+"72 lcddisplay.h
+[v _InitLCD `(v ~T0 @X0 0 ef ]
+"14 ports.h
+[v _InitAnalogueInputs `(v ~T0 @X0 0 ef ]
+"87 lcddisplay.h
+[v _LCDInitialDisplay `(v ~T0 @X0 0 ef ]
+"5290 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
+[v _CCPR1L `Vuc ~T0 @X0 0 e@4030 ]
+"2034
 [v _LATD `Vuc ~T0 @X0 0 e@3980 ]
-"2040
+"1902
+[v _LATC `Vuc ~T0 @X0 0 e@3979 ]
+"16 ports.h
+[v _ADC_Convert `(uc ~T0 @X0 0 ef ]
+"80 lcddisplay.h
+[v _SetLCDDDRamAddr `(v ~T0 @X0 0 ef1`uc ]
+"83
+[v _putIntLCD `(v ~T0 @X0 0 ef1`s ]
+"2040 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
 [s S113 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S113 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
 "2050
@@ -4014,152 +4034,192 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
-[; ;ports.h: 8: void InitPorts(void);
-[; ;ports.h: 9: void InitInterrupts(void);
-[; ;main.c: 40: void interrupt XC8_HighISR_Handler(void);
-"47 main.c
+[; ;ports.h: 12: void InitPorts(void);
+[; ;ports.h: 13: void InitInterrupts(void);
+[; ;ports.h: 14: void InitAnalogueInputs(void);
+[; ;ports.h: 15: void InitMotorPWM(void);
+[; ;ports.h: 16: unsigned char ADC_Convert(void);
+[; ;lcddisplay.h: 72: void InitLCD(void);
+[; ;lcddisplay.h: 73: void DelayFor18TCY(void);
+[; ;lcddisplay.h: 74: void DelayPORLCD(void);
+[; ;lcddisplay.h: 77: void OpenLCD(unsigned char lcdtype);
+[; ;lcddisplay.h: 78: void WriteCmdLCD(unsigned char cmd);
+[; ;lcddisplay.h: 79: void SetLCDCGRamAddr(unsigned char CGaddr);
+[; ;lcddisplay.h: 80: void SetLCDDDRamAddr(unsigned char DDaddr);
+[; ;lcddisplay.h: 81: unsigned char BusyLCD(void);
+[; ;lcddisplay.h: 82: void putLCD(char *buffer);
+[; ;lcddisplay.h: 83: void putIntLCD(short int n);
+[; ;lcddisplay.h: 84: void WriteDataLCD(char data);
+[; ;lcddisplay.h: 87: void LCDInitialDisplay(void);
+[; ;main.c: 41: void interrupt XC8_HighISR_Handler(void);
+"48 main.c
 [v _PortBValue `uc ~T0 @X0 1 e ]
-[; ;main.c: 47: unsigned char PortBValue;
-"52
+[; ;main.c: 48: unsigned char PortBValue;
+"49
+[v _ADC_Value `uc ~T0 @X0 1 e ]
+[; ;main.c: 49: unsigned char ADC_Value;
+"56
 [v _main `(v ~T0 @X0 1 ef ]
-"53
+"57
 {
-[; ;main.c: 52: void main (void)
-[; ;main.c: 53: {
+[; ;main.c: 56: void main (void)
+[; ;main.c: 57: {
 [e :U _main ]
 [f ]
-[; ;main.c: 54: InitPorts();
-"54
-[e ( _InitPorts ..  ]
-[; ;main.c: 55: LATD = 0b10000000;
-"55
-[e = _LATD -> -> 128 `i `uc ]
-[; ;main.c: 57: while (1)
-"57
-[e :U 415 ]
-[; ;main.c: 58: {
+[; ;main.c: 58: InitPorts();
 "58
-{
-[; ;main.c: 61: LATDbits.LATD7 = ~LATDbits.LATD7;
+[e ( _InitPorts ..  ]
+[; ;main.c: 59: InitInterrupts();
+"59
+[e ( _InitInterrupts ..  ]
+[; ;main.c: 60: InitMotorPWM();
+"60
+[e ( _InitMotorPWM ..  ]
+[; ;main.c: 61: InitLCD();
 "61
-[e = . . _LATDbits 0 7 -> ~ -> . . _LATDbits 0 7 `i `uc ]
-[; ;main.c: 62: Delay1KTCYx(250);
+[e ( _InitLCD ..  ]
+[; ;main.c: 62: InitAnalogueInputs();
 "62
-[e ( _Delay1KTCYx (1 -> -> 250 `i `uc ]
+[e ( _InitAnalogueInputs ..  ]
+[; ;main.c: 63: LCDInitialDisplay();
 "63
+[e ( _LCDInitialDisplay ..  ]
+[; ;main.c: 67: CCPR1L = 16;
+"67
+[e = _CCPR1L -> -> 16 `i `uc ]
+[; ;main.c: 70: LATD = 0;
+"70
+[e = _LATD -> -> 0 `i `uc ]
+[; ;main.c: 71: LATC = 0;
+"71
+[e = _LATC -> -> 0 `i `uc ]
+[; ;main.c: 73: while (1)
+"73
+[e :U 415 ]
+[; ;main.c: 74: {
+"74
+{
+[; ;main.c: 76: CCPR1L = CCPR1L + 16;
+"76
+[e = _CCPR1L -> + -> _CCPR1L `i -> 16 `i `uc ]
+[; ;main.c: 77: ADC_Value = ADC_Convert();
+"77
+[e = _ADC_Value ( _ADC_Convert ..  ]
+[; ;main.c: 78: ADC_Value = ADC_Value >> 4;
+"78
+[e = _ADC_Value -> >> -> _ADC_Value `i -> 4 `i `uc ]
+[; ;main.c: 80: SetLCDDDRamAddr(0x040);
+"80
+[e ( _SetLCDDDRamAddr (1 -> -> 64 `i `uc ]
+[; ;main.c: 81: putIntLCD(ADC_Value);
+"81
+[e ( _putIntLCD (1 -> _ADC_Value `s ]
+[; ;main.c: 83: LATDbits.LATD7 = ~LATDbits.LATD7;
+"83
+[e = . . _LATDbits 0 7 -> ~ -> . . _LATDbits 0 7 `i `uc ]
+[; ;main.c: 84: Delay1KTCYx(250);
+"84
+[e ( _Delay1KTCYx (1 -> -> 250 `i `uc ]
+"85
 }
 [e :U 414 ]
-"57
+"73
 [e $U 415  ]
 [e :U 416 ]
-[; ;main.c: 63: }
-[; ;main.c: 64: }
-"64
+[; ;main.c: 85: }
+[; ;main.c: 86: }
+"86
 [e :UE 413 ]
 }
-[v F4331 `(v ~T0 @X0 1 tf ]
-"71
-[v _XC8_HighISR_Handler `IF4331 ~T0 @X0 1 e ]
-"72
+[v F4360 `(v ~T0 @X0 1 tf ]
+"93
+[v _XC8_HighISR_Handler `IF4360 ~T0 @X0 1 e ]
+"94
 {
-[; ;main.c: 71: void interrupt XC8_HighISR_Handler(void)
-[; ;main.c: 72: {
+[; ;main.c: 93: void interrupt XC8_HighISR_Handler(void)
+[; ;main.c: 94: {
 [e :U _XC8_HighISR_Handler ]
 [f ]
-[; ;main.c: 78: if (INTCONbits.INT0IF )
-"78
+[; ;main.c: 100: if (INTCONbits.INT0IF )
+"100
 [e $ ! != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 418  ]
-[; ;main.c: 79: {
-"79
+[; ;main.c: 101: {
+"101
 {
-[; ;main.c: 81: INTCONbits.INT0IF = 0;
-"81
+[; ;main.c: 103: INTCONbits.INT0IF = 0;
+"103
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 82: LATDbits.LATD0 = ~LATDbits.LATD0;
-"82
-[e = . . _LATDbits 0 0 -> ~ -> . . _LATDbits 0 0 `i `uc ]
-"83
+[; ;main.c: 105: LATDbits.LATD6 = ~LATDbits.LATD6;
+"105
+[e = . . _LATDbits 0 6 -> ~ -> . . _LATDbits 0 6 `i `uc ]
+"106
 }
 [e :U 418 ]
-[; ;main.c: 83: }
-[; ;main.c: 85: if (INTCON3bits.INT2IF) {
-"85
-[e $ ! != -> . . _INTCON3bits 0 1 `i -> -> -> 0 `i `Vuc `i 419  ]
-{
-[; ;main.c: 86: INTCON3bits.INT2IF = 0;
-"86
-[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 87: LATDbits.LATD2 = ~LATDbits.LATD2;
-"87
-[e = . . _LATDbits 0 2 -> ~ -> . . _LATDbits 0 2 `i `uc ]
-"88
-}
-[e :U 419 ]
-[; ;main.c: 88: }
-[; ;main.c: 93: }
-"93
+[; ;main.c: 106: }
+[; ;main.c: 108: }
+"108
 [e :UE 417 ]
 }
-[v F4339 `(v ~T0 @X0 1 tf ]
-"110
-[v _XC8_LowISR_Handler `ILF4339 ~T0 @X0 1 e ]
-"111
+[v F4369 `(v ~T0 @X0 1 tf ]
+"125
+[v _XC8_LowISR_Handler `ILF4369 ~T0 @X0 1 e ]
+"126
 {
-[; ;main.c: 110: void interrupt low_priority XC8_LowISR_Handler(void)
-[; ;main.c: 111: {
+[; ;main.c: 125: void interrupt low_priority XC8_LowISR_Handler(void)
+[; ;main.c: 126: {
 [e :U _XC8_LowISR_Handler ]
 [f ]
-[; ;main.c: 114: if (INTCON3bits.INT1IF) {
-"114
-[e $ ! != -> . . _INTCON3bits 0 0 `i -> -> -> 0 `i `Vuc `i 421  ]
+[; ;main.c: 129: if (INTCON3bits.INT1IF) {
+"129
+[e $ ! != -> . . _INTCON3bits 0 0 `i -> -> -> 0 `i `Vuc `i 420  ]
 {
-[; ;main.c: 115: INTCON3bits.INT1IF = 0;
-"115
+[; ;main.c: 130: INTCON3bits.INT1IF = 0;
+"130
 [e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 116: LATDbits.LATD1 = ~LATDbits.LATD1;
-"116
+[; ;main.c: 131: LATDbits.LATD1 = ~LATDbits.LATD1;
+"131
 [e = . . _LATDbits 0 1 -> ~ -> . . _LATDbits 0 1 `i `uc ]
-"117
+"132
 }
-[e :U 421 ]
-[; ;main.c: 117: }
-[; ;main.c: 119: if (INTCONbits.RBIF) {
-"119
-[e $ ! != -> . . _INTCONbits 0 0 `i -> -> -> 0 `i `Vuc `i 422  ]
+[e :U 420 ]
+[; ;main.c: 132: }
+[; ;main.c: 134: if (INTCONbits.RBIF) {
+"134
+[e $ ! != -> . . _INTCONbits 0 0 `i -> -> -> 0 `i `Vuc `i 421  ]
 {
-[; ;main.c: 120: PortBValue = PORTB;
-"120
+[; ;main.c: 135: PortBValue = PORTB;
+"135
 [e = _PortBValue _PORTB ]
-[; ;main.c: 121: INTCONbits.RBIF = 0;
-"121
+[; ;main.c: 136: INTCONbits.RBIF = 0;
+"136
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 122: if (PortBValue & 0b00010000) {
-"122
-[e $ ! != & -> _PortBValue `i -> 16 `i -> 0 `i 423  ]
+[; ;main.c: 137: if (PortBValue & 0b00010000) {
+"137
+[e $ ! != & -> _PortBValue `i -> 16 `i -> 0 `i 422  ]
 {
-[; ;main.c: 123: LATDbits.LATD4 = ~LATDbits.LATD4;
-"123
+[; ;main.c: 138: LATDbits.LATD4 = ~LATDbits.LATD4;
+"138
 [e = . . _LATDbits 0 4 -> ~ -> . . _LATDbits 0 4 `i `uc ]
-"124
-}
-[e :U 423 ]
-[; ;main.c: 124: }
-[; ;main.c: 125: if (PortBValue & 0b00100000) {
-"125
-[e $ ! != & -> _PortBValue `i -> 32 `i -> 0 `i 424  ]
-{
-[; ;main.c: 126: LATDbits.LATD5 = ~LATDbits.LATD5;
-"126
-[e = . . _LATDbits 0 5 -> ~ -> . . _LATDbits 0 5 `i `uc ]
-"127
-}
-[e :U 424 ]
-"128
+"139
 }
 [e :U 422 ]
-[; ;main.c: 127: }
-[; ;main.c: 128: }
-[; ;main.c: 132: }
-"132
-[e :UE 420 ]
+[; ;main.c: 139: }
+[; ;main.c: 140: if (PortBValue & 0b00100000) {
+"140
+[e $ ! != & -> _PortBValue `i -> 32 `i -> 0 `i 423  ]
+{
+[; ;main.c: 141: LATDbits.LATD5 = ~LATDbits.LATD5;
+"141
+[e = . . _LATDbits 0 5 -> ~ -> . . _LATDbits 0 5 `i `uc ]
+"142
+}
+[e :U 423 ]
+"143
+}
+[e :U 421 ]
+[; ;main.c: 142: }
+[; ;main.c: 143: }
+[; ;main.c: 147: }
+"147
+[e :UE 419 ]
 }

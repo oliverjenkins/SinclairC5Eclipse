@@ -115,9 +115,9 @@ unsigned char ADC_Convert(void);
  * 27   RE2/CS/AN7                  AN7     E       0b1-------  0b--------  0b00011101
  */
 
-#define ANSEL_VAL       0b10000000
+#define ANSEL_VAL       0b00000001
 #define ANSELH_VAL      0b00000000
-#define ADCON0_VAL      0b00011101
+#define ADCON0_VAL      0b00000001
 
 /** M A I N   F U N C T I O N ***************************************/
 void main (void)

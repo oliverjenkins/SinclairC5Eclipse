@@ -5234,14 +5234,22 @@ void InitPorts(void) {
 ANSEL = 0;
 ANSELH = 0;
 
+# 57
+TRISA = 0b11100000;
+ANSEL = 0b11100000;
 
+# 70
 INTCON2bits.RBPU = 0;
 WPUBbits.WPUB0 = 1;
 
 TRISB = 0b00110111;
 
 
-TRISD = 0b00000000;
+
+TRISCbits.RC2 = 0;
+
+# 90
+TRISD = 0b00010000;
 }
 
 void InitInterrupts(void) {
@@ -5252,8 +5260,45 @@ INTCONbits.INT0IF = 0;
 INTCONbits.INT0IE = 1;
 
 
-
 RCONbits.IPEN = 1;
 INTCONbits.GIEL = 1;
 INTCONbits.GIEH = 1;
+}
+
+void InitMotorPWM(void) {
+
+CCP1CON = 0b00001100;
+
+
+PR2 = 255;
+
+
+T2CON = 0b00001100;
+
+
+CCPR1L = 0;
+}
+
+void InitAnalogueInputs(void) {
+
+
+TRISAbits.TRISA0 = 1;
+
+# 132
+ANSEL = 0b00000001;
+
+
+ADCON1 = 0b00000000;
+ADCON2 = 0b00111000;
+
+# 154
+ADCON0 = 0b00000001;
+
+}
+
+unsigned char ADC_Convert(void)
+{
+ADCON0bits.GO_DONE = 1;
+while (ADCON0bits.GO_DONE == 1);
+return ADRESH;
 }

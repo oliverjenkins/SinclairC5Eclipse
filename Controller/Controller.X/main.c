@@ -46,9 +46,12 @@ void interrupt XC8_HighISR_Handler(void);
 
 /** V A R I A B L E S *************************************************/
 unsigned char PortBValue;  // 8-bit variable
-
+unsigned char ADC_Value;  // 8-bit variable
 
 /** D E C L A R A T I O N S *******************************************/
+#define ANSEL_VAL       0b00000001
+#define ANSELH_VAL      0b00000000
+#define ADCON0_VAL      0b00000001
 
 void main (void)
 {
@@ -56,7 +59,10 @@ void main (void)
     InitInterrupts();
     InitMotorPWM();
     InitLCD();
+    InitAnalogueInputs();
     LCDInitialDisplay();
+    
+    
 
     CCPR1L = 16;
 
@@ -67,10 +73,18 @@ void main (void)
     while (1)
     { // we update the port pins in our "background" loop while the interrupts
       // handle the switch and timer.
-       CCPR1L = CCPR1L + 16;
+       CCPR1L = CCPR1L + 2;
+       ADC_Value = ADC_Convert();      // MSB from ADC
+       ADC_Value = ADC_Value >> 4;     // We have 0 - 255 from ADC, so divide by 16 to get a lookup range
        
-        LATDbits.LATD7 = ~LATDbits.LATD7; // toggle LATD;         
-        Delay1KTCYx(250);
+        SetLCDDDRamAddr(0x040);         // Cursor to second line
+        if (ADC_Value < 10) {
+            WriteDataLCD('0');
+        }
+        putIntLCD(ADC_Value);
+
+       LATDbits.LATD7 = ~LATDbits.LATD7; // toggle LATD;         
+       //Delay1KTCYx(250);
     }
 }
 
