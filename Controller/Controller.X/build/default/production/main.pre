@@ -5266,20 +5266,25 @@ void SetLCDCGRamAddr(unsigned char CGaddr);
 void SetLCDDDRamAddr(unsigned char DDaddr);
 unsigned char BusyLCD(void);
 void putLCD(char *buffer);
-void putIntLCD(short int n);
+void putIntLCD(short int n,short int pad);
 void WriteDataLCD(char data);
 
 
 void LCDInitialDisplay(void);
+void LCDUpdate(unsigned char Speed, unsigned short RPM, unsigned char Throttle, unsigned char PWM);
 
-# 41 "main.c"
+# 42 "main.c"
 void interrupt XC8_HighISR_Handler(void);
 
-# 48
+# 49
 unsigned char PortBValue;
-unsigned char ADC_Value;
 
-# 56
+
+unsigned char Speed;
+unsigned short RPM;
+unsigned char Throttle;
+
+# 64
 void main (void)
 {
 InitPorts();
@@ -5289,37 +5294,37 @@ InitLCD();
 InitAnalogueInputs();
 LCDInitialDisplay();
 
-
-
 CCPR1L = 16;
 
 
 LATD = 0;
 LATC = 0;
 
+
+Speed = 22;
+RPM = 1234;
+
 while (1)
 {
 
-CCPR1L = CCPR1L + 2;
-ADC_Value = ADC_Convert();
-ADC_Value = ADC_Value >> 4;
+CCPR1L = CCPR1L + 1;
+Throttle = ADC_Convert();
+Throttle = Throttle >> 4;
 
-SetLCDDDRamAddr(0x040);
-if (ADC_Value < 10) {
-WriteDataLCD('0');
-}
-putIntLCD(ADC_Value);
+
+LCDUpdate(Speed, RPM, Throttle, CCPR1L);
+
 
 LATDbits.LATD7 = ~LATDbits.LATD7;
-
+Delay1KTCYx(5);
 }
 }
 
-# 96
+# 104
 void interrupt XC8_HighISR_Handler(void)
 {
 
-# 103
+# 111
 if (INTCONbits.INT0IF )
 {
 
@@ -5330,7 +5335,7 @@ LATDbits.LATD6 = ~LATDbits.LATD6;
 
 }
 
-# 128
+# 136
 void interrupt low_priority XC8_LowISR_Handler(void)
 {
 

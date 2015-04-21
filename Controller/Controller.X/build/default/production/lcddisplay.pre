@@ -5307,16 +5307,110 @@ void SetLCDCGRamAddr(unsigned char CGaddr);
 void SetLCDDDRamAddr(unsigned char DDaddr);
 unsigned char BusyLCD(void);
 void putLCD(char *buffer);
-void putIntLCD(short int n);
+void putIntLCD(short int n,short int pad);
 void WriteDataLCD(char data);
 
 
 void LCDInitialDisplay(void);
+void LCDUpdate(unsigned char Speed, unsigned short RPM, unsigned char Throttle, unsigned char PWM);
 
-# 7 "lcddisplay.c"
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 24 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h"
+extern int errno;
+
+# 55
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 17 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\conio.h"
+extern int errno;
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 31
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 100 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 192
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 22 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+
+# 42
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+
+# 10 "lcddisplay.c"
 void LCDInitialDisplay(void) {
-
-
 
 
 SetLCDCGRamAddr(0x00);
@@ -5341,15 +5435,37 @@ WriteDataLCD(0b10001);
 WriteDataLCD(0b11111);
 
 WriteCmdLCD(0b00000010);
-putLCD( (unsigned char *)"Testing ");
+putLCD( (unsigned char *)" 00mph   0000rpm");
 
-putIntLCD(3455);
+
 
 SetLCDDDRamAddr(0x040);
-putLCD( (unsigned char *)"Line 000 ");
+putLCD( (unsigned char *)"000pwr   000 pwm");
 
-WriteDataLCD(0);
-WriteDataLCD(1);
+
+
+}
+
+void LCDUpdate(unsigned char Speed, unsigned short RPM, unsigned char Throttle, unsigned char PWM) {
+WriteCmdLCD(0x02);
+
+
+SetLCDDDRamAddr(0x01);
+putIntLCD(Speed,2);
+
+
+SetLCDDDRamAddr(0x09);
+putIntLCD(RPM,4);
+
+
+SetLCDDDRamAddr(0x040);
+putIntLCD(Throttle,3);
+
+
+SetLCDDDRamAddr(0x49);
+putIntLCD(PWM,3);
+
+
 
 }
 
@@ -5377,7 +5493,7 @@ void OpenLCD(unsigned char lcdtype)
 
 Delay100TCYx(38);
 
-# 79
+# 102
 PORTD &= 0xf0;
 TRISD &= 0xF0;
 
@@ -5433,7 +5549,7 @@ return;
 void WriteCmdLCD(unsigned char cmd)
 {
 
-# 196
+# 220
 TRISD &= 0xf0;
 PORTD &= 0xf0;
 PORTD |= (cmd>>4)&0x0f;
@@ -5473,7 +5589,7 @@ DelayFor18TCY();
 LATEbits.LATE2 = 1;
 DelayFor18TCY();
 
-# 251
+# 275
 if(PORTD&0x08)
 
 {
@@ -5502,7 +5618,7 @@ return 0;
 void SetLCDDDRamAddr(unsigned char DDaddr)
 {
 
-# 295
+# 319
 TRISD &= 0xf0;
 PORTD &= 0xf0;
 PORTD |= (((DDaddr | 0b10000000)>>4) & 0x0f);
@@ -5537,7 +5653,7 @@ return;
 void SetLCDCGRamAddr(unsigned char CGaddr)
 {
 
-# 345
+# 369
 TRISD &= 0xf0;
 PORTD &= 0xf0;
 PORTD |= (((CGaddr |0b01000000)>>4) & 0x0f);
@@ -5570,12 +5686,27 @@ return;
 }
 
 
+void putIntLCD(short int n,short int pad) {
 
-void putIntLCD(short int n) {
-unsigned char result[4];
-utoa((char*)result, n, 10);
+if (pad == 2) {
+unsigned char result[2];
+sprintf(result, "%02d", n);
 putLCD(result);
+} else if (pad == 3) {
+unsigned char result[3];
+sprintf(result, "%03d", n);
+putLCD(result);
+} else if (pad == 4) {
+unsigned char result[4];
+sprintf(result, "%04d", n);
+putLCD(result);
+} else {
+unsigned char result[3];
+sprintf(result, "%d", n);
+putLCD(result);
+}
 
+# 426
 }
 
 void putLCD(char *buffer)
@@ -5592,7 +5723,7 @@ return;
 void WriteDataLCD(char data)
 {
 
-# 415
+# 458
 TRISD &= 0xf0;
 PORTD &= 0xf0;
 PORTD |= ((data>>4)&0x0f);

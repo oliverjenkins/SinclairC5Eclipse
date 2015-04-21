@@ -2,11 +2,12 @@
 #include <delays.h>
 #include <stdlib.h>
 #include "lcddisplay.h"
+#include <stdio.h>
+#include <string.h>
 
 
+// Various Layouts and display options
 void LCDInitialDisplay(void) {
-
-
 //
 //    // Create first custom char
     SetLCDCGRamAddr(0x00);
@@ -31,16 +32,35 @@ void LCDInitialDisplay(void) {
     WriteDataLCD(0b11111);
 
     WriteCmdLCD(0b00000010);        // Cursor to home
-    putLCD( (unsigned char *)"Testing ");
+    putLCD( (unsigned char *)" 00mph   0000rpm");
 
-    putIntLCD(3455);
+    //putIntLCD(3455);
 
     SetLCDDDRamAddr(0x040);         // Cursor to second line
-    putLCD( (unsigned char *)"Line 000 ");
+    putLCD( (unsigned char *)"000pwr   000 pwm");
 
-    WriteDataLCD(0);              // Write First Custom Char
-    WriteDataLCD(1);              // Write Second Custom Char
+    //WriteDataLCD(0);              // Write First Custom Char
+    //WriteDataLCD(1);              // Write Second Custom Char
+}
 
+void LCDUpdate(unsigned char Speed, unsigned short RPM, unsigned char Throttle, unsigned char PWM) {
+    WriteCmdLCD(0x02);  // Cursor to home
+
+    // Speed
+    SetLCDDDRamAddr(0x01);  // Cursor to first Char
+    putIntLCD(Speed,2);
+
+    // RPM
+    SetLCDDDRamAddr(0x09);  // Cursor to first Char
+    putIntLCD(RPM,4);
+
+    // Throttle
+    SetLCDDDRamAddr(0x040);         // Cursor to second line
+    putIntLCD(Throttle,3);
+
+    // PWM
+    SetLCDDDRamAddr(0x49);
+    putIntLCD(PWM,3);
 }
 
 
@@ -130,6 +150,7 @@ void OpenLCD(unsigned char lcdtype)
 
 void WriteCmdLCD(unsigned char cmd)
 {
+    // These are in HEX
     //1 = Clear screen.
     //2 = Send cursor to top-left position.
     //8 = Blank without clearing.
@@ -374,11 +395,30 @@ void SetLCDCGRamAddr(unsigned char CGaddr)
 }
 
 // Writes out a number as a series of three ASCII charactors
-// utoa is a standard c lib function
-void putIntLCD(short int n) {
-    unsigned char result[4];
-    utoa((char*)result, n, 10);
-    putLCD(result);
+void putIntLCD(short int n,short int pad) {
+    
+    if (pad == 2) {
+        unsigned char result[2];
+        sprintf(result, "%02d", n);
+        putLCD(result);
+    } else if (pad == 3) {
+        unsigned char result[3];
+        sprintf(result, "%03d", n);
+        putLCD(result);
+    } else if (pad == 4) {
+        unsigned char result[4];
+        sprintf(result, "%04d", n);
+        putLCD(result);
+    } else {
+        unsigned char result[3];
+        sprintf(result, "%d", n);
+        putLCD(result);
+    }
+    
+    //result = sprintf("%3d", n);
+    //utoa((char*)result, n, 10);
+   // Throttle = printf("%3d", Throttle);
+    
 
 }
 

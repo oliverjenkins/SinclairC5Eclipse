@@ -30,6 +30,7 @@
 
 /** I N C L U D E S **************************************************/
 #include <xc.h>
+
 #include <delays.h>
 #include "ports.h"
 #include "lcddisplay.h"
@@ -46,7 +47,14 @@ void interrupt XC8_HighISR_Handler(void);
 
 /** V A R I A B L E S *************************************************/
 unsigned char PortBValue;  // 8-bit variable
-unsigned char ADC_Value;  // 8-bit variable
+
+
+unsigned char Speed;
+unsigned short RPM;
+unsigned char Throttle;
+
+
+
 
 /** D E C L A R A T I O N S *******************************************/
 #define ANSEL_VAL       0b00000001
@@ -62,29 +70,29 @@ void main (void)
     InitAnalogueInputs();
     LCDInitialDisplay();
     
-    
-
     CCPR1L = 16;
 
     // Testing config
     LATD = 0;
     LATC = 0;
 
+    // Set various variables to test display
+    Speed = 22;
+    RPM = 1234;
+
     while (1)
     { // we update the port pins in our "background" loop while the interrupts
       // handle the switch and timer.
-       CCPR1L = CCPR1L + 2;
-       ADC_Value = ADC_Convert();      // MSB from ADC
-       ADC_Value = ADC_Value >> 4;     // We have 0 - 255 from ADC, so divide by 16 to get a lookup range
-       
-        SetLCDDDRamAddr(0x040);         // Cursor to second line
-        if (ADC_Value < 10) {
-            WriteDataLCD('0');
-        }
-        putIntLCD(ADC_Value);
+       CCPR1L = CCPR1L + 1;
+       Throttle = ADC_Convert();      // MSB from ADC
+       Throttle = Throttle >> 4;     // We have 0 - 255 from ADC, so divide by 16 to get a lookup range
 
+       // Update the display with key metrics
+       LCDUpdate(Speed, RPM, Throttle, CCPR1L);
+
+       /// Show loop update
        LATDbits.LATD7 = ~LATDbits.LATD7; // toggle LATD;         
-       //Delay1KTCYx(250);
+       Delay1KTCYx(5);
     }
 }
 

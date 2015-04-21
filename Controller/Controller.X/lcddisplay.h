@@ -80,8 +80,9 @@ void SetLCDCGRamAddr(unsigned char CGaddr);
 void SetLCDDDRamAddr(unsigned char DDaddr);
 unsigned char BusyLCD(void);
 void putLCD(char *buffer);
-void putIntLCD(short int n);
+void putIntLCD(short int n,short int pad);
 void WriteDataLCD(char data);
 
 // Utiltity Methods
 void LCDInitialDisplay(void);
+void LCDUpdate(unsigned char Speed, unsigned short RPM, unsigned char Throttle, unsigned char PWM);
