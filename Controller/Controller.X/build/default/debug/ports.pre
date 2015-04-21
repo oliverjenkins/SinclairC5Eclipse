@@ -1,19 +1,5 @@
 
-# 1 "main.c"
-
-
-# 12
-#pragma config FOSC = INTIO67, FCMEN = OFF, IESO = OFF
-#pragma config PWRT = OFF, BOREN = SBORDIS, BORV = 30
-#pragma config WDTEN = OFF, WDTPS = 32768
-#pragma config LPT1OSC = ON, PBADEN = ON, CCP2MX = PORTC
-#pragma config STVREN = ON, LVP = OFF, XINST = OFF
-#pragma config CP0 = OFF, CP1 = OFF, CP2 = OFF, CP3 = OFF
-#pragma config CPB = OFF, CPD = OFF
-#pragma config WRT0 = OFF, WRT1 = OFF, WRT2 = OFF, WRT3 = OFF
-#pragma config WRTB = OFF, WRTC = OFF, WRTD = OFF
-#pragma config EBTR0 = OFF, EBTR1 = OFF, EBTR2 = OFF, EBTR3 = OFF
-#pragma config EBTRB = OFF
+# 1 "ports.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -5242,77 +5228,32 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 8 "ports.h"
-void InitPorts(void);
-void InitInterrupts(void);
+# 42 "ports.c"
+void InitPorts(void) {
 
-# 40 "main.c"
-void interrupt XC8_HighISR_Handler(void);
-
-# 47
-unsigned char PortBValue;
+ANSEL = 0;
+ANSELH = 0;
 
 
+INTCON2bits.RBPU = 0;
+WPUBbits.WPUB0 = 1;
+
+TRISB = 0b00110111;
 
 
-void main (void)
-{
-InitPorts();
-LATD = 0b10000000;
-
-while (1)
-{
-
-
-LATDbits.LATD7 = ~LATDbits.LATD7;
-Delay1KTCYx(250);
-}
+TRISD = 0b00000000;
 }
 
-# 71
-void interrupt XC8_HighISR_Handler(void)
-{
+void InitInterrupts(void) {
 
-# 78
-if (INTCONbits.INT0IF )
-{
 
+INTCON2bits.INTEDG0 = 0;
 INTCONbits.INT0IF = 0;
-LATDbits.LATD0 = ~LATDbits.LATD0;
+INTCONbits.INT0IE = 1;
+
+
+
+RCONbits.IPEN = 1;
+INTCONbits.GIEL = 1;
+INTCONbits.GIEH = 1;
 }
-
-if (INTCON3bits.INT2IF) {
-INTCON3bits.INT2IF = 0;
-LATDbits.LATD2 = ~LATDbits.LATD2;
-}
-
-
-
-
-}
-
-# 110
-void interrupt low_priority XC8_LowISR_Handler(void)
-{
-
-
-if (INTCON3bits.INT1IF) {
-INTCON3bits.INT1IF = 0;
-LATDbits.LATD1 = ~LATDbits.LATD1;
-}
-
-if (INTCONbits.RBIF) {
-PortBValue = PORTB;
-INTCONbits.RBIF = 0;
-if (PortBValue & 0b00010000) {
-LATDbits.LATD4 = ~LATDbits.LATD4;
-}
-if (PortBValue & 0b00100000) {
-LATDbits.LATD5 = ~LATDbits.LATD5;
-}
-}
-
-
-
-}
-

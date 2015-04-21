@@ -45,23 +45,23 @@
 [v _main main `(v  1 e 0 0 ]
 "184
 [v _InitLCD InitLCD `(v  1 e 0 0 ]
-"191
+"196
 [v _DelayFor18TCY DelayFor18TCY `(v  1 e 0 0 ]
-"197
+"202
 [v _OpenLCD OpenLCD `(v  1 e 0 0 ]
-"263
+"268
 [v _WriteCmdLCD WriteCmdLCD `(v  1 e 0 0 ]
-"313
+"364
 [v _BusyLCD BusyLCD `(uc  1 e 1 0 ]
-"362
+"413
 [v _SetLCDDDRamAddr SetLCDDDRamAddr `(v  1 e 0 0 ]
-"412
+"463
 [v _SetLCDCGRamAddr SetLCDCGRamAddr `(v  1 e 0 0 ]
-"464
+"515
 [v _putIntLCD putIntLCD `(v  1 e 0 0 ]
-"471
+"522
 [v _putLCD putLCD `(v  1 e 0 0 ]
-"482
+"533
 [v _WriteDataLCD WriteDataLCD `(v  1 e 0 0 ]
 [s S21 . 1 `uc 1 ANS0 1 0 :1:0 
 `uc 1 ANS1 1 0 :1:1 
@@ -169,14 +169,14 @@
 {
 "181
 } 0
-"464
+"515
 [v _putIntLCD putIntLCD `(v  1 e 0 0 ]
 {
-"465
+"516
 [v putIntLCD@result result `[4]uc  1 a 4 18 ]
-"464
+"515
 [v putIntLCD@n n `s  1 p 2 16 ]
-"469
+"520
 } 0
 "17 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
 [v _utoa utoa `(*.39uc  1 e 2 0 ]
@@ -213,61 +213,61 @@
 [v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "31
 } 0
-"471 F:\Projects\SinclairC5Eclipse\Controller\Config_LCD.X\lcd_main.c
+"522 F:\Projects\SinclairC5Eclipse\Controller\Config_LCD.X\lcd_main.c
 [v _putLCD putLCD `(v  1 e 0 0 ]
 {
 [v putLCD@buffer buffer `*.35uc  1 p 2 2 ]
-"480
+"531
 } 0
-"482
+"533
 [v _WriteDataLCD WriteDataLCD `(v  1 e 0 0 ]
 {
 [v WriteDataLCD@data data `uc  1 a 1 wreg ]
 [v WriteDataLCD@data data `uc  1 a 1 wreg ]
-"497
+"552
 [v WriteDataLCD@data data `uc  1 a 1 1 ]
-"530
+"581
 } 0
-"412
+"463
 [v _SetLCDCGRamAddr SetLCDCGRamAddr `(v  1 e 0 0 ]
 {
 [v SetLCDCGRamAddr@CGaddr CGaddr `uc  1 a 1 wreg ]
 [v SetLCDCGRamAddr@CGaddr CGaddr `uc  1 a 1 wreg ]
-"427
-[v SetLCDCGRamAddr@CGaddr CGaddr `uc  1 a 1 1 ]
-"460
+"482
+[v SetLCDCGRamAddr@CGaddr CGaddr `uc  1 a 1 4 ]
+"511
 } 0
 "184
 [v _InitLCD InitLCD `(v  1 e 0 0 ]
 {
-"189
+"194
 } 0
-"197
+"202
 [v _OpenLCD OpenLCD `(v  1 e 0 0 ]
 {
 [v OpenLCD@lcdtype lcdtype `uc  1 a 1 wreg ]
 [v OpenLCD@lcdtype lcdtype `uc  1 a 1 wreg ]
-"200
-[v OpenLCD@lcdtype lcdtype `uc  1 a 1 2 ]
-"261
+"205
+[v OpenLCD@lcdtype lcdtype `uc  1 a 1 5 ]
+"266
 } 0
-"263
+"268
 [v _WriteCmdLCD WriteCmdLCD `(v  1 e 0 0 ]
 {
 [v WriteCmdLCD@cmd cmd `uc  1 a 1 wreg ]
 [v WriteCmdLCD@cmd cmd `uc  1 a 1 wreg ]
-"278
+"333
 [v WriteCmdLCD@cmd cmd `uc  1 a 1 1 ]
-"311
-} 0
 "362
+} 0
+"413
 [v _SetLCDDDRamAddr SetLCDDDRamAddr `(v  1 e 0 0 ]
 {
 [v SetLCDDDRamAddr@DDaddr DDaddr `uc  1 a 1 wreg ]
 [v SetLCDDDRamAddr@DDaddr DDaddr `uc  1 a 1 wreg ]
-"377
-[v SetLCDDDRamAddr@DDaddr DDaddr `uc  1 a 1 1 ]
-"410
+"432
+[v SetLCDDDRamAddr@DDaddr DDaddr `uc  1 a 1 4 ]
+"461
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
 [v _Delay10KTCYx Delay10KTCYx `(v  1 e 0 0 ]
@@ -290,15 +290,15 @@
 {
 "57
 } 0
-"313 F:\Projects\SinclairC5Eclipse\Controller\Config_LCD.X\lcd_main.c
+"364 F:\Projects\SinclairC5Eclipse\Controller\Config_LCD.X\lcd_main.c
 [v _BusyLCD BusyLCD `(uc  1 e 1 0 ]
 {
-"359
+"410
 } 0
-"191
+"196
 [v _DelayFor18TCY DelayFor18TCY `(v  1 e 0 0 ]
 {
-"194
+"199
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
 [v _Delay1TCYx Delay1TCYx `(v  1 e 0 0 ]

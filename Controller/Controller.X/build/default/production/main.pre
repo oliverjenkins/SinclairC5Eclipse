@@ -2,7 +2,7 @@
 # 1 "main.c"
 
 
-
+# 12
 #pragma config FOSC = INTIO67, FCMEN = OFF, IESO = OFF
 #pragma config PWRT = OFF, BOREN = SBORDIS, BORV = 30
 #pragma config WDTEN = OFF, WDTPS = 32768
@@ -5247,7 +5247,11 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 68 "xlcd.h"
+# 12 "ports.h"
+void InitPorts(void);
+void InitInterrupts(void);
+
+# 72 "lcddisplay.h"
 void InitLCD(void);
 void DelayFor18TCY(void);
 void DelayPORLCD(void);
@@ -5262,130 +5266,103 @@ void putLCD(char *buffer);
 void putIntLCD(short int n);
 void WriteDataLCD(char data);
 
-# 29 "main.c"
-void ADC_Init(void);
-void PWM_Init(void);
-unsigned char ADC_Convert(void);
+# 41 "main.c"
+void interrupt XC8_HighISR_Handler(void);
+
+# 48
+unsigned char PortBValue;
 
 
-
-
-const unsigned char ADC_ThrottlePWM_Lookup[16] @ 0x180 = {
-0,
-18,
-36,
-54,
-72,
-90,
-90,
-108,
-126,
-144,
-162,
-180,
-198,
-216,
-234,
-255,
-};
-
-
-unsigned char ADC_Value;
-unsigned char Counter;
 
 
 void main (void)
 {
-
-
-TRISD = 0b00000000;
-TRISAbits.TRISA0 = 1;
-LATD = 0;
-
-INTCON2bits.RBPU = 0;
-WPUBbits.WPUB0 = 1;
-
-
-ADC_Init();
-
-
-PWM_Init();
-
+InitPorts();
+InitInterrupts();
 
 InitLCD();
 
+
+
+SetLCDCGRamAddr(0x00);
+WriteDataLCD(0b00000);
+WriteDataLCD(0b01111);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b01111);
+WriteDataLCD(0b00111);
+WriteDataLCD(0b00111);
+
+
+SetLCDCGRamAddr(0x08);
+WriteDataLCD(0b11111);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10101);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b10001);
+WriteDataLCD(0b11111);
+
 WriteCmdLCD(0b00000010);
-putLCD("Testing ");
+putLCD( (unsigned char *)"Testing ");
+
+putIntLCD(3455);
 
 SetLCDDDRamAddr(0x040);
-putLCD("LCD:");
+putLCD( (unsigned char *)"Line 000 ");
 
+WriteDataLCD(0);
+WriteDataLCD(1);
 
+LATD = 0;
 
-LATD = 1;
-ADC_Value = 12;
-Counter = 12;
 while (1)
 {
 
-ADC_Value = ADC_Convert();
-ADC_Value = ADC_Value >> 4;
 
-
-CCPR1L = ADC_ThrottlePWM_Lookup[ADC_Value];
-
-
-
-while(BusyLCD());
-SetLCDDDRamAddr(0x045);
-putLCD("12");
-
-
-Delay1KTCYx(30);
-
+LATDbits.LATD7 = ~LATDbits.LATD7;
+Delay1KTCYx(250);
 }
 }
 
-void ADC_Init(void)
+# 110
+void interrupt XC8_HighISR_Handler(void)
 {
 
+# 117
+if (INTCONbits.INT0IF )
+{
 
+INTCONbits.INT0IF = 0;
+LATDbits.LATD6 = ~LATDbits.LATD6;
+}
 
-ANSEL = 0;
-ANSELH = 0;
-ANSELbits.ANS0 = 1;
-
-
-
-ADCON1 = 0;
+}
 
 # 141
-ADCON2 = 0b00111000;
-
-
-ADCON0 = 0b00000001;
-
-}
-
-void PWM_Init(void) {
-
-
-
-
-PR2 = 249;
-T2CON = 0b00000111;
-
-
-
-
-CCP1CON = 0b01001100;
-
-# 166
-}
-
-unsigned char ADC_Convert(void)
+void interrupt low_priority XC8_LowISR_Handler(void)
 {
-ADCON0bits.GO_DONE = 1;
-while (ADCON0bits.GO_DONE == 1);
-return ADRESH;
+
+
+if (INTCON3bits.INT1IF) {
+INTCON3bits.INT1IF = 0;
+LATDbits.LATD1 = ~LATDbits.LATD1;
 }
+
+if (INTCONbits.RBIF) {
+PortBValue = PORTB;
+INTCONbits.RBIF = 0;
+if (PortBValue & 0b00010000) {
+LATDbits.LATD4 = ~LATDbits.LATD4;
+}
+if (PortBValue & 0b00100000) {
+LATDbits.LATD5 = ~LATDbits.LATD5;
+}
+}
+
+
+
+}
+

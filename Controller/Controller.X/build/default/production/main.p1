@@ -1,161 +1,136 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"2931 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
-[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
-"2279
-[s S133 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S133 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
-"2289
-[s S134 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S134 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"2278
-[u S132 `S133 1 `S134 1 ]
-[n S132 . . . ]
-"2300
-[v _TRISAbits `VS132 ~T0 @X0 0 e@3986 ]
-"2034
-[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
-"7165
-[s S365 :7 `uc 1 :1 `uc 1 ]
-[n S365 . . NOT_RBPU ]
-"7169
-[s S366 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S366 . RBIP . TMR0IP . INTEDG2 INTEDG1 INTEDG0 nRBPU ]
-"7179
-[s S367 :7 `uc 1 :1 `uc 1 ]
-[n S367 . . RBPU ]
-"7164
-[u S364 `S365 1 `S366 1 `S367 1 ]
-[n S364 . . . . ]
-"7184
-[v _INTCON2bits `VS364 ~T0 @X0 0 e@4081 ]
-"335
-[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S14 . WPUB0 WPUB1 WPUB2 WPUB3 WPUB4 WPUB5 WPUB6 WPUB7 ]
-"334
-[u S13 `S14 1 ]
-[n S13 . . ]
-"346
-[v _WPUBbits `VS13 ~T0 @X0 0 e@3964 ]
-"29 main.c
-[v _ADC_Init `(v ~T0 @X0 0 ef ]
-"30
-[v _PWM_Init `(v ~T0 @X0 0 ef ]
-"68 xlcd.h
+"12 ports.h
+[v _InitPorts `(v ~T0 @X0 0 ef ]
+"13
+[v _InitInterrupts `(v ~T0 @X0 0 ef ]
+"72 lcddisplay.h
 [v _InitLCD `(v ~T0 @X0 0 ef ]
-"74
-[v _WriteCmdLCD `(v ~T0 @X0 0 ef1`uc ]
+"79
+[v _SetLCDCGRamAddr `(v ~T0 @X0 0 ef1`uc ]
+"84
+[v _WriteDataLCD `(v ~T0 @X0 0 ef1`uc ]
 "78
+[v _WriteCmdLCD `(v ~T0 @X0 0 ef1`uc ]
+"82
 [v _putLCD `(v ~T0 @X0 0 ef1`*uc ]
-"76
+"83
+[v _putIntLCD `(v ~T0 @X0 0 ef1`s ]
+"80
 [v _SetLCDDDRamAddr `(v ~T0 @X0 0 ef1`uc ]
-"31 main.c
-[v _ADC_Convert `(uc ~T0 @X0 0 ef ]
-"5290 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
-[v _CCPR1L `Vuc ~T0 @X0 0 e@4030 ]
-"77 xlcd.h
-[v _BusyLCD `(uc ~T0 @X0 0 ef ]
+"2034 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
+[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
+"2040
+[s S113 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S113 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
+"2050
+[s S114 :1 `uc 1 ]
+[n S114 . LD0 ]
+"2053
+[s S115 :1 `uc 1 :1 `uc 1 ]
+[n S115 . . LD1 ]
+"2057
+[s S116 :2 `uc 1 :1 `uc 1 ]
+[n S116 . . LD2 ]
+"2061
+[s S117 :3 `uc 1 :1 `uc 1 ]
+[n S117 . . LD3 ]
+"2065
+[s S118 :4 `uc 1 :1 `uc 1 ]
+[n S118 . . LD4 ]
+"2069
+[s S119 :5 `uc 1 :1 `uc 1 ]
+[n S119 . . LD5 ]
+"2073
+[s S120 :6 `uc 1 :1 `uc 1 ]
+[n S120 . . LD6 ]
+"2077
+[s S121 :7 `uc 1 :1 `uc 1 ]
+[n S121 . . LD7 ]
+"2039
+[u S112 `S113 1 `S114 1 `S115 1 `S116 1 `S117 1 `S118 1 `S119 1 `S120 1 `S121 1 ]
+[n S112 . . . . . . . . . . ]
+"2082
+[v _LATDbits `VS112 ~T0 @X0 0 e@3980 ]
 "31 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h
 [v _Delay1KTCYx `(v ~T0 @X0 0 ef1`uc ]
-"428 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
-[v _ANSEL `Vuc ~T0 @X0 0 e@3966 ]
-"489
-[v _ANSELH `Vuc ~T0 @X0 0 e@3967 ]
-"434
-[s S18 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S18 . ANS0 ANS1 ANS2 ANS3 ANS4 ANS5 ANS6 ANS7 ]
-"433
-[u S17 `S18 1 ]
-[n S17 . . ]
-"445
-[v _ANSELbits `VS17 ~T0 @X0 0 e@3966 ]
-"5372
-[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
-"5302
-[v _ADCON2 `Vuc ~T0 @X0 0 e@4032 ]
-"5425
-[v _ADCON0 `Vuc ~T0 @X0 0 e@4034 ]
-"6001
-[v _PR2 `Vuc ~T0 @X0 0 e@4043 ]
-"5931
-[v _T2CON `Vuc ~T0 @X0 0 e@4042 ]
-"5203
-[v _CCP1CON `Vuc ~T0 @X0 0 e@4029 ]
-"5431
-[s S278 :1 `uc 1 :1 `uc 1 ]
-[n S278 . . GO_NOT_DONE ]
-"5435
-[s S279 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
-[n S279 . ADON GO_nDONE CHS ]
-"5440
-[s S280 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S280 . . DONE CHS0 CHS1 CHS2 CHS3 ]
-"5448
-[s S281 :1 `uc 1 :1 `uc 1 ]
-[n S281 . . NOT_DONE ]
-"5452
-[s S282 :1 `uc 1 :1 `uc 1 ]
-[n S282 . . nDONE ]
-"5456
-[s S283 :1 `uc 1 :1 `uc 1 ]
-[n S283 . . GO_DONE ]
-"5460
-[s S284 :1 `uc 1 :1 `uc 1 ]
-[n S284 . . GO ]
-"5464
-[s S285 :1 `uc 1 :1 `uc 1 ]
-[n S285 . . GODONE ]
-"5430
-[u S277 `S278 1 `S279 1 `S280 1 `S281 1 `S282 1 `S283 1 `S284 1 `S285 1 ]
-[n S277 . . . . . . . . . ]
-"5469
-[v _ADCON0bits `VS277 ~T0 @X0 0 e@4034 ]
-"5555
-[v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
-"4 main.c
+"7234 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
+[s S369 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S369 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"7244
+[s S370 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S370 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE GIE ]
+"7254
+[s S371 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S371 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE GIEL GIEH ]
+"7264
+[s S372 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S372 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"7274
+[s S373 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S373 . . GIEL GIEH ]
+"7233
+[u S368 `S369 1 `S370 1 `S371 1 `S372 1 `S373 1 ]
+[n S368 . . . . . . ]
+"7280
+[v _INTCONbits `VS368 ~T0 @X0 0 e@4082 ]
+"7074
+[s S362 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S362 . INT1IF INT2IF . INT1IE INT2IE . INT1IP INT2IP ]
+"7084
+[s S363 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S363 . INT1F INT2F . INT1E INT2E . INT1P INT2P ]
+"7073
+[u S361 `S362 1 `S363 1 ]
+[n S361 . . . ]
+"7095
+[v _INTCON3bits `VS361 ~T0 @X0 0 e@4080 ]
+"769
+[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+"12 main.c
 [p x FOSC=INTIO67 ]
 [p x FCMEN=OFF ]
 [p x IESO=OFF ]
-"5
+"13
 [p x PWRT=OFF ]
 [p x BOREN=SBORDIS ]
 [p x BORV=30 ]
-"6
+"14
 [p x WDTEN=OFF ]
 [p x WDTPS=32768 ]
-"7
+"15
 [p x LPT1OSC=ON ]
 [p x PBADEN=ON ]
 [p x CCP2MX=PORTC ]
-"8
+"16
 [p x STVREN=ON ]
 [p x LVP=OFF ]
 [p x XINST=OFF ]
-"9
+"17
 [p x CP0=OFF ]
 [p x CP1=OFF ]
 [p x CP2=OFF ]
 [p x CP3=OFF ]
-"10
+"18
 [p x CPB=OFF ]
 [p x CPD=OFF ]
-"11
+"19
 [p x WRT0=OFF ]
 [p x WRT1=OFF ]
 [p x WRT2=OFF ]
 [p x WRT3=OFF ]
-"12
+"20
 [p x WRTB=OFF ]
 [p x WRTC=OFF ]
 [p x WRTD=OFF ]
-"13
+"21
 [p x EBTR0=OFF ]
 [p x EBTR1=OFF ]
 [p x EBTR2=OFF ]
 [p x EBTR3=OFF ]
-"14
+"22
 [p x EBTRB=OFF ]
-"19
+"27
 [p x MCLRE=OFF ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -4057,252 +4032,232 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
-[; ;xlcd.h: 68: void InitLCD(void);
-[; ;xlcd.h: 69: void DelayFor18TCY(void);
-[; ;xlcd.h: 70: void DelayPORLCD(void);
-[; ;xlcd.h: 73: void OpenLCD(unsigned char lcdtype);
-[; ;xlcd.h: 74: void WriteCmdLCD(unsigned char cmd);
-[; ;xlcd.h: 75: void SetLCDCGRamAddr(unsigned char CGaddr);
-[; ;xlcd.h: 76: void SetLCDDDRamAddr(unsigned char DDaddr);
-[; ;xlcd.h: 77: unsigned char BusyLCD(void);
-[; ;xlcd.h: 78: void putLCD(char *buffer);
-[; ;xlcd.h: 79: void putIntLCD(short int n);
-[; ;xlcd.h: 80: void WriteDataLCD(char data);
-[; ;main.c: 29: void ADC_Init(void);
-[; ;main.c: 30: void PWM_Init(void);
-[; ;main.c: 31: unsigned char ADC_Convert(void);
-"36 main.c
-[v _ADC_ThrottlePWM_Lookup `Cuc ~T0 @X0 -> 16 `i e@384 ]
-[i _ADC_ThrottlePWM_Lookup
-:U ..
-"37
--> -> 0 `i `uc
-"38
--> -> 18 `i `uc
-"39
--> -> 36 `i `uc
-"40
--> -> 54 `i `uc
-"41
--> -> 72 `i `uc
-"42
--> -> 90 `i `uc
-"43
--> -> 90 `i `uc
-"44
--> -> 108 `i `uc
-"45
--> -> 126 `i `uc
-"46
--> -> 144 `i `uc
-"47
--> -> 162 `i `uc
-"48
--> -> 180 `i `uc
-"49
--> -> 198 `i `uc
-"50
--> -> 216 `i `uc
-"51
--> -> 234 `i `uc
-"52
--> -> 255 `i `uc
-..
-]
-[; ;main.c: 36: const unsigned char ADC_ThrottlePWM_Lookup[16] @ 0x180 = {
-[; ;main.c: 37: 0,
-[; ;main.c: 38: 18,
-[; ;main.c: 39: 36,
-[; ;main.c: 40: 54,
-[; ;main.c: 41: 72,
-[; ;main.c: 42: 90,
-[; ;main.c: 43: 90,
-[; ;main.c: 44: 108,
-[; ;main.c: 45: 126,
-[; ;main.c: 46: 144,
-[; ;main.c: 47: 162,
-[; ;main.c: 48: 180,
-[; ;main.c: 49: 198,
-[; ;main.c: 50: 216,
-[; ;main.c: 51: 234,
-[; ;main.c: 52: 255,
-[; ;main.c: 53: };
-"56
-[v _ADC_Value `uc ~T0 @X0 1 e ]
-[; ;main.c: 56: unsigned char ADC_Value;
-"57
-[v _Counter `uc ~T0 @X0 1 e ]
-[; ;main.c: 57: unsigned char Counter;
-"60
+[; ;ports.h: 12: void InitPorts(void);
+[; ;ports.h: 13: void InitInterrupts(void);
+[; ;lcddisplay.h: 72: void InitLCD(void);
+[; ;lcddisplay.h: 73: void DelayFor18TCY(void);
+[; ;lcddisplay.h: 74: void DelayPORLCD(void);
+[; ;lcddisplay.h: 77: void OpenLCD(unsigned char lcdtype);
+[; ;lcddisplay.h: 78: void WriteCmdLCD(unsigned char cmd);
+[; ;lcddisplay.h: 79: void SetLCDCGRamAddr(unsigned char CGaddr);
+[; ;lcddisplay.h: 80: void SetLCDDDRamAddr(unsigned char DDaddr);
+[; ;lcddisplay.h: 81: unsigned char BusyLCD(void);
+[; ;lcddisplay.h: 82: void putLCD(char *buffer);
+[; ;lcddisplay.h: 83: void putIntLCD(short int n);
+[; ;lcddisplay.h: 84: void WriteDataLCD(char data);
+[; ;main.c: 41: void interrupt XC8_HighISR_Handler(void);
+"48 main.c
+[v _PortBValue `uc ~T0 @X0 1 e ]
+[; ;main.c: 48: unsigned char PortBValue;
+"53
 [v _main `(v ~T0 @X0 1 ef ]
-"61
+"54
 {
-[; ;main.c: 60: void main (void)
-[; ;main.c: 61: {
+[; ;main.c: 53: void main (void)
+[; ;main.c: 54: {
 [e :U _main ]
 [f ]
-[; ;main.c: 64: TRISD = 0b00000000;
-"64
-[e = _TRISD -> -> 0 `i `uc ]
-[; ;main.c: 65: TRISAbits.TRISA0 = 1;
-"65
-[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 66: LATD = 0;
-"66
-[e = _LATD -> -> 0 `i `uc ]
-[; ;main.c: 68: INTCON2bits.RBPU = 0;
-"68
-[e = . . _INTCON2bits 2 1 -> -> 0 `i `uc ]
-[; ;main.c: 69: WPUBbits.WPUB0 = 1;
-"69
-[e = . . _WPUBbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 72: ADC_Init();
-"72
-[e ( _ADC_Init ..  ]
-[; ;main.c: 75: PWM_Init();
-"75
-[e ( _PWM_Init ..  ]
-[; ;main.c: 78: InitLCD();
-"78
+[; ;main.c: 55: InitPorts();
+"55
+[e ( _InitPorts ..  ]
+[; ;main.c: 56: InitInterrupts();
+"56
+[e ( _InitInterrupts ..  ]
+[; ;main.c: 58: InitLCD();
+"58
 [e ( _InitLCD ..  ]
-[; ;main.c: 80: WriteCmdLCD(0b00000010);
+[; ;main.c: 62: SetLCDCGRamAddr(0x00);
+"62
+[e ( _SetLCDCGRamAddr (1 -> -> 0 `i `uc ]
+[; ;main.c: 63: WriteDataLCD(0b00000);
+"63
+[e ( _WriteDataLCD (1 -> -> 0 `i `uc ]
+[; ;main.c: 64: WriteDataLCD(0b01111);
+"64
+[e ( _WriteDataLCD (1 -> -> 15 `i `uc ]
+[; ;main.c: 65: WriteDataLCD(0b10001);
+"65
+[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
+[; ;main.c: 66: WriteDataLCD(0b10001);
+"66
+[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
+[; ;main.c: 67: WriteDataLCD(0b10001);
+"67
+[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
+[; ;main.c: 68: WriteDataLCD(0b01111);
+"68
+[e ( _WriteDataLCD (1 -> -> 15 `i `uc ]
+[; ;main.c: 69: WriteDataLCD(0b00111);
+"69
+[e ( _WriteDataLCD (1 -> -> 7 `i `uc ]
+[; ;main.c: 70: WriteDataLCD(0b00111);
+"70
+[e ( _WriteDataLCD (1 -> -> 7 `i `uc ]
+[; ;main.c: 73: SetLCDCGRamAddr(0x08);
+"73
+[e ( _SetLCDCGRamAddr (1 -> -> 8 `i `uc ]
+[; ;main.c: 74: WriteDataLCD(0b11111);
+"74
+[e ( _WriteDataLCD (1 -> -> 31 `i `uc ]
+[; ;main.c: 75: WriteDataLCD(0b10001);
+"75
+[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
+[; ;main.c: 76: WriteDataLCD(0b10001);
+"76
+[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
+[; ;main.c: 77: WriteDataLCD(0b10101);
+"77
+[e ( _WriteDataLCD (1 -> -> 21 `i `uc ]
+[; ;main.c: 78: WriteDataLCD(0b10001);
+"78
+[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
+[; ;main.c: 79: WriteDataLCD(0b10001);
+"79
+[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
+[; ;main.c: 80: WriteDataLCD(0b10001);
 "80
-[e ( _WriteCmdLCD (1 -> -> 2 `i `uc ]
-[; ;main.c: 81: putLCD("Testing ");
+[e ( _WriteDataLCD (1 -> -> 17 `i `uc ]
+[; ;main.c: 81: WriteDataLCD(0b11111);
 "81
-[e ( _putLCD (1 -> :s 1C `*uc ]
-[; ;main.c: 83: SetLCDDDRamAddr(0x040);
+[e ( _WriteDataLCD (1 -> -> 31 `i `uc ]
+[; ;main.c: 83: WriteCmdLCD(0b00000010);
 "83
-[e ( _SetLCDDDRamAddr (1 -> -> 64 `i `uc ]
-[; ;main.c: 84: putLCD("LCD:");
+[e ( _WriteCmdLCD (1 -> -> 2 `i `uc ]
+[; ;main.c: 84: putLCD( (unsigned char *)"Testing ");
 "84
-[e ( _putLCD (1 -> :s 2C `*uc ]
-[; ;main.c: 88: LATD = 1;
+[e ( _putLCD (1 -> :s 1C `*uc ]
+[; ;main.c: 86: putIntLCD(3455);
+"86
+[e ( _putIntLCD (1 -> -> 3455 `i `s ]
+[; ;main.c: 88: SetLCDDDRamAddr(0x040);
 "88
-[e = _LATD -> -> 1 `i `uc ]
-[; ;main.c: 89: ADC_Value = 12;
+[e ( _SetLCDDDRamAddr (1 -> -> 64 `i `uc ]
+[; ;main.c: 89: putLCD( (unsigned char *)"Line 000 ");
 "89
-[e = _ADC_Value -> -> 12 `i `uc ]
-[; ;main.c: 90: Counter = 12;
-"90
-[e = _Counter -> -> 12 `i `uc ]
-[; ;main.c: 91: while (1)
+[e ( _putLCD (1 -> :s 2C `*uc ]
+[; ;main.c: 91: WriteDataLCD(0);
 "91
-[e :U 415 ]
-[; ;main.c: 92: {
+[e ( _WriteDataLCD (1 -> -> 0 `i `uc ]
+[; ;main.c: 92: WriteDataLCD(1);
 "92
-{
-[; ;main.c: 94: ADC_Value = ADC_Convert();
+[e ( _WriteDataLCD (1 -> -> 1 `i `uc ]
+[; ;main.c: 94: LATD = 0;
 "94
-[e = _ADC_Value ( _ADC_Convert ..  ]
-[; ;main.c: 95: ADC_Value = ADC_Value >> 4;
-"95
-[e = _ADC_Value -> >> -> _ADC_Value `i -> 4 `i `uc ]
-[; ;main.c: 98: CCPR1L = ADC_ThrottlePWM_Lookup[ADC_Value];
-"98
-[e = _CCPR1L *U + &U _ADC_ThrottlePWM_Lookup * -> _ADC_Value `ux -> -> # *U &U _ADC_ThrottlePWM_Lookup `ui `ux ]
-[; ;main.c: 102: while(BusyLCD());
+[e = _LATD -> -> 0 `i `uc ]
+[; ;main.c: 96: while (1)
+"96
+[e :U 415 ]
+[; ;main.c: 97: {
+"97
+{
+[; ;main.c: 100: LATDbits.LATD7 = ~LATDbits.LATD7;
+"100
+[e = . . _LATDbits 0 7 -> ~ -> . . _LATDbits 0 7 `i `uc ]
+[; ;main.c: 101: Delay1KTCYx(250);
+"101
+[e ( _Delay1KTCYx (1 -> -> 250 `i `uc ]
 "102
-[e $U 417  ]
-[e :U 418 ]
-[e :U 417 ]
-[e $ != -> ( _BusyLCD ..  `i -> -> -> 0 `i `uc `i 418  ]
-[e :U 419 ]
-[; ;main.c: 103: SetLCDDDRamAddr(0x045);
-"103
-[e ( _SetLCDDDRamAddr (1 -> -> 69 `i `uc ]
-[; ;main.c: 104: putLCD("12");
-"104
-[e ( _putLCD (1 -> :s 3C `*uc ]
-[; ;main.c: 107: Delay1KTCYx(30);
-"107
-[e ( _Delay1KTCYx (1 -> -> 30 `i `uc ]
-"109
 }
 [e :U 414 ]
-"91
+"96
 [e $U 415  ]
 [e :U 416 ]
-[; ;main.c: 109: }
-[; ;main.c: 110: }
-"110
+[; ;main.c: 102: }
+[; ;main.c: 103: }
+"103
 [e :UE 413 ]
 }
-"112
-[v _ADC_Init `(v ~T0 @X0 1 ef ]
-"113
+[v F4352 `(v ~T0 @X0 1 tf ]
+"110
+[v _XC8_HighISR_Handler `IF4352 ~T0 @X0 1 e ]
+"111
 {
-[; ;main.c: 112: void ADC_Init(void)
-[; ;main.c: 113: {
-[e :U _ADC_Init ]
+[; ;main.c: 110: void interrupt XC8_HighISR_Handler(void)
+[; ;main.c: 111: {
+[e :U _XC8_HighISR_Handler ]
 [f ]
-[; ;main.c: 117: ANSEL = 0;
+[; ;main.c: 117: if (INTCONbits.INT0IF )
 "117
-[e = _ANSEL -> -> 0 `i `uc ]
-[; ;main.c: 118: ANSELH = 0;
+[e $ ! != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 418  ]
+[; ;main.c: 118: {
 "118
-[e = _ANSELH -> -> 0 `i `uc ]
-[; ;main.c: 119: ANSELbits.ANS0 = 1;
-"119
-[e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 123: ADCON1 = 0;
-"123
-[e = _ADCON1 -> -> 0 `i `uc ]
-[; ;main.c: 141: ADCON2 = 0b00111000;
+{
+[; ;main.c: 120: INTCONbits.INT0IF = 0;
+"120
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 121: LATDbits.LATD6 = ~LATDbits.LATD6;
+"121
+[e = . . _LATDbits 0 6 -> ~ -> . . _LATDbits 0 6 `i `uc ]
+"122
+}
+[e :U 418 ]
+[; ;main.c: 122: }
+[; ;main.c: 124: }
+"124
+[e :UE 417 ]
+}
+[v F4362 `(v ~T0 @X0 1 tf ]
 "141
-[e = _ADCON2 -> -> 56 `i `uc ]
-[; ;main.c: 144: ADCON0 = 0b00000001;
-"144
-[e = _ADCON0 -> -> 1 `i `uc ]
-[; ;main.c: 146: }
+[v _XC8_LowISR_Handler `ILF4362 ~T0 @X0 1 e ]
+"142
+{
+[; ;main.c: 141: void interrupt low_priority XC8_LowISR_Handler(void)
+[; ;main.c: 142: {
+[e :U _XC8_LowISR_Handler ]
+[f ]
+[; ;main.c: 145: if (INTCON3bits.INT1IF) {
+"145
+[e $ ! != -> . . _INTCON3bits 0 0 `i -> -> -> 0 `i `Vuc `i 420  ]
+{
+[; ;main.c: 146: INTCON3bits.INT1IF = 0;
 "146
-[e :UE 420 ]
-}
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 147: LATDbits.LATD1 = ~LATDbits.LATD1;
+"147
+[e = . . _LATDbits 0 1 -> ~ -> . . _LATDbits 0 1 `i `uc ]
 "148
-[v _PWM_Init `(v ~T0 @X0 1 ef ]
+}
+[e :U 420 ]
+[; ;main.c: 148: }
+[; ;main.c: 150: if (INTCONbits.RBIF) {
+"150
+[e $ ! != -> . . _INTCONbits 0 0 `i -> -> -> 0 `i `Vuc `i 421  ]
 {
-[; ;main.c: 148: void PWM_Init(void) {
-[e :U _PWM_Init ]
-[f ]
-[; ;main.c: 153: PR2 = 249;
+[; ;main.c: 151: PortBValue = PORTB;
+"151
+[e = _PortBValue _PORTB ]
+[; ;main.c: 152: INTCONbits.RBIF = 0;
+"152
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 153: if (PortBValue & 0b00010000) {
 "153
-[e = _PR2 -> -> 249 `i `uc ]
-[; ;main.c: 154: T2CON = 0b00000111;
-"154
-[e = _T2CON -> -> 7 `i `uc ]
-[; ;main.c: 159: CCP1CON = 0b01001100;
-"159
-[e = _CCP1CON -> -> 76 `i `uc ]
-[; ;main.c: 166: }
-"166
-[e :UE 421 ]
-}
-"168
-[v _ADC_Convert `(uc ~T0 @X0 1 ef ]
-"169
+[e $ ! != & -> _PortBValue `i -> 16 `i -> 0 `i 422  ]
 {
-[; ;main.c: 168: unsigned char ADC_Convert(void)
-[; ;main.c: 169: {
-[e :U _ADC_Convert ]
-[f ]
-[; ;main.c: 170: ADCON0bits.GO_DONE = 1;
-"170
-[e = . . _ADCON0bits 5 1 -> -> 1 `i `uc ]
-[; ;main.c: 171: while (ADCON0bits.GO_DONE == 1);
-"171
-[e $U 423  ]
-[e :U 424 ]
-[e :U 423 ]
-[e $ == -> . . _ADCON0bits 5 1 `i -> 1 `i 424  ]
-[e :U 425 ]
-[; ;main.c: 172: return ADRESH;
-"172
-[e ) _ADRESH ]
-[e $UE 422  ]
-[; ;main.c: 173: }
-"173
-[e :UE 422 ]
+[; ;main.c: 154: LATDbits.LATD4 = ~LATDbits.LATD4;
+"154
+[e = . . _LATDbits 0 4 -> ~ -> . . _LATDbits 0 4 `i `uc ]
+"155
 }
-[a 2C 76 67 68 58 0 ]
-[a 3C 49 50 0 ]
+[e :U 422 ]
+[; ;main.c: 155: }
+[; ;main.c: 156: if (PortBValue & 0b00100000) {
+"156
+[e $ ! != & -> _PortBValue `i -> 32 `i -> 0 `i 423  ]
+{
+[; ;main.c: 157: LATDbits.LATD5 = ~LATDbits.LATD5;
+"157
+[e = . . _LATDbits 0 5 -> ~ -> . . _LATDbits 0 5 `i `uc ]
+"158
+}
+[e :U 423 ]
+"159
+}
+[e :U 421 ]
+[; ;main.c: 158: }
+[; ;main.c: 159: }
+[; ;main.c: 163: }
+"163
+[e :UE 419 ]
+}
 [a 1C 84 101 115 116 105 110 103 32 0 ]
+[a 2C 76 105 110 101 32 48 48 48 32 0 ]

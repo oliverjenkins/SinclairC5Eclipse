@@ -1,19 +1,5 @@
 
-# 1 "main.c"
-
-
-# 12
-#pragma config FOSC = INTIO67, FCMEN = OFF, IESO = OFF
-#pragma config PWRT = OFF, BOREN = SBORDIS, BORV = 30
-#pragma config WDTEN = OFF, WDTPS = 32768
-#pragma config LPT1OSC = ON, PBADEN = ON, CCP2MX = PORTC
-#pragma config STVREN = ON, LVP = OFF, XINST = OFF
-#pragma config CP0 = OFF, CP1 = OFF, CP2 = OFF, CP3 = OFF
-#pragma config CPB = OFF, CPD = OFF
-#pragma config WRT0 = OFF, WRT1 = OFF, WRT2 = OFF, WRT3 = OFF
-#pragma config WRTB = OFF, WRTC = OFF, WRTD = OFF
-#pragma config EBTR0 = OFF, EBTR1 = OFF, EBTR2 = OFF, EBTR3 = OFF
-#pragma config EBTRB = OFF
+# 1 "lcddisplay.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -5242,77 +5228,355 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 8 "ports.h"
-void InitPorts(void);
-void InitInterrupts(void);
+# 27 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdlib.h"
+typedef struct {
+int rem;
+int quot;
+} div_t;
+typedef struct {
+unsigned rem;
+unsigned quot;
+} udiv_t;
+typedef struct {
+long quot;
+long rem;
+} ldiv_t;
+typedef struct {
+unsigned long quot;
+unsigned long rem;
+} uldiv_t;
 
-# 40 "main.c"
-void interrupt XC8_HighISR_Handler(void);
+# 65
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+extern long strtol(const char *, char **, int);
 
-# 47
-unsigned char PortBValue;
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
 
 
 
 
-void main (void)
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+
+# 98
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+
+# 72 "lcddisplay.h"
+void InitLCD(void);
+void DelayFor18TCY(void);
+void DelayPORLCD(void);
+
+
+void OpenLCD(unsigned char lcdtype);
+void WriteCmdLCD(unsigned char cmd);
+void SetLCDCGRamAddr(unsigned char CGaddr);
+void SetLCDDDRamAddr(unsigned char DDaddr);
+unsigned char BusyLCD(void);
+void putLCD(char *buffer);
+void putIntLCD(short int n);
+void WriteDataLCD(char data);
+
+# 6 "lcddisplay.c"
+void InitLCD(void) {
+OpenLCD(0b00101100 & 0b00111000);
+while(BusyLCD());
+WriteCmdLCD(0x06);
+while(BusyLCD());
+WriteCmdLCD(0x0C);
+while(BusyLCD());
+WriteCmdLCD(0x01);
+while(BusyLCD());
+WriteCmdLCD(66);
+}
+
+void DelayFor18TCY(void) {
+
+Delay1TCYx(18);
+}
+
+
+void OpenLCD(unsigned char lcdtype)
 {
-InitPorts();
-LATD = 0b10000000;
 
-while (1)
+Delay100TCYx(38);
+
+# 38
+PORTD &= 0xf0;
+TRISD &= 0xF0;
+
+
+TRISEbits.TRISE1 = 0;
+TRISEbits.TRISE0 = 0;
+TRISEbits.TRISE2 = 0;
+LATEbits.LATE1 = 0;
+LATEbits.LATE0 = 0;
+LATEbits.LATE2 = 0;
+
+
+Delay100TCYx(38);
+
+
+WriteCmdLCD(0x30);
+Delay10KTCYx(0x05);
+
+WriteCmdLCD(0x30);
+Delay10KTCYx(0x01);
+
+
+WriteCmdLCD(0x32);
+while( BusyXLCD() );
+
+
+
+
+while(BusyLCD());
+WriteCmdLCD(lcdtype);
+
+
+while(BusyLCD());
+WriteCmdLCD(0b00001011&0b00001101&0b00001110);
+while(BusyLCD());
+WriteCmdLCD(0b00001111&0b00001111&0b00001111);
+
+
+while(BusyLCD());
+WriteCmdLCD(0x01);
+
+
+while(BusyLCD());
+WriteCmdLCD(0b00000100);
+
+
+while(BusyLCD());
+SetLCDDDRamAddr(0x80);
+
+return;
+}
+
+void WriteCmdLCD(unsigned char cmd)
 {
 
+# 155
+TRISD &= 0xf0;
+PORTD &= 0xf0;
+PORTD |= (cmd>>4)&0x0f;
 
-LATDbits.LATD7 = ~LATDbits.LATD7;
-Delay1KTCYx(250);
-}
+LATEbits.LATE1 = 0;
+LATEbits.LATE0 = 0;
+DelayFor18TCY();
+LATEbits.LATE2 = 1;
+DelayFor18TCY();
+LATEbits.LATE2 = 0;
+
+
+
+
+PORTD &= 0xf0;
+PORTD |= cmd&0x0f;
+
+DelayFor18TCY();
+LATEbits.LATE2 = 1;
+DelayFor18TCY();
+LATEbits.LATE2 = 0;
+
+
+
+TRISD |= 0x0f;
+
+
+
+return;
 }
 
-# 71
-void interrupt XC8_HighISR_Handler(void)
+unsigned char BusyLCD(void)
+{
+LATEbits.LATE1 = 1;
+LATEbits.LATE0 = 0;
+DelayFor18TCY();
+LATEbits.LATE2 = 1;
+DelayFor18TCY();
+
+# 210
+if(PORTD&0x08)
+
+{
+LATEbits.LATE2 = 0;
+DelayFor18TCY();
+LATEbits.LATE2 = 1;
+DelayFor18TCY();
+LATEbits.LATE2 = 0;
+LATEbits.LATE1 = 0;
+return 1;
+}
+else
+{
+LATEbits.LATE2 = 0;
+DelayFor18TCY();
+LATEbits.LATE2 = 1;
+DelayFor18TCY();
+LATEbits.LATE2 = 0;
+LATEbits.LATE1 = 0;
+return 0;
+}
+
+}
+
+
+void SetLCDDDRamAddr(unsigned char DDaddr)
 {
 
-# 78
-if (INTCONbits.INT0IF )
+# 254
+TRISD &= 0xf0;
+PORTD &= 0xf0;
+PORTD |= (((DDaddr | 0b10000000)>>4) & 0x0f);
+
+LATEbits.LATE1 = 0;
+LATEbits.LATE0 = 0;
+DelayFor18TCY();
+LATEbits.LATE2 = 1;
+DelayFor18TCY();
+LATEbits.LATE2 = 0;
+
+
+
+
+PORTD &= 0xf0;
+PORTD |= (DDaddr&0x0f);
+
+DelayFor18TCY();
+LATEbits.LATE2 = 1;
+DelayFor18TCY();
+LATEbits.LATE2 = 0;
+
+
+
+TRISD |= 0x0f;
+
+
+
+return;
+}
+
+void SetLCDCGRamAddr(unsigned char CGaddr)
 {
 
-INTCONbits.INT0IF = 0;
-LATDbits.LATD0 = ~LATDbits.LATD0;
+# 304
+TRISD &= 0xf0;
+PORTD &= 0xf0;
+PORTD |= (((CGaddr |0b01000000)>>4) & 0x0f);
+
+LATEbits.LATE1 = 0;
+LATEbits.LATE0 = 0;
+DelayFor18TCY();
+LATEbits.LATE2 = 1;
+DelayFor18TCY();
+LATEbits.LATE2 = 0;
+
+
+
+
+PORTD &= 0xf0;
+PORTD |= (CGaddr&0x0f);
+
+DelayFor18TCY();
+LATEbits.LATE2 = 1;
+DelayFor18TCY();
+LATEbits.LATE2 = 0;
+
+
+
+TRISD |= 0x0f;
+
+
+
+return;
 }
 
-if (INTCON3bits.INT2IF) {
-INTCON3bits.INT2IF = 0;
-LATDbits.LATD2 = ~LATDbits.LATD2;
+
+
+void putIntLCD(short int n) {
+unsigned char result[4];
+utoa((char*)result, n, 10);
+putLCD(result);
+
 }
 
-
-
-
+void putLCD(char *buffer)
+{
+while(*buffer)
+{
+while(BusyLCD());
+WriteDataLCD(*buffer);
+buffer++;
+}
+return;
 }
 
-# 110
-void interrupt low_priority XC8_LowISR_Handler(void)
+void WriteDataLCD(char data)
 {
 
+# 374
+TRISD &= 0xf0;
+PORTD &= 0xf0;
+PORTD |= ((data>>4)&0x0f);
 
-if (INTCON3bits.INT1IF) {
-INTCON3bits.INT1IF = 0;
-LATDbits.LATD1 = ~LATDbits.LATD1;
+LATEbits.LATE0 = 1;
+LATEbits.LATE1 = 0;
+DelayFor18TCY();
+LATEbits.LATE2 = 1;
+DelayFor18TCY();
+LATEbits.LATE2 = 0;
+
+
+
+
+PORTD &= 0xf0;
+PORTD |= (data&0x0f);
+
+DelayFor18TCY();
+LATEbits.LATE2 = 1;
+DelayFor18TCY();
+LATEbits.LATE2 = 0;
+
+
+
+TRISD |= 0x0f;
+
+
+
+return;
 }
-
-if (INTCONbits.RBIF) {
-PortBValue = PORTB;
-INTCONbits.RBIF = 0;
-if (PortBValue & 0b00010000) {
-LATDbits.LATD4 = ~LATDbits.LATD4;
-}
-if (PortBValue & 0b00100000) {
-LATDbits.LATD5 = ~LATDbits.LATD5;
-}
-}
-
-
-
-}
-

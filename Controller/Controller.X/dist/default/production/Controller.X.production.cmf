@@ -11,32 +11,40 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.obj
+$C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.obj
 idloc IDLOC 0 200000 200000 8 1
-end_init CODE 0 0 0 4 1
+reset_vec CODE 0 0 0 4 1
+end_init CODE 0 C0 C0 4 1
 config CONFIG 0 300000 300000 E 1
 $dist/default/production\Controller.X.production.obj
-cinit CODE 0 946 946 E 1
-text0 CODE 0 6C4 6C4 9E 1
-text1 CODE 0 762 762 60 1
-text2 CODE 0 816 816 40 1
-text3 CODE 0 954 954 E 1
-text4 CODE 0 8D2 8D2 20 1
-text5 CODE 0 614 614 B0 1
-text6 CODE 0 856 856 40 1
-text7 CODE 0 7C2 7C2 54 1
-text8 CODE 0 8F2 8F2 18 1
-text9 CODE 0 922 922 12 1
-text10 CODE 0 896 896 3C 1
-text11 CODE 0 97C 97C 8 1
-text12 CODE 0 970 970 C 1
-text13 CODE 0 934 934 12 1
-text14 CODE 0 90A 90A 18 1
-text15 CODE 0 962 962 E 1
-cstackCOMRAM COMRAM 1 1 1 6 1
-smallconst SMALLCONST 0 600 600 14 1
-bssCOMRAM COMRAM 1 7 7 2 1
-_ADC_ThrottlePWM_Lookup_const CODE 0 180 180 10 1
+intcodelo CODE 0 18 18 A8 1
+cinit CODE 0 C3E C3E C 1
+intcode_body CODE 0 846 846 70 1
+text0 CODE 0 616 616 C8 1
+text1 CODE 0 BB4 BB4 2A 1
+text2 CODE 0 79C 79C AA 1
+text3 CODE 0 A70 A70 4C 1
+text4 CODE 0 916 916 5C 1
+text5 CODE 0 8B6 8B6 60 1
+text6 CODE 0 ABC ABC 40 1
+text7 CODE 0 972 972 5A 1
+text8 CODE 0 BF6 BF6 16 1
+text9 CODE 0 A20 A20 50 1
+text10 CODE 0 6DE 6DE BE 1
+text11 CODE 0 AFC AFC 40 1
+text12 CODE 0 9CC 9CC 54 1
+text13 CODE 0 BDE BDE 18 1
+text14 CODE 0 C0C C0C 12 1
+text15 CODE 0 B3C B3C 3C 1
+text16 CODE 0 B78 B78 3C 1
+text17 CODE 0 C56 C56 8 1
+text18 CODE 0 C4A C4A C 1
+text19 CODE 0 C30 C30 E 1
+text20 CODE 0 C1E C1E 12 1
+cstackCOMRAM COMRAM 1 1 1 35 1
+intcode CODE 0 8 8 10 1
+smallconst SMALLCONST 0 600 600 16 1
+bssCOMRAM COMRAM 1 36 36 1 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -51,18 +59,18 @@ BANK2 200-2FF 1
 BANK3 300-3FF 1
 BANK4 400-4FF 1
 BANK5 500-5FF 1
-CONST 4-17F 1
-CONST 190-5FF 1
-CONST 984-7FFF 1
+CONST 4-7 1
+CONST C4-5FF 1
+CONST C5E-7FFF 1
 STACK 60-5FF 1
-SMALLCONST 984-7FFF 1
-CODE 4-17F 1
-CODE 190-5FF 1
-CODE 984-7FFF 1
-BIGRAM 9-5FF 1
-COMRAM 9-5F 1
+SMALLCONST C5E-7FFF 1
+CODE 4-7 1
+CODE C4-5FF 1
+CODE C5E-7FFF 1
+BIGRAM 37-5FF 1
+COMRAM 37-5F 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST 984-7FFF 1
+MEDIUMCONST C5E-7FFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -77,197 +85,325 @@ MEDIUMCONST 984-7FFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Controller.X.production.obj
-614 text5 CODE >19:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-616 text5 CODE >23:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-618 text5 CODE >24:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-61A text5 CODE >25:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-61C text5 CODE >26:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-61E text5 CODE >27:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-620 text5 CODE >28:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-622 text5 CODE >35:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-628 text5 CODE >38:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-62E text5 CODE >39:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-634 text5 CODE >41:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-63A text5 CODE >42:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-640 text5 CODE >44:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-646 text5 CODE >45:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-654 text5 CODE >50:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-660 text5 CODE >51:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-666 text5 CODE >54:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-672 text5 CODE >55:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-678 text5 CODE >56:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-684 text5 CODE >57:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-68A text5 CODE >60:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-696 text5 CODE >61:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-69C text5 CODE >64:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-6A8 text5 CODE >65:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-6AE text5 CODE >68:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-6BA text5 CODE >69:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-6C2 text5 CODE >72:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-6C4 text0 CODE >60:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-6C4 text0 CODE >64:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-6C8 text0 CODE >65:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-6CA text0 CODE >66:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-6CE text0 CODE >68:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-6D0 text0 CODE >69:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-6D2 text0 CODE >72:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-6D6 text0 CODE >75:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-6DA text0 CODE >78:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-6DE text0 CODE >80:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-6E4 text0 CODE >81:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-6F0 text0 CODE >83:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-6F6 text0 CODE >84:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-702 text0 CODE >88:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-706 text0 CODE >89:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-70A text0 CODE >90:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-710 text0 CODE >94:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-716 text0 CODE >95:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-71C text0 CODE >98:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-738 text0 CODE >102:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-744 text0 CODE >103:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-74A text0 CODE >104:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-756 text0 CODE >107:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-75C text0 CODE >91:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-75E text0 CODE >110:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-762 text1 CODE >226:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-762 text1 CODE >228:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-764 text1 CODE >230:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-770 text1 CODE >231:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-794 text1 CODE >232:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-79A text1 CODE >228:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-7C0 text1 CODE >235:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-7C2 text7 CODE >132:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-7C4 text7 CODE >135:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-7C8 text7 CODE >136:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-7CC text7 CODE >137:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-7E8 text7 CODE >139:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-7EA text7 CODE >140:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-7EC text7 CODE >141:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-7F0 text7 CODE >142:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-7F2 text7 CODE >143:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-7F6 text7 CODE >144:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-7F8 text7 CODE >146:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-7FC text7 CODE >147:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-802 text7 CODE >149:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-806 text7 CODE >150:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-808 text7 CODE >151:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-80C text7 CODE >152:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-80E text7 CODE >154:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-814 text7 CODE >157:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-816 text2 CODE >237:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-818 text2 CODE >240:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-81C text2 CODE >241:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-820 text2 CODE >242:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-828 text2 CODE >244:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-82A text2 CODE >245:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-82C text2 CODE >246:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-830 text2 CODE >247:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-832 text2 CODE >248:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-836 text2 CODE >249:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-838 text2 CODE >251:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-83C text2 CODE >252:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-842 text2 CODE >254:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-846 text2 CODE >255:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-848 text2 CODE >256:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-84C text2 CODE >257:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-84E text2 CODE >259:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-854 text2 CODE >262:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-856 text6 CODE >74:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-858 text6 CODE >77:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-85C text6 CODE >78:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-860 text6 CODE >79:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-868 text6 CODE >81:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-86A text6 CODE >82:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-86C text6 CODE >83:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-870 text6 CODE >84:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-872 text6 CODE >85:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-876 text6 CODE >86:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-878 text6 CODE >88:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-87C text6 CODE >89:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-882 text6 CODE >91:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-886 text6 CODE >92:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-888 text6 CODE >93:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-88C text6 CODE >94:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-88E text6 CODE >96:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-894 text6 CODE >99:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-896 text10 CODE >101:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-896 text10 CODE >103:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-898 text10 CODE >104:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-89A text10 CODE >105:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-89E text10 CODE >106:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8A0 text10 CODE >107:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8A4 text10 CODE >109:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8A8 text10 CODE >111:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8AA text10 CODE >112:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8AE text10 CODE >113:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8B0 text10 CODE >114:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8B4 text10 CODE >115:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8B6 text10 CODE >116:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8B8 text10 CODE >117:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8BA text10 CODE >118:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8BC text10 CODE >119:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8BC text10 CODE >121:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8BE text10 CODE >122:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8C2 text10 CODE >123:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8C4 text10 CODE >124:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8C8 text10 CODE >125:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8CA text10 CODE >126:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8CC text10 CODE >127:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8D0 text10 CODE >129:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8D2 text4 CODE >6:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8D2 text4 CODE >7:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8D8 text4 CODE >8:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8E4 text4 CODE >9:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8EA text4 CODE >10:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8F0 text4 CODE >11:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-8F2 text8 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
-8F4 text8 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
-902 text8 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
-908 text8 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
-90A text14 CODE >112:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-90A text14 CODE >117:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-90E text14 CODE >118:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-912 text14 CODE >119:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-914 text14 CODE >123:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-918 text14 CODE >141:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-91C text14 CODE >144:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-920 text14 CODE >146:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-922 text9 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
-924 text9 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
-92C text9 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
-932 text9 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
-934 text13 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
-936 text13 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
-93E text13 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
-944 text13 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
-946 cinit CODE >926:C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.
-946 cinit CODE >928:C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.
-946 cinit CODE >931:C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.
-946 cinit CODE >945:C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.
-948 cinit CODE >946:C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.
-94A cinit CODE >952:C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.
-94A cinit CODE >954:C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.
-94C cinit CODE >955:C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.
-94E cinit CODE >956:C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.
-950 cinit CODE >957:C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.
-954 text3 CODE >148:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-954 text3 CODE >153:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-958 text3 CODE >154:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-95C text3 CODE >159:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-960 text3 CODE >166:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-962 text15 CODE >168:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-962 text15 CODE >170:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-964 text15 CODE >171:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-96A text15 CODE >172:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-96E text15 CODE >173:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
-970 text12 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
-972 text12 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
-972 text12 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
-974 text12 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
-97A text12 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
-97C text11 CODE >13:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-97C text11 CODE >15:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
-982 text11 CODE >16:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\xlcd.c
+8 intcode CODE >110:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+8 intcode CODE >163:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+18 intcodelo CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
+18 intcodelo CODE >141:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+5C intcodelo CODE >145:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+60 intcodelo CODE >146:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+62 intcodelo CODE >147:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+64 intcodelo CODE >148:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+64 intcodelo CODE >150:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+68 intcodelo CODE >151:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+6C intcodelo CODE >152:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+6E intcodelo CODE >153:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+70 intcodelo CODE >154:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+72 intcodelo CODE >156:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+76 intcodelo CODE >157:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+78 intcodelo CODE >158:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+7A intcodelo CODE >163:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+616 text0 CODE >53:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+616 text0 CODE >55:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+61A text0 CODE >56:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+61E text0 CODE >58:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+622 text0 CODE >62:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+628 text0 CODE >63:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+62E text0 CODE >64:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+634 text0 CODE >65:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+63A text0 CODE >66:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+640 text0 CODE >67:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+646 text0 CODE >68:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+64C text0 CODE >69:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+652 text0 CODE >70:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+658 text0 CODE >73:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+65E text0 CODE >74:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+664 text0 CODE >75:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+66A text0 CODE >76:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+670 text0 CODE >77:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+676 text0 CODE >78:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+67C text0 CODE >79:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+682 text0 CODE >80:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+688 text0 CODE >81:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+68E text0 CODE >83:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+694 text0 CODE >84:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+6A0 text0 CODE >86:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+6AC text0 CODE >88:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+6B2 text0 CODE >89:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+6BE text0 CODE >91:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+6C4 text0 CODE >92:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+6CA text0 CODE >94:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+6D0 text0 CODE >100:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+6D2 text0 CODE >101:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+6D8 text0 CODE >96:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+6DA text0 CODE >103:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+6DE text10 CODE >24:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+6E0 text10 CODE >27:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+6E6 text10 CODE >38:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+6EA text10 CODE >39:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+6EE text10 CODE >42:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+6F0 text10 CODE >43:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+6F2 text10 CODE >44:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+6F4 text10 CODE >45:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+6F6 text10 CODE >46:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+6F8 text10 CODE >47:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+6FA text10 CODE >50:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+700 text10 CODE >53:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+706 text10 CODE >54:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+70C text10 CODE >56:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+712 text10 CODE >57:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+718 text10 CODE >60:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+71E text10 CODE >61:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+72C text10 CODE >66:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+738 text10 CODE >67:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+73E text10 CODE >70:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+74A text10 CODE >71:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+750 text10 CODE >72:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+75C text10 CODE >73:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+762 text10 CODE >76:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+76E text10 CODE >77:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+774 text10 CODE >80:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+780 text10 CODE >81:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+786 text10 CODE >84:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+792 text10 CODE >85:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+79A text10 CODE >88:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+79C text2 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+79C text2 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+7A6 text2 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+7C2 text2 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+7C6 text2 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+7CE text2 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+7E2 text2 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+7FA text2 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+816 text2 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+81C text2 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+820 text2 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+824 text2 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+836 text2 CODE >35:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+83E text2 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+844 text2 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\itoa.c
+846 intcode_body CODE >110:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+872 intcode_body CODE >117:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+876 intcode_body CODE >120:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+878 intcode_body CODE >121:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+87C intcode_body CODE >124:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+8B6 text5 CODE >344:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+8B6 text5 CODE >346:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+8B8 text5 CODE >348:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+8C4 text5 CODE >349:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+8E8 text5 CODE >350:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+8EE text5 CODE >346:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+914 text5 CODE >353:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+916 text4 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+916 text4 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+91E text4 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+926 text4 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+92A text4 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+92C text4 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+932 text4 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+936 text4 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+93E text4 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+944 text4 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+950 text4 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+958 text4 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+95C text4 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+962 text4 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+968 text4 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+968 text4 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+970 text4 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwdiv.c
+972 text7 CODE >285:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+974 text7 CODE >304:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+978 text7 CODE >305:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+97C text7 CODE >306:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+99E text7 CODE >308:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9A0 text7 CODE >309:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9A2 text7 CODE >310:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9A6 text7 CODE >311:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9A8 text7 CODE >312:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9AC text7 CODE >313:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9AE text7 CODE >318:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9B2 text7 CODE >319:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9B8 text7 CODE >321:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9BC text7 CODE >322:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9BE text7 CODE >323:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9C2 text7 CODE >324:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9C4 text7 CODE >328:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9CA text7 CODE >333:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9CC text12 CODE >235:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9CE text12 CODE >254:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9D2 text12 CODE >255:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9D6 text12 CODE >256:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9F2 text12 CODE >258:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9F4 text12 CODE >259:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9F6 text12 CODE >260:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9FA text12 CODE >261:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+9FC text12 CODE >262:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A00 text12 CODE >263:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A02 text12 CODE >268:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A06 text12 CODE >269:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A0C text12 CODE >271:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A10 text12 CODE >272:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A12 text12 CODE >273:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A16 text12 CODE >274:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A18 text12 CODE >278:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A1E text12 CODE >283:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A20 text9 CODE >6:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A20 text9 CODE >7:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A26 text9 CODE >8:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A32 text9 CODE >9:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A38 text9 CODE >10:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A44 text9 CODE >11:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A4A text9 CODE >12:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A56 text9 CODE >13:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A5C text9 CODE >14:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A68 text9 CODE >15:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A6E text9 CODE >16:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+A70 text3 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+A70 text3 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+A78 text3 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+A7C text3 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+A7E text3 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+A84 text3 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+A88 text3 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+A90 text3 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+A9C text3 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+AA6 text3 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+AAC text3 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+AB2 text3 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+AB2 text3 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+ABA text3 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwmod.c
+ABC text6 CODE >355:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+ABE text6 CODE >374:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+AC2 text6 CODE >375:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+AC6 text6 CODE >376:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+ACE text6 CODE >378:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+AD0 text6 CODE >379:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+AD2 text6 CODE >380:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+AD6 text6 CODE >381:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+AD8 text6 CODE >382:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+ADC text6 CODE >383:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+ADE text6 CODE >388:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+AE2 text6 CODE >389:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+AE8 text6 CODE >391:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+AEC text6 CODE >392:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+AEE text6 CODE >393:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+AF2 text6 CODE >394:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+AF4 text6 CODE >398:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+AFA text6 CODE >403:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+AFC text11 CODE >90:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+AFE text11 CODE >155:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B02 text11 CODE >156:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B06 text11 CODE >157:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B0E text11 CODE >159:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B10 text11 CODE >160:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B12 text11 CODE >161:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B16 text11 CODE >162:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B18 text11 CODE >163:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B1C text11 CODE >164:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B1E text11 CODE >169:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B22 text11 CODE >170:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B28 text11 CODE >172:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B2C text11 CODE >173:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B2E text11 CODE >174:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B32 text11 CODE >175:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B34 text11 CODE >179:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B3A text11 CODE >184:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B3C text15 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B3C text15 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B3E text15 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B40 text15 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B44 text15 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B46 text15 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B4A text15 CODE >35:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B4E text15 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B50 text15 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B54 text15 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B56 text15 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B5A text15 CODE >42:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B5C text15 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B5E text15 CODE >44:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B60 text15 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B62 text15 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B62 text15 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B64 text15 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B68 text15 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B6A text15 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B6E text15 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B70 text15 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B72 text15 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B76 text15 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\plib\XLCD\busyxlcd.c
+B78 text16 CODE >186:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B78 text16 CODE >188:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B7A text16 CODE >189:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B7C text16 CODE >190:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B80 text16 CODE >191:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B82 text16 CODE >192:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B86 text16 CODE >210:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B8A text16 CODE >213:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B8C text16 CODE >214:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B90 text16 CODE >215:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B92 text16 CODE >216:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B96 text16 CODE >217:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B98 text16 CODE >218:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B9A text16 CODE >219:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B9C text16 CODE >220:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B9E text16 CODE >221:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+B9E text16 CODE >223:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+BA0 text16 CODE >224:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+BA4 text16 CODE >225:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+BA6 text16 CODE >226:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+BAA text16 CODE >227:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+BAC text16 CODE >228:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+BAE text16 CODE >229:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+BB2 text16 CODE >232:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+BB4 text1 CODE >337:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+BB4 text1 CODE >339:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+BD0 text1 CODE >340:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+BDC text1 CODE >342:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+BDE text13 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
+BE0 text13 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
+BEE text13 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
+BF4 text13 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
+BF6 text8 CODE >42:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
+BF6 text8 CODE >44:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
+BFA text8 CODE >45:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
+BFE text8 CODE >57:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
+C00 text8 CODE >58:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
+C02 text8 CODE >60:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
+C06 text8 CODE >73:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
+C0A text8 CODE >74:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
+C0C text14 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
+C0E text14 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
+C16 text14 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
+C1C text14 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
+C1E text20 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
+C20 text20 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
+C28 text20 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
+C2E text20 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
+C30 text19 CODE >76:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
+C30 text19 CODE >79:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
+C32 text19 CODE >80:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
+C34 text19 CODE >81:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
+C36 text19 CODE >84:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
+C38 text19 CODE >85:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
+C3A text19 CODE >86:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
+C3C text19 CODE >87:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
+C3E cinit CODE >1193:C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.
+C3E cinit CODE >1195:C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.
+C3E cinit CODE >1198:C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.
+C3E cinit CODE >1209:C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.
+C40 cinit CODE >1215:C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.
+C40 cinit CODE >1217:C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.
+C42 cinit CODE >1218:C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.
+C44 cinit CODE >1219:C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.
+C46 cinit CODE >1220:C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.
+C4A text18 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
+C4C text18 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
+C4C text18 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
+C4E text18 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
+C54 text18 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d1tcyx.c
+C56 text17 CODE >18:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+C56 text17 CODE >20:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
+C5C text17 CODE >21:F:\Projects\SinclairC5Eclipse\Controller\Controller.X\lcddisplay.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -280,39 +416,47 @@ $dist/default/production\Controller.X.production.obj
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
+___lwmod@counter 24 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Controller.X.production.obj
 __Hspace_0 30000E 0 ABS 0 - dist/default/production\Controller.X.production.obj
-__Hspace_1 9 0 ABS 0 - dist/default/production\Controller.X.production.obj
+__Hspace_1 37 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __Hspace_2 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __size_of_WriteDataLCD 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
+_XC8_LowISR_Handler 18 0 CODE 0 intcodelo dist/default/production\Controller.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Controller.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Controller.X.production.obj
-_Delay1KTCYx 934 0 CODE 0 text13 dist/default/production\Controller.X.production.obj
+__end_of_InitPorts C0C 0 CODE 0 text8 dist/default/production\Controller.X.production.obj
+_Delay1KTCYx C1E 0 CODE 0 text20 dist/default/production\Controller.X.production.obj
+__size_of_InitPorts 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __Lsmallconst 600 0 SMALLCONST 0 smallconst dist/default/production\Controller.X.production.obj
 _LATD F8C 0 ABS 0 - dist/default/production\Controller.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.obj
-_main 6C4 0 CODE 0 text0 dist/default/production\Controller.X.production.obj
-start 0 0 CODE 0 init C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.obj
+___sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.obj
+_main 616 0 CODE 0 text0 dist/default/production\Controller.X.production.obj
+_utoa 79C 0 CODE 0 text2 dist/default/production\Controller.X.production.obj
+start C0 0 CODE 0 init C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
+__size_of_utoa 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
+__size_of___lwdiv 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
+__size_of___lwmod 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Controller.X.production.obj
-__end_of_WriteDataLCD 856 0 CODE 0 text2 dist/default/production\Controller.X.production.obj
-_ADC_Value 7 0 COMRAM 1 bssCOMRAM dist/default/production\Controller.X.production.obj
-__p_ADC_ThrottlePWM_Lookup_const 180 0 CODE 0 _ADC_ThrottlePWM_Lookup_const dist/default/production\Controller.X.production.obj
-__H_ADC_ThrottlePWM_Lookup_const 190 0 CODE 0 _ADC_ThrottlePWM_Lookup_const dist/default/production\Controller.X.production.obj
-_BusyLCD 896 0 CODE 0 text10 dist/default/production\Controller.X.production.obj
-__Hpowerup 0 0 CODE 0 powerup dist/default/production\Controller.X.production.obj
-Delay1TCYx@unit 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
-__size_of_ADC_Init 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.obj
-intlevel0 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.obj
-intlevel1 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.obj
-intlevel2 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.obj
-intlevel3 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.obj
+__end_of_WriteDataLCD AFC 0 CODE 0 text6 dist/default/production\Controller.X.production.obj
+_InitPorts BF6 0 CODE 0 text8 dist/default/production\Controller.X.production.obj
+_XC8_HighISR_Handler 8 0 CODE 0 intcode dist/default/production\Controller.X.production.obj
+_BusyLCD B78 0 CODE 0 text16 dist/default/production\Controller.X.production.obj
+__Hpowerup C0 0 CODE 0 powerup dist/default/production\Controller.X.production.obj
+Delay1TCYx@unit 20 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+utoa@c 2F 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+utoa@v 2D 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+__accesstop 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.obj
+intlevel0 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.obj
+intlevel1 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.obj
+intlevel2 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.obj
+intlevel3 0 0 CODE 0 text C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Controller.X.production.obj
-_InitLCD 8D2 0 CODE 0 text4 dist/default/production\Controller.X.production.obj
+_InitLCD A20 0 CODE 0 text9 dist/default/production\Controller.X.production.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Controller.X.production.obj
 __size_of_WriteCmdLCD 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
@@ -322,52 +466,61 @@ __CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\Controller.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\Controller.X.production.obj
+__end_of_putIntLCD BDE 0 CODE 0 text1 dist/default/production\Controller.X.production.obj
+__size_of_putIntLCD 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __CFG_FOSC$INTIO67 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
-_ADCON0 FC2 0 ABS 0 - dist/default/production\Controller.X.production.obj
-_ADCON1 FC1 0 ABS 0 - dist/default/production\Controller.X.production.obj
-_ADCON2 FC0 0 ABS 0 - dist/default/production\Controller.X.production.obj
-_ADRESH FC4 0 ABS 0 - dist/default/production\Controller.X.production.obj
-_Delay100TCYx 922 0 CODE 0 text9 dist/default/production\Controller.X.production.obj
-__end_of_ADC_Convert 970 0 CODE 0 text15 dist/default/production\Controller.X.production.obj
+_Delay100TCYx C0C 0 CODE 0 text14 dist/default/production\Controller.X.production.obj
+SetLCDCGRamAddr@CGaddr 24 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
 _ANSELH F7F 0 ABS 0 - dist/default/production\Controller.X.production.obj
-Delay100TCYx@unit 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
-_Delay10KTCYx 8F2 0 CODE 0 text8 dist/default/production\Controller.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.obj
-_CCPR1L FBE 0 ABS 0 - dist/default/production\Controller.X.production.obj
-__end_of_SetLCDDDRamAddr 816 0 CODE 0 text7 dist/default/production\Controller.X.production.obj
+Delay100TCYx@unit 20 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+_Delay10KTCYx BDE 0 CODE 0 text13 dist/default/production\Controller.X.production.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.obj
+__end_of_SetLCDDDRamAddr A20 0 CODE 0 text12 dist/default/production\Controller.X.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\Controller.X.production.obj
+__size_of_BusyXLCD 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
+_putIntLCD BB4 0 CODE 0 text1 dist/default/production\Controller.X.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Controller.X.production.obj
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Controller.X.production.obj
-_ADC_Init 90A 0 CODE 0 text14 dist/default/production\Controller.X.production.obj
-__Hintcodelo 0 0 CODE 0 intcodelo dist/default/production\Controller.X.production.obj
-Delay1KTCYx@unit 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
-WriteCmdLCD@cmd 2 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
-__end_of_ADC_Init 922 0 CODE 0 text14 dist/default/production\Controller.X.production.obj
+__Hintcodelo C0 0 CODE 0 intcodelo dist/default/production\Controller.X.production.obj
+Delay1KTCYx@unit 20 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+WriteCmdLCD@cmd 21 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+___lwmod@divisor 22 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+__end_of___lwdiv 972 0 CODE 0 text4 dist/default/production\Controller.X.production.obj
+__end_of___lwmod ABC 0 CODE 0 text3 dist/default/production\Controller.X.production.obj
+___lwdiv@quotient 24 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
 __size_of_Delay100TCYx 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __size_of_Delay10KTCYx 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
+__end_of_XC8_HighISR_Handler 8B6 0 CODE 0 intcode_body dist/default/production\Controller.X.production.obj
 _INTCON2bits FF1 0 ABS 0 - dist/default/production\Controller.X.production.obj
-__Lintcodelo 0 0 CODE 0 intcodelo dist/default/production\Controller.X.production.obj
+_INTCON3bits FF0 0 ABS 0 - dist/default/production\Controller.X.production.obj
+___lwmod@dividend 20 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+__Lintcodelo 18 0 CODE 0 intcodelo dist/default/production\Controller.X.production.obj
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 _WPUBbits F7C 0 ABS 0 - dist/default/production\Controller.X.production.obj
-_DelayFor18TCY 97C 0 CODE 0 text11 dist/default/production\Controller.X.production.obj
-start_initialization 946 0 CODE 0 cinit dist/default/production\Controller.X.production.obj
-OpenLCD@lcdtype 6 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+_DelayFor18TCY C56 0 CODE 0 text17 dist/default/production\Controller.X.production.obj
+start_initialization C3E 0 CODE 0 cinit dist/default/production\Controller.X.production.obj
+OpenLCD@lcdtype 25 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
 __CFG_PBADEN$ON 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Controller.X.production.obj
-_SetLCDDDRamAddr 7C2 0 CODE 0 text7 dist/default/production\Controller.X.production.obj
-_TRISAbits F92 0 ABS 0 - dist/default/production\Controller.X.production.obj
-_TRISCbits F94 0 ABS 0 - dist/default/production\Controller.X.production.obj
-SetLCDDDRamAddr@DDaddr 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+_SetLCDDDRamAddr 9CC 0 CODE 0 text12 dist/default/production\Controller.X.production.obj
+_TRISEbits F96 0 ABS 0 - dist/default/production\Controller.X.production.obj
+SetLCDDDRamAddr@DDaddr 24 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
 ___rparam_used 1 0 ABS 0 - dist/default/production\Controller.X.production.obj
-_Counter 8 0 COMRAM 1 bssCOMRAM dist/default/production\Controller.X.production.obj
+_BusyXLCD B3C 0 CODE 0 text15 dist/default/production\Controller.X.production.obj
 __CFG_WDTPS$32768 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
-__end_of_Delay100TCYx 934 0 CODE 0 text9 dist/default/production\Controller.X.production.obj
-__end_of_Delay10KTCYx 90A 0 CODE 0 text8 dist/default/production\Controller.X.production.obj
-WriteDataLCD@data 2 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
-__end_of_putLCD 7C2 0 CODE 0 text1 dist/default/production\Controller.X.production.obj
-_Delay1TCYx 970 0 CODE 0 text12 dist/default/production\Controller.X.production.obj
+__end_of_Delay100TCYx C1E 0 CODE 0 text14 dist/default/production\Controller.X.production.obj
+__end_of_Delay10KTCYx BF6 0 CODE 0 text13 dist/default/production\Controller.X.production.obj
+WriteDataLCD@data 21 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+__end_of_BusyXLCD B78 0 CODE 0 text15 dist/default/production\Controller.X.production.obj
+__size_of_XC8_LowISR_Handler 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
+utoa@buf 27 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+utoa@val 29 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+__end_of_putLCD 916 0 CODE 0 text5 dist/default/production\Controller.X.production.obj
+_Delay1TCYx C4A 0 CODE 0 text18 dist/default/production\Controller.X.production.obj
+_InitInterrupts C30 0 CODE 0 text19 dist/default/production\Controller.X.production.obj
+putIntLCD@result 32 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
 __Hbank0 0 0 ABS 0 bank0 dist/default/production\Controller.X.production.obj
 __Hbank1 0 0 ABS 0 bank1 dist/default/production\Controller.X.production.obj
 __Hbank2 0 0 ABS 0 bank2 dist/default/production\Controller.X.production.obj
@@ -393,12 +546,14 @@ __Htext7 0 0 ABS 0 text7 dist/default/production\Controller.X.production.obj
 __Htext8 0 0 ABS 0 text8 dist/default/production\Controller.X.production.obj
 __Htext9 0 0 ABS 0 text9 dist/default/production\Controller.X.production.obj
 __size_of_OpenLCD 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
+___lwdiv@counter 26 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Controller.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\Controller.X.production.obj
-__smallconst 600 0 SMALLCONST 0 smallconst C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.obj
+putIntLCD@n 30 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+__smallconst 600 0 SMALLCONST 0 smallconst C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\Controller.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\Controller.X.production.obj
-__end_of_Delay1KTCYx 946 0 CODE 0 text13 dist/default/production\Controller.X.production.obj
+__end_of_Delay1KTCYx C30 0 CODE 0 text20 dist/default/production\Controller.X.production.obj
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\Controller.X.production.obj
 __Lbank1 0 0 ABS 0 bank1 dist/default/production\Controller.X.production.obj
 __Lbank2 0 0 ABS 0 bank2 dist/default/production\Controller.X.production.obj
@@ -425,42 +580,43 @@ __Ltext8 0 0 ABS 0 text8 dist/default/production\Controller.X.production.obj
 __Ltext9 0 0 ABS 0 text9 dist/default/production\Controller.X.production.obj
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/production\Controller.X.production.obj
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\Controller.X.production.obj
-__size_of_ADC_Convert 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
+_INTCONbits FF2 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __Habs1 0 0 ABS 0 abs1 dist/default/production\Controller.X.production.obj
 __Hdata 0 0 ABS 0 data dist/default/production\Controller.X.production.obj
-__Hinit 0 0 CODE 0 init dist/default/production\Controller.X.production.obj
+__Hinit C0 0 CODE 0 init dist/default/production\Controller.X.production.obj
 __Hrbit 0 0 COMRAM 1 rbit dist/default/production\Controller.X.production.obj
 __Hrbss 0 0 COMRAM 1 rbss dist/default/production\Controller.X.production.obj
 __Htemp 0 0 COMRAM 1 temp dist/default/production\Controller.X.production.obj
 __Htext 0 0 ABS 0 text dist/default/production\Controller.X.production.obj
 __Labs1 0 0 ABS 0 abs1 dist/default/production\Controller.X.production.obj
 __Ldata 0 0 ABS 0 data dist/default/production\Controller.X.production.obj
-__Linit 0 0 CODE 0 init dist/default/production\Controller.X.production.obj
+__Linit C0 0 CODE 0 init dist/default/production\Controller.X.production.obj
 __Lrbit 0 0 COMRAM 1 rbit dist/default/production\Controller.X.production.obj
 __Lrbss 0 0 COMRAM 1 rbss dist/default/production\Controller.X.production.obj
 __Ltemp 0 0 COMRAM 1 temp dist/default/production\Controller.X.production.obj
 __Ltext 0 0 ABS 0 text dist/default/production\Controller.X.production.obj
 __CFG_XINST$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
-_WriteCmdLCD 856 0 CODE 0 text6 dist/default/production\Controller.X.production.obj
+_WriteCmdLCD AFC 0 CODE 0 text11 dist/default/production\Controller.X.production.obj
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Controller.X.production.obj
 __Hintret 0 0 ABS 0 intret dist/default/production\Controller.X.production.obj
 __Hirdata 0 0 CODE 0 irdata dist/default/production\Controller.X.production.obj
-_PR2 FCB 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __S0 30000E 0 ABS 0 - dist/default/production\Controller.X.production.obj
-__S1 9 0 ABS 0 - dist/default/production\Controller.X.production.obj
+__S1 37 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __S2 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
-_ADC_ThrottlePWM_Lookup 180 0 CODE 0 _ADC_ThrottlePWM_Lookup_const dist/default/production\Controller.X.production.obj
-__L_ADC_ThrottlePWM_Lookup_const 180 0 CODE 0 _ADC_ThrottlePWM_Lookup_const dist/default/production\Controller.X.production.obj
 __size_of_DelayFor18TCY 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
+__end_of_InitInterrupts C3E 0 CODE 0 text19 dist/default/production\Controller.X.production.obj
 __size_of_SetLCDDDRamAddr 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
-__end_of_Delay1TCYx 97C 0 CODE 0 text12 dist/default/production\Controller.X.production.obj
+utoa@base 2B 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+__end_of_SetLCDCGRamAddr 9CC 0 CODE 0 text7 dist/default/production\Controller.X.production.obj
+__end_of_Delay1TCYx C56 0 CODE 0 text18 dist/default/production\Controller.X.production.obj
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Controller.X.production.obj
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\Controller.X.production.obj
+int_func 846 0 CODE 0 intcode_body dist/default/production\Controller.X.production.obj
 __CFG_CCP2MX$PORTC 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __size_of_BusyLCD 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __Lintentry 0 0 ABS 0 intentry dist/default/production\Controller.X.production.obj
 __Hramtop 600 0 RAM 0 ramtop dist/default/production\Controller.X.production.obj
-putLCD@buffer 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+putLCD@buffer 22 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
 __Hrparam 0 0 COMRAM 1 rparam dist/default/production\Controller.X.production.obj
 __activetblptr 2 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __Hstruct 0 0 COMRAM 1 struct dist/default/production\Controller.X.production.obj
@@ -470,62 +626,81 @@ __Htext12 0 0 ABS 0 text12 dist/default/production\Controller.X.production.obj
 __Htext13 0 0 ABS 0 text13 dist/default/production\Controller.X.production.obj
 __Htext14 0 0 ABS 0 text14 dist/default/production\Controller.X.production.obj
 __Htext15 0 0 ABS 0 text15 dist/default/production\Controller.X.production.obj
+__Htext16 0 0 ABS 0 text16 dist/default/production\Controller.X.production.obj
+__Htext17 0 0 ABS 0 text17 dist/default/production\Controller.X.production.obj
+__Htext18 0 0 ABS 0 text18 dist/default/production\Controller.X.production.obj
+__Htext19 0 0 ABS 0 text19 dist/default/production\Controller.X.production.obj
+__Htext20 0 0 ABS 0 text20 dist/default/production\Controller.X.production.obj
 __size_of_InitLCD 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
-__end_of_DelayFor18TCY 984 0 CODE 0 text11 dist/default/production\Controller.X.production.obj
-__end_of_OpenLCD 6C4 0 CODE 0 text5 dist/default/production\Controller.X.production.obj
-__ptext10 896 0 CODE 0 text10 dist/default/production\Controller.X.production.obj
-__ptext11 97C 0 CODE 0 text11 dist/default/production\Controller.X.production.obj
-__ptext12 970 0 CODE 0 text12 dist/default/production\Controller.X.production.obj
-__ptext13 934 0 CODE 0 text13 dist/default/production\Controller.X.production.obj
-__ptext14 90A 0 CODE 0 text14 dist/default/production\Controller.X.production.obj
-__ptext15 962 0 CODE 0 text15 dist/default/production\Controller.X.production.obj
+__end_of_DelayFor18TCY C5E 0 CODE 0 text17 dist/default/production\Controller.X.production.obj
+__end_of_OpenLCD 79C 0 CODE 0 text10 dist/default/production\Controller.X.production.obj
+__ptext10 6DE 0 CODE 0 text10 dist/default/production\Controller.X.production.obj
+__ptext11 AFC 0 CODE 0 text11 dist/default/production\Controller.X.production.obj
+__ptext12 9CC 0 CODE 0 text12 dist/default/production\Controller.X.production.obj
+__ptext13 BDE 0 CODE 0 text13 dist/default/production\Controller.X.production.obj
+__ptext14 C0C 0 CODE 0 text14 dist/default/production\Controller.X.production.obj
+__ptext15 B3C 0 CODE 0 text15 dist/default/production\Controller.X.production.obj
+__ptext16 B78 0 CODE 0 text16 dist/default/production\Controller.X.production.obj
+__ptext17 C56 0 CODE 0 text17 dist/default/production\Controller.X.production.obj
+__ptext18 C4A 0 CODE 0 text18 dist/default/production\Controller.X.production.obj
+__ptext19 C30 0 CODE 0 text19 dist/default/production\Controller.X.production.obj
+__ptext20 C1E 0 CODE 0 text20 dist/default/production\Controller.X.production.obj
+__pintcode_body 846 0 CODE 0 intcode_body dist/default/production\Controller.X.production.obj
+___lwdiv 916 0 CODE 0 text4 dist/default/production\Controller.X.production.obj
+___lwmod A70 0 CODE 0 text3 dist/default/production\Controller.X.production.obj
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Controller.X.production.obj
 __Lbigram 0 0 ABS 0 bigram dist/default/production\Controller.X.production.obj
 __CFG_BORV$30 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
-Delay10KTCYx@unit 2 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+Delay10KTCYx@unit 21 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
 __Lcomram 0 0 ABS 0 comram dist/default/production\Controller.X.production.obj
 __Lconfig 300000 0 CONFIG 0 config dist/default/production\Controller.X.production.obj
-_putLCD 762 0 CODE 0 text1 dist/default/production\Controller.X.production.obj
-_LATCbits F8B 0 ABS 0 - dist/default/production\Controller.X.production.obj
+_putLCD 8B6 0 CODE 0 text5 dist/default/production\Controller.X.production.obj
+_LATBbits F8A 0 ABS 0 - dist/default/production\Controller.X.production.obj
+_LATDbits F8C 0 ABS 0 - dist/default/production\Controller.X.production.obj
+_LATEbits F8D 0 ABS 0 - dist/default/production\Controller.X.production.obj
+_SetLCDCGRamAddr 972 0 CODE 0 text7 dist/default/production\Controller.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Controller.X.production.obj
+___lwdiv@divisor 22 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\Controller.X.production.obj
-stackhi 5FF 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.obj
-stacklo 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.obj
-__Lintcode 0 0 CODE 0 intcode dist/default/production\Controller.X.production.obj
+stackhi 5FF 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.obj
+stacklo 60 0 ABS 0 - C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.obj
+__Lintcode 8 0 CODE 0 intcode dist/default/production\Controller.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\Controller.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production\Controller.X.production.obj
-_ADCON0bits FC2 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __Lspace_0 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __Lspace_1 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __Lspace_2 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
-__pbssCOMRAM 7 0 COMRAM 1 bssCOMRAM dist/default/production\Controller.X.production.obj
+__pbssCOMRAM 36 0 COMRAM 1 bssCOMRAM dist/default/production\Controller.X.production.obj
 __size_of_Delay1KTCYx 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
-__Lend_init 0 0 CODE 0 end_init dist/default/production\Controller.X.production.obj
+__Lend_init C0 0 CODE 0 end_init dist/default/production\Controller.X.production.obj
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Controller.X.production.obj
-end_of_initialization 94A 0 CODE 0 cinit dist/default/production\Controller.X.production.obj
+end_of_initialization C40 0 CODE 0 cinit dist/default/production\Controller.X.production.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\Controller.X.production.obj
 __Hintentry 0 0 ABS 0 intentry dist/default/production\Controller.X.production.obj
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
-__end_of_BusyLCD 8D2 0 CODE 0 text10 dist/default/production\Controller.X.production.obj
+_RCONbits FD0 0 ABS 0 - dist/default/production\Controller.X.production.obj
+__end_of_BusyLCD BB4 0 CODE 0 text16 dist/default/production\Controller.X.production.obj
 __size_of_putLCD 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __CFG_LPT1OSC$ON 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
-__Hreset_vec 0 0 CODE 0 reset_vec dist/default/production\Controller.X.production.obj
+___lwdiv@dividend 20 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+?___lwdiv 20 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+?___lwmod 20 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
+__Hreset_vec 4 0 CODE 0 reset_vec dist/default/production\Controller.X.production.obj
 __Lramtop 600 0 RAM 0 ramtop dist/default/production\Controller.X.production.obj
-__size_of_PWM_Init 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\Controller.X.production.obj
-__pcinit 946 0 CODE 0 cinit dist/default/production\Controller.X.production.obj
-__ptext0 6C4 0 CODE 0 text0 dist/default/production\Controller.X.production.obj
-__ptext1 762 0 CODE 0 text1 dist/default/production\Controller.X.production.obj
-__ptext2 816 0 CODE 0 text2 dist/default/production\Controller.X.production.obj
-__ptext3 954 0 CODE 0 text3 dist/default/production\Controller.X.production.obj
-__ptext4 8D2 0 CODE 0 text4 dist/default/production\Controller.X.production.obj
-__ptext5 614 0 CODE 0 text5 dist/default/production\Controller.X.production.obj
-__ptext6 856 0 CODE 0 text6 dist/default/production\Controller.X.production.obj
-__ptext7 7C2 0 CODE 0 text7 dist/default/production\Controller.X.production.obj
-__ptext8 8F2 0 CODE 0 text8 dist/default/production\Controller.X.production.obj
-__ptext9 922 0 CODE 0 text9 dist/default/production\Controller.X.production.obj
-__end_of_InitLCD 8F2 0 CODE 0 text4 dist/default/production\Controller.X.production.obj
+__pcinit C3E 0 CODE 0 cinit dist/default/production\Controller.X.production.obj
+__ptext0 616 0 CODE 0 text0 dist/default/production\Controller.X.production.obj
+__ptext1 BB4 0 CODE 0 text1 dist/default/production\Controller.X.production.obj
+__ptext2 79C 0 CODE 0 text2 dist/default/production\Controller.X.production.obj
+__ptext3 A70 0 CODE 0 text3 dist/default/production\Controller.X.production.obj
+__ptext4 916 0 CODE 0 text4 dist/default/production\Controller.X.production.obj
+__ptext5 8B6 0 CODE 0 text5 dist/default/production\Controller.X.production.obj
+__ptext6 ABC 0 CODE 0 text6 dist/default/production\Controller.X.production.obj
+__ptext7 972 0 CODE 0 text7 dist/default/production\Controller.X.production.obj
+__ptext8 BF6 0 CODE 0 text8 dist/default/production\Controller.X.production.obj
+__ptext9 A20 0 CODE 0 text9 dist/default/production\Controller.X.production.obj
+__end_of_InitLCD A70 0 CODE 0 text9 dist/default/production\Controller.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\Controller.X.production.obj
 __Ltext10 0 0 ABS 0 text10 dist/default/production\Controller.X.production.obj
 __Ltext11 0 0 ABS 0 text11 dist/default/production\Controller.X.production.obj
@@ -533,16 +708,20 @@ __Ltext12 0 0 ABS 0 text12 dist/default/production\Controller.X.production.obj
 __Ltext13 0 0 ABS 0 text13 dist/default/production\Controller.X.production.obj
 __Ltext14 0 0 ABS 0 text14 dist/default/production\Controller.X.production.obj
 __Ltext15 0 0 ABS 0 text15 dist/default/production\Controller.X.production.obj
-__ramtop 600 0 RAM 0 ramtop C:\Users\ADMINI~1\AppData\Local\Temp\s3t4.obj
-__end_of_ADC_ThrottlePWM_Lookup 190 0 CODE 0 _ADC_ThrottlePWM_Lookup_const dist/default/production\Controller.X.production.obj
-_ADC_Convert 962 0 CODE 0 text15 dist/default/production\Controller.X.production.obj
-__Lpowerup 0 0 CODE 0 powerup dist/default/production\Controller.X.production.obj
+__Ltext16 0 0 ABS 0 text16 dist/default/production\Controller.X.production.obj
+__Ltext17 0 0 ABS 0 text17 dist/default/production\Controller.X.production.obj
+__Ltext18 0 0 ABS 0 text18 dist/default/production\Controller.X.production.obj
+__Ltext19 0 0 ABS 0 text19 dist/default/production\Controller.X.production.obj
+__Ltext20 0 0 ABS 0 text20 dist/default/production\Controller.X.production.obj
+__ramtop 600 0 RAM 0 ramtop C:\Users\ADMINI~1\AppData\Local\Temp\s4ho.obj
+__Lpowerup C0 0 CODE 0 powerup dist/default/production\Controller.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Controller.X.production.obj
 __psmallconst 600 0 SMALLCONST 0 smallconst dist/default/production\Controller.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\Controller.X.production.obj
+__size_of_SetLCDCGRamAddr 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 ___param_bank 10 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Controller.X.production.obj
-__end_of__initialization 94A 0 CODE 0 cinit dist/default/production\Controller.X.production.obj
+__end_of__initialization C40 0 CODE 0 cinit dist/default/production\Controller.X.production.obj
 __size_of_Delay1TCYx 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
@@ -553,21 +732,22 @@ __Libigdata 0 0 CODE 0 ibigdata dist/default/production\Controller.X.production.
 __CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\Controller.X.production.obj
-__end_of_WriteCmdLCD 896 0 CODE 0 text6 dist/default/production\Controller.X.production.obj
+__end_of_WriteCmdLCD B3C 0 CODE 0 text11 dist/default/production\Controller.X.production.obj
 __CFG_PWRT$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
-_ANSELbits F7E 0 ABS 0 - dist/default/production\Controller.X.production.obj
+__pintcodelo 18 0 CODE 0 intcodelo dist/default/production\Controller.X.production.obj
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Controller.X.production.obj
-_PWM_Init 954 0 CODE 0 text3 dist/default/production\Controller.X.production.obj
-__Hend_init 4 0 CODE 0 end_init dist/default/production\Controller.X.production.obj
+_PortBValue 36 0 COMRAM 1 bssCOMRAM dist/default/production\Controller.X.production.obj
+__Hend_init C4 0 CODE 0 end_init dist/default/production\Controller.X.production.obj
 __CFG_BOREN$SBORDIS 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
-__end_of_main 762 0 CODE 0 text0 dist/default/production\Controller.X.production.obj
+__end_of_main 6DE 0 CODE 0 text0 dist/default/production\Controller.X.production.obj
+__end_of_utoa 846 0 CODE 0 text2 dist/default/production\Controller.X.production.obj
+__pintcode 8 0 CODE 0 intcode dist/default/production\Controller.X.production.obj
 _ANSEL F7E 0 ABS 0 - dist/default/production\Controller.X.production.obj
-_WriteDataLCD 816 0 CODE 0 text2 dist/default/production\Controller.X.production.obj
-_PORTC F82 0 ABS 0 - dist/default/production\Controller.X.production.obj
-_T2CON FCA 0 ABS 0 - dist/default/production\Controller.X.production.obj
-_TRISC F94 0 ABS 0 - dist/default/production\Controller.X.production.obj
+_WriteDataLCD ABC 0 CODE 0 text6 dist/default/production\Controller.X.production.obj
+_PORTB F81 0 ABS 0 - dist/default/production\Controller.X.production.obj
+_PORTD F83 0 ABS 0 - dist/default/production\Controller.X.production.obj
+_TRISB F93 0 ABS 0 - dist/default/production\Controller.X.production.obj
 _TRISD F95 0 ABS 0 - dist/default/production\Controller.X.production.obj
-__end_of_PWM_Init 962 0 CODE 0 text3 dist/default/production\Controller.X.production.obj
 __CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __CFG_CP1$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __HRAM 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
@@ -582,15 +762,16 @@ __CFG_CP2$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __CFG_CP3$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __CFG_CPB$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
-_CCP1CON FBD 0 ABS 0 - dist/default/production\Controller.X.production.obj
-_ADC_ThrottlePWM_Lookup_absconstaddr 180 0 ABS 0 - dist/default/production\Controller.X.production.obj
-__initialization 946 0 CODE 0 cinit dist/default/production\Controller.X.production.obj
-_OpenLCD 614 0 CODE 0 text5 dist/default/production\Controller.X.production.obj
+__end_of_XC8_LowISR_Handler C0 0 CODE 0 intcodelo dist/default/production\Controller.X.production.obj
+__size_of_InitInterrupts 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
+__initialization C3E 0 CODE 0 cinit dist/default/production\Controller.X.production.obj
+_OpenLCD 6DE 0 CODE 0 text10 dist/default/production\Controller.X.production.obj
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production\Controller.X.production.obj
-__Hsmallconst 614 0 SMALLCONST 0 smallconst dist/default/production\Controller.X.production.obj
+__Hsmallconst 616 0 SMALLCONST 0 smallconst dist/default/production\Controller.X.production.obj
 __Lifardata 0 0 CODE 0 ifardata dist/default/production\Controller.X.production.obj
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Controller.X.production.obj
-__Hintcode 0 0 CODE 0 intcode dist/default/production\Controller.X.production.obj
+__Hintcode 18 0 CODE 0 intcode dist/default/production\Controller.X.production.obj
+__size_of_XC8_HighISR_Handler 0 0 ABS 0 - dist/default/production\Controller.X.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -615,10 +796,11 @@ __Hintcode 0 0 CODE 0 intcode dist/default/production\Controller.X.production.ob
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
+intcodelo 0 18 18 AC 1
 idloc 0 200000 200000 8 1
-text5 0 614 614 370 1
-cstackCOMRAM 1 1 1 8 1
+text0 0 616 616 648 1
+cstackCOMRAM 1 1 1 36 1
 reset_vec 0 0 0 4 1
-smallconst 0 600 600 14 1
-_ADC_ThrottlePWM_Lookup_const 0 180 180 10 1
+intcode 0 8 8 10 1
+smallconst 0 600 600 16 1
 config 0 300000 300000 E 1

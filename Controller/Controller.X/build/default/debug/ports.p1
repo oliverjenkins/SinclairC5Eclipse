@@ -1,44 +1,35 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[p mainexit ]
-"8 ports.h
-[v _InitPorts `(v ~T0 @X0 0 ef ]
-"2034 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
-[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
-"2040
-[s S113 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S113 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"2050
-[s S114 :1 `uc 1 ]
-[n S114 . LD0 ]
-"2053
-[s S115 :1 `uc 1 :1 `uc 1 ]
-[n S115 . . LD1 ]
-"2057
-[s S116 :2 `uc 1 :1 `uc 1 ]
-[n S116 . . LD2 ]
-"2061
-[s S117 :3 `uc 1 :1 `uc 1 ]
-[n S117 . . LD3 ]
-"2065
-[s S118 :4 `uc 1 :1 `uc 1 ]
-[n S118 . . LD4 ]
-"2069
-[s S119 :5 `uc 1 :1 `uc 1 ]
-[n S119 . . LD5 ]
-"2073
-[s S120 :6 `uc 1 :1 `uc 1 ]
-[n S120 . . LD6 ]
-"2077
-[s S121 :7 `uc 1 :1 `uc 1 ]
-[n S121 . . LD7 ]
-"2039
-[u S112 `S113 1 `S114 1 `S115 1 `S116 1 `S117 1 `S118 1 `S119 1 `S120 1 `S121 1 ]
-[n S112 . . . . . . . . . . ]
-"2082
-[v _LATDbits `VS112 ~T0 @X0 0 e@3980 ]
-"31 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h
-[v _Delay1KTCYx `(v ~T0 @X0 0 ef1`uc ]
-"7234 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
+"428 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
+[v _ANSEL `Vuc ~T0 @X0 0 e@3966 ]
+"489
+[v _ANSELH `Vuc ~T0 @X0 0 e@3967 ]
+"7165
+[s S365 :7 `uc 1 :1 `uc 1 ]
+[n S365 . . NOT_RBPU ]
+"7169
+[s S366 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S366 . RBIP . TMR0IP . INTEDG2 INTEDG1 INTEDG0 nRBPU ]
+"7179
+[s S367 :7 `uc 1 :1 `uc 1 ]
+[n S367 . . RBPU ]
+"7164
+[u S364 `S365 1 `S366 1 `S367 1 ]
+[n S364 . . . . ]
+"7184
+[v _INTCON2bits `VS364 ~T0 @X0 0 e@4081 ]
+"335
+[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S14 . WPUB0 WPUB1 WPUB2 WPUB3 WPUB4 WPUB5 WPUB6 WPUB7 ]
+"334
+[u S13 `S14 1 ]
+[n S13 . . ]
+"346
+[v _WPUBbits `VS13 ~T0 @X0 0 e@3964 ]
+"2489
+[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
+"2931
+[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"7234
 [s S369 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S369 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
 "7244
@@ -58,62 +49,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S368 . . . . . . ]
 "7280
 [v _INTCONbits `VS368 ~T0 @X0 0 e@4082 ]
-"7074
-[s S362 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S362 . INT1IF INT2IF . INT1IE INT2IE . INT1IP INT2IP ]
-"7084
-[s S363 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S363 . INT1F INT2F . INT1E INT2E . INT1P INT2P ]
-"7073
-[u S361 `S362 1 `S363 1 ]
-[n S361 . . . ]
-"7095
-[v _INTCON3bits `VS361 ~T0 @X0 0 e@4080 ]
-"769
-[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
-"12 main.c
-[p x FOSC=INTIO67 ]
-[p x FCMEN=OFF ]
-[p x IESO=OFF ]
-"13
-[p x PWRT=OFF ]
-[p x BOREN=SBORDIS ]
-[p x BORV=30 ]
-"14
-[p x WDTEN=OFF ]
-[p x WDTPS=32768 ]
-"15
-[p x LPT1OSC=ON ]
-[p x PBADEN=ON ]
-[p x CCP2MX=PORTC ]
-"16
-[p x STVREN=ON ]
-[p x LVP=OFF ]
-[p x XINST=OFF ]
-"17
-[p x CP0=OFF ]
-[p x CP1=OFF ]
-[p x CP2=OFF ]
-[p x CP3=OFF ]
-"18
-[p x CPB=OFF ]
-[p x CPD=OFF ]
-"19
-[p x WRT0=OFF ]
-[p x WRT1=OFF ]
-[p x WRT2=OFF ]
-[p x WRT3=OFF ]
-"20
-[p x WRTB=OFF ]
-[p x WRTC=OFF ]
-[p x WRTD=OFF ]
-"21
-[p x EBTR0=OFF ]
-[p x EBTR1=OFF ]
-[p x EBTR2=OFF ]
-[p x EBTR3=OFF ]
-"22
-[p x EBTRB=OFF ]
+"6244
+[s S329 :1 `uc 1 ]
+[n S329 . NOT_BOR ]
+"6247
+[s S330 :1 `uc 1 :1 `uc 1 ]
+[n S330 . . NOT_POR ]
+"6251
+[s S331 :2 `uc 1 :1 `uc 1 ]
+[n S331 . . NOT_PD ]
+"6255
+[s S332 :3 `uc 1 :1 `uc 1 ]
+[n S332 . . NOT_TO ]
+"6259
+[s S333 :4 `uc 1 :1 `uc 1 ]
+[n S333 . . NOT_RI ]
+"6263
+[s S334 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S334 . nBOR nPOR nPD nTO nRI . SBOREN IPEN ]
+"6273
+[s S335 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S335 . BOR POR PD TO RI ]
+"6243
+[u S328 `S329 1 `S330 1 `S331 1 `S332 1 `S333 1 `S334 1 `S335 1 ]
+[n S328 . . . . . . . . ]
+"6281
+[v _RCONbits `VS328 ~T0 @X0 0 e@4048 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f45k20.h: 49: extern volatile unsigned char SSPMSK @ 0xF77;
@@ -4014,152 +3975,59 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
-[; ;ports.h: 8: void InitPorts(void);
-[; ;ports.h: 9: void InitInterrupts(void);
-[; ;main.c: 40: void interrupt XC8_HighISR_Handler(void);
-"47 main.c
-[v _PortBValue `uc ~T0 @X0 1 e ]
-[; ;main.c: 47: unsigned char PortBValue;
-"52
-[v _main `(v ~T0 @X0 1 ef ]
-"53
+"42 ports.c
+[v _InitPorts `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 52: void main (void)
-[; ;main.c: 53: {
-[e :U _main ]
+[; ;ports.c: 42: void InitPorts(void) {
+[e :U _InitPorts ]
 [f ]
-[; ;main.c: 54: InitPorts();
+[; ;ports.c: 44: ANSEL = 0;
+"44
+[e = _ANSEL -> -> 0 `i `uc ]
+[; ;ports.c: 45: ANSELH = 0;
+"45
+[e = _ANSELH -> -> 0 `i `uc ]
+[; ;ports.c: 48: INTCON2bits.RBPU = 0;
+"48
+[e = . . _INTCON2bits 2 1 -> -> 0 `i `uc ]
+[; ;ports.c: 49: WPUBbits.WPUB0 = 1;
+"49
+[e = . . _WPUBbits 0 0 -> -> 1 `i `uc ]
+[; ;ports.c: 51: TRISB = 0b00110111;
+"51
+[e = _TRISB -> -> 55 `i `uc ]
+[; ;ports.c: 54: TRISD = 0b00000000;
 "54
-[e ( _InitPorts ..  ]
-[; ;main.c: 55: LATD = 0b10000000;
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;ports.c: 55: }
 "55
-[e = _LATD -> -> 128 `i `uc ]
-[; ;main.c: 57: while (1)
-"57
-[e :U 415 ]
-[; ;main.c: 58: {
-"58
-{
-[; ;main.c: 61: LATDbits.LATD7 = ~LATDbits.LATD7;
-"61
-[e = . . _LATDbits 0 7 -> ~ -> . . _LATDbits 0 7 `i `uc ]
-[; ;main.c: 62: Delay1KTCYx(250);
-"62
-[e ( _Delay1KTCYx (1 -> -> 250 `i `uc ]
-"63
-}
-[e :U 414 ]
-"57
-[e $U 415  ]
-[e :U 416 ]
-[; ;main.c: 63: }
-[; ;main.c: 64: }
-"64
 [e :UE 413 ]
 }
-[v F4331 `(v ~T0 @X0 1 tf ]
-"71
-[v _XC8_HighISR_Handler `IF4331 ~T0 @X0 1 e ]
-"72
+"57
+[v _InitInterrupts `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 71: void interrupt XC8_HighISR_Handler(void)
-[; ;main.c: 72: {
-[e :U _XC8_HighISR_Handler ]
+[; ;ports.c: 57: void InitInterrupts(void) {
+[e :U _InitInterrupts ]
 [f ]
-[; ;main.c: 78: if (INTCONbits.INT0IF )
-"78
-[e $ ! != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 418  ]
-[; ;main.c: 79: {
-"79
-{
-[; ;main.c: 81: INTCONbits.INT0IF = 0;
-"81
+[; ;ports.c: 60: INTCON2bits.INTEDG0 = 0;
+"60
+[e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
+[; ;ports.c: 61: INTCONbits.INT0IF = 0;
+"61
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 82: LATDbits.LATD0 = ~LATDbits.LATD0;
-"82
-[e = . . _LATDbits 0 0 -> ~ -> . . _LATDbits 0 0 `i `uc ]
-"83
-}
-[e :U 418 ]
-[; ;main.c: 83: }
-[; ;main.c: 85: if (INTCON3bits.INT2IF) {
-"85
-[e $ ! != -> . . _INTCON3bits 0 1 `i -> -> -> 0 `i `Vuc `i 419  ]
-{
-[; ;main.c: 86: INTCON3bits.INT2IF = 0;
-"86
-[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 87: LATDbits.LATD2 = ~LATDbits.LATD2;
-"87
-[e = . . _LATDbits 0 2 -> ~ -> . . _LATDbits 0 2 `i `uc ]
-"88
-}
-[e :U 419 ]
-[; ;main.c: 88: }
-[; ;main.c: 93: }
-"93
-[e :UE 417 ]
-}
-[v F4339 `(v ~T0 @X0 1 tf ]
-"110
-[v _XC8_LowISR_Handler `ILF4339 ~T0 @X0 1 e ]
-"111
-{
-[; ;main.c: 110: void interrupt low_priority XC8_LowISR_Handler(void)
-[; ;main.c: 111: {
-[e :U _XC8_LowISR_Handler ]
-[f ]
-[; ;main.c: 114: if (INTCON3bits.INT1IF) {
-"114
-[e $ ! != -> . . _INTCON3bits 0 0 `i -> -> -> 0 `i `Vuc `i 421  ]
-{
-[; ;main.c: 115: INTCON3bits.INT1IF = 0;
-"115
-[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 116: LATDbits.LATD1 = ~LATDbits.LATD1;
-"116
-[e = . . _LATDbits 0 1 -> ~ -> . . _LATDbits 0 1 `i `uc ]
-"117
-}
-[e :U 421 ]
-[; ;main.c: 117: }
-[; ;main.c: 119: if (INTCONbits.RBIF) {
-"119
-[e $ ! != -> . . _INTCONbits 0 0 `i -> -> -> 0 `i `Vuc `i 422  ]
-{
-[; ;main.c: 120: PortBValue = PORTB;
-"120
-[e = _PortBValue _PORTB ]
-[; ;main.c: 121: INTCONbits.RBIF = 0;
-"121
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 122: if (PortBValue & 0b00010000) {
-"122
-[e $ ! != & -> _PortBValue `i -> 16 `i -> 0 `i 423  ]
-{
-[; ;main.c: 123: LATDbits.LATD4 = ~LATDbits.LATD4;
-"123
-[e = . . _LATDbits 0 4 -> ~ -> . . _LATDbits 0 4 `i `uc ]
-"124
-}
-[e :U 423 ]
-[; ;main.c: 124: }
-[; ;main.c: 125: if (PortBValue & 0b00100000) {
-"125
-[e $ ! != & -> _PortBValue `i -> 32 `i -> 0 `i 424  ]
-{
-[; ;main.c: 126: LATDbits.LATD5 = ~LATDbits.LATD5;
-"126
-[e = . . _LATDbits 0 5 -> ~ -> . . _LATDbits 0 5 `i `uc ]
-"127
-}
-[e :U 424 ]
-"128
-}
-[e :U 422 ]
-[; ;main.c: 127: }
-[; ;main.c: 128: }
-[; ;main.c: 132: }
-"132
-[e :UE 420 ]
+[; ;ports.c: 62: INTCONbits.INT0IE = 1;
+"62
+[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
+[; ;ports.c: 66: RCONbits.IPEN = 1;
+"66
+[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
+[; ;ports.c: 67: INTCONbits.GIEL = 1;
+"67
+[e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
+[; ;ports.c: 68: INTCONbits.GIEH = 1;
+"68
+[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
+[; ;ports.c: 69: }
+"69
+[e :UE 414 ]
 }
