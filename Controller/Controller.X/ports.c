@@ -96,6 +96,18 @@ void InitInterrupts(void) {
     INTCON2bits.INTEDG0 = 0;    // Falling edge of RB0 / INT0 (switch pressed)
     INTCONbits.INT0IF = 0;      // Clear INT0 flag
     INTCONbits.INT0IE = 1;      // Enable INT0 interrupt
+    
+    
+    // Timer 0 - used to determine RPM
+    // Use this http://www.enmcu.com/software/timer0calculatorandcodegeneration
+    INTCONbits.TMR0IF = 0;          // clear roll-over interrupt flag
+    INTCON2bits.TMR0IP = 1;         // Timer0 is hgih priority interrupt
+    INTCONbits.TMR0IE = 1;          // enable the Timer0 interrupt.
+
+    T0CON = 0b000000000;   // 8-bit timer, 1:2 prescaler = 0.20020480000 per overflow
+    T0CONbits.T08BIT = 0;
+    T0CONbits.T0CS = 0;
+    T0CONbits.PSA = 1;
 
     // Set up global interrupts
     RCONbits.IPEN = 1;          // Enable priority levels on interrupts
@@ -111,7 +123,7 @@ void InitMotorPWM(void) {
     PR2 = 255;   // PWM period = (PR2+1) * prescaler * Tcy = 1ms
 
     // Enable Timer2 module for PWM to run
-    T2CON = 0b00001100;     // Enable TMR2 with prescaler = 1
+    T2CON = 0b00000100;     // Enable TMR2 with prescaler = 1
 
     // Duty Cycle - how much is it 'on'
     CCPR1L = 0; // pulse width = CCPR1L * prescaler * Tcy = 100us    

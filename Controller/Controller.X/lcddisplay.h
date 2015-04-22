@@ -85,4 +85,4 @@ void WriteDataLCD(char data);
 
 // Utiltity Methods
 void LCDInitialDisplay(void);
-void LCDUpdate(unsigned char Speed, unsigned short RPM, unsigned char Throttle, unsigned char PWM);
+void LCDUpdate(unsigned char dSpeed, unsigned short dRPM, unsigned char dThrottle, unsigned char dPWM);

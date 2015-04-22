@@ -32,12 +32,12 @@ void LCDInitialDisplay(void) {
     WriteDataLCD(0b11111);
 
     WriteCmdLCD(0b00000010);        // Cursor to home
-    putLCD( (unsigned char *)" 00mph   0000rpm");
+    putLCD( (unsigned char *)" --mph    ---rpm");
 
     //putIntLCD(3455);
-
+    while(BusyLCD());
     SetLCDDDRamAddr(0x040);         // Cursor to second line
-    putLCD( (unsigned char *)"000pwr   000 pwm");
+    putLCD( (unsigned char *)"---pwr    ---pwm");
 
     //WriteDataLCD(0);              // Write First Custom Char
     //WriteDataLCD(1);              // Write Second Custom Char
@@ -47,20 +47,30 @@ void LCDUpdate(unsigned char Speed, unsigned short RPM, unsigned char Throttle, 
     WriteCmdLCD(0x02);  // Cursor to home
 
     // Speed
-    SetLCDDDRamAddr(0x01);  // Cursor to first Char
-    putIntLCD(Speed,2);
+    SetLCDDDRamAddr(0x00);  // Cursor to first Char
+    while(BusyLCD());
 
-    // RPM
-    SetLCDDDRamAddr(0x09);  // Cursor to first Char
-    putIntLCD(RPM,4);
+    while(BusyLCD());
+    putIntLCD(Speed,3);
+    while(BusyLCD());              // Wait if LCD busy
+    putLCD("mph   ");
+    while(BusyLCD());
+    putIntLCD(RPM, 4);
+    putLCD("rpm");
 
-    // Throttle
     SetLCDDDRamAddr(0x040);         // Cursor to second line
-    putIntLCD(Throttle,3);
+  
+    
+    while(BusyLCD());
 
-    // PWM
-    SetLCDDDRamAddr(0x49);
-    putIntLCD(PWM,3);
+     putIntLCD(Throttle,3);
+     while(BusyLCD());
+     putLCD("pwr    ");
+     while(BusyLCD());
+     putIntLCD(PWM, 3);
+
+
+
 }
 
 

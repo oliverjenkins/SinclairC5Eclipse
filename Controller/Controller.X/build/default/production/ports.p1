@@ -62,6 +62,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S368 . . . . . . ]
 "7280
 [v _INTCONbits `VS368 ~T0 @X0 0 e@4082 ]
+"6742
+[v _T0CON `Vuc ~T0 @X0 0 e@4053 ]
+"6748
+[s S353 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S353 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
+"6756
+[s S354 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S354 . T0PS0 T0PS1 T0PS2 ]
+"6747
+[u S352 `S353 1 `S354 1 ]
+[n S352 . . . ]
+"6762
+[v _T0CONbits `VS352 ~T0 @X0 0 e@4053 ]
 "6244
 [s S329 :1 `uc 1 ]
 [n S329 . NOT_BOR ]
@@ -4096,89 +4109,110 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ports.c: 98: INTCONbits.INT0IE = 1;
 "98
 [e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-[; ;ports.c: 101: RCONbits.IPEN = 1;
-"101
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;ports.c: 102: INTCONbits.GIEL = 1;
-"102
-[e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
-[; ;ports.c: 103: INTCONbits.GIEH = 1;
+[; ;ports.c: 103: INTCONbits.TMR0IF = 0;
 "103
-[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
-[; ;ports.c: 104: }
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;ports.c: 104: INTCON2bits.TMR0IP = 1;
 "104
+[e = . . _INTCON2bits 1 2 -> -> 1 `i `uc ]
+[; ;ports.c: 105: INTCONbits.TMR0IE = 1;
+"105
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;ports.c: 107: T0CON = 0b000000000;
+"107
+[e = _T0CON -> -> 0 `i `uc ]
+[; ;ports.c: 108: T0CONbits.T08BIT = 0;
+"108
+[e = . . _T0CONbits 0 4 -> -> 0 `i `uc ]
+[; ;ports.c: 109: T0CONbits.T0CS = 0;
+"109
+[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
+[; ;ports.c: 110: T0CONbits.PSA = 1;
+"110
+[e = . . _T0CONbits 0 1 -> -> 1 `i `uc ]
+[; ;ports.c: 113: RCONbits.IPEN = 1;
+"113
+[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
+[; ;ports.c: 114: INTCONbits.GIEL = 1;
+"114
+[e = . . _INTCONbits 2 6 -> -> 1 `i `uc ]
+[; ;ports.c: 115: INTCONbits.GIEH = 1;
+"115
+[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
+[; ;ports.c: 116: }
+"116
 [e :UE 414 ]
 }
-"106
+"118
 [v _InitMotorPWM `(v ~T0 @X0 1 ef ]
 {
-[; ;ports.c: 106: void InitMotorPWM(void) {
+[; ;ports.c: 118: void InitMotorPWM(void) {
 [e :U _InitMotorPWM ]
 [f ]
-[; ;ports.c: 108: CCP1CON = 0b00001100;
-"108
+[; ;ports.c: 120: CCP1CON = 0b00001100;
+"120
 [e = _CCP1CON -> -> 12 `i `uc ]
-[; ;ports.c: 111: PR2 = 255;
-"111
+[; ;ports.c: 123: PR2 = 255;
+"123
 [e = _PR2 -> -> 255 `i `uc ]
-[; ;ports.c: 114: T2CON = 0b00001100;
-"114
-[e = _T2CON -> -> 12 `i `uc ]
-[; ;ports.c: 117: CCPR1L = 0;
-"117
+[; ;ports.c: 126: T2CON = 0b00000100;
+"126
+[e = _T2CON -> -> 4 `i `uc ]
+[; ;ports.c: 129: CCPR1L = 0;
+"129
 [e = _CCPR1L -> -> 0 `i `uc ]
-[; ;ports.c: 118: }
-"118
+[; ;ports.c: 130: }
+"130
 [e :UE 415 ]
 }
-"120
+"132
 [v _InitAnalogueInputs `(v ~T0 @X0 1 ef ]
 {
-[; ;ports.c: 120: void InitAnalogueInputs(void) {
+[; ;ports.c: 132: void InitAnalogueInputs(void) {
 [e :U _InitAnalogueInputs ]
 [f ]
-[; ;ports.c: 123: TRISAbits.TRISA0 = 1;
-"123
-[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
-[; ;ports.c: 132: ANSEL = 0b00000001;
-"132
-[e = _ANSEL -> -> 1 `i `uc ]
-[; ;ports.c: 135: ADCON1 = 0b00000000;
+[; ;ports.c: 135: TRISAbits.TRISA0 = 1;
 "135
+[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
+[; ;ports.c: 144: ANSEL = 0b00000001;
+"144
+[e = _ANSEL -> -> 1 `i `uc ]
+[; ;ports.c: 147: ADCON1 = 0b00000000;
+"147
 [e = _ADCON1 -> -> 0 `i `uc ]
-[; ;ports.c: 136: ADCON2 = 0b00111000;
-"136
+[; ;ports.c: 148: ADCON2 = 0b00111000;
+"148
 [e = _ADCON2 -> -> 56 `i `uc ]
-[; ;ports.c: 154: ADCON0 = 0b00000001;
-"154
+[; ;ports.c: 166: ADCON0 = 0b00000001;
+"166
 [e = _ADCON0 -> -> 1 `i `uc ]
-[; ;ports.c: 156: }
-"156
+[; ;ports.c: 168: }
+"168
 [e :UE 416 ]
 }
-"158
+"170
 [v _ADC_Convert `(uc ~T0 @X0 1 ef ]
-"159
+"171
 {
-[; ;ports.c: 158: unsigned char ADC_Convert(void)
-[; ;ports.c: 159: {
+[; ;ports.c: 170: unsigned char ADC_Convert(void)
+[; ;ports.c: 171: {
 [e :U _ADC_Convert ]
 [f ]
-[; ;ports.c: 160: ADCON0bits.GO_DONE = 1;
-"160
+[; ;ports.c: 172: ADCON0bits.GO_DONE = 1;
+"172
 [e = . . _ADCON0bits 5 1 -> -> 1 `i `uc ]
-[; ;ports.c: 161: while (ADCON0bits.GO_DONE == 1);
-"161
+[; ;ports.c: 173: while (ADCON0bits.GO_DONE == 1);
+"173
 [e $U 418  ]
 [e :U 419 ]
 [e :U 418 ]
 [e $ == -> . . _ADCON0bits 5 1 `i -> 1 `i 419  ]
 [e :U 420 ]
-[; ;ports.c: 162: return ADRESH;
-"162
+[; ;ports.c: 174: return ADRESH;
+"174
 [e ) _ADRESH ]
 [e $UE 417  ]
-[; ;ports.c: 163: }
-"163
+[; ;ports.c: 175: }
+"175
 [e :UE 417 ]
 }

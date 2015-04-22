@@ -5312,7 +5312,7 @@ void WriteDataLCD(char data);
 
 
 void LCDInitialDisplay(void);
-void LCDUpdate(unsigned char Speed, unsigned short RPM, unsigned char Throttle, unsigned char PWM);
+void LCDUpdate(unsigned char dSpeed, unsigned short dRPM, unsigned char dThrottle, unsigned char dPWM);
 
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\stdarg.h"
 typedef void * va_list[1];
@@ -5435,12 +5435,12 @@ WriteDataLCD(0b10001);
 WriteDataLCD(0b11111);
 
 WriteCmdLCD(0b00000010);
-putLCD( (unsigned char *)" 00mph   0000rpm");
+putLCD( (unsigned char *)" --mph    ---rpm");
 
 
-
+while(BusyLCD());
 SetLCDDDRamAddr(0x040);
-putLCD( (unsigned char *)"000pwr   000 pwm");
+putLCD( (unsigned char *)"---pwr    ---pwm");
 
 
 
@@ -5450,20 +5450,27 @@ void LCDUpdate(unsigned char Speed, unsigned short RPM, unsigned char Throttle, 
 WriteCmdLCD(0x02);
 
 
-SetLCDDDRamAddr(0x01);
-putIntLCD(Speed,2);
+SetLCDDDRamAddr(0x00);
+while(BusyLCD());
 
-
-SetLCDDDRamAddr(0x09);
-putIntLCD(RPM,4);
-
+while(BusyLCD());
+putIntLCD(Speed,3);
+while(BusyLCD());
+putLCD("mph   ");
+while(BusyLCD());
+putIntLCD(RPM, 4);
+putLCD("rpm");
 
 SetLCDDDRamAddr(0x040);
+
+
+while(BusyLCD());
+
 putIntLCD(Throttle,3);
-
-
-SetLCDDDRamAddr(0x49);
-putIntLCD(PWM,3);
+while(BusyLCD());
+putLCD("pwr    ");
+while(BusyLCD());
+putIntLCD(PWM, 3);
 
 
 
@@ -5493,7 +5500,7 @@ void OpenLCD(unsigned char lcdtype)
 
 Delay100TCYx(38);
 
-# 102
+# 109
 PORTD &= 0xf0;
 TRISD &= 0xF0;
 
@@ -5549,7 +5556,7 @@ return;
 void WriteCmdLCD(unsigned char cmd)
 {
 
-# 220
+# 227
 TRISD &= 0xf0;
 PORTD &= 0xf0;
 PORTD |= (cmd>>4)&0x0f;
@@ -5589,7 +5596,7 @@ DelayFor18TCY();
 LATEbits.LATE2 = 1;
 DelayFor18TCY();
 
-# 275
+# 282
 if(PORTD&0x08)
 
 {
@@ -5618,7 +5625,7 @@ return 0;
 void SetLCDDDRamAddr(unsigned char DDaddr)
 {
 
-# 319
+# 326
 TRISD &= 0xf0;
 PORTD &= 0xf0;
 PORTD |= (((DDaddr | 0b10000000)>>4) & 0x0f);
@@ -5653,7 +5660,7 @@ return;
 void SetLCDCGRamAddr(unsigned char CGaddr)
 {
 
-# 369
+# 376
 TRISD &= 0xf0;
 PORTD &= 0xf0;
 PORTD |= (((CGaddr |0b01000000)>>4) & 0x0f);
@@ -5706,7 +5713,7 @@ sprintf(result, "%d", n);
 putLCD(result);
 }
 
-# 426
+# 433
 }
 
 void putLCD(char *buffer)
@@ -5723,7 +5730,7 @@ return;
 void WriteDataLCD(char data)
 {
 
-# 458
+# 465
 TRISD &= 0xf0;
 PORTD &= 0xf0;
 PORTD |= ((data>>4)&0x0f);

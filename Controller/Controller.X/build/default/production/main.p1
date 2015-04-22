@@ -18,42 +18,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _LATD `Vuc ~T0 @X0 0 e@3980 ]
 "1902
 [v _LATC `Vuc ~T0 @X0 0 e@3979 ]
+"6823
+[v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
+"6817
+[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
+"6748
+[s S353 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S353 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
+"6756
+[s S354 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S354 . T0PS0 T0PS1 T0PS2 ]
+"6747
+[u S352 `S353 1 `S354 1 ]
+[n S352 . . . ]
+"6762
+[v _T0CONbits `VS352 ~T0 @X0 0 e@4053 ]
 "16 ports.h
 [v _ADC_Convert `(uc ~T0 @X0 0 ef ]
+"43 main.c
+[v _ConvertTimerOverflowToWheelRPM `(us ~T0 @X0 0 ef ]
+"44
+[v _ConvertTimerOverflowToMPH `(uc ~T0 @X0 0 ef ]
 "88 lcddisplay.h
 [v _LCDUpdate `(v ~T0 @X0 0 ef4`uc`us`uc`uc ]
-"2040 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
-[s S113 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S113 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"2050
-[s S114 :1 `uc 1 ]
-[n S114 . LD0 ]
-"2053
-[s S115 :1 `uc 1 :1 `uc 1 ]
-[n S115 . . LD1 ]
-"2057
-[s S116 :2 `uc 1 :1 `uc 1 ]
-[n S116 . . LD2 ]
-"2061
-[s S117 :3 `uc 1 :1 `uc 1 ]
-[n S117 . . LD3 ]
-"2065
-[s S118 :4 `uc 1 :1 `uc 1 ]
-[n S118 . . LD4 ]
-"2069
-[s S119 :5 `uc 1 :1 `uc 1 ]
-[n S119 . . LD5 ]
-"2073
-[s S120 :6 `uc 1 :1 `uc 1 ]
-[n S120 . . LD6 ]
-"2077
-[s S121 :7 `uc 1 :1 `uc 1 ]
-[n S121 . . LD7 ]
-"2039
-[u S112 `S113 1 `S114 1 `S115 1 `S116 1 `S117 1 `S118 1 `S119 1 `S120 1 `S121 1 ]
-[n S112 . . . . . . . . . . ]
-"2082
-[v _LATDbits `VS112 ~T0 @X0 0 e@3980 ]
 "31 C:\Program Files (x86)\Microchip\xc8\v1.34\include\plib\delays.h
 [v _Delay1KTCYx `(v ~T0 @X0 0 ef1`uc ]
 "7234 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f45k20.h
@@ -87,6 +74,38 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S361 . . . ]
 "7095
 [v _INTCON3bits `VS361 ~T0 @X0 0 e@4080 ]
+"2040
+[s S113 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S113 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
+"2050
+[s S114 :1 `uc 1 ]
+[n S114 . LD0 ]
+"2053
+[s S115 :1 `uc 1 :1 `uc 1 ]
+[n S115 . . LD1 ]
+"2057
+[s S116 :2 `uc 1 :1 `uc 1 ]
+[n S116 . . LD2 ]
+"2061
+[s S117 :3 `uc 1 :1 `uc 1 ]
+[n S117 . . LD3 ]
+"2065
+[s S118 :4 `uc 1 :1 `uc 1 ]
+[n S118 . . LD4 ]
+"2069
+[s S119 :5 `uc 1 :1 `uc 1 ]
+[n S119 . . LD5 ]
+"2073
+[s S120 :6 `uc 1 :1 `uc 1 ]
+[n S120 . . LD6 ]
+"2077
+[s S121 :7 `uc 1 :1 `uc 1 ]
+[n S121 . . LD7 ]
+"2039
+[u S112 `S113 1 `S114 1 `S115 1 `S116 1 `S117 1 `S118 1 `S119 1 `S120 1 `S121 1 ]
+[n S112 . . . . . . . . . . ]
+"2082
+[v _LATDbits `VS112 ~T0 @X0 0 e@3980 ]
 "769
 [v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
 "12 main.c
@@ -4051,185 +4070,1556 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcddisplay.h: 83: void putIntLCD(short int n,short int pad);
 [; ;lcddisplay.h: 84: void WriteDataLCD(char data);
 [; ;lcddisplay.h: 87: void LCDInitialDisplay(void);
-[; ;lcddisplay.h: 88: void LCDUpdate(unsigned char Speed, unsigned short RPM, unsigned char Throttle, unsigned char PWM);
+[; ;lcddisplay.h: 88: void LCDUpdate(unsigned char dSpeed, unsigned short dRPM, unsigned char dThrottle, unsigned char dPWM);
 [; ;main.c: 42: void interrupt XC8_HighISR_Handler(void);
-"49 main.c
+[; ;main.c: 43: unsigned short ConvertTimerOverflowToWheelRPM(void);
+[; ;main.c: 44: unsigned char ConvertTimerOverflowToMPH(void);
+"51 main.c
 [v _PortBValue `uc ~T0 @X0 1 e ]
-[; ;main.c: 49: unsigned char PortBValue;
-"52
-[v _Speed `uc ~T0 @X0 1 e ]
-[; ;main.c: 52: unsigned char Speed;
+[; ;main.c: 51: unsigned char PortBValue;
 "53
-[v _RPM `us ~T0 @X0 1 e ]
-[; ;main.c: 53: unsigned short RPM;
-"54
 [v _Throttle `uc ~T0 @X0 1 e ]
-[; ;main.c: 54: unsigned char Throttle;
-"64
+[; ;main.c: 53: unsigned char Throttle;
+"54
+[v _TimerOverflowCounter `us ~T0 @X0 1 e ]
+[; ;main.c: 54: unsigned short TimerOverflowCounter;
+"55
+[v _TimerValueAtOverflow `uc ~T0 @X0 1 e ]
+[; ;main.c: 55: unsigned char TimerValueAtOverflow;
+"56
+[v _TimerCounterAtOverflow `us ~T0 @X0 1 e ]
+[; ;main.c: 56: unsigned short TimerCounterAtOverflow;
+"57
+[v _Speed `uc ~T0 @X0 1 e ]
+[; ;main.c: 57: unsigned char Speed;
+"58
+[v _RPM `us ~T0 @X0 1 e ]
+[; ;main.c: 58: unsigned short RPM;
+"59
+[v _CanCalculateSpeed `uc ~T0 @X0 1 e ]
+[; ;main.c: 59: unsigned char CanCalculateSpeed;
+"67
 [v _main `(v ~T0 @X0 1 ef ]
-"65
+"68
 {
-[; ;main.c: 64: void main (void)
-[; ;main.c: 65: {
+[; ;main.c: 67: void main (void)
+[; ;main.c: 68: {
 [e :U _main ]
 [f ]
-[; ;main.c: 66: InitPorts();
-"66
-[e ( _InitPorts ..  ]
-[; ;main.c: 67: InitInterrupts();
-"67
-[e ( _InitInterrupts ..  ]
-[; ;main.c: 68: InitMotorPWM();
-"68
-[e ( _InitMotorPWM ..  ]
-[; ;main.c: 69: InitLCD();
+[; ;main.c: 69: InitPorts();
 "69
-[e ( _InitLCD ..  ]
-[; ;main.c: 70: InitAnalogueInputs();
+[e ( _InitPorts ..  ]
+[; ;main.c: 70: InitInterrupts();
 "70
-[e ( _InitAnalogueInputs ..  ]
-[; ;main.c: 71: LCDInitialDisplay();
+[e ( _InitInterrupts ..  ]
+[; ;main.c: 71: InitMotorPWM();
 "71
-[e ( _LCDInitialDisplay ..  ]
-[; ;main.c: 73: CCPR1L = 16;
+[e ( _InitMotorPWM ..  ]
+[; ;main.c: 72: InitLCD();
+"72
+[e ( _InitLCD ..  ]
+[; ;main.c: 73: InitAnalogueInputs();
 "73
-[e = _CCPR1L -> -> 16 `i `uc ]
-[; ;main.c: 76: LATD = 0;
+[e ( _InitAnalogueInputs ..  ]
+[; ;main.c: 74: LCDInitialDisplay();
+"74
+[e ( _LCDInitialDisplay ..  ]
+[; ;main.c: 76: CCPR1L = 16;
 "76
+[e = _CCPR1L -> -> 16 `i `uc ]
+[; ;main.c: 79: LATD = 0;
+"79
 [e = _LATD -> -> 0 `i `uc ]
-[; ;main.c: 77: LATC = 0;
-"77
-[e = _LATC -> -> 0 `i `uc ]
-[; ;main.c: 80: Speed = 22;
+[; ;main.c: 80: LATC = 0;
 "80
-[e = _Speed -> -> 22 `i `uc ]
-[; ;main.c: 81: RPM = 1234;
-"81
-[e = _RPM -> -> 1234 `i `us ]
-[; ;main.c: 83: while (1)
-"83
-[e :U 415 ]
-[; ;main.c: 84: {
-"84
-{
-[; ;main.c: 86: CCPR1L = CCPR1L + 1;
+[e = _LATC -> -> 0 `i `uc ]
+[; ;main.c: 85: TMR0H = 0xFF;
+"85
+[e = _TMR0H -> -> 255 `i `uc ]
+[; ;main.c: 86: TMR0L = 0x83;
 "86
-[e = _CCPR1L -> + -> _CCPR1L `i -> 1 `i `uc ]
-[; ;main.c: 87: Throttle = ADC_Convert();
+[e = _TMR0L -> -> 131 `i `uc ]
+[; ;main.c: 87: T0CONbits.TMR0ON = 1;
 "87
-[e = _Throttle ( _ADC_Convert ..  ]
-[; ;main.c: 88: Throttle = Throttle >> 4;
-"88
-[e = _Throttle -> >> -> _Throttle `i -> 4 `i `uc ]
-[; ;main.c: 91: LCDUpdate(Speed, RPM, Throttle, CCPR1L);
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 89: CanCalculateSpeed = 0;
+"89
+[e = _CanCalculateSpeed -> -> 0 `i `uc ]
+[; ;main.c: 90: while (1)
+"90
+[e :U 415 ]
+[; ;main.c: 91: {
 "91
-[e ( _LCDUpdate (4 , , , _Speed _RPM _Throttle _CCPR1L ]
-[; ;main.c: 94: LATDbits.LATD7 = ~LATDbits.LATD7;
+{
+[; ;main.c: 93: CCPR1L = CCPR1L + 1;
+"93
+[e = _CCPR1L -> + -> _CCPR1L `i -> 1 `i `uc ]
+[; ;main.c: 94: Throttle = ADC_Convert();
 "94
-[e = . . _LATDbits 0 7 -> ~ -> . . _LATDbits 0 7 `i `uc ]
-[; ;main.c: 95: Delay1KTCYx(5);
+[e = _Throttle ( _ADC_Convert ..  ]
+[; ;main.c: 95: Throttle = Throttle >> 4;
 "95
-[e ( _Delay1KTCYx (1 -> -> 5 `i `uc ]
+[e = _Throttle -> >> -> _Throttle `i -> 4 `i `uc ]
+[; ;main.c: 96: if (CanCalculateSpeed) {
 "96
+[e $ ! != -> _CanCalculateSpeed `i -> -> -> 0 `i `uc `i 417  ]
+{
+[; ;main.c: 97: RPM = ConvertTimerOverflowToWheelRPM();
+"97
+[e = _RPM ( _ConvertTimerOverflowToWheelRPM ..  ]
+[; ;main.c: 98: Speed = ConvertTimerOverflowToMPH();
+"98
+[e = _Speed ( _ConvertTimerOverflowToMPH ..  ]
+[; ;main.c: 99: CanCalculateSpeed = 0;
+"99
+[e = _CanCalculateSpeed -> -> 0 `i `uc ]
+"100
+}
+[e :U 417 ]
+[; ;main.c: 100: }
+[; ;main.c: 103: LCDUpdate(Speed, RPM, Throttle, CCPR1L);
+"103
+[e ( _LCDUpdate (4 , , , _Speed _RPM _Throttle _CCPR1L ]
+[; ;main.c: 107: Delay1KTCYx(10);
+"107
+[e ( _Delay1KTCYx (1 -> -> 10 `i `uc ]
+"109
 }
 [e :U 414 ]
-"83
+"90
 [e $U 415  ]
 [e :U 416 ]
-[; ;main.c: 96: }
-[; ;main.c: 97: }
-"97
+[; ;main.c: 109: }
+[; ;main.c: 110: }
+"110
 [e :UE 413 ]
 }
 [v F4366 `(v ~T0 @X0 1 tf ]
-"104
+"117
 [v _XC8_HighISR_Handler `IF4366 ~T0 @X0 1 e ]
-"105
+"118
 {
-[; ;main.c: 104: void interrupt XC8_HighISR_Handler(void)
-[; ;main.c: 105: {
+[; ;main.c: 117: void interrupt XC8_HighISR_Handler(void)
+[; ;main.c: 118: {
 [e :U _XC8_HighISR_Handler ]
 [f ]
-[; ;main.c: 111: if (INTCONbits.INT0IF )
-"111
-[e $ ! != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 418  ]
-[; ;main.c: 112: {
-"112
+[; ;main.c: 124: if (INTCONbits.INT0IF )
+"124
+[e $ ! != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 419  ]
+[; ;main.c: 125: {
+"125
 {
-[; ;main.c: 114: INTCONbits.INT0IF = 0;
-"114
+[; ;main.c: 128: INTCONbits.INT0IF = 0;
+"128
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 116: LATDbits.LATD6 = ~LATDbits.LATD6;
-"116
-[e = . . _LATDbits 0 6 -> ~ -> . . _LATDbits 0 6 `i `uc ]
-"117
-}
-[e :U 418 ]
-[; ;main.c: 117: }
-[; ;main.c: 119: }
-"119
-[e :UE 417 ]
-}
-[v F4377 `(v ~T0 @X0 1 tf ]
+[; ;main.c: 130: TimerValueAtOverflow = TMR0L;
+"130
+[e = _TimerValueAtOverflow _TMR0L ]
+[; ;main.c: 131: TimerCounterAtOverflow = TimerOverflowCounter;
+"131
+[e = _TimerCounterAtOverflow _TimerOverflowCounter ]
+[; ;main.c: 132: TimerOverflowCounter = 0;
+"132
+[e = _TimerOverflowCounter -> -> 0 `i `us ]
+[; ;main.c: 133: TMR0H = 0xFF;
+"133
+[e = _TMR0H -> -> 255 `i `uc ]
+[; ;main.c: 134: TMR0L = 0x83;
+"134
+[e = _TMR0L -> -> 131 `i `uc ]
+[; ;main.c: 135: CanCalculateSpeed = 1;
+"135
+[e = _CanCalculateSpeed -> -> 1 `i `uc ]
 "136
-[v _XC8_LowISR_Handler `ILF4377 ~T0 @X0 1 e ]
+}
+[e :U 419 ]
+[; ;main.c: 136: }
+[; ;main.c: 137: if (INTCONbits.TMR0IF)
 "137
+[e $ ! != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 420  ]
+[; ;main.c: 138: {
+"138
 {
-[; ;main.c: 136: void interrupt low_priority XC8_LowISR_Handler(void)
-[; ;main.c: 137: {
-[e :U _XC8_LowISR_Handler ]
-[f ]
-[; ;main.c: 140: if (INTCON3bits.INT1IF) {
+[; ;main.c: 139: INTCONbits.TMR0IF = 0;
+"139
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 140: TimerOverflowCounter = TimerOverflowCounter + 1;
 "140
-[e $ ! != -> . . _INTCON3bits 0 0 `i -> -> -> 0 `i `Vuc `i 420  ]
-{
-[; ;main.c: 141: INTCON3bits.INT1IF = 0;
+[e = _TimerOverflowCounter -> + -> _TimerOverflowCounter `ui -> -> 1 `i `ui `us ]
+[; ;main.c: 141: TMR0H = 0xFF;
 "141
-[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 142: LATDbits.LATD1 = ~LATDbits.LATD1;
+[e = _TMR0H -> -> 255 `i `uc ]
+[; ;main.c: 142: TMR0L = 0x83;
 "142
-[e = . . _LATDbits 0 1 -> ~ -> . . _LATDbits 0 1 `i `uc ]
-"143
+[e = _TMR0L -> -> 131 `i `uc ]
+"145
 }
 [e :U 420 ]
-[; ;main.c: 143: }
-[; ;main.c: 145: if (INTCONbits.RBIF) {
-"145
-[e $ ! != -> . . _INTCONbits 0 0 `i -> -> -> 0 `i `Vuc `i 421  ]
-{
-[; ;main.c: 146: PortBValue = PORTB;
-"146
-[e = _PortBValue _PORTB ]
-[; ;main.c: 147: INTCONbits.RBIF = 0;
+[; ;main.c: 145: }
+[; ;main.c: 147: }
 "147
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 148: if (PortBValue & 0b00010000) {
-"148
-[e $ ! != & -> _PortBValue `i -> 16 `i -> 0 `i 422  ]
+[e :UE 418 ]
+}
+[v F4385 `(v ~T0 @X0 1 tf ]
+"164
+[v _XC8_LowISR_Handler `ILF4385 ~T0 @X0 1 e ]
+"165
 {
-[; ;main.c: 149: LATDbits.LATD4 = ~LATDbits.LATD4;
-"149
-[e = . . _LATDbits 0 4 -> ~ -> . . _LATDbits 0 4 `i `uc ]
-"150
+[; ;main.c: 164: void interrupt low_priority XC8_LowISR_Handler(void)
+[; ;main.c: 165: {
+[e :U _XC8_LowISR_Handler ]
+[f ]
+[; ;main.c: 168: if (INTCON3bits.INT1IF) {
+"168
+[e $ ! != -> . . _INTCON3bits 0 0 `i -> -> -> 0 `i `Vuc `i 422  ]
+{
+[; ;main.c: 169: INTCON3bits.INT1IF = 0;
+"169
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 170: LATDbits.LATD1 = ~LATDbits.LATD1;
+"170
+[e = . . _LATDbits 0 1 -> ~ -> . . _LATDbits 0 1 `i `uc ]
+"171
 }
 [e :U 422 ]
-[; ;main.c: 150: }
-[; ;main.c: 151: if (PortBValue & 0b00100000) {
-"151
-[e $ ! != & -> _PortBValue `i -> 32 `i -> 0 `i 423  ]
+[; ;main.c: 171: }
+[; ;main.c: 173: if (INTCONbits.RBIF) {
+"173
+[e $ ! != -> . . _INTCONbits 0 0 `i -> -> -> 0 `i `Vuc `i 423  ]
 {
-[; ;main.c: 152: LATDbits.LATD5 = ~LATDbits.LATD5;
-"152
+[; ;main.c: 174: PortBValue = PORTB;
+"174
+[e = _PortBValue _PORTB ]
+[; ;main.c: 175: INTCONbits.RBIF = 0;
+"175
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 176: if (PortBValue & 0b00010000) {
+"176
+[e $ ! != & -> _PortBValue `i -> 16 `i -> 0 `i 424  ]
+{
+[; ;main.c: 177: LATDbits.LATD4 = ~LATDbits.LATD4;
+"177
+[e = . . _LATDbits 0 4 -> ~ -> . . _LATDbits 0 4 `i `uc ]
+"178
+}
+[e :U 424 ]
+[; ;main.c: 178: }
+[; ;main.c: 179: if (PortBValue & 0b00100000) {
+"179
+[e $ ! != & -> _PortBValue `i -> 32 `i -> 0 `i 425  ]
+{
+[; ;main.c: 180: LATDbits.LATD5 = ~LATDbits.LATD5;
+"180
 [e = . . _LATDbits 0 5 -> ~ -> . . _LATDbits 0 5 `i `uc ]
-"153
+"181
+}
+[e :U 425 ]
+"182
 }
 [e :U 423 ]
-"154
+[; ;main.c: 181: }
+[; ;main.c: 182: }
+[; ;main.c: 186: }
+"186
+[e :UE 421 ]
 }
-[e :U 421 ]
-[; ;main.c: 153: }
-[; ;main.c: 154: }
-[; ;main.c: 158: }
-"158
-[e :UE 419 ]
+"203
+[v _ConvertTimerOverflowToMPH `(uc ~T0 @X0 1 ef ]
+{
+[; ;main.c: 203: unsigned char ConvertTimerOverflowToMPH() {
+[e :U _ConvertTimerOverflowToMPH ]
+[f ]
+[; ;main.c: 204: if (TimerCounterAtOverflow <= 95) {
+"204
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 95 `i `ui 427  ]
+{
+[; ;main.c: 205: return 30;
+"205
+[e ) -> -> 30 `i `uc ]
+[e $UE 426  ]
+"206
+}
+[; ;main.c: 206: } else if (TimerCounterAtOverflow <=98) {
+[e $U 428  ]
+[e :U 427 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 98 `i `ui 429  ]
+{
+[; ;main.c: 207: return 29;
+"207
+[e ) -> -> 29 `i `uc ]
+[e $UE 426  ]
+"208
+}
+[; ;main.c: 208: } else if (TimerCounterAtOverflow <=102) {
+[e $U 430  ]
+[e :U 429 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 102 `i `ui 431  ]
+{
+[; ;main.c: 209: return 28;
+"209
+[e ) -> -> 28 `i `uc ]
+[e $UE 426  ]
+"210
+}
+[; ;main.c: 210: } else if (TimerCounterAtOverflow <=106) {
+[e $U 432  ]
+[e :U 431 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 106 `i `ui 433  ]
+{
+[; ;main.c: 211: return 27;
+"211
+[e ) -> -> 27 `i `uc ]
+[e $UE 426  ]
+"212
+}
+[; ;main.c: 212: } else if (TimerCounterAtOverflow <=110) {
+[e $U 434  ]
+[e :U 433 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 110 `i `ui 435  ]
+{
+[; ;main.c: 213: return 26;
+"213
+[e ) -> -> 26 `i `uc ]
+[e $UE 426  ]
+"214
+}
+[; ;main.c: 214: } else if (TimerCounterAtOverflow <=114) {
+[e $U 436  ]
+[e :U 435 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 114 `i `ui 437  ]
+{
+[; ;main.c: 215: return 25;
+"215
+[e ) -> -> 25 `i `uc ]
+[e $UE 426  ]
+"216
+}
+[; ;main.c: 216: } else if (TimerCounterAtOverflow <=119) {
+[e $U 438  ]
+[e :U 437 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 119 `i `ui 439  ]
+{
+[; ;main.c: 217: return 24;
+"217
+[e ) -> -> 24 `i `uc ]
+[e $UE 426  ]
+"218
+}
+[; ;main.c: 218: } else if (TimerCounterAtOverflow <=124) {
+[e $U 440  ]
+[e :U 439 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 124 `i `ui 441  ]
+{
+[; ;main.c: 219: return 23;
+"219
+[e ) -> -> 23 `i `uc ]
+[e $UE 426  ]
+"220
+}
+[; ;main.c: 220: } else if (TimerCounterAtOverflow <=130) {
+[e $U 442  ]
+[e :U 441 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 130 `i `ui 443  ]
+{
+[; ;main.c: 221: return 21;
+"221
+[e ) -> -> 21 `i `uc ]
+[e $UE 426  ]
+"222
+}
+[; ;main.c: 222: } else if (TimerCounterAtOverflow <=136) {
+[e $U 444  ]
+[e :U 443 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 136 `i `ui 445  ]
+{
+[; ;main.c: 223: return 21;
+"223
+[e ) -> -> 21 `i `uc ]
+[e $UE 426  ]
+"224
+}
+[; ;main.c: 224: } else if (TimerCounterAtOverflow <=143) {
+[e $U 446  ]
+[e :U 445 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 143 `i `ui 447  ]
+{
+[; ;main.c: 225: return 19;
+"225
+[e ) -> -> 19 `i `uc ]
+[e $UE 426  ]
+"226
+}
+[; ;main.c: 226: } else if (TimerCounterAtOverflow <=150) {
+[e $U 448  ]
+[e :U 447 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 150 `i `ui 449  ]
+{
+[; ;main.c: 227: return 19;
+"227
+[e ) -> -> 19 `i `uc ]
+[e $UE 426  ]
+"228
+}
+[; ;main.c: 228: } else if (TimerCounterAtOverflow <=159) {
+[e $U 450  ]
+[e :U 449 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 159 `i `ui 451  ]
+{
+[; ;main.c: 229: return 17;
+"229
+[e ) -> -> 17 `i `uc ]
+[e $UE 426  ]
+"230
+}
+[; ;main.c: 230: } else if (TimerCounterAtOverflow <=168) {
+[e $U 452  ]
+[e :U 451 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 168 `i `ui 453  ]
+{
+[; ;main.c: 231: return 17;
+"231
+[e ) -> -> 17 `i `uc ]
+[e $UE 426  ]
+"232
+}
+[; ;main.c: 232: } else if (TimerCounterAtOverflow <=178) {
+[e $U 454  ]
+[e :U 453 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 178 `i `ui 455  ]
+{
+[; ;main.c: 233: return 16;
+"233
+[e ) -> -> 16 `i `uc ]
+[e $UE 426  ]
+"234
+}
+[; ;main.c: 234: } else if (TimerCounterAtOverflow <=190) {
+[e $U 456  ]
+[e :U 455 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 190 `i `ui 457  ]
+{
+[; ;main.c: 235: return 15;
+"235
+[e ) -> -> 15 `i `uc ]
+[e $UE 426  ]
+"236
+}
+[; ;main.c: 236: } else if (TimerCounterAtOverflow <=204) {
+[e $U 458  ]
+[e :U 457 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 204 `i `ui 459  ]
+{
+[; ;main.c: 237: return 14;
+"237
+[e ) -> -> 14 `i `uc ]
+[e $UE 426  ]
+"238
+}
+[; ;main.c: 238: } else if (TimerCounterAtOverflow <=219) {
+[e $U 460  ]
+[e :U 459 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 219 `i `ui 461  ]
+{
+[; ;main.c: 239: return 13;
+"239
+[e ) -> -> 13 `i `uc ]
+[e $UE 426  ]
+"240
+}
+[; ;main.c: 240: } else if (TimerCounterAtOverflow <=238) {
+[e $U 462  ]
+[e :U 461 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 238 `i `ui 463  ]
+{
+[; ;main.c: 241: return 12;
+"241
+[e ) -> -> 12 `i `uc ]
+[e $UE 426  ]
+"242
+}
+[; ;main.c: 242: } else if (TimerCounterAtOverflow <=260) {
+[e $U 464  ]
+[e :U 463 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 260 `i `ui 465  ]
+{
+[; ;main.c: 243: return 11;
+"243
+[e ) -> -> 11 `i `uc ]
+[e $UE 426  ]
+"244
+}
+[; ;main.c: 244: } else if (TimerCounterAtOverflow <=286) {
+[e $U 466  ]
+[e :U 465 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 286 `i `ui 467  ]
+{
+[; ;main.c: 245: return 10;
+"245
+[e ) -> -> 10 `i `uc ]
+[e $UE 426  ]
+"246
+}
+[; ;main.c: 246: } else if (TimerCounterAtOverflow <=318) {
+[e $U 468  ]
+[e :U 467 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 318 `i `ui 469  ]
+{
+[; ;main.c: 247: return 9;
+"247
+[e ) -> -> 9 `i `uc ]
+[e $UE 426  ]
+"248
+}
+[; ;main.c: 248: } else if (TimerCounterAtOverflow <=358) {
+[e $U 470  ]
+[e :U 469 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 358 `i `ui 471  ]
+{
+[; ;main.c: 249: return 8;
+"249
+[e ) -> -> 8 `i `uc ]
+[e $UE 426  ]
+"250
+}
+[; ;main.c: 250: } else if (TimerCounterAtOverflow <=410) {
+[e $U 472  ]
+[e :U 471 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 410 `i `ui 473  ]
+{
+[; ;main.c: 251: return 7;
+"251
+[e ) -> -> 7 `i `uc ]
+[e $UE 426  ]
+"252
+}
+[; ;main.c: 252: } else if (TimerCounterAtOverflow <=479) {
+[e $U 474  ]
+[e :U 473 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 479 `i `ui 475  ]
+{
+[; ;main.c: 253: return 6;
+"253
+[e ) -> -> 6 `i `uc ]
+[e $UE 426  ]
+"254
+}
+[; ;main.c: 254: } else if (TimerCounterAtOverflow <=576) {
+[e $U 476  ]
+[e :U 475 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 576 `i `ui 477  ]
+{
+[; ;main.c: 255: return 5;
+"255
+[e ) -> -> 5 `i `uc ]
+[e $UE 426  ]
+"256
+}
+[; ;main.c: 256: } else if (TimerCounterAtOverflow <=722) {
+[e $U 478  ]
+[e :U 477 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 722 `i `ui 479  ]
+{
+[; ;main.c: 257: return 4;
+"257
+[e ) -> -> 4 `i `uc ]
+[e $UE 426  ]
+"258
+}
+[; ;main.c: 258: } else if (TimerCounterAtOverflow <=966) {
+[e $U 480  ]
+[e :U 479 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 966 `i `ui 481  ]
+{
+[; ;main.c: 259: return 3;
+"259
+[e ) -> -> 3 `i `uc ]
+[e $UE 426  ]
+"260
+}
+[; ;main.c: 260: } else if (TimerCounterAtOverflow <=1462) {
+[e $U 482  ]
+[e :U 481 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 1462 `i `ui 483  ]
+{
+[; ;main.c: 261: return 2;
+"261
+[e ) -> -> 2 `i `uc ]
+[e $UE 426  ]
+"262
+}
+[; ;main.c: 262: } else if (TimerCounterAtOverflow <=3002) {
+[e $U 484  ]
+[e :U 483 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 3002 `i `ui 485  ]
+{
+[; ;main.c: 263: return 1;
+"263
+[e ) -> -> 1 `i `uc ]
+[e $UE 426  ]
+"264
+}
+[; ;main.c: 264: } else {
+[e $U 486  ]
+[e :U 485 ]
+{
+[; ;main.c: 265: return 0;
+"265
+[e ) -> -> 0 `i `uc ]
+[e $UE 426  ]
+"266
+}
+[e :U 486 ]
+[e :U 484 ]
+[e :U 482 ]
+[e :U 480 ]
+[e :U 478 ]
+[e :U 476 ]
+[e :U 474 ]
+[e :U 472 ]
+[e :U 470 ]
+[e :U 468 ]
+[e :U 466 ]
+[e :U 464 ]
+[e :U 462 ]
+[e :U 460 ]
+[e :U 458 ]
+[e :U 456 ]
+[e :U 454 ]
+[e :U 452 ]
+[e :U 450 ]
+[e :U 448 ]
+[e :U 446 ]
+[e :U 444 ]
+[e :U 442 ]
+[e :U 440 ]
+[e :U 438 ]
+[e :U 436 ]
+[e :U 434 ]
+[e :U 432 ]
+[e :U 430 ]
+[e :U 428 ]
+[; ;main.c: 266: }
+[; ;main.c: 267: }
+"267
+[e :UE 426 ]
+}
+"269
+[v _ConvertTimerOverflowToWheelRPM `(us ~T0 @X0 1 ef ]
+{
+[; ;main.c: 269: unsigned short ConvertTimerOverflowToWheelRPM() {
+[e :U _ConvertTimerOverflowToWheelRPM ]
+[f ]
+[; ;main.c: 270: if (TimerCounterAtOverflow <=93) {
+"270
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 93 `i `ui 488  ]
+{
+[; ;main.c: 271: return 1300;
+"271
+[e ) -> -> 1300 `i `us ]
+[e $UE 487  ]
+"272
+}
+[; ;main.c: 272: } else if (TimerCounterAtOverflow <=96) {
+[e $U 489  ]
+[e :U 488 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 96 `i `ui 490  ]
+{
+[; ;main.c: 273: return 1250;
+"273
+[e ) -> -> 1250 `i `us ]
+[e $UE 487  ]
+"274
+}
+[; ;main.c: 274: } else if (TimerCounterAtOverflow <=100) {
+[e $U 491  ]
+[e :U 490 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 100 `i `ui 492  ]
+{
+[; ;main.c: 275: return 1200;
+"275
+[e ) -> -> 1200 `i `us ]
+[e $UE 487  ]
+"276
+}
+[; ;main.c: 276: } else if (TimerCounterAtOverflow <=104) {
+[e $U 493  ]
+[e :U 492 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 104 `i `ui 494  ]
+{
+[; ;main.c: 277: return 1150;
+"277
+[e ) -> -> 1150 `i `us ]
+[e $UE 487  ]
+"278
+}
+[; ;main.c: 278: } else if (TimerCounterAtOverflow <=109) {
+[e $U 495  ]
+[e :U 494 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 109 `i `ui 496  ]
+{
+[; ;main.c: 279: return 1100;
+"279
+[e ) -> -> 1100 `i `us ]
+[e $UE 487  ]
+"280
+}
+[; ;main.c: 280: } else if (TimerCounterAtOverflow <=114) {
+[e $U 497  ]
+[e :U 496 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 114 `i `ui 498  ]
+{
+[; ;main.c: 281: return 1050;
+"281
+[e ) -> -> 1050 `i `us ]
+[e $UE 487  ]
+"282
+}
+[; ;main.c: 282: } else if (TimerCounterAtOverflow <=120) {
+[e $U 499  ]
+[e :U 498 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 120 `i `ui 500  ]
+{
+[; ;main.c: 283: return 1000;
+"283
+[e ) -> -> 1000 `i `us ]
+[e $UE 487  ]
+"284
+}
+[; ;main.c: 284: } else if (TimerCounterAtOverflow <=126) {
+[e $U 501  ]
+[e :U 500 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 126 `i `ui 502  ]
+{
+[; ;main.c: 285: return 950;
+"285
+[e ) -> -> 950 `i `us ]
+[e $UE 487  ]
+"286
+}
+[; ;main.c: 286: } else if (TimerCounterAtOverflow <=133) {
+[e $U 503  ]
+[e :U 502 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 133 `i `ui 504  ]
+{
+[; ;main.c: 287: return 900;
+"287
+[e ) -> -> 900 `i `us ]
+[e $UE 487  ]
+"288
+}
+[; ;main.c: 288: } else if (TimerCounterAtOverflow <=141) {
+[e $U 505  ]
+[e :U 504 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 141 `i `ui 506  ]
+{
+[; ;main.c: 289: return 850;
+"289
+[e ) -> -> 850 `i `us ]
+[e $UE 487  ]
+"290
+}
+[; ;main.c: 290: } else if (TimerCounterAtOverflow <=150) {
+[e $U 507  ]
+[e :U 506 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 150 `i `ui 508  ]
+{
+[; ;main.c: 291: return 800;
+"291
+[e ) -> -> 800 `i `us ]
+[e $UE 487  ]
+"292
+}
+[; ;main.c: 292: } else if (TimerCounterAtOverflow <=160) {
+[e $U 509  ]
+[e :U 508 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 160 `i `ui 510  ]
+{
+[; ;main.c: 293: return 750;
+"293
+[e ) -> -> 750 `i `us ]
+[e $UE 487  ]
+"294
+}
+[; ;main.c: 294: } else if (TimerCounterAtOverflow <=171) {
+[e $U 511  ]
+[e :U 510 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 171 `i `ui 512  ]
+{
+[; ;main.c: 295: return 660;
+"295
+[e ) -> -> 660 `i `us ]
+[e $UE 487  ]
+"296
+}
+[; ;main.c: 296: } else if (TimerCounterAtOverflow <=185) {
+[e $U 513  ]
+[e :U 512 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 185 `i `ui 514  ]
+{
+[; ;main.c: 297: return 650;
+"297
+[e ) -> -> 650 `i `us ]
+[e $UE 487  ]
+"298
+}
+[; ;main.c: 298: } else if (TimerCounterAtOverflow <=187) {
+[e $U 515  ]
+[e :U 514 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 187 `i `ui 516  ]
+{
+[; ;main.c: 299: return 640;
+"299
+[e ) -> -> 640 `i `us ]
+[e $UE 487  ]
+"300
+}
+[; ;main.c: 300: } else if (TimerCounterAtOverflow <=190) {
+[e $U 517  ]
+[e :U 516 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 190 `i `ui 518  ]
+{
+[; ;main.c: 301: return 630;
+"301
+[e ) -> -> 630 `i `us ]
+[e $UE 487  ]
+"302
+}
+[; ;main.c: 302: } else if (TimerCounterAtOverflow <=193) {
+[e $U 519  ]
+[e :U 518 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 193 `i `ui 520  ]
+{
+[; ;main.c: 303: return 620;
+"303
+[e ) -> -> 620 `i `us ]
+[e $UE 487  ]
+"304
+}
+[; ;main.c: 304: } else if (TimerCounterAtOverflow <=197) {
+[e $U 521  ]
+[e :U 520 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 197 `i `ui 522  ]
+{
+[; ;main.c: 305: return 610;
+"305
+[e ) -> -> 610 `i `us ]
+[e $UE 487  ]
+"306
+}
+[; ;main.c: 306: } else if (TimerCounterAtOverflow <=200) {
+[e $U 523  ]
+[e :U 522 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 200 `i `ui 524  ]
+{
+[; ;main.c: 307: return 600;
+"307
+[e ) -> -> 600 `i `us ]
+[e $UE 487  ]
+"308
+}
+[; ;main.c: 308: } else if (TimerCounterAtOverflow <=204) {
+[e $U 525  ]
+[e :U 524 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 204 `i `ui 526  ]
+{
+[; ;main.c: 309: return 590;
+"309
+[e ) -> -> 590 `i `us ]
+[e $UE 487  ]
+"310
+}
+[; ;main.c: 310: } else if (TimerCounterAtOverflow <=207) {
+[e $U 527  ]
+[e :U 526 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 207 `i `ui 528  ]
+{
+[; ;main.c: 311: return 580;
+"311
+[e ) -> -> 580 `i `us ]
+[e $UE 487  ]
+"312
+}
+[; ;main.c: 312: } else if (TimerCounterAtOverflow <=211) {
+[e $U 529  ]
+[e :U 528 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 211 `i `ui 530  ]
+{
+[; ;main.c: 313: return 570;
+"313
+[e ) -> -> 570 `i `us ]
+[e $UE 487  ]
+"314
+}
+[; ;main.c: 314: } else if (TimerCounterAtOverflow <=214) {
+[e $U 531  ]
+[e :U 530 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 214 `i `ui 532  ]
+{
+[; ;main.c: 315: return 560;
+"315
+[e ) -> -> 560 `i `us ]
+[e $UE 487  ]
+"316
+}
+[; ;main.c: 316: } else if (TimerCounterAtOverflow <=218) {
+[e $U 533  ]
+[e :U 532 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 218 `i `ui 534  ]
+{
+[; ;main.c: 317: return 550;
+"317
+[e ) -> -> 550 `i `us ]
+[e $UE 487  ]
+"318
+}
+[; ;main.c: 318: } else if (TimerCounterAtOverflow <=222) {
+[e $U 535  ]
+[e :U 534 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 222 `i `ui 536  ]
+{
+[; ;main.c: 319: return 540;
+"319
+[e ) -> -> 540 `i `us ]
+[e $UE 487  ]
+"320
+}
+[; ;main.c: 320: } else if (TimerCounterAtOverflow <=227) {
+[e $U 537  ]
+[e :U 536 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 227 `i `ui 538  ]
+{
+[; ;main.c: 321: return 530;
+"321
+[e ) -> -> 530 `i `us ]
+[e $UE 487  ]
+"322
+}
+[; ;main.c: 322: } else if (TimerCounterAtOverflow <=231) {
+[e $U 539  ]
+[e :U 538 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 231 `i `ui 540  ]
+{
+[; ;main.c: 323: return 520;
+"323
+[e ) -> -> 520 `i `us ]
+[e $UE 487  ]
+"324
+}
+[; ;main.c: 324: } else if (TimerCounterAtOverflow <=235) {
+[e $U 541  ]
+[e :U 540 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 235 `i `ui 542  ]
+{
+[; ;main.c: 325: return 510;
+"325
+[e ) -> -> 510 `i `us ]
+[e $UE 487  ]
+"326
+}
+[; ;main.c: 326: } else if (TimerCounterAtOverflow <=240) {
+[e $U 543  ]
+[e :U 542 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 240 `i `ui 544  ]
+{
+[; ;main.c: 327: return 500;
+"327
+[e ) -> -> 500 `i `us ]
+[e $UE 487  ]
+"328
+}
+[; ;main.c: 328: } else if (TimerCounterAtOverflow <=245) {
+[e $U 545  ]
+[e :U 544 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 245 `i `ui 546  ]
+{
+[; ;main.c: 329: return 490;
+"329
+[e ) -> -> 490 `i `us ]
+[e $UE 487  ]
+"330
+}
+[; ;main.c: 330: } else if (TimerCounterAtOverflow <=250) {
+[e $U 547  ]
+[e :U 546 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 250 `i `ui 548  ]
+{
+[; ;main.c: 331: return 480;
+"331
+[e ) -> -> 480 `i `us ]
+[e $UE 487  ]
+"332
+}
+[; ;main.c: 332: } else if (TimerCounterAtOverflow <=256) {
+[e $U 549  ]
+[e :U 548 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 256 `i `ui 550  ]
+{
+[; ;main.c: 333: return 470;
+"333
+[e ) -> -> 470 `i `us ]
+[e $UE 487  ]
+"334
+}
+[; ;main.c: 334: } else if (TimerCounterAtOverflow <=261) {
+[e $U 551  ]
+[e :U 550 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 261 `i `ui 552  ]
+{
+[; ;main.c: 335: return 460;
+"335
+[e ) -> -> 460 `i `us ]
+[e $UE 487  ]
+"336
+}
+[; ;main.c: 336: } else if (TimerCounterAtOverflow <=267) {
+[e $U 553  ]
+[e :U 552 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 267 `i `ui 554  ]
+{
+[; ;main.c: 337: return 450;
+"337
+[e ) -> -> 450 `i `us ]
+[e $UE 487  ]
+"338
+}
+[; ;main.c: 338: } else if (TimerCounterAtOverflow <=273) {
+[e $U 555  ]
+[e :U 554 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 273 `i `ui 556  ]
+{
+[; ;main.c: 339: return 440;
+"339
+[e ) -> -> 440 `i `us ]
+[e $UE 487  ]
+"340
+}
+[; ;main.c: 340: } else if (TimerCounterAtOverflow <=280) {
+[e $U 557  ]
+[e :U 556 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 280 `i `ui 558  ]
+{
+[; ;main.c: 341: return 430;
+"341
+[e ) -> -> 430 `i `us ]
+[e $UE 487  ]
+"342
+}
+[; ;main.c: 342: } else if (TimerCounterAtOverflow <=286) {
+[e $U 559  ]
+[e :U 558 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 286 `i `ui 560  ]
+{
+[; ;main.c: 343: return 420;
+"343
+[e ) -> -> 420 `i `us ]
+[e $UE 487  ]
+"344
+}
+[; ;main.c: 344: } else if (TimerCounterAtOverflow <=293) {
+[e $U 561  ]
+[e :U 560 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 293 `i `ui 562  ]
+{
+[; ;main.c: 345: return 410;
+"345
+[e ) -> -> 410 `i `us ]
+[e $UE 487  ]
+"346
+}
+[; ;main.c: 346: } else if (TimerCounterAtOverflow <=300) {
+[e $U 563  ]
+[e :U 562 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 300 `i `ui 564  ]
+{
+[; ;main.c: 347: return 400;
+"347
+[e ) -> -> 400 `i `us ]
+[e $UE 487  ]
+"348
+}
+[; ;main.c: 348: } else if (TimerCounterAtOverflow <=308) {
+[e $U 565  ]
+[e :U 564 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 308 `i `ui 566  ]
+{
+[; ;main.c: 349: return 390;
+"349
+[e ) -> -> 390 `i `us ]
+[e $UE 487  ]
+"350
+}
+[; ;main.c: 350: } else if (TimerCounterAtOverflow <=316) {
+[e $U 567  ]
+[e :U 566 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 316 `i `ui 568  ]
+{
+[; ;main.c: 351: return 380;
+"351
+[e ) -> -> 380 `i `us ]
+[e $UE 487  ]
+"352
+}
+[; ;main.c: 352: } else if (TimerCounterAtOverflow <=325) {
+[e $U 569  ]
+[e :U 568 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 325 `i `ui 570  ]
+{
+[; ;main.c: 353: return 370;
+"353
+[e ) -> -> 370 `i `us ]
+[e $UE 487  ]
+"354
+}
+[; ;main.c: 354: } else if (TimerCounterAtOverflow <=334) {
+[e $U 571  ]
+[e :U 570 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 334 `i `ui 572  ]
+{
+[; ;main.c: 355: return 360;
+"355
+[e ) -> -> 360 `i `us ]
+[e $UE 487  ]
+"356
+}
+[; ;main.c: 356: } else if (TimerCounterAtOverflow <=343) {
+[e $U 573  ]
+[e :U 572 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 343 `i `ui 574  ]
+{
+[; ;main.c: 357: return 350;
+"357
+[e ) -> -> 350 `i `us ]
+[e $UE 487  ]
+"358
+}
+[; ;main.c: 358: } else if (TimerCounterAtOverflow <=353) {
+[e $U 575  ]
+[e :U 574 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 353 `i `ui 576  ]
+{
+[; ;main.c: 359: return 340;
+"359
+[e ) -> -> 340 `i `us ]
+[e $UE 487  ]
+"360
+}
+[; ;main.c: 360: } else if (TimerCounterAtOverflow <=364) {
+[e $U 577  ]
+[e :U 576 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 364 `i `ui 578  ]
+{
+[; ;main.c: 361: return 330;
+"361
+[e ) -> -> 330 `i `us ]
+[e $UE 487  ]
+"362
+}
+[; ;main.c: 362: } else if (TimerCounterAtOverflow <=375) {
+[e $U 579  ]
+[e :U 578 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 375 `i `ui 580  ]
+{
+[; ;main.c: 363: return 320;
+"363
+[e ) -> -> 320 `i `us ]
+[e $UE 487  ]
+"364
+}
+[; ;main.c: 364: } else if (TimerCounterAtOverflow <=388) {
+[e $U 581  ]
+[e :U 580 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 388 `i `ui 582  ]
+{
+[; ;main.c: 365: return 310;
+"365
+[e ) -> -> 310 `i `us ]
+[e $UE 487  ]
+"366
+}
+[; ;main.c: 366: } else if (TimerCounterAtOverflow <=400) {
+[e $U 583  ]
+[e :U 582 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 400 `i `ui 584  ]
+{
+[; ;main.c: 367: return 300;
+"367
+[e ) -> -> 300 `i `us ]
+[e $UE 487  ]
+"368
+}
+[; ;main.c: 368: } else if (TimerCounterAtOverflow <=414) {
+[e $U 585  ]
+[e :U 584 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 414 `i `ui 586  ]
+{
+[; ;main.c: 369: return 290;
+"369
+[e ) -> -> 290 `i `us ]
+[e $UE 487  ]
+"370
+}
+[; ;main.c: 370: } else if (TimerCounterAtOverflow <=429) {
+[e $U 587  ]
+[e :U 586 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 429 `i `ui 588  ]
+{
+[; ;main.c: 371: return 280;
+"371
+[e ) -> -> 280 `i `us ]
+[e $UE 487  ]
+"372
+}
+[; ;main.c: 372: } else if (TimerCounterAtOverflow <=445) {
+[e $U 589  ]
+[e :U 588 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 445 `i `ui 590  ]
+{
+[; ;main.c: 373: return 270;
+"373
+[e ) -> -> 270 `i `us ]
+[e $UE 487  ]
+"374
+}
+[; ;main.c: 374: } else if (TimerCounterAtOverflow <=462) {
+[e $U 591  ]
+[e :U 590 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 462 `i `ui 592  ]
+{
+[; ;main.c: 375: return 260;
+"375
+[e ) -> -> 260 `i `us ]
+[e $UE 487  ]
+"376
+}
+[; ;main.c: 376: } else if (TimerCounterAtOverflow <=480) {
+[e $U 593  ]
+[e :U 592 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 480 `i `ui 594  ]
+{
+[; ;main.c: 377: return 250;
+"377
+[e ) -> -> 250 `i `us ]
+[e $UE 487  ]
+"378
+}
+[; ;main.c: 378: } else if (TimerCounterAtOverflow <=499) {
+[e $U 595  ]
+[e :U 594 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 499 `i `ui 596  ]
+{
+[; ;main.c: 379: return 240;
+"379
+[e ) -> -> 240 `i `us ]
+[e $UE 487  ]
+"380
+}
+[; ;main.c: 380: } else if (TimerCounterAtOverflow <=522) {
+[e $U 597  ]
+[e :U 596 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 522 `i `ui 598  ]
+{
+[; ;main.c: 381: return 230;
+"381
+[e ) -> -> 230 `i `us ]
+[e $UE 487  ]
+"382
+}
+[; ;main.c: 382: } else if (TimerCounterAtOverflow <=546) {
+[e $U 599  ]
+[e :U 598 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 546 `i `ui 600  ]
+{
+[; ;main.c: 383: return 220;
+"383
+[e ) -> -> 220 `i `us ]
+[e $UE 487  ]
+"384
+}
+[; ;main.c: 384: } else if (TimerCounterAtOverflow <=572) {
+[e $U 601  ]
+[e :U 600 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 572 `i `ui 602  ]
+{
+[; ;main.c: 385: return 210;
+"385
+[e ) -> -> 210 `i `us ]
+[e $UE 487  ]
+"386
+}
+[; ;main.c: 386: } else if (TimerCounterAtOverflow <=600) {
+[e $U 603  ]
+[e :U 602 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 600 `i `ui 604  ]
+{
+[; ;main.c: 387: return 200;
+"387
+[e ) -> -> 200 `i `us ]
+[e $UE 487  ]
+"388
+}
+[; ;main.c: 388: } else if (TimerCounterAtOverflow <=632) {
+[e $U 605  ]
+[e :U 604 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 632 `i `ui 606  ]
+{
+[; ;main.c: 389: return 190;
+"389
+[e ) -> -> 190 `i `us ]
+[e $UE 487  ]
+"390
+}
+[; ;main.c: 390: } else if (TimerCounterAtOverflow <=667) {
+[e $U 607  ]
+[e :U 606 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 667 `i `ui 608  ]
+{
+[; ;main.c: 391: return 180;
+"391
+[e ) -> -> 180 `i `us ]
+[e $UE 487  ]
+"392
+}
+[; ;main.c: 392: } else if (TimerCounterAtOverflow <=706) {
+[e $U 609  ]
+[e :U 608 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 706 `i `ui 610  ]
+{
+[; ;main.c: 393: return 170;
+"393
+[e ) -> -> 170 `i `us ]
+[e $UE 487  ]
+"394
+}
+[; ;main.c: 394: } else if (TimerCounterAtOverflow <=750) {
+[e $U 611  ]
+[e :U 610 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 750 `i `ui 612  ]
+{
+[; ;main.c: 395: return 160;
+"395
+[e ) -> -> 160 `i `us ]
+[e $UE 487  ]
+"396
+}
+[; ;main.c: 396: } else if (TimerCounterAtOverflow <=800) {
+[e $U 613  ]
+[e :U 612 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 800 `i `ui 614  ]
+{
+[; ;main.c: 397: return 150;
+"397
+[e ) -> -> 150 `i `us ]
+[e $UE 487  ]
+"398
+}
+[; ;main.c: 398: } else if (TimerCounterAtOverflow <=857) {
+[e $U 615  ]
+[e :U 614 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 857 `i `ui 616  ]
+{
+[; ;main.c: 399: return 140;
+"399
+[e ) -> -> 140 `i `us ]
+[e $UE 487  ]
+"400
+}
+[; ;main.c: 400: } else if (TimerCounterAtOverflow <=923) {
+[e $U 617  ]
+[e :U 616 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 923 `i `ui 618  ]
+{
+[; ;main.c: 401: return 130;
+"401
+[e ) -> -> 130 `i `us ]
+[e $UE 487  ]
+"402
+}
+[; ;main.c: 402: } else if (TimerCounterAtOverflow <=1000) {
+[e $U 619  ]
+[e :U 618 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 1000 `i `ui 620  ]
+{
+[; ;main.c: 403: return 120;
+"403
+[e ) -> -> 120 `i `us ]
+[e $UE 487  ]
+"404
+}
+[; ;main.c: 404: } else if (TimerCounterAtOverflow <=1091) {
+[e $U 621  ]
+[e :U 620 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 1091 `i `ui 622  ]
+{
+[; ;main.c: 405: return 110;
+"405
+[e ) -> -> 110 `i `us ]
+[e $UE 487  ]
+"406
+}
+[; ;main.c: 406: } else if (TimerCounterAtOverflow <=1200) {
+[e $U 623  ]
+[e :U 622 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 1200 `i `ui 624  ]
+{
+[; ;main.c: 407: return 100;
+"407
+[e ) -> -> 100 `i `us ]
+[e $UE 487  ]
+"408
+}
+[; ;main.c: 408: } else if (TimerCounterAtOverflow <=1334) {
+[e $U 625  ]
+[e :U 624 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 1334 `i `ui 626  ]
+{
+[; ;main.c: 409: return 90;
+"409
+[e ) -> -> 90 `i `us ]
+[e $UE 487  ]
+"410
+}
+[; ;main.c: 410: } else if (TimerCounterAtOverflow <=1500) {
+[e $U 627  ]
+[e :U 626 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 1500 `i `ui 628  ]
+{
+[; ;main.c: 411: return 80;
+"411
+[e ) -> -> 80 `i `us ]
+[e $UE 487  ]
+"412
+}
+[; ;main.c: 412: } else if (TimerCounterAtOverflow <=1715) {
+[e $U 629  ]
+[e :U 628 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 1715 `i `ui 630  ]
+{
+[; ;main.c: 413: return 70;
+"413
+[e ) -> -> 70 `i `us ]
+[e $UE 487  ]
+"414
+}
+[; ;main.c: 414: } else if (TimerCounterAtOverflow <=2001) {
+[e $U 631  ]
+[e :U 630 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 2001 `i `ui 632  ]
+{
+[; ;main.c: 415: return 60;
+"415
+[e ) -> -> 60 `i `us ]
+[e $UE 487  ]
+"416
+}
+[; ;main.c: 416: } else if (TimerCounterAtOverflow <=2402) {
+[e $U 633  ]
+[e :U 632 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 2402 `i `ui 634  ]
+{
+[; ;main.c: 417: return 50;
+"417
+[e ) -> -> 50 `i `us ]
+[e $UE 487  ]
+"418
+}
+[; ;main.c: 418: } else if (TimerCounterAtOverflow <=3003) {
+[e $U 635  ]
+[e :U 634 ]
+[e $ ! <= -> _TimerCounterAtOverflow `ui -> -> 3003 `i `ui 636  ]
+{
+[; ;main.c: 419: return 40;
+"419
+[e ) -> -> 40 `i `us ]
+[e $UE 487  ]
+"420
+}
+[; ;main.c: 420: } else {
+[e $U 637  ]
+[e :U 636 ]
+{
+[; ;main.c: 421: return 0;
+"421
+[e ) -> -> 0 `i `us ]
+[e $UE 487  ]
+"422
+}
+[e :U 637 ]
+[e :U 635 ]
+[e :U 633 ]
+[e :U 631 ]
+[e :U 629 ]
+[e :U 627 ]
+[e :U 625 ]
+[e :U 623 ]
+[e :U 621 ]
+[e :U 619 ]
+[e :U 617 ]
+[e :U 615 ]
+[e :U 613 ]
+[e :U 611 ]
+[e :U 609 ]
+[e :U 607 ]
+[e :U 605 ]
+[e :U 603 ]
+[e :U 601 ]
+[e :U 599 ]
+[e :U 597 ]
+[e :U 595 ]
+[e :U 593 ]
+[e :U 591 ]
+[e :U 589 ]
+[e :U 587 ]
+[e :U 585 ]
+[e :U 583 ]
+[e :U 581 ]
+[e :U 579 ]
+[e :U 577 ]
+[e :U 575 ]
+[e :U 573 ]
+[e :U 571 ]
+[e :U 569 ]
+[e :U 567 ]
+[e :U 565 ]
+[e :U 563 ]
+[e :U 561 ]
+[e :U 559 ]
+[e :U 557 ]
+[e :U 555 ]
+[e :U 553 ]
+[e :U 551 ]
+[e :U 549 ]
+[e :U 547 ]
+[e :U 545 ]
+[e :U 543 ]
+[e :U 541 ]
+[e :U 539 ]
+[e :U 537 ]
+[e :U 535 ]
+[e :U 533 ]
+[e :U 531 ]
+[e :U 529 ]
+[e :U 527 ]
+[e :U 525 ]
+[e :U 523 ]
+[e :U 521 ]
+[e :U 519 ]
+[e :U 517 ]
+[e :U 515 ]
+[e :U 513 ]
+[e :U 511 ]
+[e :U 509 ]
+[e :U 507 ]
+[e :U 505 ]
+[e :U 503 ]
+[e :U 501 ]
+[e :U 499 ]
+[e :U 497 ]
+[e :U 495 ]
+[e :U 493 ]
+[e :U 491 ]
+[e :U 489 ]
+[; ;main.c: 422: }
+[; ;main.c: 423: }
+"423
+[e :UE 487 ]
 }
