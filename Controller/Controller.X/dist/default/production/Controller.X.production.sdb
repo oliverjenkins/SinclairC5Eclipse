@@ -73,11 +73,11 @@
 [v _main main `(v  1 e 0 0 ]
 "117
 [v _XC8_HighISR_Handler XC8_HighISR_Handler `II(v  1 e 0 0 ]
-"164
+"169
 [v _XC8_LowISR_Handler XC8_LowISR_Handler `IIL(v  1 e 0 0 ]
-"203
+"208
 [v _ConvertTimerOverflowToMPH ConvertTimerOverflowToMPH `(uc  1 e 1 0 ]
-"269
+"276
 [v _ConvertTimerOverflowToWheelRPM ConvertTimerOverflowToWheelRPM `(us  1 e 2 0 ]
 "42 F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
 [v _InitPorts InitPorts `(v  1 e 0 0 ]
@@ -467,8 +467,6 @@
 [v _Throttle Throttle `uc  1 e 1 0 ]
 "54
 [v _TimerOverflowCounter TimerOverflowCounter `us  1 e 2 0 ]
-"55
-[v _TimerValueAtOverflow TimerValueAtOverflow `uc  1 e 1 0 ]
 "56
 [v _TimerCounterAtOverflow TimerCounterAtOverflow `us  1 e 2 0 ]
 "57
@@ -699,28 +697,28 @@
 [v Delay1KTCYx@unit unit `uc  1 a 1 31 ]
 "13
 } 0
-"269 F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+"276 F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
 [v _ConvertTimerOverflowToWheelRPM ConvertTimerOverflowToWheelRPM `(us  1 e 2 0 ]
 {
-"423
+"432
 } 0
-"203
+"208
 [v _ConvertTimerOverflowToMPH ConvertTimerOverflowToMPH `(uc  1 e 1 0 ]
 {
-"267
+"274
 } 0
 "170 F:\Projects\SinclairC5Eclipse\Controller\Controller.X\ports.c
 [v _ADC_Convert ADC_Convert `(uc  1 e 1 0 ]
 {
 "175
 } 0
-"164 F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
+"169 F:\Projects\SinclairC5Eclipse\Controller\Controller.X\main.c
 [v _XC8_LowISR_Handler XC8_LowISR_Handler `IIL(v  1 e 0 0 ]
 {
-"186
+"191
 } 0
 "117
 [v _XC8_HighISR_Handler XC8_HighISR_Handler `II(v  1 e 0 0 ]
 {
-"147
+"152
 } 0

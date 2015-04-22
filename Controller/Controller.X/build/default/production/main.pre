@@ -5330,7 +5330,7 @@ LCDUpdate(Speed, RPM, Throttle, CCPR1L);
 
 
 
-Delay1KTCYx(10);
+Delay1KTCYx(1);
 
 }
 }
@@ -5346,7 +5346,6 @@ if (INTCONbits.INT0IF )
 
 INTCONbits.INT0IF = 0;
 
-TimerValueAtOverflow = TMR0L;
 TimerCounterAtOverflow = TimerOverflowCounter;
 TimerOverflowCounter = 0;
 TMR0H = 0xFF;
@@ -5357,6 +5356,12 @@ if (INTCONbits.TMR0IF)
 {
 INTCONbits.TMR0IF = 0;
 TimerOverflowCounter = TimerOverflowCounter + 1;
+
+
+if (TimerOverflowCounter > 3003 ) {
+TimerCounterAtOverflow = TimerOverflowCounter;
+CanCalculateSpeed = 1;
+}
 TMR0H = 0xFF;
 TMR0L = 0x83;
 
@@ -5365,7 +5370,7 @@ TMR0L = 0x83;
 
 }
 
-# 164
+# 169
 void interrupt low_priority XC8_LowISR_Handler(void)
 {
 
@@ -5390,9 +5395,11 @@ LATDbits.LATD5 = ~LATDbits.LATD5;
 
 }
 
-# 203
+# 208
 unsigned char ConvertTimerOverflowToMPH() {
-if (TimerCounterAtOverflow <= 95) {
+if (TimerCounterAtOverflow > 3003) {
+return 0;
+}else if (TimerCounterAtOverflow <= 95) {
 return 30;
 } else if (TimerCounterAtOverflow <=98) {
 return 29;
@@ -5458,7 +5465,9 @@ return 0;
 }
 
 unsigned short ConvertTimerOverflowToWheelRPM() {
-if (TimerCounterAtOverflow <=93) {
+if (TimerCounterAtOverflow > 3003) {
+return 0;
+} else if (TimerCounterAtOverflow <=93) {
 return 1300;
 } else if (TimerCounterAtOverflow <=96) {
 return 1250;

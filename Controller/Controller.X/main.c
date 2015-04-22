@@ -104,7 +104,7 @@ void main (void)
 
        /// Show loop update
       // LATDbits.LATD7 = ~LATDbits.LATD7; // toggle LATD;
-       Delay1KTCYx(10);
+       Delay1KTCYx(1);
        
     }
 }
@@ -126,8 +126,7 @@ void interrupt XC8_HighISR_Handler(void)
         // Wheel has turned
         // clear (reset) flag
         INTCONbits.INT0IF = 0;
-        //LATDbits.LATD6 = ~LATDbits.LATD6; // toggle LATD;
-        TimerValueAtOverflow = TMR0L;
+       
         TimerCounterAtOverflow = TimerOverflowCounter;
         TimerOverflowCounter = 0;
         TMR0H = 0xFF;
@@ -138,6 +137,12 @@ void interrupt XC8_HighISR_Handler(void)
     {
         INTCONbits.TMR0IF = 0;          // clear (reset) flag
         TimerOverflowCounter = TimerOverflowCounter + 1;
+
+        // Handle the stopped case
+        if (TimerOverflowCounter > 3003 ) {
+            TimerCounterAtOverflow = TimerOverflowCounter;
+            CanCalculateSpeed = 1;
+        }
         TMR0H = 0xFF;
         TMR0L = 0x83;
         //LATDbits.LATD7 = ~LATDbits.LATD7; // toggle LATD
@@ -201,7 +206,9 @@ void C18_LowISR_Vector (void)
 
 
 unsigned char ConvertTimerOverflowToMPH() {
-    if (TimerCounterAtOverflow <= 95) {
+    if (TimerCounterAtOverflow > 3003) {
+        return 0;
+    }else if (TimerCounterAtOverflow <= 95) {
         return 30;
     } else if (TimerCounterAtOverflow <=98) {
         return 29;
@@ -267,7 +274,9 @@ unsigned char ConvertTimerOverflowToMPH() {
 }
 
 unsigned short ConvertTimerOverflowToWheelRPM() {
-    if (TimerCounterAtOverflow <=93) {
+    if (TimerCounterAtOverflow > 3003) {
+        return 0;
+    } else if (TimerCounterAtOverflow <=93) {
         return 1300;
     } else if (TimerCounterAtOverflow <=96) {
         return 1250;
